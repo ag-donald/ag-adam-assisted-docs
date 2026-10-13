@@ -1,0 +1,66 @@
+- image: database-field-management-04.png
+  captured: 2026-10-13
+  as: staff
+  path: Administration tab → Database Administration → Manage Input Forms → edit (Online Application - Pupil Details, form 7)
+  frame:
+    mode: span
+    selectors: >
+      From the page's h1 (the form name) down to the 13th row of #fields
+      tbody (pupil_cell); horizontally from the h1's left edge to the right
+      edge of #fields
+    padding: 8
+  setup: >
+    Re-capture of the existing image so that it shows the new Show when
+    column. The viewport was widened to 1280px: with the extra column the
+    #fields table needs about 1240px and overflows a 900px viewport (the
+    previous image was 1062px wide for the same reason). Served from the
+    feature/conditional-form-fields branch (see note) against adam_dev.
+  revert: none
+  note: >
+    Midway through the capture run another session switched the main
+    ~/dev/adam checkout to development, so dev.theta.adam.co.za stopped
+    serving the feature. The images were re-taken from a temporary worktree
+    of feature/conditional-form-fields served with php -S on localhost:8123
+    (main checkout's config.ini, so the same adam_dev database), with the
+    browser's dev.theta requests proxied to it. The worktree was removed
+    afterwards.
+
+- image: database-field-management-10.png
+  captured: 2026-10-13
+  as: staff
+  path: Administration tab → Database Administration → Manage Input Forms → edit (Online Application - Pupil Details, form 7)
+  frame:
+    mode: span
+    selectors: >
+      #fields rows from pupil_medaid_name down to pupil_prevschool_country
+      (ten rows); horizontally the #fields table. The table's header row is
+      not included because it sits 13 rows higher; image 04 shows it
+    padding: 8
+  setup: >
+    Done through the form editor, then Save form information:
+    cleared a leftover development rule (Gender is Male) on
+    pupil_medaid_principal with Always show; added the unused field
+    pupil_atschool with Section "Previous Schooling" and moved it above
+    pupil_prepschool; gave pupil_prepschool and pupil_prevschool_country the
+    rule At School Prior to Enrolling is Yes. The existing rule on
+    pupil_medaid_principal_id (Grade is Grade 10, Grade 11 or Grade 12) was
+    left in place. html5sortable's native drag could not be driven headless,
+    so the pupil_atschool row was moved in the DOM to the position a drop
+    would give it before saving; the saved sort order was confirmed in
+    input_form_fields.
+  revert: none — the rules are left on form 7 in adam_dev
+
+- image: database-field-management-11.png
+  captured: 2026-10-13
+  as: staff
+  path: Administration tab → Database Administration → Manage Input Forms → edit (Online Application - Pupil Details, form 7) → click the Show when rule of pupil_prevschool_country
+  frame:
+    mode: element
+    selectors: dialog.adam-dialog[open]
+    padding: 0
+  setup: >
+    Uses the rule saved for image 10, so the dialog opens with At School
+    Prior to Enrolling (pupil_atschool) chosen and Yes ticked. Taken at a
+    900px viewport after a 600ms wait for the dialog's fade-in, which
+    otherwise lets the page show through. Closed with Cancel.
+  revert: none

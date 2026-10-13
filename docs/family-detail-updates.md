@@ -8,6 +8,8 @@ Schools usually do not want to expose every field in a parent's view. A pupil's 
 
 ADAM lets each field be flagged as visible or hidden on update forms. The settings are described in the documentation on [core database fields](database-field-management.md) and [custom database fields](database-field-management.md#managing-custom-database-fields). The same visibility rules govern both the [hardcopy](#hard-copy-detail-update-forms) and the [online](#online-detail-updates) forms, so there is no need to re-audit the field configuration when you start using online updates.
 
+A field on an update form can also be given a [**Show when** rule](database-field-management.md#show-when-rules), so that the parent is asked the question only when an earlier answer on the same form calls for it. The online form hides the field until then. A hidden field is not sent with the form, so the review screen shows no change for it and the value ADAM already holds is kept. The printed form cannot hide a question, so it prints every field and adds the condition after the label, for example *Country of Previous School (only if At School Prior to Enrolling is Yes)*.
+
 ## Hard copy detail update forms
 
 A hard copy form prints the family's current details on the left of each row and leaves an empty box on the right for corrections:
