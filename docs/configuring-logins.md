@@ -20,9 +20,9 @@ Other settings, discussed later, are shown also.
 
 The staff login option is always available from the main login screen. Staff will enter their usernames and passwords here. ADAM will then consider how that staff member is to be authenticated and pass the login credentials to the authentication mechanism.
 
-ADAM can either authenticate staff using its local database and a locally stored password, by sending the login details to an Active Directory LDAP server or to a POP3 mail server.
+ADAM can either authenticate staff using its local database and a locally stored password, or by sending the login details to an Active Directory LDAP server.
 
-An internal password asks ADAM to manage a password for the teacher concerned. The other two options, “POP3 Mail Server” and “Active Directory LDAP Authentication” rely on other servers being available. If a staff member has one of these methods selected, then ADAM will simply use the specified server to perform a login using the details that the user provides. If the server accepts the login, then ADAM, in turn, allows the login.
+An internal password asks ADAM to manage a password for the teacher concerned. The other option, “Active Directory LDAP Authentication”, relies on another server being available. If a staff member has this method selected, then ADAM will simply use that server to perform a login using the details that the user provides. If the server accepts the login, then ADAM, in turn, allows the login.
 
 This helps users by reducing the number of passwords that they need to remember. In the case of Active Directory, login policies that block users from after a number of incorrect attempts are also enforced. This increases the security of your data.
 
@@ -65,38 +65,15 @@ Access is only granted if all three steps can be followed.
 > [!NOTE]
 > ADAM cannot tell, in this instance, why a user's credentials might have been denied. Common reasons include a) an incorrect password, b) a locked user account or c) a forced password change is pending (because this cannot be done over LDAP, the login is denied).
 
-### Configuring POP3 Authentication
+### POP3 Authentication
 
-> [!WARNING]
-> POP3 authentication is not secure. As such, we are removing this as an authentication option from ADAM with effect from 1 October 2026. We recommend using OAuth authentication instead, such as **Sign in with Google** or **Sign in with Microsoft**.
->
-> Schools that are using POP3 Authentication will see a warning banner appear which will notify the administrators how many staff and pupils are affected. To get actual names of staff and pupils, you can create a **scratchlist by filter** and use the **Authenticate** field in your filter, being equal to "POP3".
->
-> If no action is taken, these users will be unable to log in, starting from 1 October 2026. On this date, their authentication method will be changed to "suspended" which will prevent logins until they are updated to another method.
+POP3 authentication was removed from ADAM on 1 October 2026 because it is not secure. Any staff member or pupil who was still using it had their authentication method changed to **Suspended**, which prevents them from logging in.
 
-In order for ADAM to process POP3 authentication, it must be given a POP3 server to use. This is done in the “**Site Settings**” page (**Administration** / **Site** **Administration** / **Edit Site Settings**) and clicking on the “**Security**” tab.
-
-![](assets/screenshots/configuring-logins/configuring-logins-05.png)
-
-1.  Enter in the IP address of your POP3 Server into the first box.
-2.  If your POP3 server requires use of a different port (it almost certainly will if SSL and TLS are implemented).
-3.  Consult your POP3 server requirements to determine whether SSL and TLS should be enabled. If in doubt, try with both set to “No”.
-4.  The POP3 user name suffix is useful if all your users need to authenticate to your POP3 server with their whole email address.
-
-1.  By adding in the domain portion of the email address (e.g. “@example.com”), ADAM will automatically append that to the end of the username that the users supply.
-2.  Example: my POP3 server requires me to log in with the full email address bob@example.com. If I set “@example.com” as the domain suffix, then I can just enter the username “bob” on the front login screen, and as the staff login name, and ADAM will automatically send the login name “bob@example.com” when attempting to log in to the service.
-
-In order to associate an account on ADAM with a user account on a mail server, the user must have the same username set in ADAM as they would use to authenticate to the POP3 server. The following procedure is followed on login:
-
-5.  ADAM checks that the username entered matches a staff member or pupil in the database.
-6.  Then ADAM will check that the staff member or pupil in question is “current” – that is, their start date is in the past, and their end date is in the future.
-7.  Then ADAM takes the username and password that were provided and attempts a login on the POP3 server. If the POP3 server grants access, the username and password that were supplied must be correct and ADAM will grant the login.
-
-Access is only granted if all three steps can be followed.
+To restore someone's access, change their **Authentication Method** to **Internal Password**, **Active Directory Server** or **LDAP Server**. Once they are no longer suspended, staff can also use **Sign in with Google** or **Sign in with Microsoft** if your school has turned these on. To list everyone who is suspended, create a **scratchlist by filter** with the **Authenticate** field equal to "Suspended".
 
 ### Configuring Internal Passwords
 
-Sometimes, especially for temporary staff members, it is easier to create an internal password within ADAM. This is generally NOT a good idea since by using your Active Directory authentication (see page ) and POP3 authentication (see page ), more sophisticated restrictions can apply to the passwords including lockout times if the password is guessed incorrectly after a certain amount of times. These features do not apply to internal passwords.
+Sometimes, especially for temporary staff members, it is easier to create an internal password within ADAM. This is generally NOT a good idea since by using your Active Directory authentication (see page ), more sophisticated restrictions can apply to the passwords including lockout times if the password is guessed incorrectly after a certain amount of times. These features do not apply to internal passwords.
 
 An internal password can be set when the staff member is created. Alternatively, a password can be set and changed using the “**Change a teacher’s password**” option on the “**Staff**” tab, under the “**Security Administration**” heading.
 
@@ -218,7 +195,7 @@ Note that simply allowing the menu option to appear will not automatically allow
 Pupil logins can be enabled and their authentication method set on the “Site Settings” page (Administration / Site Administration / Edit Site Settings) and clicking on the “Pupil & Family Login” section. Once there, the “Allow pupil logins?” option should be set to “Yes”.
 
 > [!WARNING]
-> The authentication method used for pupils is a global setting and cannot be controlled individually. They can either make use of the Active Directory LDAP Authentication or the POP3 Authentication as used and described in the Staff Logins section. (POP3 authentication is being retired on 1 October 2026 — see the warning under [Configuring POP3 Authentication](#configuring-pop3-authentication) above.)
+> The authentication method used for pupils is a global setting and cannot be controlled individually. They can make use of the Active Directory LDAP Authentication as used and described in the Staff Logins section.
 
 Permissions for pupils are determined by [pupil login groups](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils).
 

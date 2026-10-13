@@ -131,17 +131,6 @@ The **Remember logged-in machines for** setting stores a long-term cookie on a c
 
 Some schools may chose to **Allow “Remember Me” Logins**. This will prevent the login time-out from affecting the user. Schools should be cautioned against allowing this if the computers that staff use are often left unsupervised and unlocked (consider a desktop computer in a classroom which may have pupils in unsupervised, as opposed to a laptop which is more likely to be turned off and locked). The number of days that ADAM can remember a user for can be set with the **Remember Me Duration** setting.
 
-### POP3 Authentication
-
-> [!WARNING]
-> POP3 authentication is not secure. As such, we are removing this as an authentication option from ADAM with effect from 1 October 2026. We recommend using OAuth authentication instead, such as **Sign in with Google** or **Sign in with Microsoft**.
->
-> Schools that are using POP3 Authentication will see a warning banner appear which will notify the administrators how many staff and pupils are affected. To get actual names of staff and pupils, you can create a **scratchlist by filter** and use the **Authenticate** field in your filter, being equal to "POP3".
->
-> If no action is taken, these users will be unable to log in, starting from 1 October 2026. On this date, their authentication method will be changed to "suspended" which will prevent logins until they are updated to another method.
-
-ADAM can use a POP3 server as an external authentication source. Provide the necessary settings here to communicate with your POP3 server. This method is not commonly used because generally schools will have another more commonly used authentication source available to them.
-
 ## Staff Logins
 
 Staff logins are governed by a number of different settings in ADAM.
