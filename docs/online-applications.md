@@ -97,6 +97,8 @@ ADAM has four different data capture screens for each of families and pupils. Th
 
 Each of these screens can be customised, within reason, to show only the fields that are required.
 
+On the application forms you can also ask a question only when it applies — for example only for the grades a question is about, or only when the parent says the child needs a study permit. Give the field a [**Show when** rule](database-field-management.md#show-when-rules). A field that a rule hides is not required, and any answer typed into it is discarded when the parent saves the page.
+
 Spend a moment deciding which fields are necessary for an application form. Our advice is to be conservative in what you ask for. Remember that with the introduction of the Protection of Personal Information Act, it will be an offence to store information unnecessarily.
 
 The most important fields are, from ADAM’s point of view:
@@ -435,7 +437,7 @@ ADAM now presents the application form one page at a time. Parents complete thei
 
 ![](assets/screenshots/online-applications/online-applications-08.png)
 
-The contents of this application form can be customised by controlling which fields appear in the application form within the [core database field management screen](database-field-management.md).
+The contents of this application form can be customised by controlling which fields appear in the application form within the [core database field management screen](database-field-management.md). Some questions may appear only once the parent has given a particular earlier answer, such as a grade of entry, because the school has given them a [**Show when** rule](database-field-management.md#show-when-rules).
 
 Where an application was started for the parent by another system — an application-fee payment provider, for example, using the [API](api-access-to-adam.md#applicationscreatepost) — some of the form may already be filled in. Fields that the other system has supplied are pre-filled, and those it has marked as fixed are shown but cannot be changed by the parent. Values supplied that way are also the ones written to the family and pupil records when a member of staff approves the application, even where the parent was allowed to edit them.
 

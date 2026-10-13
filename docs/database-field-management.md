@@ -63,7 +63,7 @@ It is possible to delete the custom field. Note that the table shows the number 
 
 ## Managing Data Input Forms
 
-ADAM has a number of core and custom fields that can be customised. To manage the fields that are present, including adding fields, removing fields and determining which fields are mandatory, navigate to **Administration → Database Administration → Manage input forms**.
+ADAM has a number of core and custom fields that can be customised. To manage the fields that are present, including adding fields, removing fields and determining which fields are mandatory, navigate to **Administration → Database Administration → Manage Input Forms**.
 
 A list of customisable input forms will be displayed:
 
@@ -89,7 +89,8 @@ For each field, ADAM shows the internal field name, a Section header, a Label, H
 
 -   Again, this text can be customised to contain any information you want, but once more it is important to realise that this will not change how ADAM treats and interprets the field.
 
--   The **Required** tick box will tell ADAM whether the value must be entered or not. The user will not be able to submit the form if they have not captured any data.
+-   The **Required** tick box will tell ADAM whether the value must be entered or not. The user will not be able to submit the form if they have not captured any data. A field that a [**Show when** rule](#show-when-rules) has hidden is never required.
+-   The **Show when** column appears only on the forms that parents fill in. It lets you ask a question only when an earlier answer calls for it, and is described [below](#show-when-rules).
 -   ADAM allows for fields to be removed from the form by clicking on the **remove** button next to the field.
 
 -   Please be careful about removing fields that ADAM requires. Removing important fields can have deleterious consequences. Please reach out to the ADAM support for guidance if you are not sure.
@@ -101,6 +102,87 @@ At the bottom of the page is a list of fields that can be added to the form.
 Click on the **add** button and drag the field into the correct position on the form.
 
 Click on **Save form information** when done.
+
+### Creating a new external form
+
+ADAM ships with one form for each purpose, but a school can create further external forms — for example a short pupil form that asks only for medical information, for use in a [detail update profile](family-detail-updates.md#configuring-an-update-profile).
+
+Click on **Create New External Form** at the top of the list of forms. Type a **Form Name** and an optional **Description**, choose the **Table** the form belongs to (**Pupils**, **Families** or **Staff**), and click on **Create Form**. ADAM copies every field from the matching default update form — **Online Update - Pupil Details**, **Online Update - Family Details** or **Update Personal Staff Details** — including its sections, labels, help, **Required** settings and **Show when** rules. Then edit the new form as described above.
+
+A form that your school created shows a **delete** button in the list, as long as no detail update profile uses it. ADAM’s own forms cannot be deleted.
+
+### Showing a field only when it applies { #show-when-rules }
+
+Some questions only make sense for some children. Questions about a child’s previous school matter only if the child was at school before, and a study permit number matters only if the child needs a study permit. A **Show when** rule tells ADAM to ask a question only when an earlier answer on the same form calls for it. Until then the question is hidden.
+
+**Show when** rules are available only on the external pupil and family forms — the forms that parents fill in:
+
+-   **Online Application - Pupil Details** and **Online Application - Family Details**, used by [online applications](online-applications.md#customising-the-application-form);
+-   **Online Update - Pupil Details** and **Online Update - Family Details**, used by [detail updates](family-detail-updates.md#customising-the-detail-update-forms); and
+-   any pupil or family form that your school has [created](#creating-a-new-external-form).
+
+The forms that staff use, and the staff update form, do not show the **Show when** column.
+
+#### Setting a rule
+
+1.  Click on **edit** next to the form. Every field shows **Always** in the **Show when** column until it is given a rule.
+2.  Click on **Always** next to the field that should only sometimes be asked. A dialog opens.
+3.  Under **Show this field when**, choose the field whose answer decides. Each field is listed by its label, followed by its internal name in brackets, for example **At School Prior to Enrolling (pupil_atschool)**.
+4.  Under **is any of:**, tick every answer for which the field should be shown.
+
+    ![The Show when dialog for Country of Previous School, with At School Prior to Enrolling chosen and Yes ticked](assets/screenshots/database-field-management/database-field-management-11.png)
+
+    *Country of Previous School will be asked only when the parent answers Yes to At School Prior to Enrolling.*
+
+5.  Click on **Save**. The **Show when** column now describes the rule in words, for example *At School Prior to Enrolling is Yes* or *Grade is Grade 10, Grade 11 or Grade 12*.
+6.  Click on **Save form information**. The rule is not stored until you do.
+
+    ![The Form Fields table with the Show when column, showing Always for most fields and a rule for three of them](assets/screenshots/database-field-management/database-field-management-10.png)
+
+    *Previous School and Country of Previous School depend on At School Prior to Enrolling, and the medical aid principal member’s ID is asked only for Grades 10 to 12.*
+
+To remove a rule, click on its description and then on **Always show**. **Cancel** closes the dialog without changing anything.
+
+#### Which fields can decide
+
+Only a field with a fixed list of answers can decide whether another field is shown. Examples are **Gender**, **Home Language**, **At School Prior to Enrolling**, **Requires Study Permit**, the grade, and custom fields of the **Single Option** or **Multiple Option** type. A text box or a date cannot decide.
+
+The deciding field must be on the same form, in the **Form Fields** table. A field cannot depend on itself.
+
+-   **The grade** is always listed as **Grade**, whatever label it has on the form. On an application form it is the **Grade of Entry** that the parent chooses for the child. On an update form it is the child’s current grade.
+-   **A Multiple Option field** shows the dependent field if *any* of the parent’s chosen answers is one that you ticked.
+-   **Rules can follow on from each other.** A field can depend on a field that has a rule of its own. If the first field is hidden, every field that depends on it is hidden too. ADAM refuses rules that go round in a loop, where a field ends up depending on itself.
+
+Each field can have one rule, based on one deciding field. That rule can list as many answers as you like.
+
+#### What parents see
+
+A field with a rule appears and disappears as soon as the parent changes the deciding answer. When every field in a section is hidden, the section’s heading is hidden as well.
+
+A hidden field is never required, even if its **Required** box is ticked, so it never stops a parent from submitting the form. Once the field is shown, it is required as usual.
+
+What happens to an answer in a field that becomes hidden depends on the form:
+
+-   **Online applications.** When the parent saves the page, ADAM discards any answer in a field that is hidden at that moment. The staff screen for checking and accepting an application applies the same rules.
+-   **Online detail updates.** A hidden field is not sent with the form, so the review screen shows no change for it. The value that ADAM already holds is kept.
+-   **Printed detail update forms.** Paper cannot hide a question, so every field is printed. A field with a rule has its condition added after its label, for example *Country of Previous School (only if At School Prior to Enrolling is Yes)*.
+
+#### When a rule cannot be saved
+
+ADAM checks every rule when you click on **Save form information**. If a rule cannot work, ADAM saves nothing, returns you to the form as it was last saved, and shows a message that names the field and the problem. The most common causes are:
+
+-   the deciding field has been removed from the form;
+-   a ticked answer is no longer one of the deciding field’s answers; or
+-   two or more rules depend on each other in a loop.
+
+ADAM will not let you click on **remove** for a field that other fields depend on. It shows a **Field in use** message that names those fields instead. Change or clear their rules first.
+
+If a field’s rule depended on a field that is no longer on the form — or on answers that no longer exist — the **Show when** column reads *Always (its rule depended on an answer no longer on this form)*. Parents are shown that field every time. The old rule is cleared the next time you click on **Save form information**. When only some of a rule’s answers have been removed, ADAM keeps the rule with the answers that remain.
+
+#### Limits
+
+-   A field cannot depend on an answer on a different form. On an online application the parents’ details and each child’s details are separate forms, so a question about a child cannot depend on a parent’s answer.
+-   Each field has one rule. A rule cannot combine two deciding fields, and it cannot say “show unless”. To show a field for every answer except one, tick all the other answers.
 
 ## Managing Scratch List Fields
 
