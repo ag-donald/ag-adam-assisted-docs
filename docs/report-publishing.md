@@ -9,32 +9,56 @@ When a new report template has been developed for your school, there are three t
 New templates are disabled by default. Before a template can be used for reporting, you must first enable it in the reporting template list.
 
 1.  Click on the **Reporting** tab.
-2.  Under the **Report Period Administration** heading, click on **Manage Report Templates**.
-3.  In the **Disabled Report Templates** section, find the new template and click on the **enable** action.
+2.  Under the **Reporting Administration** heading, click on **Manage reporting templates**.
 
-The page will reload and the template should now appear in the top part of the page.
+    ![The Reporting Administration heading on the Reporting tab, with Manage reporting templates fifth in its list](assets/screenshots/report-publishing/report-publishing-20.png)
 
-This video also demonstrates the process:
+3.  The **Manage Reporting Templates** page opens. It has two lists. The first, **Report Templates**, holds the templates your school has already enabled. The second, **Disabled Report Templates**, holds every template that is available but not yet enabled.
 
-https://www.youtube.com/watch?v=XJvKcyLhq9U
+    ![The top of the Manage Reporting Templates page, showing the Show all templates button and the list of enabled templates](assets/screenshots/report-publishing/report-publishing-21.png)
+
+    To keep the page short, ADAM lists only the templates whose codes start the same way as the templates your school already uses. A new template made for your school normally starts the same way, so it will be listed. If you cannot find it, click on the **Show all templates** button above the lists.
+
+4.  Scroll down to the **Disabled Report Templates** list, find the new template and click on its **enable** action.
+
+    ![Rows of the Disabled Report Templates list, each with an enable action, and a settings action on templates that have settings](assets/screenshots/report-publishing/report-publishing-22.png)
+
+The page will reload with the message “The template has been enabled.” The template now appears in the **Report Templates** list at the top of the page.
 
 ### Step 2: Check the Report Template Settings
 
 Some report templates have certain settings that can be set to change different aspects of the report. Often this will be used to set which staff member’s signature should appear at the bottom, or in which category examination results need to be found. The settings that are asked for differ from template to template.
 
-Head to the template management page: **Reporting → Report Period Administration → Manage Report Templates**. Next to the report, on the right-hand side, you will see a “settings” option next to report templates that have customisable settings:
+On the **Manage Reporting Templates** page (see [Step 1](#step-1-enable-the-template)), look at the new template in the **Report Templates** list. If it has customisable settings, a **settings** action appears next to it, to the left of the **disable** action:
 
-![](assets/screenshots/report-publishing/report-publishing-02.png)
+![The Report Templates list with three enabled templates; the last one has a settings action as well as a disable action](assets/screenshots/report-publishing/report-publishing-02.png)
 
-Clicking on this option will provide you with some settings to change. The settings that are available are unique for each template.
+If there is no **settings** action, the template has no settings and you can go on to Step 3.
 
-Make the appropriate selections for the settings and then save the settings using the **Save** button at the bottom of the page. These changes will now take effect on the template.
+Click on **settings**. The page that opens is headed **Settings for Reporting Template:** followed by the template’s name. The settings that are available are unique for each template.
 
-**Note:** It may happen that your changes are not reflected immediately. If you are making these changes towards the end of your reporting period, near your publishing date, please make sure to [refresh the archived reports](#refreshing-archived-reports) to ensure that the changes you’ve made reflect on the reports that ADAM generates.
+![The settings page for a template with a single setting, Headmistress, and the Save settings button below it](assets/screenshots/report-publishing/report-publishing-23.png)
+
+Make the appropriate selections for the settings and then click on the **Save settings** button at the bottom of the page. ADAM returns you to the **Manage Reporting Templates** page with a message confirming that the settings have been saved.
+
+> [!NOTE]
+> It may happen that your changes are not reflected immediately. If you are making these changes towards the end of your reporting period, near your publishing date, please make sure to [refresh the archived reports](#refreshing-archived-reports) to ensure that the changes you’ve made reflect on the reports that ADAM generates.
 
 ### Step 3: Select the Template in your Reporting Period Settings
 
-Enabling a template makes it available, but ADAM will not use it until it has been selected for a grade. Once you have enabled the new template, remember to select it as the template to use in the **Reporting Period Settings** for the appropriate grades. See [Report Template Options](reporting-period-administration.md#report-template-options) for how to choose a template for each grade.
+Enabling a template makes it available, but ADAM will not use it until it has been selected for a grade.
+
+1.  Click on the **Reporting** tab.
+2.  Under the **Reporting Administration** heading, click on **Edit reporting period**.
+3.  Choose the reporting period from the **Reporting Period** list and click on **Next**.
+4.  The settings for each grade are on a tab of their own, below the period’s dates. Click on the tab for a grade that should use the new template.
+5.  Under the **Report Template** heading, choose the new template from the **Report Template** list.
+
+    ![The Grade 8 tab of a reporting period, with a template chosen in the Report Template list](assets/screenshots/report-publishing/report-publishing-24.png)
+
+6.  Repeat steps 4 and 5 for each grade that should use the template, then click on the **Save reporting period** button.
+
+The **Report Template** list only shows enabled templates, which is why Step 1 has to come first. See [Report Template Options](reporting-period-administration.md#report-template-options) for the other settings under the **Report Template** heading.
 
 ## Staff Signatures
 

@@ -6,7 +6,7 @@ A reporting period is equivalent in many ways to a school term. Each reporting p
 
 At the start of each new term, a new reporting period needs to be created. These can be created for the year in advance, but it is not advised to create any reporting periods beyond the end of the current academic year.
 
-On the **Reporting** tab, under the **Reporting Period Administration** section, click on the **Add reporting period** option.
+On the **Reporting** tab, under the **Reporting Administration** section, click on the **Add reporting period** option.
 
 ![](assets/screenshots/reporting-period-administration/reporting-period-administration-01.png)
 

@@ -45,3 +45,90 @@
     pages other than Profile Overview Layouts, but no pupil of that name
     exists in the current demonstration data — the pupil autocomplete returns
     no Brandon Clark. The Anderson family was used instead.
+
+- image: report-publishing-20.png
+  captured: 2026-10-14
+  as: staff
+  path: Reporting tab
+  frame:
+    mode: element
+    selectors: the menu .section block containing "Manage reporting templates" (the Reporting Administration block)
+    padding: 8
+  setup: >
+    Shared with images 21, 22, 02 and 23. The demonstration school had no
+    templates enabled, so the manager page listed all 965 and showed no
+    "Show all templates" notice. Enabled through the manager page:
+    kyalami_bc_2016 (Beaulieu College 2016, already the template for grades
+    8-12 in the demonstration data) and kyalami_bps_sp_gr5_2021 (Beaulieu
+    Prep - SP (Grade 5, 2021 version), chosen because it has settings).
+    Beaulieu templates were used because the manual already shows a Beaulieu
+    template name (reporting-period-administration-05.png); every other
+    template name identifies a client school. kyalami_bc_2024 (Beaulieu
+    College 2024) plays the "new" template.
+  revert: all three templates disabled again after capturing
+
+- image: report-publishing-21.png
+  captured: 2026-10-14
+  as: staff
+  path: Reporting tab → Reporting Administration → Manage reporting templates
+  frame:
+    mode: span
+    selectors: from the h1 "Manage Reporting Templates" to the bottom of the Report Templates table (#table_1)
+    padding: 8
+  setup: see report-publishing-20.png; taken with the two "existing" templates enabled, before the new one
+  revert: see report-publishing-20.png
+  note: The focused control was blurred before capturing, to drop its focus ring.
+
+- image: report-publishing-22.png
+  captured: 2026-10-14
+  as: staff
+  path: Reporting tab → Reporting Administration → Manage reporting templates
+  frame:
+    mode: span
+    selectors: >
+      Disabled Report Templates table (#table_2), from two rows above the
+      kyalami_bc_2024 row to two rows below it
+    padding: 8
+  setup: see report-publishing-20.png
+  revert: see report-publishing-20.png
+  note: >
+    Beaulieu College 2024 shows 10 uses because the demonstration data
+    already refers to it; nothing was changed to make that happen.
+
+- image: report-publishing-02.png
+  captured: 2026-10-14
+  as: staff
+  path: Reporting tab → Reporting Administration → Manage reporting templates
+  frame:
+    mode: span
+    selectors: from the h2 "Report Templates" to the bottom of #table_1
+    padding: 8
+  setup: see report-publishing-20.png; taken after enabling kyalami_bc_2024 and reloading to clear the flash message
+  revert: see report-publishing-20.png
+  note: >
+    Re-captured with a wider frame. The previous image was a crop of the
+    settings action alone, from the old DataEditor version of the page.
+
+- image: report-publishing-23.png
+  captured: 2026-10-14
+  as: staff
+  path: Manage reporting templates → settings (kyalami_bps_sp_gr5_2021)
+  frame:
+    mode: span
+    selectors: from the h1 to the Save settings button
+    padding: 8
+  setup: see report-publishing-20.png; settings left as they were, not saved
+  revert: see report-publishing-20.png
+
+- image: report-publishing-24.png
+  captured: 2026-10-14
+  as: staff
+  path: Reporting tab → Reporting Administration → Edit reporting period → Term 2, 2026 (period 64) → Grade 8 tab
+  frame:
+    mode: span
+    selectors: from the "Grade 8" tab to the Report Template row of the Grade 8 form
+    padding: 8
+  setup: >
+    Beaulieu College 2024 chosen in Grade 8's Report Template list in the
+    browser only. The form was not saved, so the period is unchanged.
+  revert: none needed
