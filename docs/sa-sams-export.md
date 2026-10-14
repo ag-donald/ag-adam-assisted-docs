@@ -50,6 +50,55 @@ Without advocating for or against any particular “solution”, some schools ha
 
 Note that in spite of doing this, it is often impossible for these schools to ensure that all pupils offer a full, or valid, CAPS curriculum offering. This does not seem to be a primary concern at the District Office level.
 
+## The School Principal
+
+ADAM does not send the principal’s name to SA-SAMS as a separate item. The School Information page has a **Principal Details** heading on its **School Info** tab, with **Principal’s Initials**, **Principal’s Surname** and two telephone numbers. ADAM sends the initials and surname in the LURITS export, but the SA-SAMS export does not include any of them. Changing them has no effect on SA-SAMS.
+
+In the SA-SAMS database, the principal is recorded only in the list of educators. Every educator is sent with two pieces of information from their staff record, both found under **Employment Information**:
+
+-   **Post Level** — one of Educator, HOD, Deputy Principal, Principal, Administrative or Other.
+-   **Personnel Category** — sent as its SA-SAMS equivalent (see below). If the staff member is acting in a different post, **Acting Personnel Category** is sent as well.
+
+Staff with a **Post Level** of Administrative or Other are sent as general staff, not as educators.
+
+### Recording a new principal
+
+When the school appoints a new principal, update both people’s staff records.
+
+For the **new principal**:
+
+1.  Click on the “**Staff**” tab and, under the “**Staff Administration**” heading, click on “**Edit a staff member’s information**”. Choose the new principal.
+2.  Under **Employment Information**, set **Post Level** to **Principal**.
+3.  Set **Personnel Category** to the category your school uses for the principal. That category’s SA-SAMS equivalent must be “Principal”.
+4.  Check that **Nature of Appointment** is not **Not Employed**. ADAM leaves anybody marked **Not Employed** out of the SA-SAMS export.
+5.  Save the record.
+6.  Open their **Employment History** and check that they have a contract that starts on or before the date you will use for the export. See [Employment contracts](staff-information.md#employment-contracts).
+
+For the **previous principal**:
+
+-   If they have **left the school**, terminate their employment contract with the date they left. See [Staff who leave the school](staff-information.md#staff-who-leave-the-school). A staff member with an open contract is still exported as an educator, whatever else you change on their record.
+-   If they are **still at the school** in another post, edit their record and change **Post Level**, **Personnel Category** and, if it applies, **Acting Personnel Category** to match the post they now hold.
+
+### Checking the SA-SAMS equivalent of a personnel category
+
+Your school can rename personnel categories, so the name you see on a staff record may differ from the one SA-SAMS uses. To check, click on the “**Staff**” tab and, under the “**Staff Administration**” heading, click on “**Manage Personnel Categories**”. The **SA-SAMS Category** column shows what ADAM sends for each category. To change it, click **edit** next to the category and choose a value for **SA-SAMS Equivalent**.
+
+> [!NOTE]
+> You need the permission “Manage the Personnel Categories (personnel-category:manage)” to see this page.
+
+### SA-SAMS still shows the previous principal
+
+SA-SAMS shows the previous principal when the database ADAM sends still lists them as an educator in the principal’s post, or does not list the new principal in that post. Work through these causes in order:
+
+1.  **The previous principal’s contract is still open.** ADAM exports every educator whose employment contract covers the date you chose for the export. If the previous principal’s contract has no termination date, or ends after the export date, ADAM still sends them, with a **Post Level** of **Principal** unless that has been changed. Terminate the contract as described above.
+2.  **The previous principal is still marked as the principal.** If they remain at the school, their **Post Level** or **Personnel Category** may still say Principal. Change them to their current post.
+3.  **The new principal is not marked as the principal.** Check their **Post Level** and **Personnel Category**, and check the category’s SA-SAMS equivalent.
+4.  **The export date is earlier than the change.** ADAM chooses which staff to include by the effective date of the export, so an export dated before the new principal’s contract starts leaves them out. ADAM uses each person’s **Post Level** and **Personnel Category** as they are *now*, not as they were on the export date.
+5.  **The export is filtered by grade.** When you use **Filter by Grades**, ADAM includes only educators who teach an academic class in the selected grades. A principal who does not teach an academic subject in those grades is left out of that export.
+6.  **You opened an older database.** Every export builds a new SA-SAMS database from the beginning. Changes you make in ADAM reach SA-SAMS only in a database exported after the change. For the same reason, anything you type directly into SA-SAMS is not kept in the next export from ADAM.
+
+To see which staff ADAM treats as employed on a given date, click on the “**Staff**” tab and, under the “**Lists and Labels**” heading, click on “**Historical staff scratch list**”. Enter the export date and include the **Post Level** field. Exactly one person in that list should have a **Post Level** of **Principal**. If ADAM sends more than one, ADAM cannot control which of them SA-SAMS displays.
+
 ## Verifying Information in ADAM
 
 ADAM performs some fairly basic checks on the information that is passed over to SA-SAMS. The warning messages are currently mainly limited to ID number validation checks, although there are a few others that are run.
