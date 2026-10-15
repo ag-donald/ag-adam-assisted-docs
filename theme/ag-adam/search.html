@@ -1,0 +1,26 @@
+{# Shared by ordinary help pages and the static 404; no page object required. #}
+{% set ag_adam = config.extra.get('ag_adam', {}) %}
+{% set ag_adam_active = ag_adam.get('enabled') is sameas true and ag_adam.get('site_token', '') %}
+<div class="searchbar site-search ag-adam-help-search">
+    <form action="https://www.google.com/search" method="get" role="search">
+        <label for="adam-help-search">Search the ADAM help centre</label>
+        <div class="ag-adam-search-row">
+            <input id="adam-help-search" type="search" name="q"
+                placeholder="Search the ADAM help centre"
+                aria-describedby="adam-help-privacy" autocomplete="off">
+            <input type="hidden" name="sitesearch" value="help.adam.co.za">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    <p id="adam-help-privacy">
+        {% if ag_adam_active %}
+        Search may send text while you type. Questions, conversations and searches
+        are recorded for up to 90 days for trial evaluation. Please omit names,
+        learner records and passwords. If enhanced search is unavailable, Search
+        opens Google results for this help site.
+        {% else %}
+        Search opens Google results for this help site.
+        {% endif %}
+        <a href="{{ ag_adam.get('privacy_url', 'https://www.adam.co.za/regulatory-information/privacy-policy/')|e }}">Privacy information</a>
+    </p>
+</div>

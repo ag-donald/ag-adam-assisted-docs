@@ -45,11 +45,7 @@
 
     <article>
         <div id="bodycontainer">
-            <div class="searchbar">
-                <script async src="https://cse.google.com/cse.js?cx=017047591166674552263:0idgv_vajd0">
-                </script>
-                <div class="gcse-search" data-linkTarget="_self"></div>
-            </div>
+            {% include "ag-adam/search.html" %}
             <div class="content">
                 <h1>Page not found</h1>
                 <p>There is no page at this address. It may have been renamed, or
@@ -70,5 +66,6 @@
     {% for path in config.extra_javascript %}
     <script src="{{ path|url }}"></script>
     {% endfor %}
+    {% include "ag-adam/embeds.html" %}
 </body>
 </html>
