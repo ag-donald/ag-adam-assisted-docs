@@ -45,7 +45,7 @@ markdown_extensions:
 extra:
   ag_adam:
     enabled: true
-    site_token: ""
+    site_token: "adam-help-MBzkYXY8zmkX6bBTRnR7ICehAMIZexN5hA9jOWdlJUY"
 
 extra_css:
   - css/ag-adam.css
