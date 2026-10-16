@@ -1,4 +1,4 @@
-{# No key means no live embed; a quoted "false" must not activate the trial. #}
+{# No key means no live embed; a quoted "false" must not switch the embeds on. #}
 {% set ag_adam = config.extra.get('ag_adam', {}) %}
 {% if ag_adam.get('enabled') is sameas true and ag_adam.get('site_token', '') %}
 <script src="https://adam.agmercium.com/ag-search-0.13.0.js"

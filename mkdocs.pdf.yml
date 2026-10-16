@@ -27,8 +27,8 @@ hooks:
   - hooks/pdf_cover.py
   - hooks/pdf_internal_links.py
 
-# Never activate live Ag-Adam embeds in the exported manual, even while the
-# website trial is enabled in the inherited configuration.
+# Never activate live Adam Assistant embeds in the exported manual, even while the
+# website integration is enabled in the inherited configuration.
 extra:
   ag_adam:
     enabled: false

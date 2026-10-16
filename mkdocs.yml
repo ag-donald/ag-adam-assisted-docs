@@ -40,14 +40,12 @@ markdown_extensions:
       toc_depth: 2-4
   - smarty
 
-# Ag-Adam help-site trial. Both fields are required to render the two embeds.
+# Adam Assistant help-site integration. Both fields are required to render the two embeds.
 # The site token is public HTML, not an admin or model-provider secret.
-# Keep the token empty until the notice, signed trial and launch checks are complete.
 extra:
   ag_adam:
     enabled: true
     site_token: ""
-    privacy_url: https://www.adam.co.za/regulatory-information/privacy-policy/
 
 extra_css:
   - css/ag-adam.css

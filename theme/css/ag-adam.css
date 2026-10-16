@@ -47,15 +47,8 @@
     }
 
     .ag-adam-help-search input:focus-visible,
-    .ag-adam-help-search button:focus-visible,
-    .ag-adam-help-search a:focus-visible {
+    .ag-adam-help-search button:focus-visible {
         outline: 3px solid #0d5fa6;
         outline-offset: 2px;
-    }
-
-    .ag-adam-help-search #adam-help-privacy {
-        margin: 0.5rem 0 0;
-        font-size: 0.875rem;
-        line-height: 1.5;
     }
 }
