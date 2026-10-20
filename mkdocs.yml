@@ -40,6 +40,16 @@ markdown_extensions:
       toc_depth: 2-4
   - smarty
 
+# Adam Assistant help-site integration. Both fields are required to render the two embeds.
+# The site token is public HTML, not an admin or model-provider secret.
+extra:
+  ag_adam:
+    enabled: true
+    site_token: "adam-help-MBzkYXY8zmkX6bBTRnR7ICehAMIZexN5hA9jOWdlJUY"
+
+extra_css:
+  - css/ag-adam.css
+
 nav:
   - Home: index.md
   - Absentee Administration: absentee-administration.md

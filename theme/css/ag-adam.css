@@ -1,0 +1,54 @@
+/* Help-site form only; keep document content and the original theme untouched. */
+@media screen {
+    .ag-adam-help-search {
+        margin-bottom: 1.5rem;
+    }
+
+    .ag-adam-help-search label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 700;
+    }
+
+    .ag-adam-search-row {
+        display: flex;
+        align-items: stretch;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
+    /* The enhancement wraps the input; both enhanced and plain forms shrink. */
+    .ag-adam-search-row > input[type="search"],
+    .ag-adam-search-row > .adam-assistant-search {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .ag-adam-help-search input[type="search"] {
+        width: 100%;
+        min-width: 0;
+        padding: 0.6rem 0.7rem;
+        border: 1px solid #687b89;
+        border-radius: 4px;
+        background: #fff;
+        color: #1a1a1a;
+        font: inherit;
+    }
+
+    .ag-adam-help-search button[type="submit"] {
+        flex: 0 0 auto;
+        padding: 0.6rem 0.8rem;
+        border: 1px solid #0d5fa6;
+        border-radius: 4px;
+        background: #0d5fa6;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .ag-adam-help-search input:focus-visible,
+    .ag-adam-help-search button:focus-visible {
+        outline: 3px solid #0d5fa6;
+        outline-offset: 2px;
+    }
+}
