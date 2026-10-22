@@ -1,12 +1,12 @@
 {# No key means no live embed; a quoted "false" must not switch the embeds on. #}
 {% set ag_adam = config.extra.get('ag_adam', {}) %}
 {% if ag_adam.get('enabled') is sameas true and ag_adam.get('site_token', '') %}
-<script src="https://adam.agmercium.com/ag-search-0.15.1.js"
+<script src="https://adam.agmercium.com/ag-search-0.17.0.js"
     data-adam-assistant-token="{{ ag_adam.site_token|e }}"
     data-adam-assistant-input="#adam-help-search"
     data-adam-assistant-recent="false"
     defer></script>
-<script src="https://adam.agmercium.com/ag-widget-2.3.0.js"
+<script src="https://adam.agmercium.com/ag-widget-2.6.0.js"
     data-adam-assistant-token="{{ ag_adam.site_token|e }}"
     data-adam-assistant-theme="light"
     data-adam-assistant-persist="false"
