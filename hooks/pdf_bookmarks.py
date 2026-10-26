@@ -43,19 +43,55 @@ def append(self, document):
     return _append(self, document)
 
 
-def save(self, metadata={}):
-    """Writes the chapter outline, then saves."""
+def write_outline(writer, pages, offsets):
+    """Adds one bookmark per page, nested under the nav sections it sits in.
 
-    offsets = getattr(self, 'offsets', [])
+    A page inside a nav section (such as "Appendix C: API Access to ADAM")
+    goes under a bookmark carrying the section's label, which points at the
+    section's first page. Without it the section's label would be missing from
+    the outline and its pages would read as top-level chapters.
 
-    for page, offset in zip(self.pages, offsets):
+    Returns the number of page bookmarks written.
+    """
+
+    sections = {}
+    count = 0
+
+    def section_item(section, offset):
+        if id(section) not in sections:
+            parent = _parent_section(section)
+            parent_item = section_item(parent, offset) if parent else None
+            sections[id(section)] = writer.add_outline_item(str(section.title), offset, parent=parent_item)
+
+        return sections[id(section)]
+
+    for page, offset in zip(pages, offsets):
         # `title` is the nav label; the source path is a legible last resort
         # for a page that somehow reaches here without one.
         title = getattr(page, 'title', None) or page.file.src_path
+        parent = _parent_section(page)
+        parent_item = section_item(parent, offset) if parent else None
 
-        self.writer.add_outline_item(str(title), offset)
+        writer.add_outline_item(str(title), offset, parent=parent_item)
+        count += 1
 
-    log.info('pdf_bookmarks: wrote %d chapter bookmarks.', len(offsets))
+    return count
+
+
+def _parent_section(item):
+    """The nav section directly containing `item`, or None at the top level."""
+
+    parent = getattr(item, 'parent', None)
+
+    return parent if getattr(parent, 'is_section', False) else None
+
+
+def save(self, metadata={}):
+    """Writes the chapter outline, then saves."""
+
+    count = write_outline(self.writer, self.pages, getattr(self, 'offsets', []))
+
+    log.info('pdf_bookmarks: wrote %d chapter bookmarks.', count)
 
     return _save(self, metadata)
 
