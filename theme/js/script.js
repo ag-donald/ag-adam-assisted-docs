@@ -21,9 +21,13 @@
         return path || 'index.html';
     }
 
+    // A section links to its first page, so that page can match twice: once
+    // as the section and once in the section's own list. The last match is
+    // the innermost one, which is the entry for the page itself.
     function findActiveLink (page) {
         var selector = 'nav a[href$="/' + page + '"], nav a[href="' + page + '"]';
-        return document.querySelector (selector);
+        var links = document.querySelectorAll (selector);
+        return links.length ? links[links.length - 1] : null;
     }
 
     function highlightActivePage () {
