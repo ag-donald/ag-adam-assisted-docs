@@ -134,7 +134,7 @@ The body of the request is a JSON object containing one or both of these fields:
 }
 ```
 
-ADAM removes spaces from the start and end of each value. A field that is left out, or set to `null`, is not changed. Any other field in the body is rejected.
+ADAM removes whitespace, such as spaces, tabs and line breaks, from the start and end of each value. A field that is left out, or set to `null`, is not changed. Any other field in the body is rejected.
 
 #### Response {#familiesemailpatch-response}
 
@@ -243,7 +243,11 @@ The values take the school's communication policies into account. A communicatio
 Response codes:
 
 - Code 200: The preferences were saved.
-- Code 400: The body is empty, is not valid JSON, has no `preferences` object or an empty one, or contains an unknown communication type or a value that is not `true` or `false`. The response.error property describes the problem.
+- Code 400: The request was rejected. The response.error property gives the reason:
+    - `No preferences provided for update.`: the body is empty.
+    - `Input was not valid json: ` followed by the parser's message: the body is not valid JSON.
+    - `Missing or invalid 'preferences' object.`: the body has no `preferences` object, or the object is empty.
+    - `Invalid preferences payload.`: the `preferences` object contains an unknown communication type, or a value that is not `true` or `false`.
 - Code 404: No email address record has this identifier.
 
 ### Families/searchbyid:get

@@ -254,7 +254,7 @@ GET /api/classes/enrolment/150/2025-06-30
 }
 ```
 
-The `data` attribute contains one object per pupil, ordered by surname and then first name, with the same properties as [Classes/pupils:get](#classespupilsget). `grade` is the grade the pupil was in during the calendar year of `<date>`, not their grade today.
+The `data` attribute contains one object per pupil, ordered by surname and then first name, with the same properties as [Classes/pupils:get](#classespupilsget). `grade` is the grade the pupil was in during the calendar year of `<date>`, not their grade today. It is `null` if no Grade 12 year (the `pupil_final` field) is recorded for the pupil.
 
 A pupil appears if their registration in the class had begun on or before `<date>` and had not ended on or before it. Unlike Classes/pupils:get, the pupil's enrolment at the school is not checked: a pupil who has since left the school is still listed for a date on which they were in the class. For this reason, asking for today's date can return more pupils than Classes/pupils:get.
 

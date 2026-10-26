@@ -38,6 +38,8 @@ The image data is always in PNG format. The response's `Content-Type` header giv
 
 A 404 response, with no body, means that there is no photograph for that pupil identifier, or that the photograph could not be read as an image.
 
+A pupil identifier of `0` returns a JSON object with a 400 response code and the response.error property `Invalid request`.
+
 ### Pupils/add:post
 
 #### Request {#pupilsaddpost-request}
