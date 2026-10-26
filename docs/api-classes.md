@@ -5,7 +5,7 @@ api_prefixes:
 
 # Classes
 
-Use these endpoints to list the school's current classes, find the classes a pupil attends, and list the pupils in a class.
+Use these endpoints to list the school's current classes, find the classes a pupil attends, and list the pupils in a class today or on a past date.
 
 All endpoints on this page are under `/api/classes/`.
 
@@ -211,4 +211,55 @@ The list reflects who is in the class **today**. A pupil appears only if their r
 A class with nobody currently enrolled in it returns an empty `data` list with a 200 response code.
 
 -   Code 200: The class exists; `data` contains the (possibly empty) list of pupils
+-   Code 404: No such class, or the class has been deleted
+
+### Classes/enrolment:get
+
+Returns the pupils who were enrolled in a particular class on a given date, together with the date on which each pupil's registration in that class began. Use this to see who was in a class on a past date; use [Classes/pupils:get](#classespupilsget) to see who is in it today.
+
+#### Request {#classesenrolmentget-request}
+
+```
+GET /api/classes/enrolment/<class>/<date>
+```
+
+#### Parameters {#classesenrolmentget-parameters}
+
+-   `<class>`: The class identifier (URL path parameter, required). Class identifiers are returned by [Classes/list:get](#classeslistget).
+-   `<date>`: The date to report on, in `YYYY-MM-DD` format (URL path parameter, required). It must be a real calendar date.
+
+#### Response {#classesenrolmentget-response}
+
+```
+GET /api/classes/enrolment/150/2025-06-30
+```
+
+```json
+{
+    "data": [
+        {
+            "id": 1183,
+            "admin": "A2021-044",
+            "firstname": "Thandi",
+            "lastname": "Mokoena",
+            "grade": 7,
+            "datestart": "2025-01-15"
+        }
+    ],
+    "message": "",
+    "response": {
+        "error": "OK",
+        "code": 200
+    }
+}
+```
+
+The `data` attribute contains one object per pupil, ordered by surname and then first name, with the same properties as [Classes/pupils:get](#classespupilsget). `grade` is the grade the pupil was in during the calendar year of `<date>`, not their grade today.
+
+A pupil appears if their registration in the class had begun on or before `<date>` and had not ended on or before it. Unlike Classes/pupils:get, the pupil's enrolment at the school is not checked: a pupil who has since left the school is still listed for a date on which they were in the class. For this reason, asking for today's date can return more pupils than Classes/pupils:get.
+
+A class with nobody enrolled in it on that date returns an empty `data` list with a 200 response code.
+
+-   Code 200: The class exists; `data` contains the (possibly empty) list of pupils
+-   Code 400: The date is not a real calendar date in `YYYY-MM-DD` format
 -   Code 404: No such class, or the class has been deleted

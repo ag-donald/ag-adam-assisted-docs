@@ -13,25 +13,30 @@ See [Authentication](api-access-to-adam.md#authentication) for how to send your 
 
 ### Pupils/image:get
 
-Returns an image of a pupil.
+Returns a pupil's photograph, resized to a given width.
 
 #### Request {#pupilsimageget-request}
 
 ```
-GET /api/pupils/image/<pupil_id>
+GET /api/pupils/image/<pupil_id>[/<width>]
 ```
 
 #### Parameters {#pupilsimageget-parameters}
 
-- `<pupil_id>`: The internal identifier of the pupil.
+- `<pupil_id>`: The internal identifier of the pupil (required).
+- `<width>`: OPTIONAL. The maximum width of the image in pixels. If omitted, a width of 200 pixels is used. The height is scaled to keep the image's proportions. If the width is larger than the photograph's own width, the photograph is returned at its own size and is not enlarged.
 
 #### Response {#pupilsimageget-response}
 
 ```
-GET /api/reporting/pupils/image/123
+GET /api/pupils/image/123/400
 ```
 
-Unlike other API calls, this will return an image file and not a JSON object. The image type will be specified by the response’s Content-Type header, but will almost certainly be a JPG image. A response code of 404 suggests that the image does not exist.
+Unlike other API calls, this returns an image file and not a JSON object.
+
+The image data is always in PNG format. The response's `Content-Type` header gives the file type of the photograph as it was uploaded to ADAM (for example `image/jpeg`), which may not be PNG. Read the image data as PNG, or detect the format from the data itself, rather than relying on the `Content-Type` header.
+
+A 404 response, with no body, means that there is no photograph for that pupil identifier, or that the photograph could not be read as an image.
 
 ### Pupils/add:post
 
@@ -69,25 +74,6 @@ Note that while pupils may be added to the database even if these fields are omi
 For fields ending in an “_id” suffix, some values can be determined from [Appendix A](appendix-a-import-and-export-codes.md#appendix-a-import-and-export-codes). Note that pupil_registration_id field refers to a many-to-many relationship and thus cannot be completed by this end-point. If it exists in the submitted data, it is silently discarded.
 
 If any other invalid fields are passed in, the response message will contain details of those invalid fields.
-
-### Pupils/image:get {#api-resources-pupilsimageget}
-
-#### Request {#api-resources-request}
-
-```
-GET /api/pupils/image/<ADAM_Identifier>[/<width>]
-```
-
-#### Parameters {#api-resources-parameters}
-
-- `<ADAM_Identifier>`: An integer referring to the pupil’s internal ADAM identifier.
-- `<width>`: An optional integer to determine the maximum width of the image. If omitted, the image is not resized. If the width provided is larger than the image’s width, the image will not be  resized.
-
-#### Response {#api-resources-response}
-
-This response returns an image. No JSON information is returned.
-
-Where the identifier cannot be found, a response will be returned with an HTTP 404 status code.
 
 ### Pupils/pupil:get
 

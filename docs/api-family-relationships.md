@@ -5,7 +5,7 @@ api_prefixes:
 
 # Family Relationships
 
-Use these endpoints to find the families linked to a pupil, or the current pupils linked to a family, with the relationship of each parent.
+Use these endpoints to find the families linked to a pupil, or the current pupils linked to a family, with the relationship of each parent, and to change those relationships.
 
 All endpoints on this page are under `/api/familyrelationships/`.
 
@@ -68,6 +68,70 @@ GET /api/familyrelationships/family/123
   }
 }
 ```
+
+### FamilyRelationships/family:patch
+
+Changes how the primary or secondary parent of a family is related to a pupil.
+
+#### Request {#familyrelationshipsfamilypatch-request}
+
+```
+PATCH /api/familyrelationships/family/<family_id>/<pupil_id>
+```
+
+#### Parameters {#familyrelationshipsfamilypatch-parameters}
+
+- `<family_id>`: The internal identifier for the family (required).
+- `<pupil_id>`: The internal identifier for the pupil (required). The pupil must already be linked to the family.
+
+The body of the request is a JSON object containing one or both of these fields:
+
+- `primary`: the relationship between the primary parent and the pupil.
+- `secondary`: the relationship between the secondary parent and the pupil.
+
+```json
+{
+  "primary": "biological",
+  "secondary": "step parent"
+}
+```
+
+Each value must be one of the following, written exactly as shown, in lower case:
+
+- biological
+- adoptive parent
+- step parent
+- foster parent
+- guardian
+- sponsor
+- relative
+- other
+
+A field that is left out, or set to `null`, is not changed. Any other field in the body is rejected.
+
+#### Response {#familyrelationshipsfamilypatch-response}
+
+On success, the **data** attribute contains the relationship as it now stands. `primary` or `secondary` is `null` if that relationship has never been set.
+
+```json
+{
+  "data": {
+    "family_id": 111,
+    "pupil_id": 123,
+    "primary": "biological",
+    "secondary": "step parent"
+  },
+  "message": "",
+  "response": {
+    "error": "OK",
+    "code": 200
+  }
+}
+```
+
+- Code 200: The relationship was updated.
+- Code 400: The body is empty, is not valid JSON, contains a field other than `primary` or `secondary`, or contains a value that is not in the list above. The response.error property describes the problem.
+- Code 404: The pupil is not linked to the family, or neither field has a value.
 
 ### FamilyRelationships/pupil:get
 

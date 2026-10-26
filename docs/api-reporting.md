@@ -131,21 +131,25 @@ The **data** attribute contains an array of 0 or more pupil objects. The pupil o
 - `report_aggregate_ytd` is a summary year-to-date result. Again, this is often, but not always an average of the subject results.
 - `report_modified` is a timestamp of the last modification time of that report.
 
-### Reporting/pupilreportingperiods:ge
+### Reporting/pupilreportingperiods:get
 
-Returns reporting periods available for a specific pupil, including report availability.
+Returns the reporting periods in which a pupil has a report, with the pupil's aggregates and the archived report document for each period.
 
-#### Request {#reportingpupilreportingperiodsge-request}
+#### Request {#reportingpupilreportingperiodsget-request}
 
 ```
 GET /api/reporting/pupilreportingperiods/<pupil>
 ```
 
-#### Parameters {#reportingpupilreportingperiodsge-parameters}
+#### Parameters {#reportingpupilreportingperiodsget-parameters}
 
 - `<pupil>`: ADAM internal pupil identifier (required)
 
-#### Response {#reportingpupilreportingperiodsge-response}
+#### Response {#reportingpupilreportingperiodsget-response}
+
+```
+GET /api/reporting/pupilreportingperiods/123
+```
 
 ```json
 {
@@ -155,16 +159,28 @@ GET /api/reporting/pupilreportingperiods/<pupil>
       "period_name": "Term 1 2026",
       "period_start": "2026-01-15",
       "period_end": "2026-03-31",
-      "period_publish": "Yes",
+      "period_publish": "2026-04-01 12:00:00",
       "report_aggregate": 72.5,
       "report_aggregate_ytd": 72.5,
       "document_id": 456,
-      "document_upload_date": "2026-04-01",
+      "document_upload_date": "2026-04-01 09:15:00",
       "pupil_gradetext": "Grade 10"
     }
-  ]
+  ],
+  "message": "",
+  "response": {
+    "error": "OK",
+    "code": 200
+  }
 }
 ```
+
+The **data** attribute contains an array of 0 or more reporting period objects, with the most recent period (by end date) first. A period is included only if the pupil has a report in it and the period's **Show on Parent/Pupil Portals** setting is **Yes**. The period's publish date is not checked, so the list can include periods whose reports are not yet published.
+
+- `period_id`, `period_name`, `period_start`, `period_end` and `period_publish` are as described under [Reporting/periods:get](#reportingperiodsget-response).
+- `report_aggregate` and `report_aggregate_ytd` are the pupil's summary result for the period and year to date, as described under [Reporting/results:get](#reportingresultsget-response).
+- `document_id` is the identifier of the archived report document for this period, and `document_upload_date` is the date and time it was stored. Both are `null` when no report document has been archived for the period.
+- `pupil_gradetext` is the name of the grade the pupil was in during the year in which the period ended, using the grade names set up in ADAM, for example "Grade 10".
 
 ### Reporting/subjectmarksbypupil:get
 

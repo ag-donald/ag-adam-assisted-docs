@@ -5,7 +5,7 @@ api_prefixes:
 
 # Psychometric
 
-Use this endpoint to list the active psychometric assessments in a category.
+Use these endpoints to list the active psychometric assessments in a category. The two endpoints on this page are equivalent: the second is another name for the first.
 
 All endpoints on this page are under `/api/psychometric/`.
 
@@ -28,3 +28,13 @@ GET /api/psychometric/assessmentsbycategory/<category>
 #### Response {#psychometricassessmentsbycategoryget-response}
 
 Data attribute contains an array of active assessment records (where assessment_disabled = 'No').
+
+### Psychometric/assessments_by_category:get
+
+This endpoint is equivalent to [Psychometric/assessmentsbycategory:get](#psychometricassessmentsbycategoryget). It takes the same parameters and returns the same response.
+
+#### Request {#psychometricassessments_by_categoryget-request}
+
+```
+GET /api/psychometric/assessments_by_category/<category>
+```
