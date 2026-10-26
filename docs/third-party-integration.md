@@ -130,7 +130,7 @@ The API Key will need access to all the following end-points. Use the “Ctrl”
 
 ### Create Data Query Secrets for Papyrus
 
-Two DataQuery Secrets [need to be created](api-access-to-adam.md#create-a-data-query-secret): one for staff, and one for pupils. The secrets must all be associated with the API Key that you created in the first step.
+Two DataQuery Secrets [need to be created](api-data-query.md#create-a-data-query-secret): one for staff, and one for pupils. The secrets must all be associated with the API Key that you created in the first step.
 
 The fields required by Papyrus are:
 
@@ -324,7 +324,7 @@ Notably, if you’ve been using SOCS before, the admin numbers that were in use 
 -   DataQuery/getone/get
 -   DataQuery/getsince/get
 
--   Two [DataQuery Secrets](api-access-to-adam.md#create-a-data-query-secret) both linked to the API Token above, one for Pupils and the other for Staff. The fields required are:
+-   Two [DataQuery Secrets](api-data-query.md#create-a-data-query-secret) both linked to the API Token above, one for Pupils and the other for Staff. The fields required are:
 
 -   Pupils:
 
