@@ -460,3 +460,55 @@ time, uses the correct path, so the two now disagree on the same screen.
 Worth a sweep of the whole manual for "Cron Settings" and for "**Cron** tab" while somebody is in
 there — the settings screen was reorganised into the categories in
 `ADAM\Support\Settings\SettingCategory` and other pages are likely to be stale in the same way.
+
+---
+
+## API pages — known errors in the entries moved from the old appendix
+
+The API appendix was split into one page per module on `docs/api-split`. The entries were moved
+as they were, without rewriting, so these errors came across with them. Each was checked against
+the ADAM source on 2026-10-26.
+
+### 1. `Families/email:get` shows columns that no longer exist (`docs/api-families.md`)
+
+The example response includes `email_bulkmail`, `email_reports` and `email_alerts`. ADAM no
+longer has these columns: an address's communication choices are now preferences, set through
+`Families/emailpreferences:patch`. The `Families/email:patch` entry on the same page lists the
+record's real properties (`email_id`, `email_family_id`, `email_member`, `email_address`,
+`email_description`, `email_maillog`, `email_modify`), so the two entries disagree. Remove the
+three properties from the example, and check whether the response should also show the
+preferences.
+
+### 2. Relationship values on the `FamilyRelationships` get entries (`docs/api-family-relationships.md`)
+
+`FamilyRelationships::isValidRelationship` accepts exactly `biological`, `adoptive parent`,
+`step parent`, `foster parent`, `guardian`, `sponsor`, `relative` and `other`, all in lower case.
+The list under `FamilyRelationships/family:get` shows `stepparent` instead of `step parent`, and
+the lists under both `FamilyRelationships/family:get` and `FamilyRelationships/pupil:get` show
+`Other` instead of `other`. The list under `FamilyRelationships/family:patch` is already correct;
+copy it.
+
+### 3. `Families/email:delete` is worded as if it adds an address (`docs/api-families.md`)
+
+Checked against `FamilyEmail::apiDeleteEmail` and `FamilyEmail::removeAddress`:
+
+- The summary says "Remove an email address **to** a family member"; it removes it **from** one.
+- The `(primary|secondary)` parameter says "Which parent the email address should be **added
+  to**"; it is the parent the address is removed from.
+- The response line says only "200 if deleted successfully, 404 if not found". On success,
+  response.error is `<address> was removed from the family`, not `OK`. A request with no `email`
+  field, or a database error, also returns 404 (`Email address '' not found` for the missing
+  field). The entry does not say that deleting the address also deletes its communication
+  preferences.
+
+---
+
+## Pupils/image:get — the `Content-Type` header is wrong (for development)
+
+This is an ADAM code issue, not a documentation one. `DocRep::getApiImage` sets the response's
+file type from the uploaded document's `document_filetype` (`DocRep.php`, lines 1504 to 1506),
+but the bytes it sends come from `ThumbnailStore`, which always renders a PNG (`imagepng`). A
+photograph uploaded as a JPEG is therefore sent as PNG data with `Content-Type: image/jpeg`.
+
+`docs/api-pupils.md` already warns readers to treat the data as PNG and not to trust the header.
+Once ADAM sends `image/png`, remove that warning.
