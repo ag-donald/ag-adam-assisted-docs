@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import audit_api_endpoints as audit  # noqa: E402
@@ -66,6 +67,34 @@ class TestParsePage(unittest.TestCase):
     def test_invalid_yaml_raises(self):
         with self.assertRaises(ValueError):
             audit.parse_page("api-x.md", "---\n: : [\n---\n")
+
+    def test_lower_cases_declared_prefixes(self):
+        page = audit.parse_page("api-families.md", "---\napi_prefixes:\n  - Families\n---\n")
+        self.assertEqual(page.prefixes, ["families"])
+
+    def test_empty_front_matter_declares_nothing(self):
+        self.assertEqual(audit.parse_page("api-x.md", "---\n---\n# X\n").prefixes, [])
+
+    def test_unclosed_front_matter_raises(self):
+        with self.assertRaises(ValueError):
+            audit.parse_page("api-x.md", "---\napi_prefixes:\n  - families\n")
+
+    def test_closing_line_must_be_only_dashes(self):
+        # `----` and `---x` start with three dashes but do not close the block.
+        with self.assertRaises(ValueError):
+            audit.parse_page("api-x.md", "---\napi_prefixes:\n  - families\n---x\n")
+
+    def test_closing_line_may_have_trailing_spaces(self):
+        page = audit.parse_page("api-x.md", "---\napi_prefixes:\n  - families\n---  \n")
+        self.assertEqual(page.prefixes, ["families"])
+
+    def test_non_mapping_front_matter_raises(self):
+        with self.assertRaises(ValueError):
+            audit.parse_page("api-x.md", "---\n- families\n---\n")
+
+    def test_non_string_prefix_raises(self):
+        with self.assertRaises(ValueError):
+            audit.parse_page("api-x.md", "---\napi_prefixes:\n  - families\n  - 3\n---\n")
 
     def test_ignores_headings_in_code_fences(self):
         page = audit.parse_page("api-x.md", "```\n### Foo/bar:get\n```\n### Real/one:get\n")
@@ -226,6 +255,43 @@ class TestMain(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertTrue(err.startswith("audit_api_endpoints: "))
         self.assertEqual(err.count("\n"), 1)
+
+
+    def assert_fails_cleanly(self):
+        code, _, err = self.run_main()
+        self.assertEqual(code, 2)
+        self.assertTrue(err.startswith("audit_api_endpoints: "))
+        self.assertEqual(err.count("\n"), 1)
+
+    def test_source_not_utf8_exits_2(self):
+        self.clean()
+        (self.adam / "includes" / "methods_apiresource.php").write_bytes(b"\xff\xfe<?php")
+        self.assert_fails_cleanly()
+
+    def test_page_not_utf8_exits_2(self):
+        self.clean()
+        (self.docs / "api-x.md").write_bytes(b"\xff\xfe# X")
+        self.assert_fails_cleanly()
+        self.assertIn("api-x.md", self.run_main()[2])
+
+    def test_unreadable_page_exits_2(self):
+        self.clean()
+        (self.docs / "api-x.md").mkdir()
+        self.assert_fails_cleanly()
+        self.assertIn("api-x.md", self.run_main()[2])
+
+    def test_missing_pyyaml_exits_2(self):
+        self.clean()
+        with mock.patch.object(audit, "yaml", None):
+            self.assert_fails_cleanly()
+            _, _, err = self.run_main()
+        self.assertIn("PyYAML", err)
+
+    def test_mixed_case_prefix_declaration_matches(self):
+        self.source(_php(("families/children", "get")))
+        self.page("api-families.md", "---\napi_prefixes:\n  - Families\n---\n### Families/children:get\n")
+        code, _, _ = self.run_main()
+        self.assertEqual(code, 0)
 
 
 if __name__ == "__main__":

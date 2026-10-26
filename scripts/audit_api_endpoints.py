@@ -18,7 +18,10 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import NamedTuple
 
-import yaml
+try:
+    import yaml
+except ImportError:  # reported by main() as a failure to run, not a traceback
+    yaml = None
 
 
 class Endpoint(NamedTuple):
@@ -43,6 +46,7 @@ class Page:
 _BLOCK_SPLIT = re.compile(r"__set_state\(array\(")
 _METHOD = re.compile(r"'method'\s*=>\s*'([^']*)'")
 _ENDPOINT = re.compile(r"'endpoint'\s*=>\s*'([^']*)'")
+_FRONT_MATTER_END = re.compile(r"^---[ \t]*$", re.M)
 _HEADING = re.compile(
     r"^### ([A-Za-z][A-Za-z0-9_]*(?:/[A-Za-z0-9_-]+)+):([a-z]+)(?:\s+\{#[^}]*\})?\s*$"
 )
@@ -64,11 +68,11 @@ def parse_source(php_text: str) -> set[Endpoint]:
 def _read_prefixes(name: str, text: str) -> list[str]:
     if not text.startswith("---\n"):
         return []
-    end = text.find("\n---", 4)
-    if end == -1:
+    end = _FRONT_MATTER_END.search(text, 4)
+    if end is None:
         raise ValueError(f"{name}: front matter is not closed")
     try:
-        data = yaml.safe_load(text[4:end])
+        data = yaml.safe_load(text[4:end.start()])
     except yaml.YAMLError as err:
         raise ValueError(f"{name}: front matter is not valid YAML: {err}") from err
     if data is None:
@@ -78,7 +82,7 @@ def _read_prefixes(name: str, text: str) -> list[str]:
     prefixes = data.get("api_prefixes", [])
     if not isinstance(prefixes, list) or not all(isinstance(p, str) for p in prefixes):
         raise ValueError(f"{name}: api_prefixes must be a list of strings")
-    return prefixes
+    return [p.lower() for p in prefixes]
 
 
 def parse_page(name: str, text: str) -> Page:
@@ -98,10 +102,14 @@ def parse_page(name: str, text: str) -> Page:
 
 
 def load_pages(docs_dir: Path) -> list[Page]:
-    return [
-        parse_page(path.name, path.read_text(encoding="utf-8"))
-        for path in sorted(docs_dir.glob("api-*.md"))
-    ]
+    pages = []
+    for path in sorted(docs_dir.glob("api-*.md")):
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as err:
+            raise ValueError(f"cannot read {path}: {err}") from err
+        pages.append(parse_page(path.name, text))
+    return pages
 
 
 CHECKS: tuple[str, ...] = (
@@ -176,6 +184,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="path to the docs directory")
     parser.add_argument("--json", action="store_true", help="print the findings as JSON")
     args = parser.parse_args(argv)
+    if yaml is None:
+        return _fail("PyYAML is not installed; run the audit with .venv/bin/python")
 
     php_file = Path(args.adam).expanduser() / "includes" / "methods_apiresource.php"
     docs_dir = Path(args.docs).expanduser()
@@ -184,7 +194,11 @@ def main(argv: list[str] | None = None) -> int:
     if not docs_dir.is_dir():
         return _fail(f"cannot find the docs directory {docs_dir}")
 
-    source = parse_source(php_file.read_text(encoding="utf-8"))
+    try:
+        php_text = php_file.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as err:
+        return _fail(f"cannot read {php_file}: {err}".replace("\n", " "))
+    source = parse_source(php_text)
     if not source:
         return _fail(f"no endpoints found in {php_file}")
     try:
