@@ -160,8 +160,8 @@ GET /api/reporting/pupilreportingperiods/123
       "period_start": "2026-01-15",
       "period_end": "2026-03-31",
       "period_publish": "2026-04-01 12:00:00",
-      "report_aggregate": 72.5,
-      "report_aggregate_ytd": 72.5,
+      "report_aggregate": "72.5000000",
+      "report_aggregate_ytd": "-1.0000000",
       "document_id": 456,
       "document_upload_date": "2026-04-01 09:15:00",
       "pupil_gradetext": "Grade 10"
@@ -178,7 +178,7 @@ GET /api/reporting/pupilreportingperiods/123
 The **data** attribute contains an array of 0 or more reporting period objects, with the most recent period (by end date) first. A period is included only if the pupil has a report in it and the period's **Show on Parent/Pupil Portals** setting is **Yes**. The period's publish date is not checked, so the list can include periods whose reports are not yet published.
 
 - `period_id`, `period_name`, `period_start`, `period_end` and `period_publish` are as described under [Reporting/periods:get](#reportingperiodsget-response).
-- `report_aggregate` and `report_aggregate_ytd` are the pupil's summary result for the period and year to date, as described under [Reporting/results:get](#reportingresultsget-response).
+- `report_aggregate` and `report_aggregate_ytd` are the pupil's summary result for the period and for the year to date, as stored on the pupil's report. Each is a string holding a decimal number with seven decimal places, for example `"72.5000000"`. A value of `"-1.0000000"` means that no aggregate is stored, not a mark of -1. These are not always the same values that [Reporting/results:get](#reportingresultsget-response) returns: that endpoint calculates an aggregate when none is stored, and this endpoint does not.
 - `document_id` is the identifier of the archived report document for this period, and `document_upload_date` is the date and time it was stored. Both are `null` when no report document has been archived for the period.
 - `pupil_gradetext` is the name of the grade the pupil was in during the year in which the period ended, using the grade names set up in ADAM, for example "Grade 10".
 
