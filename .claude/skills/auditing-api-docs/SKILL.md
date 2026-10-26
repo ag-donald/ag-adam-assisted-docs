@@ -37,12 +37,12 @@ Exit 0 means the docs match the source. Exit 1 means there are findings, listed 
 
 Pages declare the URL prefixes they hold in `api_prefixes` front matter. An entry belongs on the page that declares its prefix. Entry headings look like `### Prefix/name:method`, with sub-headings `#### Request {#prefixnamemethod-request}`.
 
-- **Undocumented:** find the endpoint in `includes/methods_apiresource.php` to get its class and method, and read that method in the ADAM source. Write an entry on the page that declares its prefix, in the same format as its neighbours. Follow the `writing-user-documentation` skill. If the endpoint is an alias of another, write a short entry that points to the original, as `Families/get_children_by_family:get` does.
+- **Undocumented:** find the endpoint in `includes/methods_apiresource.php` to get its class and method, and read that method in the ADAM source. Write an entry on the page that declares its prefix, in the same format as its neighbours. Follow the `writing-user-documentation` skill. An endpoint is an alias when another entry in `methods_apiresource.php` has the same `callback` (the same class and method). For an alias, write a short entry that points to the original, as `Families/get_children_by_family:get` does.
 - **Not in source:** the page has an entry ADAM no longer serves. Ask the user before you delete it. If ADAM renamed the endpoint, update the entry instead.
 - **Duplicated:** the same heading appears more than once. Merge the entries, keep the more accurate content, and fix links to the one you removed.
 - **Wrong page:** move the entry to the page that declares its prefix and fix any links to it.
 - **Unassigned prefix:** no page declares this prefix. Decide where it belongs. Add it to `api_prefixes` on a related module page, or add it to `api-other-endpoints.md`. If it is a new ADAM area with several endpoints, create a new `docs/api-<module>.md` with `api_prefixes` front matter and add it to the Appendix C section of `mkdocs.yml`.
-- **Prefix declared twice:** keep the declaration on the page that holds its entries and remove the other. If neither page holds entries for it, remove both (the audit also reports it as stale).
+- **Prefix declared twice:** if ADAM still serves the prefix, keep one declaration, on the page that holds or should hold its entries, and remove the other. Remove both only if ADAM no longer serves the prefix; the audit then also reports it as stale.
 - **Stale prefix:** remove the declaration from the page once the page holds no entries for it.
 
 Do not run `scripts/generate_nav.mjs`. It flattens the navigation in `mkdocs.yml`.
