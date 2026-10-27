@@ -181,39 +181,6 @@ Click on **Save Changes** to save the alert.
 
 ## Certificates from Records and Points
 
-Where a Record and Points category has an attendance register included as part of its setup, ADAM can offer to print certificates for pupils who have had a record added to their profile, but who have not yet been listed as having “attended.” In this context, “attended” could be read as being: “attending the awards ceremony”.
+Where a Records and Points category has an attendance register, ADAM can print certificates for the pupils who have a record in that category. Certificates are printed from saved layouts, so that a school can keep separate layouts for, say, sport and cultural certificates. ADAM can also print one-off certificates for awards that are not recorded in Records and Points.
 
-### Uploading Certificate Templates
-
-Traditionally, this feature was designed to print over a pre-printed certificate. However, with more and more awards being issued electronically, even for archival purposes, it is useful to have a purely electronic certificate that can be emailed.
-
-Navigate to **Administration → Document Repository → Upload documents to the Site Repository**. Here, you can upload PDF documents into the “Certificates” category.
-
-![](assets/screenshots/records-and-points-administration/records-and-points-administration-09.png)
-
-Kindly note the following:
-
--   The certificates should be one of the standard sizes A4 or A5 (either portrait or landscape). Other will be truncated to fit the size chosen in the print settings.
--   The PDF document must be compatible with PDF Version 1.4 (Adobe 5). If you have a graphic designer working with your certificates, they should be able to export the template in this format for you. If you upload the certificate in a newer format, it *may* work, but it may give unpredictable results and errors.
-
-### Choosing the Printing Settings
-
-Once you’ve chosen the awards for which you want to print certificates, ADAM will show you this screen:
-
-![](assets/screenshots/records-and-points-administration/records-and-points-administration-10.png)
-
-If you have [uploaded any templates](#uploading-certificate-templates), then you will see these listed in the drop-down. If you are printing onto pre-printed certificates, leave this as “No template”.
-
-Choose your desired report size.
-
-Next, for each of the five elements that ADAM can show on the template, choose the settings that apply. You can change fonts and font-sizes. The “Left” and “Top” measurements are how many millimetres these text elements appear from the left and top of the page. The text is then shown in a box with a specific “width” and “height”. Note that the text is centred vertically and horizontally in the box and may overflow.
-
-When you’ve set these up for the first time, ADAM should remember them for subsequent certificate runs - this makes it simpler to generate them in future. However, for the first time, it is often useful to draw some pencil boxes where you expect the text to be displayed and then measure their top left corners for (“left” and “top” measurements) as well as the boxes’ widths and heights.
-
-Note that although the signature element asks for fonts and colours, they are not shown.
-
-Then, below these settings is a list of pupils for whom ADAM will generate certificates. The ones that are ticked will be printed:
-
-![](assets/screenshots/records-and-points-administration/records-and-points-administration-11.png)
-
-Finally, click on the **Generate certificates** button to have ADAM compile the certificates for you. These can then either be printed or saved. You might also use a free online service to split the PDFs into individual documents so that the certificates can be emailed individually.
+See [Certificates](certificates.md#certificates) for setting up layouts, uploading certificate templates and printing.
