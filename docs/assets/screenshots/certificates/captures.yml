@@ -1,0 +1,89 @@
+- image: certificates-02.png
+  captured: 2026-10-27
+  as: staff
+  path: Pupils tab → Records and Points Admin → Certificate layouts
+  frame:
+    mode: span
+    selectors: >
+      From the "Edit Certificate Layouts" h1 down to the bottom of the
+      Certificate Layouts table (#table_1), so that the add link and the
+      three layouts with their disable and edit actions are in shot. The
+      empty Disabled Certificate Layouts table below is left out.
+    padding: 8
+  setup: >
+    Shared with images 03, 04, 05 and 07. adam_dev was three migrations
+    behind development, including the one that adds certificate layouts, so
+    `php adam schema:migrate` was run first; it carried the old settings
+    over as "Certificate layout". Two layouts were then added through the
+    layout form: "Sport certificate" (A4 Landscape, Arial, name at 70 mm)
+    and "Cultural certificate" (A4 Portrait, Bookman Old Style, name at
+    110 mm). No PDF exists in the Certificates category, so every
+    Background template reads "—".
+  revert: none — the three layouts were left in place for later captures.
+
+- image: certificates-03.png
+  captured: 2026-10-27
+  as: staff
+  path: Certificate layouts → edit next to Sport certificate (layout 2)
+  frame:
+    mode: element
+    selectors: form#certificate_layout
+    padding: 8
+  setup: As for certificates-02.png.
+  revert: none
+  note: >
+    The form's Save layout bar is sticky to the bottom of the window, so a
+    full-page capture draws it across the second row of blocks. The viewport
+    was made taller than the page before capturing, which leaves the bar in
+    its natural place below the form.
+
+- image: certificates-04.png
+  captured: 2026-10-27
+  as: staff
+  path: Sport certificate → Preview this layout with sample text
+  frame:
+    mode: span
+    selectors: >
+      The "Preview Certificate Layout" h1, the layout name h2 and
+      form#certificate_layout_preview, which carries the instruction, the
+      five sample fields and Print preview.
+    padding: 8
+  setup: As for certificates-02.png. The sample text is ADAM's own default.
+  revert: none
+
+- image: certificates-05.png
+  captured: 2026-10-27
+  as: staff
+  path: Pupils tab → Records and Points Admin → Print certificates → Colours → Thu, 30 Jul 2026
+  frame:
+    mode: span
+    selectors: >
+      The Printing Certificates h1, the Colours h2 and the date h3, down to
+      the .grid block holding Certificate layout and Certification Date. The
+      records table below is certificates-06.png and is left out.
+    padding: 8
+  setup: >
+    Colours (category 7) was chosen because it is an attendance-register
+    category with recent records; 30 July 2026 is its most recent date. The
+    layout list is left on "Choose a layout", as the page first shows it.
+  revert: none
+
+- image: certificates-07.png
+  captured: 2026-10-27
+  as: staff
+  path: Pupils tab → Records and Points Admin → Print a one-off certificate
+  frame:
+    mode: span
+    selectors: >
+      The "Print a One-off Certificate" h1 and form#one_off_certificate.
+    padding: 8
+  setup: >
+    Sport certificate chosen; Tayla Hodge, Sahir Lutchman and Sebastian
+    Marais picked in Pupils by typing the first name and two letters of the
+    surname, then choosing the match; Award "Best Actor", Notes
+    "Inter-house play, 2026". Nothing was submitted.
+  revert: none
+  note: >
+    The page moves focus into the pupil search shortly after it loads and
+    selects its contents, which swallows the first key typed. Wait about a
+    second after the page loads before typing.

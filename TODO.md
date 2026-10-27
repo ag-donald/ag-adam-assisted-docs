@@ -239,54 +239,6 @@ Family Bookings**.
 
 ---
 
-## Certificates (`docs/certificates.md`)
-
-The certificate section moved here from the Records and Points page when certificate layouts were
-added. Two images moved with it and still match ADAM: the upload screen (`certificates-01.png`) and
-the list of records with their **Print** ticks (`certificates-06.png`). The old print-settings image
-(`records-and-points-administration-10.png`) showed the layout settings on the print page, which no
-longer exist there, and it has been deleted.
-
-The page needs five more images, and each entry below says where its `![](...)` reference goes.
-Before capturing, set up two layouts on the
-demonstration school — **Sport certificate** (A4 Landscape) and **Cultural certificate** (A4
-Portrait) — and an event category with records in it, such as **Colours**. A PDF in the
-**Certificates** category of the Site Document Repository makes the **Background template** column
-more useful, but is not essential. All five screens are under **Pupils → Records and Points Admin**.
-
-### 1. `certificates-02.png` — the list of layouts
-
-**Certificate layouts**. Frame the heading, the **Click here to add a new certificate layout** link
-and the table with both layouts and their **edit**, **disable** and **delete** options. It goes in
-*Certificate Layouts*, after the sentence listing the columns.
-
-### 2. `certificates-03.png` — the layout form
-
-**edit** next to **Sport certificate**. Frame the **Layout name**, **Certificate Template** and
-**Certificate Size** lines and the six blocks, including the **Format** setting under **Class**. It
-goes in *Adding a New Layout*, after the first paragraph.
-
-### 3. `certificates-04.png` — the preview form
-
-From the same layout, **Preview this layout with sample text**. Frame the **Preview Certificate
-Layout** heading, the layout's name and the five sample fields with **Print preview**. It goes in
-*Previewing a Layout*, after the sentence about the link.
-
-### 4. `certificates-05.png` — choosing the layout when printing
-
-**Print certificates**, then the category and a date with several records. Frame the three headings,
-the **Certificate layout** line with its **Edit certificate layouts** link and the **Certification
-Date** line, stopping above the table (which is `certificates-06.png`). It goes in *Printing
-Certificates from Records and Points*, after the sentence about the **Printing Certificates** page.
-
-### 5. `certificates-07.png` — the one-off form
-
-**Print a one-off certificate**, with **Sport certificate** chosen, two or three pupils picked in
-**Pupils** and an award such as “Best Actor” typed in. It goes in *Printing a One-off Certificate*,
-after the sentence about the menu option.
-
----
-
 # Missing Written Content
 
 ## Parent and Pupil Portal — Today's Birthdays (`docs/parent-and-pupil-portal.md`)

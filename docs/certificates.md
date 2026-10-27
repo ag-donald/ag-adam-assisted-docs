@@ -38,17 +38,22 @@ Kindly note the following:
 
 On the **Pupils** tab, under the **Records and Points Admin** heading, click on **Certificate layouts**. You need the **Manage certificate layouts** permission to see this option.
 
-The **Edit Certificate Layouts** page lists every layout, with its **Layout name**, **Background template** and **Page size**.
+The **Edit Certificate Layouts** page lists the layouts in use under **Certificate Layouts**, with each layout’s **Layout name**, **Background template** and **Page size**. Disabled layouts are listed below them, under **Disabled Certificate Layouts**.
 
-To the right of each layout are these options:
+![The Certificate Layouts list with three layouts, each with disable and edit actions](assets/screenshots/certificates/certificates-02.png)
+
+In the **Actions** column:
 
 -   **edit** opens the layout so that you can change it or preview it.
--   **disable** stops the layout being offered when certificates are printed. The layout is kept, and **enable** brings it back.
--   **delete** removes the layout permanently.
+-   **disable** moves the layout to the **Disabled Certificate Layouts** list. A disabled layout is not offered when certificates are printed.
+-   **enable**, on a disabled layout, brings it back into use.
+-   **delete**, on a disabled layout, removes it permanently once you have confirmed. A layout must be disabled before it can be deleted.
 
 ### Adding a New Layout
 
 Click on **Click here to add a new certificate layout** at the top of the page. The same form is used to edit a layout.
+
+![The layout form for a Sport certificate on A4 Landscape, with the Name, Award, Notes, Date, Class and Signature blocks and the Save layout button](assets/screenshots/certificates/certificates-03.png)
 
 -   **Layout name:** the name that staff choose from when they print, such as “Sport certificate” or “Cultural certificate”. A layout must have a name.
 -   **Certificate Template:** the PDF that the text is printed on. The list shows the documents [uploaded to the “Certificates” category](#uploading-certificate-templates). Choose “No template” to print onto pre-printed certificates.
@@ -92,6 +97,8 @@ Previewing prints one certificate from a saved layout using sample text, so that
 
 Open the layout with **edit**, then click on **Preview this layout with sample text** at the top of the page.
 
+![The Preview Certificate Layout page for the Sport certificate, with sample text in the Name, Class, Award, Notes and Date fields](assets/screenshots/certificates/certificates-04.png)
+
 The **Name**, **Class**, **Award**, **Notes** and **Date** fields are filled in with sample text. The sample notes are deliberately long, so that you can see how notes wrap. Change any of the text if you would like to check a real pupil’s name or a particular award, then click on **Print preview**. The certificate opens in a new tab.
 
 The preview uses the layout as it was last saved. Save your changes before you preview them.
@@ -115,6 +122,8 @@ On the **Pupils** tab, under the **Records and Points Admin** heading, click on 
 2.  Choose the **Date** and click on **Next**. The list shows the 30 most recent dates on which records were added in that category.
 
 The **Printing Certificates** page lists the records for that date, together with any earlier records in the category for pupils who have not yet attended.
+
+![The top of the Printing Certificates page for Colours, with the Certificate layout list showing Choose a layout, the Edit certificate layouts link and the Certification Date](assets/screenshots/certificates/certificates-05.png)
 
 -   **Certificate layout:** choose the layout to print with. No layout is chosen for you, so that a sport certificate is never printed with a cultural layout by mistake. Staff with the **Manage certificate layouts** permission also see an **Edit certificate layouts** link here.
 -   **Certification Date:** the date printed in the **Date** block. It starts as today’s date, and you can type any wording you like.
@@ -142,6 +151,8 @@ If no layouts have been set up, the page says “No certificate layouts have bee
 A one-off certificate is for an award that is not recorded in Records and Points, such as a prize at an inter-house event. You can print it for one pupil or for several at once. Nothing is recorded on the pupils’ profiles.
 
 On the **Pupils** tab, under the **Records and Points Admin** heading, click on **Print a one-off certificate**.
+
+![The Print a One-off Certificate form with the Sport certificate layout, three pupils chosen, and Best Actor as the award](assets/screenshots/certificates/certificates-07.png)
 
 -   **Certificate layout:** the layout to print with.
 -   **Pupils:** type in part of a pupil’s name and choose the pupil from the list that appears. Repeat for each pupil. Because each name comes from the pupil’s record, it is spelt exactly as ADAM has it.
