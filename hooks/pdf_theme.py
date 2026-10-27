@@ -195,7 +195,11 @@ class Theme(BaseTheme):
             if not href:
                 continue
 
-            path = os.path.normpath(os.path.join(site_dir, href))
+            # The theme appends `?v=<build time>` to bust browser caches. On
+            # disk the file has no query string, and a path that keeps it is
+            # never found, which would leave the screen rules in and blank
+            # every page.
+            path = os.path.normpath(os.path.join(site_dir, href.split('?', 1)[0]))
 
             if not os.path.isfile(path):
                 # A remote or generated stylesheet; nothing to inline.
