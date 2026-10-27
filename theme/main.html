@@ -21,10 +21,32 @@
 
     <button id="navtoggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
 
+    {#- A section has no page of its own, so it links to its first page. The
+        section's pages are listed under it only while one of them is open. -#}
+    {% macro nav_href(item) -%}
+    {%- if item.is_section -%}
+    {{ nav_href(item.children|first) }}
+    {%- else -%}
+    {{ item.url|url }}
+    {%- endif -%}
+    {%- endmacro %}
+
+    {% macro nav_entry(item) -%}
+    <li><a href="{{ nav_href(item) }}">{{ item.title }}</a>
+        {%- if item.is_section and item.active %}
+        <ul class="menu2">
+            {% for child in item.children %}
+            {{ nav_entry(child) }}
+            {% endfor %}
+        </ul>
+        {%- endif -%}
+    </li>
+    {%- endmacro %}
+
     <nav>
         <ul class="menu1">
             {% for nav_item in nav %}
-            <li><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+            {{ nav_entry(nav_item) }}
             {% endfor %}
         </ul>
     </nav>

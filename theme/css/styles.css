@@ -229,6 +229,27 @@ nav ul.menu1 > li.selected {
     font-weight: bold;
 }
 
+/* A section's pages, listed under it while one of them is open. */
+
+nav ul.menu2 {
+    margin-top: 6px;
+    font-weight: normal;
+}
+
+nav ul.menu2 > li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+nav ul.menu2 a {
+    padding-left: 36px;
+}
+
+nav ul.menu2 > li.selected {
+    background: var(--selected-bg);
+    font-weight: bold;
+}
+
 /* Right TOC ------------------------------------------------------------- */
 
 .toc-sidebar {

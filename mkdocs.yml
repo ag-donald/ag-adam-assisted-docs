@@ -151,4 +151,23 @@ nav:
   - Year-end Functions: year-end-functions.md
   - "Appendix A: Import and Export Codes": appendix-a-import-and-export-codes.md
   - "Appendix B: Common Errors and their Meanings": appendix-b-common-errors-and-their-meanings.md
-  - "Appendix C: API Access to ADAM": api-access-to-adam.md
+  - "Appendix C: API Access to ADAM":
+    - API Access to ADAM: api-access-to-adam.md
+    - Absentees: api-absentees.md
+    - Assessment: api-assessment.md
+    - Calendar: api-calendar.md
+    - Classes: api-classes.md
+    - Data Query: api-data-query.md
+    - DevMan Export: api-devman-export.md
+    - Documents: api-documents.md
+    - Families: api-families.md
+    - Family Relationships: api-family-relationships.md
+    - Messaging Logs: api-messaging-logs.md
+    - Online Applications: api-applications.md
+    - Psychometric: api-psychometric.md
+    - Pupils: api-pupils.md
+    - Records and Points: api-records-and-points.md
+    - Registration: api-registration.md
+    - Reporting: api-reporting.md
+    - Subjects: api-subjects.md
+    - Other Endpoints: api-other-endpoints.md
