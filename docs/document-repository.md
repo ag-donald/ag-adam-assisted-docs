@@ -293,6 +293,6 @@ Some files are needed for sharing across the site. These can include graphics th
 The category is important here:
 
 -   The **Site** category is not used, currently, and will only act as a store for site-related information. *You are encouraged not to use this category*.
--   The **Certificates** category is used for PDF certificate templates for electronically generated certificates. Note that these PDFs must be saved in PDF Version 1.5 or earlier for ADAM to understand them.
+-   The **Certificates** category is used for PDF certificate templates for electronically generated certificates. Note that these PDFs must be saved in PDF Version 1.4 for ADAM to understand them. See [Uploading Certificate Templates](certificates.md#uploading-certificate-templates).
 -   The **Logos** category is used for specifying logos that ADAM should use for display and printing. It also can store email banners and imagery. For more information about school logos, please see the [specific documentation](school-logos.md#school-logos).
 -   The **Reporting** category is used for miscellaneous files that ADAM might need for report templates. Note that this may include logos, but those will probably catered for in the **Logos** category above. You will be given specific instructions regarding your report templates.
