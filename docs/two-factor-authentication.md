@@ -1,23 +1,43 @@
 # Two-Factor Authentication
 
-## Introduction
+## What is two-factor authentication?
 
-The data stored in the ADAM database is very sensitive data. To help protect this data, ADAM allows you to protect your account with Two-Factor Authentication (2FA).
+ADAM keeps private information about pupils, families and staff. We need to keep it safe.
 
-Two-factor authentication is used by many banks to ensure that your transactions are genuine: when you initiate a payment or transaction, you are asked to type in a “one-time-PIN” (OTP) or approve the transaction from your phone. The OTP, or the approval from your phone, is known as the “second factor” in the authentication process.
+Two-factor authentication (2FA) adds a second lock to your ADAM account. To sign in, you need two things:
 
-An account protected with Two-Factor Authentication will not let a password on its own get you in — something more is always needed, whether that is the one-time-PIN from your app, one of your recovery codes, or a passkey.
+1. Your password.
+2. A six-digit code from an app on your phone.
 
-ADAM’s two-factor authentication system works using an Authenticator App that must be installed onto your phone. The Authenticator App will generate the One Time PIN. It is not sent by SMS and it is not linked to any specific phone number. After it has been set up, the app will not require any airtime or data to use.
+If someone learns your password, they still cannot get in. They would need your phone too.
+
+Your bank may already do something like this. When you pay, it may ask you for a one-time PIN. ADAM works in a similar way.
+
+The code comes from an app on your phone. It is **not** sent by SMS. The app does not need airtime, data or signal to make a code.
 
 > [!WARNING]
-> From **1 January 2027**, two-factor authentication is required for every staff member who uses ADAM. You do not need to wait for that date — you can set it up now, and we would encourage you to. Once the requirement takes effect, ADAM will ask you to set it up the next time you sign in, and you will not be able to use ADAM until you have.
+> From **1 January 2027**, every staff member must use two-factor authentication. You can set it up now. We suggest you do. After that date, ADAM will make you set it up the next time you sign in. You will not be able to use ADAM until you do.
 
-Two-factor authentication is already required for accounts with elevated permissions, whatever your school has chosen.
+If you are an ADAM administrator, you must already use two-factor authentication.
 
-## Supported Authenticator Apps
+You may see a reminder box on your dashboard before then. Click on **Set up two-factor authentication** in the box to start.
 
-There are many different Authenticator Apps that you can use. Popular ones include **Google Authenticator** (by Google LLC), **Microsoft Authenticator** (by Microsoft Corporation), **Twilio Authy Authenticator** (previously simply “Authy”, by Twilio), or **1Password** (by 1Password).
+## What you need
+
+- Your phone.
+- Your computer, signed in to ADAM.
+- About two minutes.
+
+## Setting up two-factor authentication
+
+### Step 1: Get an authenticator app { #supported-authenticator-apps }
+
+An authenticator app makes the six-digit codes. You only need one app. These are all free:
+
+- **Google Authenticator**
+- **Microsoft Authenticator**
+- **Twilio Authy Authenticator** (it used to be called **Authy**)
+- **1Password**
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-01.png)
 
@@ -35,50 +55,80 @@ Twilio Authy Authenticator
 
 1Password
 
-All of these apps are available for download from your preferred app store.
+Get the app from the App Store or Google Play.
 
-If your school makes use of Google Workspace, we recommend using the Google Authenticator. If your school makes use of Microsoft 365, we recommend using Microsoft Authenticator.
+Does your school use Google? Choose **Google Authenticator**. Does your school use Microsoft? Choose **Microsoft Authenticator**.
 
-## Adding Two-Factor Authentication to your account
+### Step 2: Open the setup page
 
-First, [download and install an authenticator app](#supported-authenticator-apps) from your app store.
+1. Sign in to ADAM on your computer.
+2. Click on the **Staff tab**.
+3. Under the **Security Administration** heading, click on **Manage your Two-Factor Authentication**.
 
-You can reach the setup page in two ways. If ADAM is waiting for you to set two-factor authentication up, it takes you there itself the next time you sign in. Otherwise, sign in as normal, click on the **Staff tab**, and then under the **Security Administration** heading click on **Manage your Two-Factor Authentication**.
+If ADAM needs you to set up two-factor authentication, it opens this page for you when you sign in.
 
-The setup page asks you to do two things, in order.
+### Step 3: Scan the code
 
-### Step 1: Scan this code
-
-ADAM shows a QR code for your app's camera to read. If your phone cannot scan it — because you are reading this on the phone itself, for instance — open **I can't scan the code** underneath it and ADAM shows the same information as a short written secret you can type in by hand instead.
+ADAM shows a square black-and-white code. This is called a QR code.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-12.png)
 
 > [!NOTE]
-> The QR code in the picture above has been deliberately corrupted so that it cannot be scanned. Scan the code on **your own screen** — every account's code is different.
+> The QR code in this picture will not scan. Scan the code you see **on your ADAM screen**. Every person gets a different code.
 
-Open the authenticator app you installed, and choose its option to add a new account. The app will ask permission to use your camera so that it can scan the code. In the Google Authenticator app, for example, this is the **+** button at the bottom right of the screen.
+1. Open the authenticator app on your phone.
+2. Tap the button to add an account. In Google Authenticator, this is the **+** button at the bottom right.
+3. Let the app use your camera if it asks.
+4. Point your phone's camera at the QR code on your computer screen.
+
+The app now shows an entry for ADAM in its list. Under it is a six-digit number. The number changes every 30 seconds.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-05.png)
 
-*An example of three accounts that have been set up for Two-Factor Authentication and how they appear in the Google Authenticator App. If you use a different App, it will look different!*
+*This is how three accounts look in Google Authenticator. Your app may look different.*
 
-Once the code has been scanned, the app lists the account and shows a six-digit number beneath it. That number changes every thirty seconds.
+**Can't scan the code?** Click on **I can't scan the code** under the QR code. ADAM shows a "key" made of letters and numbers. In your app, choose to enter a setup key. Type the key in exactly as ADAM shows you.
 
-### Step 2: Enter the six digits
+### Step 4: Type in the six digits
 
-The last step tells ADAM that your app really did save the secret. Type the six digits currently shown in your app into the **Code from your app** boxes, and click on **Turn on two-factor authentication**.
+1. Look at the six-digit number in your app.
+2. Type it into the **Code from your app** boxes in ADAM.
+3. Click on **Turn on two-factor authentication**.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-13.png)
 
-If the digits were correct, ADAM confirms that two-factor authentication is now protecting your account, and shows you your recovery codes. **Do not leave that page without saving them** — see [Recovery codes](#recovery-codes) below.
+Did ADAM say the code was wrong? The number may have changed while you typed. Try again with the new number. Still not working? See [My code does not work](#my-code-does-not-work).
+
+### Step 5: Save your recovery codes
+
+ADAM now shows a page called **Save your recovery codes**. It lists ten codes.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-14.png)
 
-If ADAM says the code was wrong, the most likely reason is that the six digits changed while you were typing. Try again with the number now showing in your app. If it fails repeatedly, see the [frequently asked questions](#frequently-asked-questions) below.
+> [!WARNING]
+> ADAM shows these codes **only once**. Save them before you leave this page.
+
+1. Click on **Print these codes** or **Download these codes**.
+2. Keep them somewhere safe. Keep them away from your phone. A drawer at home is good.
+3. Click on **I have saved my recovery codes**.
+
+Do not leave the codes on your desk beside your computer. Anyone with your password and those codes can get into your account.
+
+You are done. Two-factor authentication now protects your account.
+
+## Signing in to ADAM
+
+1. Sign in with your username and password, as you always do.
+2. ADAM asks for a **One Time PIN**. This is the six-digit code.
+3. Open the authenticator app on your phone.
+4. Type the six digits shown next to ADAM.
+5. Click on **Authenticate**.
+
+ADAM never sends you this code. You always get it from the app on your phone.
 
 ## Recovery codes
 
-When you set up two-factor authentication, ADAM gives you **ten recovery codes**. Each one can be used once, in place of the six digits from your app, to sign in. They are what gets you back into ADAM when your phone is lost, broken, flat, or simply not with you.
+A recovery code is like a spare key. Use one when you cannot use your phone. Maybe your phone is lost, broken, flat, or at home.
 
 A recovery code looks like this:
 
@@ -86,136 +136,140 @@ A recovery code looks like this:
 A3F7-K29P
 ```
 
-They contain no digit 0, 1, 8 or 9 — so if you see a rounded character, it is always the letter O, never a zero. Neither capitalisation nor the hyphen matters: ADAM upper-cases the code and strips punctuation before checking it, so `a3f7k29p` works just as well as `A3F7-K29P`.
+- Each code works **once**.
+- You get **ten** codes.
+- Capital letters do not matter. The dash does not matter.
+- There is no number 0 in a code. A round letter is always the letter **O**.
+
+### Signing in with a recovery code
+
+1. Sign in with your username and password.
+2. When ADAM asks for your code, click on **I've lost my phone — use a recovery code**.
+3. Type one of your recovery codes into the **Recovery Code** box.
+4. Click on **Sign in**.
+
+Cross that code off your list. It will not work again.
+
+### Getting new recovery codes
+
+Get new codes if you have used most of them. Get new codes if someone else may have seen them.
+
+1. Click on the **Staff tab**.
+2. Under the **Security Administration** heading, click on **Manage your Two-Factor Authentication**.
+3. Find the **Recovery codes** box. It shows how many codes you have left.
+4. Click on **Generate a new set**.
+5. ADAM may ask for your password and your six-digit code. This checks that it really is you.
+6. Save the new codes, just like in [Step 5](#step-5-save-your-recovery-codes).
 
 > [!WARNING]
-> ADAM shows your recovery codes **once**, at the moment they are created, and never again. It cannot show them to you later, because it does not keep a readable copy — it stores only enough to check a code you type in. If you lose them, you can generate a fresh set, but the old ones stop working.
-
-Print them, or download them, and keep them somewhere you can reach without your phone. A drawer at home is fine. A note on your desk beside the computer you sign in on is not — anyone who has your password and that note has your account.
-
-### Using a recovery code
-
-When ADAM asks for your six-digit code, use the option to sign in with a recovery code instead, and type one in. That code is then used up. Nine remain.
-
-### Generating new codes
-
-You can replace your codes at any time — if you have used most of them, or if you think someone else has seen them. Click on the **Staff tab**, then under the **Security Administration** heading click on **Manage your Two-Factor Authentication**, and click on **Generate a new set** in the **Recovery codes** card — the card is shown under [Remembered devices](#remembered-devices) below. The card also tells you how many of your codes are still unused.
-
-ADAM asks for your password and a code from your app first, to be sure it is you. Generating a new set **cancels every code in the old set**, so make sure you have saved the new ones before you close the page.
+> When you get new codes, **all your old codes stop working**. Throw the old ones away.
 
 ## Remembered devices
 
-Depending on how your school has set ADAM up, it may not ask for your six-digit code every single time you sign in. It can instead remember the computer you are using, and skip the prompt for a while. Your school's administrator chooses this — see [how often ADAM asks for a code](two-factor-authentication-for-administrators.md#choosing-how-often-adam-asks-for-a-code).
+Your school may let ADAM remember your computer for a while. Then ADAM does not ask for your six-digit code every time you sign in.
 
-Where that is in use, your two-factor authentication page shows a **Remembered devices** card telling you how many computers are currently trusted to skip the prompt.
-
-![](assets/screenshots/two-factor-authentication/two-factor-authentication-15.png)
-
-> [!TIP]
-> If you have signed in on a computer that is not yours — a shared office machine, a hotel, a friend's laptop — or if a laptop has been lost or stolen, use **Sign out all devices**. Every computer remembered for your account is forgotten, and the next time you sign in on any of them you are asked for a code.
-
-Signing devices out does not remove two-factor authentication from your account and does not affect your recovery codes. It only means the code prompt comes back.
-
-You may also see this card show nothing to sign out. That simply means no computer is currently being trusted — either because none has been, or because your school asks for a code at every sign-in.
-
-## Removing Two-Factor Authentication
-
-Once you have added two-factor authentication, you can remove 2FA by clicking on the **Staff tab**, and then under the **Security Administration** heading clicking on **Manage your Two-Factor Authentication**. If it is enabled on your account, you will see the following:
+If your school does this, you will see a **Remembered devices** box on your two-factor authentication page. It shows how many computers ADAM remembers.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-15.png)
 
-Click on the **Remove two-factor authentication** option at the bottom to begin the process. ADAM opens a page headed **Remove two-factor authentication**.
+Click on **Sign out all devices** if:
 
-You must then enter your ADAM password to confirm that you’d like to remove Two-Factor Authentication from your account:
+- You signed in on a computer that is not yours.
+- You lost a laptop, or someone stole it.
+
+ADAM then forgets every computer. Next time, each computer will ask for your code again. Your two-factor authentication and your recovery codes stay the same.
+
+If the box shows **0**, ADAM is not remembering any computer. There is nothing to sign out.
+
+If you do not see the box at all, your school asks for a code every time you sign in.
+
+## Getting a new phone
+
+Your new phone needs to be set up again. Do this while you still have your old phone, if you can.
+
+1. Sign in to ADAM. Use your old phone to get a six-digit code, or [use a recovery code](#signing-in-with-a-recovery-code) if you do not have your old phone with you
+2. [Remove two-factor authentication](#removing-two-factor-authentication) from your account.
+3. Set it up again on your new phone. Start at [Step 1](#supported-authenticator-apps).
+4. Delete the old ADAM entry from your old app. It will not work any more.
+
+## Removing two-factor authentication
+
+1. Click on the **Staff tab**.
+2. Under the **Security Administration** heading, click on **Manage your Two-Factor Authentication**.
+3. At the bottom, click on **Remove two-factor authentication**.
+4. Type your ADAM password.
+5. Click on **Remove two-factor authentication**.
 
 ![](assets/screenshots/two-factor-authentication/two-factor-authentication-09.png)
 
-Once removed, ADAM will show the options to re-enrol your account in the Two-Factor Authentication setup, including a new QR code. If you see the QR code, then your account is no longer protected by Two-Factor Authentication.
+ADAM now shows a new QR code. This means two-factor authentication is off. Your recovery codes stop working too.
 
-Please note that if your account requires Two-Factor Authentication, if you remove it, you will be forced to re-add two factor authentication immediately and will not be able to use ADAM until this is done.
+Delete the ADAM entry from your authenticator app. It will not work any more.
 
-## Frequently Asked Questions
+If your account must use two-factor authentication, ADAM will ask you to set it up again straight away.
 
-### ADAM is not sending me the OTP. How do I log in?
+## Frequently asked questions
 
-ADAM does not send the One-Time PIN (OTP) - it is generated by the Authenticator App on your phone. You need to open the Authenticator App and get the OTP from within the App.
+### ADAM did not send me a code. How do I sign in?
 
-The OTP is generated by the App. It does not use any data and does not require you to have any airtime on your phone, and you don’t need any cell reception.
+ADAM does not send codes. Open the authenticator app on your phone. The code is there.
 
-### How do I log in if I don’t have my phone with me?
+The app does not need airtime, data or signal.
 
-Use one of your [recovery codes](#recovery-codes). When ADAM asks for the six digits, choose to sign in with a recovery code instead, and type one in. Each code works once.
+### I don't have my phone with me. How do I sign in?
 
-If you have run out of codes, or never saved them, your ADAM administrator can [remove two-factor authentication from your account](two-factor-authentication-for-administrators.md#removing-two-factor-for-another-staff-member). You can then sign in with just your password — but if your school requires two-factor authentication, ADAM will ask you to set it up again straight away, and you will need your phone to do that.
+Use one of your [recovery codes](#signing-in-with-a-recovery-code).
 
-If you are your school's ADAM administrator and you cannot sign in yourself, contact us for support. We will verify who you are before making any change.
+No recovery codes left? Ask your ADAM administrator for help. They can remove two-factor authentication from your account. Then you can sign in with only your password. You may need to set it up again straight away, so have your phone ready.
 
-### I have a new phone or don’t have the App installed anymore. How do I log in?
+Are you the ADAM administrator? Contact ADAM support. We will check who you are before we change anything.
 
-Sign in with a [recovery code](#recovery-codes), then remove two-factor authentication from your account and set it up again on the new phone. Scanning the QR code on the new phone creates a new secret; the entry in your old app stops working, and you should delete it.
+### I deleted the app. Now I can't sign in.
 
-### I removed the app because I don’t want to use two factor authentication any more. Now I can’t log in.
+Deleting the app does **not** turn off two-factor authentication. ADAM still asks for a code.
 
-Please be aware that the only time that ADAM and your Authenticator App will communicate is when the QR code is first scanned. After that, there is no synchronisation or communication of any kind between ADAM and the Two-Factor Authentication app that is installed on your phone.
+Use one of your [recovery codes](#signing-in-with-a-recovery-code) to sign in. No codes left? Ask your ADAM administrator for help.
 
 > [!WARNING]
-> If you remove the app from your phone, or remove the ADAM OTP from within the app, it does not remove Two-Factor Authentication protection from your account. If you remove the code from your app before you remove two-factor authentication from your account, you will no longer be able to log in.
+> Always remove two-factor authentication in ADAM **before** you delete the app or the ADAM entry in the app.
 
-Similarly, if you remove the protection from your account, it does not automatically remove the code from your app.
+### My app shows two ADAM codes. Which one do I use?
 
-If you lose your phone, or cannot generate a code for any other reason, sign in with a [recovery code](#recovery-codes). If you have none left, only your [ADAM administrator can remove the protection](two-factor-authentication-for-administrators.md#removing-two-factor-for-another-staff-member) from your account.
+You may have set up two-factor authentication more than once. Only the newest entry works.
 
-### I have two ADAM logins and need to scan two different QR codes for the two different accounts. Can I do this?
+1. Delete every ADAM entry from your app.
+2. [Remove two-factor authentication](#removing-two-factor-authentication) in ADAM. Use a recovery code to sign in if you need to.
+3. Set it up again from [Step 1](#supported-authenticator-apps).
 
-Yes, most authenticator apps will support multiple accounts. Please be aware that if you scan a second QR Code for the same ADAM server, the Authenticator App *may* ask you if you want to replace the OTP.
+### I have two ADAM accounts. Can I add both to my app?
 
-Most authenticator apps will also allow you to rename the OTP entry so that you can differentiate between the two entries in your phone.
+Yes. Most apps can hold many accounts. Scan the QR code for each account.
+
+Your app may ask if you want to replace the first one. Say no. You can rename each entry in the app so you can tell them apart and know which one to use for each account.
+
+### My code does not work.
+
+The code changes every 30 seconds. Type the newest number and try again.
+
+Still not working? Your phone's clock may be wrong. The codes depend on the time. If ADAM sees this, it says: *your phone's clock is out of step with this server*.
+
+To fix it:
+
+1. Open your phone's **Settings**.
+2. Find the date and time settings.
+3. Switch on *automatic time*.
+4. Try again.
+
+Are many people at your school having this problem at once? Tell your ADAM administrator. The server's clock may be wrong. See [Allowing for clock drift](two-factor-authentication-for-administrators.md#allowing-for-clock-drift).
 
 ### I sign in with a passkey. Do I still need two-factor authentication?
 
-Yes. Signing in with a passkey means ADAM does not ask you for a six-digit code — the passkey is already a second factor, so a code on top of it would add nothing. But you still have to set two-factor authentication up.
-
-The reason is that your password still works. A passkey is something you choose to use; it does not switch your password off. Anyone who obtains your password can still try to sign in with it, and the six-digit code is what stops them. See [Passkey Authentication](passkey-authentication.md#passkey-authentication) for more about passkeys.
+Yes. A passkey is already a second lock, so ADAM does not ask for your code when you use one. But your password still works, so you still need to set up two-factor authentication. It stops anyone who learns your password. See [Passkey Authentication](passkey-authentication.md#passkey-authentication).
 
 ### I sign in with Google or Microsoft. Do I still need two-factor authentication?
 
-Yes. Your school may have set ADAM not to ask for your six-digit code when you sign in with Google or Microsoft, because Google or Microsoft already asks you for a second factor. But if your school requires two-factor authentication, you still have to set it up.
+Yes. Your school may let you skip the ADAM code when you sign in with Google or Microsoft. But your password still works. When you sign in with your password, ADAM asks for your code.
 
-The reason is the same as for passkeys: your ADAM password still works. When you sign in with your password instead, ADAM asks for your code.
+## For ADAM administrators
 
-### The Authenticator App shows me two OTPs. Which one do I use?
-
-If you remove and re-add Two-Factor Authentication, you will have to scan a new QR Code. Sometimes this means that your Authenticator App will have two entries. Each time ADAM generates a new QR code, it comes with a different secret code which means that every QR code will provide different OTPs.
-
-You cannot use the OTPs generated by an old entry. Please make sure that you remove any old entries that are no longer applicable to avoid confusion!
-
-Sometimes it can be easier to have your ADAM administrator remove your Two-Factor Authentication and then sign up from scratch. Once two factor authentication has been removed from your account, please remember to remove all OTP entries in your Authenticator App before scanning the new QR code.
-
-### I can’t enrol in 2FA because my confirmation code is wrong.
-
-This is very rare, but it can happen. ADAM checks for this specific case, both when you confirm enrolment and every time you sign in — if it recognises the pattern, it tells you outright that the code was correct but your phone's clock is out of step with the server, and to switch on automatic time. If you see that message, that is the fix.
-
-Otherwise, please make sure that your phone time is accurate.
-
-If this issue suddenly affects lots of users, and if your server is hosted on your network at school, it could also be an issue with the server’s time synchronisation and your network administrator may have to investigate further.
-
-OTPs are generated according to the time of day. The ADAM server knows the current time, your phone knows the current time, and so at any specific time, ADAM can check if the code is the correct one that should be generated by the app.
-
-Most phones will set their time automatically from external sources - often from the network provider. In general these times are accurate to within a few seconds of universal time. However, some phones have been seen to NOT update their time and run a minute or more out of sync with universal time.
-
-If this happens, there will be a mismatch between the codes that your phone generates and the code that the server is expecting.
-
-## Removing Two-Factor Authentication for another staff member
-
-Only your ADAM administrator can do this. The procedure is described on the [Two-Factor Authentication for Administrators](two-factor-authentication-for-administrators.md#removing-two-factor-for-another-staff-member) page.
-
-> [!WARNING]
-> Note that if 2FA is reinstated by a user after being removed, their app will have to be updated with a new QR Code. ADAM does not allow a previous code to be used. The code should be removed from the 2FA app when 2FA is disabled from the account.
-
-## Troubleshooting 2FA and OTPs
-
-The most common issues arise from the fact that the OTP is time-based.
-
-If, for example, there is a delay in entering the OTP, the OTP may expire. Although the OTP changes every 30 seconds, ADAM will allow an OTP to be used for a while after it disappears from the app — at the default **Two Factor Authentication Time Drift** setting, roughly as long again as the code's own life. Lowering that setting shortens the allowance. This is to help offset the any potential differences in clocks between the phone and the server.
-
-Because the OTPs are time-based, it is important that the server and the phone both have accurate time of day set. Most phones have their time set via their GPS chips and so are normally accurate within a second. Servers should be synchronised to an internet time server and be configured with the correct timezone and are similarly normally accurate within a second.
+To remove two-factor authentication for another staff member, see [Two-Factor Authentication for Administrators](two-factor-authentication-for-administrators.md#removing-two-factor-for-another-staff-member). That page also explains the school's settings.
