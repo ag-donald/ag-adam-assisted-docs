@@ -89,11 +89,19 @@ jobs:
 
           from pypdf import PdfReader
 
+
+          def count_bookmarks(items):
+              # pypdf returns a nav section's children as a nested list after
+              # the section's own bookmark, so len() counts a whole section of
+              # pages as a single entry.
+              return sum(count_bookmarks(item) if isinstance(item, list) else 1 for item in items)
+
+
           path = pathlib.Path('site-pdf/adam-manual.pdf')
           chapters = len(list(pathlib.Path('docs').glob('*.md')))
           reader = PdfReader(path)
           pages = len(reader.pages)
-          outline = len(reader.outline)
+          outline = count_bookmarks(reader.outline)
           text = sum(bool((page.extract_text() or '').strip()) for page in reader.pages)
 
           print(f'{path}: {path.stat().st_size / 1024 / 1024:.1f} MB, '
