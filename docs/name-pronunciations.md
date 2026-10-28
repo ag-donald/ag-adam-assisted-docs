@@ -34,7 +34,17 @@ Navigate to **Pupils → Names and Faces → Record Name Pronunciations by Class
 
 The class list shows every pupil in the class with four columns — **Pupil**, **Clip**, **Status** and **Actions**. The **Clip** column holds a media control for any recording that pupil already has, so you can listen before deciding what to do. **Status** is one of *Nothing recorded.*, *Pending approval* or *Approved*.
 
-![](assets/screenshots/name-pronunciations/name-pronunciations-01.png)
+**Actions** holds **Approve** and **Reject** for a recording that is waiting for approval, and **Record** for every other pupil.
+
+![The class list for a Grade 4 register class: one pupil approved, one pending approval with Approve and Reject, and a Record link beside every other pupil](assets/screenshots/name-pronunciations/name-pronunciations-01.png)
+
+### Recording one pupil at a time
+
+Click **Record** beside a pupil to record that pupil alone. When you click **Save**, ADAM returns you to the class list, where you can choose the next pupil. Use this when children come to you in any order rather than down the register.
+
+A pupil whose recording is waiting for approval has no **Record** link. Approve it, or reject it and then record the name yourself.
+
+### Working through the class
 
 Above the list are three links, each with a count:
 
@@ -44,15 +54,17 @@ Above the list are three links, each with a count:
 | **Work through pending** | Only the pupils whose recording is waiting for approval. |
 | **Record the missing** | Only the pupils with no recording at all. |
 
-Each of these opens a single pupil at a time, headed **Pupil 3 of 28** or similar, with the recorder and a **Skip to the next pupil** link. This is the quickest way to get through a register class: call a name, record, save, and ADAM moves on by itself.
+Each of these opens a single pupil at a time, with the recorder and a **Skip to the next pupil** link. The heading says how many pupils are left, counting the one on the screen — **6 remaining**, then **5 remaining**, and so on down to **1 remaining**. This is the quickest way to get through a register class in register order: call a name, record, save, and ADAM moves on by itself.
 
-If you have recorded something but not yet saved it, skipping asks **Discard this recording?** before it moves on. A recording you have not saved is lost when you leave the pupil.
+![The first pupil of Record the missing, headed 6 remaining, with the recorder and a Skip to the next pupil link](assets/screenshots/name-pronunciations/name-pronunciations-09.png)
+
+If you have recorded something but not yet saved it, **Skip to the next pupil** and **Back to the roster** both ask **Discard this recording?** before they leave the page. A recording you have not saved is lost when you leave the pupil.
 
 ## How the recorder works
 
 The recorder is the same wherever it appears.
 
-1.  Click the microphone button. The first time, your browser asks whether ADAM may use the microphone — you must allow it.
+1.  Click **Record**. The first time, your browser asks whether ADAM may use the microphone — you must allow it.
 2.  ADAM counts down: **Get ready… 3**, **2**, **1**.
 3.  **Recording — say the name now.** Say the name.
 4.  Recording stops on its own after five seconds. There is no stop button and there does not need to be.

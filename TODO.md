@@ -163,7 +163,7 @@ narrower-friendly, it is worth asking about that table at the same time.
 
 ## Name Pronunciations (`docs/name-pronunciations.md`)
 
-Six of the eight images this page needed are captured and placed; their setup is recorded in
+Seven of the nine images this page needs are captured and placed; their setup is recorded in
 `docs/assets/screenshots/name-pronunciations/captures.yml`. **Two remain, and both need a machine
 this one is not.**
 
@@ -176,12 +176,11 @@ global scope is never created. It is an environment limitation, not a fault in A
 works in an ordinary browser.
 
 **Both images below therefore need capturing from a machine with a real microphone and working
-audio**, driving the browser by hand if need be. Everything else is already set up: the
-demonstration school has recordings in place, and the **Record name pronunciation** permission is
-already granted to the **Full Access** pupil login group for both Pupils and Families.
+audio**, driving the browser by hand if need be. No other setup is needed: these two images
+are taken as staff, and a staff recording needs no portal permission.
 
 Reach the recorder at **Pupils → Names and Faces → Record Name Pronunciations by Class**, choose
-**English Home Language: Grade 8 CC6** (class 7412 — the class the other images use), then
+**Register Class: Grade 4 CM9** (class 17 — the class images 1 and 9 use), then
 **Record the missing**. Frame the recorder card only, 8px padding, 900px viewport, and check the
 page is in light mode first.
 

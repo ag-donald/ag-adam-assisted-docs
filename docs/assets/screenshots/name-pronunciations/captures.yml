@@ -1,7 +1,7 @@
 # Captures for docs/name-pronunciations.md.
 #
-# All six were taken on the same afternoon, against the demonstration school on
-# the dev instance, driving Playwright directly (the Playwright MCP server is
+# Images 4 to 8 were taken on 2026-09-22 and images 1 and 9 on 2026-10-28,
+# all against the demonstration school on the dev database, driving Playwright directly (the Playwright MCP server is
 # not loaded in a session rooted in ~/dev/adam). Viewport 900x1200,
 # deviceScaleFactor 1, scale: css, LANG/LANGUAGE/LC_ALL=en_ZA so that
 # navigator.languages reads ['en-GB']. Open Sans was confirmed present against
@@ -22,26 +22,58 @@
 # mid-recording and in review, could not be taken at all and remain owed.
 
 - image: name-pronunciations-01.png
-  captured: 2026-09-22
+  captured: 2026-10-28
   as: staff
-  path: Pupils tab → Names and Faces → Record Name Pronunciations by Class → English Home Language: Grade 8 CC6 (class 7412)
+  path: Pupils tab → Names and Faces → Record Name Pronunciations by Class → Register Class: Grade 4 CM9 (class 17)
   frame:
     mode: span
     selectors: >
       h2 (the class name); div.pronunciation-class-toolbar (the three
-      work-through links); #table_1 thead; the first 6 tbody rows
-      (Donna Bell through Shay Dyer)
+      work-through links); the table head; all 8 tbody rows (Chelsea Mackie
+      through Bradford Smith)
     padding: 8 top, 0 bottom
   setup: >
-    Class 7412 was chosen because its first six pupils give all three states
-    at once. Sean Bell's approved clip was already there from the developer's
-    own testing. Donna Bell (5356) was recorded as her parent, family 3766,
-    to give the pending row and the Approve/Reject actions; Fynn Duncan
-    (5461's classmate, pupil for "Record the missing") was recorded as staff
-    to give "Approved (Recorded by staff)". Xavier Gordon and Shelley Hancock
-    were also recorded as their parents for image 4 — they sit below the
-    framed rows, but they move the toolbar counts, so this image was retaken
-    after them and reads 21/3/16.
+    Retaken for the per-pupil Record action (ADAM branch
+    feature/pronunciation-record-pupil), which the September image predates.
+    adam_dev had been rebuilt since September: class 7412 no longer exists
+    and the pronunciations table was empty. The branch was served from a
+    worktree on localhost:8123 against adam_dev, because dev.theta serves
+    the main checkout, which was on another branch.
+
+    Class 17 was chosen because its eight pupils fit in one image. Two clips
+    were posted to the ingest endpoint as described in the standing note
+    above. Harrison Mason (162) was recorded as staff from the new
+    one-pupil Record page, giving "Approved (Recorded by staff)". Troy
+    McArthur (319) was recorded as his parent, family 194, through
+    Families → Security → Login as a family, giving the pending row with
+    Approve and Reject. The toolbar reads 8/1/6.
+
+    The demonstration school assigns NO pupil to a pupil login permission
+    group and NO group grants "Record name pronunciation", so no parent can
+    reach the portal recorder for any child. For Troy's recording, Troy was
+    put into the Intermediate Phase group through his profile's
+    permissions tab, and the group was given "Record name pronunciation"
+    for Families.
+  revert: >
+    The Families "Record name pronunciation" permission was removed from
+    Intermediate Phase straight afterwards, verified by re-reading the
+    form. Troy's group assignment STANDS: the per-pupil form has no
+    "no group" option, so it cannot be undone through ADAM. Both clips
+    stand, and Troy's is still pending.
+
+- image: name-pronunciations-09.png
+  captured: 2026-10-28
+  as: staff
+  path: Register Class: Grade 4 CM9 (class 17) → Record the missing
+  frame:
+    mode: span
+    selectors: >
+      the "6 remaining" h2 down to the "Skip to the next pupil" link
+    padding: 8 top, 0 bottom
+  setup: >
+    Same sitting and data as image 1, so "Record the missing" holds six
+    pupils and opens on Chelsea Mackie. The recorder is in its idle state,
+    which renders without an audio device; see the standing note above.
   revert: none
 
 - image: name-pronunciations-04.png
