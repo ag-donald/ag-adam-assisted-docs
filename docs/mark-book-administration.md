@@ -203,6 +203,39 @@ See here that each classwork category weighting is simply to total of the weight
 
 In this case, while the weightings of the assessments within each category is technically accurate (the “Formal assessment” counts 20 out of 35 marks or 57.1% of the “Classwork” result), this is merely a mathematical side-effect of the model that ADAM uses.
 
+### When the term mark is set by a calculation
+
+A class can have its term mark worked out by an [aggregated result calculation](aggregated-results.md#using-an-aggregated-result-calculation-to-calculate-term-results) instead of by the mark book’s weightings. When it does, ADAM uses the calculation to decide the class’s term marks, and the class’s assessment category weightings are not used.
+
+ADAM shows this in two places:
+
+-   On the **Manage assessments and weightings** screen, the assessment categories are listed without their percentages. The **Term Mark Calculation** block at the bottom of the screen names the calculation: “This class’s term marks are decided by an aggregated calculation: …”.
+-   After clicking **edit weightings**, each assessment category shows “Set by the term mark calculation” instead of a weighting box. A note under **Term Mark Calculation** names the calculation and explains how to use the category weightings again.
+
+![](assets/screenshots/mark-book-administration/mark-book-administration-37.png)
+
+The assessment and assessment group weightings can still be edited on this screen.
+
+#### Using the category weightings again
+
+To return a class to its mark book weightings, change its term mark calculation back. This needs the *Edit the term mark calculation* permission.
+
+1.  Navigate to **Assessment → Assessment Administration → Manage assessments and weightings** and choose the class.
+2.  In the **Term Mark Calculation** block at the bottom of the screen, click on **Change term mark calculation**. The note on the **edit weightings** screen has the same link.
+3.  In the drop-down list, choose “-- Use assessments, assessment groups and assessment category weightings --”.
+4.  Click on **Save calculation**.
+
+ADAM recalculates the class’s term marks from its weightings, and the category weighting boxes appear again. Check the category weightings afterwards: they may not be the split that you expect.
+
+To change many classes at once, navigate to **Reporting → Aggregated Result Calculations → Change aggregated result calculations in bulk**. Choose the reporting period and then the grade. In the **Term Result** column, choose “-- Use assessments, assessment groups and assessment category weightings --” for each class, and leave the **Year-to-Date Result** column as it is. Click on **Save weightings**. This screen needs both the *Manage all aggregated result calculations* and the *Edit assessment task weightings* permissions.
+
+In the example below, the Life Orientation class already uses its weightings. The other classes still have a promotion calculation set as their term mark calculation:
+
+![](assets/screenshots/mark-book-administration/mark-book-administration-38.png)
+
+> [!WARNING]
+> Do not set a promotion or year-end calculation as a class’s **term** mark calculation in order to show the promotion mark on a report. The calculation then replaces the term mark itself, and the class’s category weightings stop being used. Set the promotion calculation as the class’s [Year-to-Date calculation](#customising-the-year-to-date-calculation) instead, and ask for the report to show the Year-to-Date result.
+
 ## Assessment Groups
 
 To simplify the management of large markbooks with many assessments, it is often useful to make use of “Assessment Groups”.  Assessment groups are automatically copied across into all teachers’ mark books of the same subject and grade. The weightings are also shared.
