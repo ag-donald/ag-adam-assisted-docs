@@ -193,11 +193,13 @@ Use the instructions above to create an Aggregated Result based on subject and g
 > [!WARNING]
 > It is not possible to have a term mark based on overall marks from other terms. It is, however, possible, to use assessments from previous terms.
 
-In the assessment summary and weighting page, one would set the Year-to-Date calculation at the bottom of the page. However, to change the term mark to use an Aggregated Result, look for the following option at the top of the page:
+On the **Manage assessments and weightings** screen, the **Term Mark Calculation** block sits at the bottom of the page, next to the **Year-to-date Mark Calculation** block:
 
 ![](assets/screenshots/aggregated-results/aggregated-results-16.png)
 
 Click on the button **Change term mark calculation** and then choose the Aggregate Result Calculation that you created above.
+
+While a term mark calculation is set, the class’s assessment category weightings are not used and cannot be edited. See [When the term mark is set by a calculation](mark-book-administration.md#when-the-term-mark-is-set-by-a-calculation) for what changes on the mark book screens and how to use the category weightings again.
 
 ## Semesterised Subjects on Reports
 

@@ -1,0 +1,44 @@
+- image: mark-book-administration-37.png
+  captured: 2026-10-28
+  as: staff
+  path: Assessment tab → Assessment Administration → Manage assessments and weightings → English HL Grade 10 SL5, Term 4-26 (class 31, period 5) → edit weightings
+  frame:
+    mode: span
+    selectors: >
+      From the "Manage Assessments and Category Weightings." h1 down to the
+      Save weightings button, so that the term calculation note, both
+      categories' "Set by the term mark calculation" labels and the
+      Examinations assessments are in shot.
+    padding: 8
+  setup: >
+    Shared with image 38. adam_dev held a copy of a client school's database,
+    loaded to investigate a support query, in which 34 Term 4-26 classes had
+    their promotion calculation set as their term mark calculation. It was
+    randomised with `php adam databaserandomseeder:randomise` before any
+    capture (school, staff, pupil and family names replaced); the term and
+    YTD calculations were left as they were. The note on this screen is new
+    on the adam branch feature/weightings-term-calculation-note, which was
+    checked out at the time.
+  revert: none
+  note: >
+    The randomiser's first run was interrupted, and its rerun failed on a
+    duplicate transfer_schools.transfer_host. The 75 transfer hosts were
+    renamed to unique placeholders and the randomiser rerun to completion.
+
+- image: mark-book-administration-38.png
+  captured: 2026-10-28
+  as: staff
+  path: Reporting tab → Aggregated Result Calculations → Change aggregated result calculations in bulk → Term 4-26 → Grade 10
+  frame:
+    mode: span
+    selectors: >
+      From the "Global Aggregated Calculation Settings" h1 down to the
+      Life Orientation row of the class table, the first row whose Term
+      Result uses the weightings option.
+    padding: 8
+  setup: As for mark-book-administration-37.png.
+  revert: none
+  note: >
+    Captured at a 1200px viewport, not 900px. The class table's two
+    drop-down columns make the page about 1180px wide, so a 900px viewport
+    cuts the Year-to-Date Result column off.

@@ -1,0 +1,17 @@
+- image: aggregated-results-16.png
+  captured: 2026-10-28
+  as: staff
+  path: Assessment tab → Assessment Administration → Manage assessments and weightings → English HL Grade 8 TG1, Term 4-26 (class 198, period 5)
+  frame:
+    mode: element
+    selectors: The div.grid that holds the Term Mark Calculation and Year-to-date Mark Calculation blocks at the bottom of the screen.
+    padding: 8
+  setup: >
+    Class chosen because it has no term mark calculation, so the Term Mark
+    Calculation block reads "decided by the weightings specified above".
+    adam_dev had been randomised first; see
+    mark-book-administration/captures.yml for mark-book-administration-37.png.
+  revert: none
+  note: >
+    Re-capture. The previous image showed the older wording "the weightings
+    specified below", from when this block sat at the top of the screen.
