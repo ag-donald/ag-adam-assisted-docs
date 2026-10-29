@@ -1,0 +1,49 @@
+# Captures for docs/records-and-points-administration.md.
+#
+# Images 9 and 10 were taken on 2026-10-29. The dev database (adam_dev) still
+# holds a school's real data, so it was not used: it was copied to a throwaway
+# database, adam_agent_shots, and `php adam databaserandomseeder:randomise` was
+# run on the copy. Every pupil and staff name, username and record note in these
+# images is generated. The copy was served from an ADAM checkout at commit
+# 75649c8e20 (ADAM PR #550 merged) with `php -S localhost:8123`, and driven with
+# Playwright directly. Viewport 900x1200, deviceScaleFactor 1, scale: css,
+# LANG/LANGUAGE/LC_ALL=en_ZA so that navigator.languages reads ['en-GB']. Open
+# Sans was confirmed present against DejaVu Sans, and light mode confirmed by
+# getComputedStyle(document.body).backgroundColor === 'rgb(239, 246, 255)'.
+# The copy's eight css-colour-* theme settings were blanked first, so the
+# default theme shows.
+
+- image: records-and-points-administration-09.png
+  captured: 2026-10-29
+  as: staff (staff_id 1, dev login)
+  path: Pupils tab → Records and Points Admin → Change effective dates in bulk
+  frame:
+    mode: span
+    selectors: >
+      main h1 (Change effective dates in bulk) down to the Find records
+      button (#bulk-effective-dates button)
+    padding: 8
+  setup: >
+    Categories: Work Ethic Card (category 18). From and To: 12 October 2026.
+    Captured by: Burger, Mrs Keren (staff 966), who captured eight Work Ethic
+    Cards on that date. The brief asked for Captured by on Anyone; a staff
+    member was chosen instead so that the picture shows the optional filter in
+    use. The Chosen category list opens on page load because the field takes
+    focus, so the capture waits two seconds and then closes it before measuring.
+  revert: none (throwaway database)
+
+- image: records-and-points-administration-10.png
+  captured: 2026-10-29
+  as: staff (staff_id 1, dev login)
+  path: >
+    Pupils tab → Records and Points Admin → Change effective dates in bulk →
+    Find records (the filters of image 9)
+  frame:
+    mode: span
+    selectors: >
+      main h1 down to the bottom of the change form (the Change dates button)
+    padding: 8
+  setup: >
+    All eight records listed. The third (de Villiers, Justin) unticked. New
+    effective date: 9 October 2026. Change dates was not clicked.
+  revert: none (throwaway database)

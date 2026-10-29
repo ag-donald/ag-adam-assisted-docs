@@ -88,7 +88,43 @@ You can now record the information necessary. Be sure to include a note explaini
 
 If you have permission, or if you added a record to a pupil, you will see an option to “edit” or “delete” the record in the **Actions** column.
 
-When a record is deleted, ADAM will check whether any automatically generated consequences are affected and flag them for review if necessary (see [Flagged Consequences](#flagged-consequences) below).
+When a record is deleted, ADAM will check whether any automatically generated consequences are affected and flag them for review if necessary (see [Flagged Consequences](#flagged-consequences) below). Editing a record does the same, but only when the change lowers the pupil’s running total in the record’s original category — for example, by reducing the amount, moving the record to another category, or moving its **Effective Date** outside the category’s expiry period.
+
+Editing a record does not notify the pupil again, and it does not send the record to parents again in the [Family Alerts](family-alerts.md#records-and-points) email. If an edit moves a record to a different category that notifies pupils, the pupil is notified about the new category.
+
+## Changing the Effective Date of Several Records
+
+Every record has an **Effective Date** — the day the incident happened — as well as the date and time it was captured. If a batch of records was captured with the wrong date, for example a whole class recorded under today’s date instead of the day of the incident, you can correct all of them in one step instead of editing each record.
+
+You need the **Edit any Records and Points** permission to use this option.
+
+1.  From the **Pupils** tab, under the **Records and Points Admin** heading, click on **Change effective dates in bulk**.
+2.  Choose one or more **Categories**, and set **From** and **To** to the range of effective dates that the records currently have. Both dates are included. If the records were all captured by one person, choose them under **Captured by** to narrow the list; otherwise leave it on **Anyone**. Click on **Find records**.
+
+    ![](assets/screenshots/records-and-points-administration/records-and-points-administration-09.png)
+
+3.  ADAM lists the matching records, showing the **Pupil**, **Category**, **Details**, **Amount**, **Effective date**, **Captured by** and **Captured on** for each one. Every record is ticked. Untick any record that should keep its current date.
+4.  Choose the **New effective date** and click on **Change dates**.
+
+    ![](assets/screenshots/records-and-points-administration/records-and-points-administration-10.png)
+
+Every ticked record is given the new date, and ADAM then tells you how many records were moved, how many already had that date, and how many were skipped and why. The changes are made together: if anything goes wrong while saving, none of the records is changed.
+
+Some records are never offered for a change:
+
+-   Records that ADAM created automatically as a [consequence](#records-and-points-consequences). These keep the date on which the consequence was awarded.
+-   Records in a **Sensitive** group, unless you have permission to see sensitive information for that pupil.
+-   Records that have been deleted.
+
+A record on the list can still be skipped when you click on **Change dates**: for example, if someone else edited or deleted it after the list was shown, if its option has since been deleted from the category, or if you do not have permission to add records for that pupil. Each skipped record keeps its date, and ADAM gives the reason.
+
+At most 500 records can be changed at a time. If more than 500 records match, ADAM asks you to narrow the filters — choose fewer categories, a shorter date range, or the person who captured them.
+
+Changing the dates has the same effect as editing each record by hand:
+
+-   **Running totals and consequences.** If the expiry settings of a category count only recent records, moving records into or out of the expiry period changes the pupil’s running total. Moving records into the period can award a consequence. Moving records out of it can flag a consequence for review (see [Flagged Consequences](#flagged-consequences)). Moving a record to another date within the period does neither.
+-   **Notifications.** Pupils are not notified again, and parents do not receive the records again in the Family Alerts email.
+-   **History.** Each record keeps the name of the person who captured it and the date and time it was captured. The original version of each changed record is kept as a deleted record.
 
 ## Displaying a Pupil’s Records and Points
 
@@ -121,7 +157,7 @@ Click on the **Next** button to save the consequences.
 
 ### Flagged Consequences
 
-When a Records and Points entry is deleted (e.g. because it was added in error), any consequence that was automatically generated from it may no longer be valid. ADAM detects this and flags the affected consequence record for review.
+When a Records and Points entry is deleted (e.g. because it was added in error), any consequence that was automatically generated from it may no longer be valid. ADAM detects this and flags the affected consequence record for review. The same happens when an entry is edited in a way that lowers the pupil’s running total, such as moving its effective date outside the category’s expiry period.
 
 Flagged consequences appear in two places:
 
