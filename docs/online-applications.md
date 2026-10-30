@@ -380,12 +380,13 @@ Yes, the automatic reminder system runs continuously regardless of term dates or
 
 Each weekday morning, ADAM sends a summary of online applications to the people listed in **Online Applications Recipients**. The email says how many applications have arrived, and it lists the parents who may need a phone call: parents who never clicked the link ADAM emailed them, and parents whose application will soon expire. The email does not change anything in ADAM.
 
-ADAM sends the email only when both of these are true:
+ADAM sends the email only when all of these are true:
 
 -   **Enable online applications** is set to “Yes”;
+-   **Send Daily Status Email** is set to “Yes”, which is the default;
 -   **Online Applications Recipients** holds at least one email address.
 
-There is no separate setting to switch the email on, or off: see [Stopping the Email](#stopping-the-email). Every recipient receives the same email. If there is nothing to report — no new applications, no parents who have not clicked their link, and no applications close to expiry — ADAM does not send an email that day.
+To stop the email, see [Stopping the Email](#stopping-the-email). Every recipient receives the same email. If there is nothing to report — no new applications, no parents who have not clicked their link, and no applications close to expiry — ADAM does not send an email that day.
 
 ### What the Email Contains
 
@@ -430,13 +431,12 @@ Then click on **Save settings**.
 
 ### Stopping the Email
 
-There is no setting that switches off only the status email. Of the settings that look as if they might, only one stops it, and it has a side effect:
+In the site settings, on the **Admissions** tab under the **Online Applications** heading, set **Send Daily Status Email** to “No” and click on **Save settings**. ADAM stops sending the status email. The **Notify School of Completed Application** email, which ADAM sends to the same recipients each time a parent submits an application, is not affected.
 
--   **Clearing Online Applications Recipients** stops the status email. However, the same addresses receive the **Notify School of Completed Application** email each time a parent submits an application. With no recipients, ADAM sends that email to the address in **System Admin's Email** instead (on the **General** tab of the site settings, under **System Administration**). If that is empty too, nobody at the school is told when an application is submitted.
+Do not use these other settings to stop the status email:
+
+-   **Clearing Online Applications Recipients** also stops the status email. However, ADAM then sends the **Notify School of Completed Application** email to the address in **System Admin's Email** instead (on the **General** tab of the site settings, under **System Administration**). If that is empty too, nobody at the school is told when an application is submitted.
 -   **Unticking every day** in **Days on which to send the status email** does **not** stop it. ADAM saves the empty choice, but then sends the email once every eight days instead, on whatever day of the week that falls.
--   **Setting Enable online applications to “No”** stops it, but it also closes the application form to parents.
-
-If your school needs the submission alerts but not the status email, contact ADAM support.
 
 ### Changing Who Is Listed
 
@@ -475,7 +475,7 @@ One of these is the reason:
 
 -   Today is not one of the days in **Days on which to send the status email**, or the time has not yet come.
 -   There was nothing to report: all three numbers would have been zero.
--   **Enable online applications** is set to “No”, or **Online Applications Recipients** is empty.
+-   **Enable online applications** or **Send Daily Status Email** is set to “No”, or **Online Applications Recipients** is empty.
 -   ADAM’s scheduled tasks are not running. See [Cron Service](cron-service.md#cron-service).
 -   ADAM was updated to include this email since the last send time. The first email goes at the next send time.
 
