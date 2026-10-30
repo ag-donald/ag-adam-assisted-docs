@@ -39,7 +39,7 @@ that starts an application without an emailed link (`online-applications-18.png`
 `online-applications-06.png` showed the old "choose the number of children" screen, which no longer
 exists in ADAM, and the file has been deleted.
 
-One image is still outstanding.
+Three images are still outstanding.
 
 ### 1. The start email — `online-applications-07.png` needs recapturing
 
@@ -54,6 +54,39 @@ The demonstration families' addresses are all `testing+…@adam.co.za`, so whoev
 mailbox can capture it. Trigger it by entering the ID number of a demonstration parent on
 **/apply** — the link is then emailed to the address on file for that parent, not to the address
 typed on the form. Note that ADAM sends at most three such emails per parent in 24 hours.
+
+### 2. The Unconfirmed Applications table — `online-applications-20.png` (new)
+
+Capture against the **demonstration school** only, once it runs a version of ADAM that has the
+table. The development database holds a real school's data and must not be used.
+
+Path: **Admissions** tab, **Online Applications** heading, **Manage online applications**. Frame
+the **Unconfirmed Applications** heading, the line of explanation under it and the table, down to
+the **Incomplete Applications** heading. Place the image at the end of the
+**Unconfirmed Applications** section, after the paragraph that introduces the table's columns.
+
+Setup: on **/apply**, submit three or four requests with made-up ID numbers the school does not
+know and `testing+…@adam.co.za` addresses, and do not click the emailed links. To show both states
+of the **Link** column, at least one request must be more than 24 hours old ("expired") and at
+least one newer ("valid until …"), so submit the first batch a day before the capture. Do not use
+the ID number of a demonstration parent: those requests are never listed.
+
+### 3. The status email — `online-applications-21.png` (new)
+
+Capture against the **demonstration school** only. Frame the email as received: the subject line,
+the three counts, the **Link not clicked after 24 hours** and **Expiring within 3 days** lists, and
+the **Manage online applications** button. Place the image in the **What the Email Contains**
+section of **Online Application Status Email**, after the opening three-item list.
+
+Like `online-applications-07.png`, this cannot be captured from ADAM itself. Set
+**Online Applications Recipients** on the demonstration school to a `testing+…@adam.co.za` address
+that you can read. The email needs something to report in both lists: the unconfirmed requests from
+entry 2 more than 24 hours old fill the first list, and an application started on **/apply** but
+not submitted fills the second once it is within 3 days of **Expire applications (days)**. The
+email is sent at the time set in **Time at which to send the status email**
+(**Notifications & Scheduling** tab, **Online Application Status** heading); the first one goes
+out at the first scheduled time after the update has been installed. Every name,
+address and telephone number in the email must be made up.
 
 ---
 

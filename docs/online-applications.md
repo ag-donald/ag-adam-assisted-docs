@@ -31,6 +31,8 @@ Parents visit the online application form and submit their ID or passport number
 
 After submitting their details, the parent receives an email containing a link that is valid for 24 hours. Clicking it shows them their details to check, and nothing is created until they click **Start Application**. ADAM then creates the application, emails them a second link to the application form itself, and takes them straight to it. If the school has set up [online agreements](online-agreements.md#online-agreements) for the **Admissions Parents** audience, applicants are first asked to read and respond to each outstanding agreement before the application form is shown. The parent will be asked to complete the application form with both their and the applicant child’s information.
 
+Some parents never click the link. The school can still see these parents in the [**Unconfirmed Applications**](#unconfirmed-applications) table, and the [status email](#online-application-status-email) lists those who have waited more than a day.
+
 If the family already exists in ADAM, only the child’s information is requested. No password is asked for at any point during an application. Parents who already use the portal can log in first instead and start the application from there, without waiting for an email.
 
 Parents complete the form one page at a time — their own details first, then a page for each child — and can save any page and come back to it later, even if some of it is still empty. Required information is only insisted on when they submit the application.
@@ -72,11 +74,11 @@ The pupils would typically end up in one of two broad categories of applicant: �
 
 There are a few things that need to be checked first. In the [Site Settings](changing-site-settings.md#changing-site-settings), check the following settings:
 
--   **General / Online Applications:**
+-   **Admissions / Online Applications:**
 
-    -   **Online application recipients:** Enter an email address or a comma-separated list of email addresses of people who will be notified when an online application has been received by the school.
+    -   **Online Applications Recipients:** Enter an email address or a comma-separated list of email addresses of people who will be notified when an online application has been received by the school. The same people receive the [status email](#online-application-status-email) each weekday morning.
     -   **Enable online applications:** Ensure that this is set to “Yes” to allow parents access to the application form.
-    -   **Expire applications (days):** This setting will automatically expire and eventually remove incomplete applications. These are applications that were started, but never submitted to the school for consideration. The default setting is 7 days, but some schools have it as low as 2 or 3. Ask yourself how long it should take a person to complete this information.
+    -   **Expire applications (days):** This setting will automatically expire and eventually remove incomplete applications. These are applications that were started, but never submitted to the school for consideration. The default setting is 7 days, but some schools have it as low as 2 or 3. Ask yourself how long it should take a person to complete this information. ADAM also keeps the details of parents who never clicked the emailed link for this many days, so that they appear in the [**Unconfirmed Applications**](#unconfirmed-applications) table.
 
 -   **General / Site Settings:**
 
@@ -159,10 +161,11 @@ In the “**Applications**” section, you will find the emails that are relevan
 -   **Notify Parent of Application Rejection** is used when the application is rejected. We strongly discourage the use of this email template and suggest that schools make direct contact with parents.
 -   **Notify Parent of Application Submission** is sent to parents when they click on the final button to submit their application.
 -   **Notify School of Completed Application** is used to notify a member of staff at the school that a new application form is waiting for acceptance of rejection.
+-   **Online Application Status (to Staff)** is the [status email](#online-application-status-email) that the school’s recipients receive each weekday morning.
 
 Because you are customising the template for your school, you do not have to make use of the other codes that are provided.
 
-The three additional emails are enabled via the site settings. Under the **General** tab, look for the section on **Online Applications**. The three settings that control the three emails are shown below:
+The three additional emails are enabled via the site settings. Under the **Admissions** tab, look for the section on **Online Applications**. The three settings that control the three emails are shown below:
 
 ![](assets/screenshots/online-applications/online-applications-02.png)
 
@@ -277,7 +280,7 @@ If a parent saves their application, the incomplete reminder countdown resets. F
 
 ### Email Templates
 
-Two email templates are used for reminder messages. These can be customised in **Administration → Site Administration → Edit email templates**, under the **Applications** section.
+Two email templates are used for reminder messages. To customise them, click on the **Administration** tab, then under the **Site Administration** heading, click on **Manage email messages**. The templates are in the **Applications** section.
 
 #### Reminder: Application Not Started
 
@@ -322,10 +325,7 @@ The system automatically protects against sending reminders for applications tha
 
 #### Application Expiry Setting
 
-The application expiry period is controlled by a separate setting:
-
--   Go to Setup > Settings > General > Online Applications
--   Find the Application Expiry setting (typically set to 30 days)
+The application expiry period is controlled by a separate setting, **Expire applications (days)**. It is in the site settings on the **Admissions** tab, under the **Online Applications** heading. The default is 7 days.
 
 When planning your reminder schedule, ensure your last reminder day is well before the expiry period. For example, if applications expire after 30 days, setting reminders for days 3, 7, and 14 gives parents at least 16 days to complete their application after the final reminder.
 
@@ -373,6 +373,83 @@ The automatic system does not support manual triggering. However, you can contac
 #### Will reminders be sent during school holidays?
 
 Yes, the automatic reminder system runs continuously regardless of term dates or holidays. If you wish to pause reminders during certain periods, you can temporarily set Enable Reminder Emails to "No".
+
+## Online Application Status Email
+
+### Overview
+
+Each weekday morning, ADAM sends a summary of online applications to the people listed in **Online Applications Recipients**. The email says how many applications have arrived, and it lists the parents who may need a phone call: parents who never clicked the link ADAM emailed them, and parents whose application will soon expire. The email does not change anything in ADAM.
+
+ADAM sends the email only when both of these are true:
+
+-   **Enable online applications** is set to “Yes”;
+-   **Online Applications Recipients** holds at least one email address.
+
+There is no separate setting to switch the email on. Every recipient receives the same email. If there is nothing to report — no new applications, no parents who have not clicked their link, and no applications close to expiry — ADAM does not send an email that day.
+
+### What the Email Contains
+
+The email opens with three numbers:
+
+-   **new:** the applications that parents started since the previous email was due, together with parents who gave their details in that time but have not yet clicked the link. Monday’s email therefore covers the weekend. An application counts as new even if the parent has already submitted it. If more than four days have passed since the previous email was due, the count covers only the last 72 hours.
+-   **not confirmed:** parents who gave their details on the application form, but who had still not clicked the emailed link after 24 hours.
+-   **expiring:** applications that have not been submitted and that will expire within 3 days.
+
+Below the numbers are two lists. A list that has nobody in it is left out of the email.
+
+**Link not clicked after 24 hours** lists the parents counted as not confirmed, newest first. It shows each parent’s **Email**, **Phone**, the number of **Children** and how long ago their details were **Submitted**. These are the same parents shown in the [**Unconfirmed Applications**](#unconfirmed-applications) table. Their link has expired, so a parent who still wants to apply must start again on the application form.
+
+**Expiring within 3 days** lists the applications counted as expiring, with the soonest expiry first. It shows:
+
+-   **Family / children:** the family name and the children’s names, or the parent’s email address if the parent has not yet entered any names;
+-   **Phone:** the contact telephone number;
+-   **State:** “nothing captured” if the parent has not saved any page of the form, or “captured, not submitted” if they have;
+-   **Expires:** how long is left before the application expires;
+-   **Reminders:** “none”, or how many [reminder emails](#online-application-reminder-emails) ADAM has sent the parent, with the date of the last one — for example “2 (27 Oct)”. A reminder sent after the status email went out is not shown.
+
+Each list shows at most 15 parents. When there are more, the last line of the list says how many more there are, for example “… and 4 more”. A parent appears in only one of the two lists: a parent who already has an application that is not yet submitted is not listed as not confirmed, even if they also asked for a new link.
+
+Every telephone number in the lists is a link, and so is every email address in the **Link not clicked** list, so you can call or write from the email. The **Manage online applications** button at the bottom opens the [list of applications](#application-process-procedure-for-staff) in ADAM.
+
+### When the Email Is Sent
+
+By default, the email is sent on Monday to Friday at 07:00. After ADAM is updated to include this email, the first one is sent at the next of these times.
+
+To change the days or the time, click on the **Administration** tab, then under the **Site Administration** heading, click on **Edit site settings**. On the **Notifications & Scheduling** tab, under the **Online Application Status** heading, change:
+
+-   **Days on which to send the status email**
+-   **Time at which to send the status email**
+
+Then click on **Save Settings**.
+
+### Changing Who Is Listed
+
+The 24 hours and the 3 days in the lists above are both settings. In the site settings, on the **Admissions** tab under the **Online Applications** heading:
+
+-   **Status email: hours before "not confirmed"** is how many hours after giving their details a parent who has not clicked the link is listed as not confirmed. The default is 24.
+-   **Status email: days before expiry** is how many days before it expires an application that has not been submitted is listed as expiring. The default is 3. If you make this the same as **Expire applications (days)**, every application that has not been submitted will be listed every day.
+
+### Changing the Wording
+
+The wording of the email can be [customised](email-message-templates.md#email-message-templates) like the other application emails. Click on the **Administration** tab, then under the **Site Administration** heading, click on **Manage email messages**. The template is called **Online Application Status (to Staff)**, in the **Applications** section. Its default subject is “Online applications — {date}”.
+
+ADAM builds the two lists itself and places them where the `{notconfirmedlist}` and `{expiringlist}` codes appear. Keep both codes in the template, or the lists will not appear in the email.
+
+**Available merge codes:**
+
+|Merge Code|Description|
+|----------|-----------|
+|`{school}`|The name of your school|
+|`{date}`|Today’s date, for example “Friday 30 October”|
+|`{newcount}`|The number of new applications since the previous email|
+|`{notconfirmedcount}`|The number of parents who have not clicked the emailed link|
+|`{expiringcount}`|The number of applications that will soon expire|
+|`{notconfirmedhours}`|The value of **Status email: hours before "not confirmed"**|
+|`{expirydays}`|The value of **Status email: days before expiry**|
+|`{notconfirmedlist}`|The list of parents who have not clicked the emailed link|
+|`{expiringlist}`|The list of applications that will soon expire|
+|`{link}`|The address of the **Manage Online Applications** page|
+|`{button:Text}`|A button linking to the **Manage Online Applications** page (e.g., `{button:Manage online applications}`)|
 
 ## The Application Process: Procedure for Parents
 
@@ -483,7 +560,7 @@ At this point a notification is sent to the system administrator, or the configu
 
 The content of this email can be [changed in the email templates](email-message-templates.md#email-message-templates). This template is called “Notify School of Completed Application”.
 
-The staff member can now visit **Admissions → Online Applications → Manage Online Applications** within ADAM. Here they will see a list of all the applications and their statuses. This list will include any applications that might be incomplete, might have expired (not completed within the 7 days) or which were rejected.
+The staff member can now visit **Admissions → Online Applications → Manage Online Applications** within ADAM. Here they will see a list of all the applications and their statuses. This list will include any applications that might be incomplete, might have expired (not completed within the 7 days) or which were rejected. Parents who have not yet clicked the link ADAM emailed them have no application yet. They are shown separately, in the [**Unconfirmed Applications**](#unconfirmed-applications) table at the top of the page.
 
 ![](assets/screenshots/online-applications/online-applications-13.png)
 
@@ -508,6 +585,28 @@ To leave an application on the list without approving or rejecting it, simply le
 
 > [!WARNING]
 > “Accepting” and “Rejecting” applications refers specifically to the **application form**. This will add these details into your database as an Applicant profile. **No decisions about enrolment into the school have been made** at this point. Enrolment (or not!) will only happen at the very end of the application process.
+
+### Unconfirmed Applications
+
+The **Unconfirmed Applications** table is the first table on the **Manage Online Applications** page, above **Incomplete Applications**. It lists the parents who gave their details on the application form but have not clicked the link that ADAM emailed to them. The newest are shown first. The table shows:
+
+-   **Email:** the address the parent typed. Click on it to write to them.
+-   **Phone:** the contact telephone number the parent typed.
+-   **Children:** the number of children the parent said they are applying for.
+-   **Submitted:** the date and time the parent gave their details.
+-   **Link:** “valid until” and a time while the emailed link can still be used, or “expired” once it cannot.
+
+These parents do not have an application yet, so there is nothing to view or edit, and the table has no actions. You can email or phone them. The emailed link is valid for 24 hours. After that, a parent who still wants to apply must start again on the [application form](#finding-the-address-of-your-application-form); ADAM cannot send them a new link from this page.
+
+A parent leaves this table when they click the link and then **Start Application**. Their application then appears under **Incomplete Applications**. Otherwise, ADAM removes the parent from the table once the number of days in **Expire applications (days)** has passed since they gave their details. The ID or passport number that the parent typed is deleted after 24 hours, when the link expires; ADAM keeps only the email address, telephone number and number of children until then.
+
+A few parents are not listed here:
+
+-   A parent who asked for a link more than once is listed once, with their most recent request.
+-   A parent who already has an application that has not been submitted is not listed. That application is shown under **Incomplete Applications** instead.
+-   A parent whose ID or passport number ADAM already knows is never listed. Their link went to the email address the school already holds for them, and ADAM does not keep the details typed on the form.
+
+The parents in this table who have waited longer than the hours set in **Status email: hours before "not confirmed"** (24 by default) also appear in the [status email](#online-application-status-email).
 
 ## Uploading of Supporting Documents
 
