@@ -28,6 +28,7 @@ The table below lists the email templates that ADAM provides, grouped by the hea
 | Applications | Notify Parent of Application Approval | Tells the parent their application was successful and explains the next steps. |
 | Applications | Notify Parent of Application Rejection | Tells the parent that their application was unsuccessful. |
 | Applications | Notify School of Completed Application | Alerts the school that a parent has completed an online application. |
+| Applications | Online Application Status (to Staff) | The weekday [status email](online-applications.md#online-application-status-email) to the school’s online application recipients: new applications, parents who have not clicked their link, and applications close to expiry. The merge codes are listed on that page. |
 | Applications | Reminder: Application Not Started | Reminds a parent who has been invited to apply but has not yet begun. |
 | Applications | Reminder: Application Incomplete | Reminds a parent who has started an application but not yet submitted it. |
 | Attendance Alerts | Attendance Register Alert | Notifies staff that an attendance register has not been completed as expected. |

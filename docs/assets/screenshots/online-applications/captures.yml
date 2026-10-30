@@ -116,3 +116,49 @@
     padding: 8
   setup: None beyond application 85 (see online-applications-08.png).
   revert: none
+
+- image: online-applications-20.png
+  captured: 2026-10-30
+  as: staff (dev login, staff_id 1)
+  path: Admissions tab → Online Applications → Manage online applications
+  frame:
+    mode: span
+    selectors: >
+      From the "Unconfirmed Applications" h2 down to the bottom of the
+      "Incomplete Applications" h2, viewport 900 wide.
+    padding: 8
+  setup: >
+    Captured against a private copy (adam_agent_appstatus_shots) of the
+    randomised demonstration database adam_agent_shots, served from a
+    worktree of ADAM branch feature/online-applications-daily-status, not
+    against a school's data. Five unconfirmed 'new' start requests were
+    inserted directly with made-up example.com addresses and 555 numbers,
+    2, 5, 30, 52 and 99 hours old, so that two rows read "valid until" and
+    three "expired". The /apply form was not used because dev mail cannot be
+    read in that setup and the rows must be more than 24 hours old.
+  revert: the private database was dropped after capture.
+
+- image: online-applications-21.png
+  captured: 2026-10-30
+  as: n/a (rendered email)
+  path: Online Application Status Email, as sent to Online Applications Recipients
+  frame:
+    mode: element
+    selectors: >
+      A plain page holding the subject and "to" line above the email HTML,
+      cropped 16px below the Manage online applications button; 800 wide.
+    padding: 0
+  setup: >
+    Same private database as -20, with Online Applications Recipients set to
+    admissions@example.com through the site settings form, and five
+    randomised open applications re-dated so that four expire within 3 days
+    (one 'requested' with nothing captured and a made-up example.com
+    address, one with 2 reminders). The email HTML is the output of the real
+    ApplicationStatusEmail job and application_status_daily template,
+    poured into the shipped "allemail" wrapper (the randomiser had replaced
+    that wrapper with placeholder text, so it was restored to the
+    datainstall default in the private copy). The job ran with a capturing
+    mailer instead of sending; last run taken as 2026-10-29 07:00. The
+    subject and "to" lines are drawn by the capture page, not by an email
+    client. Rendered with Arial as the sans-serif font, as on Windows.
+  revert: the private database was dropped after capture.
