@@ -311,21 +311,23 @@ Staff do not have to wait to be asked. At any time they can click on the “**St
 
 #### Confirming your identity before editing
 
-The update form shows a staff member their own personal details — contact numbers, addresses, and banking information where the school’s form includes it — and then lets them be changed. A browser left open at a desk is enough to reach it, so ADAM will not open the form on a session that has been signed in for a while. It asks for the password again first.
+The update form shows a staff member their own personal details — contact numbers, addresses, and banking information where the school’s form includes it — and then lets them be changed. A browser left open at a desk is enough to reach it, so ADAM will not open the form on a session that has been signed in for a while. It asks the staff member to confirm who they are first, with their password or with a [passkey](passkey-authentication.md#passkey-authentication).
 
-ADAM counts a session as recent for **ten minutes** after signing in, or after any other point at which the password was confirmed. This matters more than it sounds, because requests are usually raised overnight and so reach most staff in the middle of the working day rather than at sign-in.
+ADAM counts a session as recent for **ten minutes** after signing in, or after any other point at which the staff member confirmed who they are. This matters more than it sounds, because requests are usually raised overnight and so reach most staff in the middle of the working day rather than at sign-in.
 
--   **Reaching the form.** A staff member whose session is older than that sees a short page in place of the form, headed **Update Staff Details**, offering **Confirm your identity** and **Skip for now**. Skipping stays free: putting the prompt off records nothing, so it never needs a password. Choosing to confirm asks for the password, and the one-time PIN as well for anybody enrolled in [two-factor authentication](two-factor-authentication.md#two-factor-authentication), and then opens the form.
--   **Saving the form.** The ten minutes can also run out while the form is on screen, which is easily done on a long form. ADAM then shows a page headed **Confirm your identity**. Fill in the **Password** — and the **One Time PIN**, where enrolled — and click on **Confirm and save**. Everything typed into the form is carried across and saved with it.
+-   **Reaching the form.** A staff member whose session is older than that sees a short page in place of the form, headed **Update Staff Details**, offering **Confirm your identity** and **Skip for now**. Skipping stays free: putting the prompt off records nothing, so it never needs a password. Choosing to confirm asks for the password, and the one-time PIN as well for anybody enrolled in [two-factor authentication](two-factor-authentication.md#two-factor-authentication), and then opens the form. A staff member who has registered a passkey can click on **Confirm with a passkey** instead. The passkey is enough on its own, with no one-time PIN, just as it is at the login screen.
+-   **Saving the form.** The ten minutes can also run out while the form is on screen, which is easily done on a long form. ADAM then shows a page headed **Confirm your identity**. Fill in the **Password** — and the **One Time PIN**, where enrolled — and click on **Confirm and save**, or click on **Confirm with a passkey**. Everything typed into the form is carried across and saved with it.
 
 ![](assets/screenshots/staff-information/staff-information-24.png)
 
-The **One Time PIN** field is only shown to staff enrolled in two-factor authentication; the picture above is of a staff member who is not.
+The **One Time PIN** field is only shown to staff enrolled in two-factor authentication, and the **Passkey** row only to staff who have registered a passkey; the picture above is of a staff member who has neither.
 
 A wrong password returns the same page, with the changes still intact, and the message *“That password was not correct.”* Too many wrong passwords in a row are refused for a few minutes. Passwords entered here are counted separately from the ones entered at the login screen, so fumbling a password at this prompt can never lock a staff member out of ADAM itself. A wrong **One Time PIN** is treated differently — it counts against the same allowance as the one-time PIN at sign-in, because it is a guess at the same secret.
 
+A passkey is checked differently again. It must be the staff member’s own: anybody else’s passkey is refused with the message *“That passkey belongs to someone else. Please use your own passkey.”* Confirming with a passkey never counts against the wrong-password allowance. If the passkey is cancelled or fails, the page stays as it was, with the changes still intact.
+
 > [!WARNING]
-> Staff who sign in only with a [passkey](passkey-authentication.md#passkey-authentication), or through Google or Microsoft, may never have needed a password and may not know one. They can still use **Skip for now** to put the prompt off, but they will not be able to save the form. If this affects somebody at your school, make sure they have a working password for the authentication method their record uses — see [Staff Passwords](staff-passwords.md#staff-passwords) — before asking them to update their details.
+> Staff who sign in only through Google or Microsoft may never have needed a password and may not know one. They can still use **Skip for now** to put the prompt off, but they will not be able to save the form unless they have registered a [passkey](passkey-authentication.md#passkey-authentication). If this affects somebody at your school, have them register a passkey, or make sure they have a working password for the authentication method their record uses — see [Staff Passwords](staff-passwords.md#staff-passwords) — before asking them to update their details.
 
 ### Approving the Information:
 
