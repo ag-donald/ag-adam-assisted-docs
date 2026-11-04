@@ -44,6 +44,7 @@
             {% for nav_item in nav %}
             <li><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
             {% endfor %}
+            {% include "ag-adam/nav.html" %}
         </ul>
     </nav>
 

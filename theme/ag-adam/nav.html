@@ -1,0 +1,5 @@
+{# The API reference, shown by the loader once this site's own proxy serves it; listed only while the integration is on. #}
+{% set ag_adam = config.extra.get('ag_adam', {}) %}
+{% if ag_adam.get('enabled') is sameas true and ag_adam.get('site_token', '') %}
+<li class="ag-adam-api-reference" hidden><a href="/api/">API Reference</a></li>
+{% endif %}
