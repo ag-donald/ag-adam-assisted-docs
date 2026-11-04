@@ -158,7 +158,7 @@ Get new codes if you have used most of them. Get new codes if someone else may h
 2. Under the **Security Administration** heading, click on **Manage your Two-Factor Authentication**.
 3. Find the **Recovery codes** box. It shows how many codes you have left.
 4. Click on **Generate a new set**.
-5. ADAM may ask for your password and your six-digit code. This checks that it really is you.
+5. ADAM may ask for your password and your six-digit code. If you have a passkey, you can click on **Confirm with a passkey** instead. This checks that it really is you.
 6. Save the new codes, just like in [Step 5](#step-5-save-your-recovery-codes).
 
 > [!WARNING]

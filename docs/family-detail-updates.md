@@ -133,7 +133,9 @@ Because the update form discloses the family's existing personal information bef
 
 ![](assets/screenshots/family-detail-updates/family-detail-updates-11.png)
 
-The page is titled **Confirm your identity** and prompts: *"To protect your family's information, please re-enter your password before making any changes to your family's details."* If the logged-in parent has a registered passkey, the page additionally offers a passkey sign-in. Pressing **Confirm** with the correct password (or completing the passkey challenge) marks the session fresh and forwards the browser to the update form. Failed attempts are rate-limited and recorded against the same pool as ordinary login failures.
+The page is titled **Confirm your identity** and prompts: *"To protect your family's information, please re-enter your password before making any changes to your family's details."* If the logged-in parent has registered a passkey, the prompt reads *"…please re-enter your password or use your passkey before making any changes…"* instead, and the page adds a **Passkey** row with a **Confirm with a passkey** button. Pressing **Confirm** with the correct password, or completing the passkey check, marks the session fresh and forwards the browser to the update form. The passkey must be the parent's own: where both parents have portal logins, each parent's passkey only confirms their own session. Failed password attempts are rate-limited and recorded against the same pool as ordinary login failures.
+
+The ten minutes can also run out while the parent is filling in the form. Saving then shows a second page, also titled **Confirm your identity**, which reads *"Your changes have not been saved yet. You have been signed in for a while, so please re-enter your password to save them. Nothing you have typed has been lost."* (with *"or use your passkey"* added for a parent who has registered one). Entering the password and clicking on **Confirm and save**, or clicking on **Confirm with a passkey**, saves the form with everything the parent typed.
 
 The gate only sits in front of the update form. The rest of the portal — viewing reports, marks, messaging — is unaffected.
 

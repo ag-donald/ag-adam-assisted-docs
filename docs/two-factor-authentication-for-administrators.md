@@ -100,7 +100,7 @@ Both actions below appear next to a staff member's name in the **Set up** table 
 
 Use this when somebody cannot get in and has no recovery codes left. Click **remove 2FA** next to their name.
 
-ADAM asks you to confirm your identity first — your password, and a code from your own authenticator app if you have two-factor authentication set up yourself — unless you have confirmed recently, in which case a second removal soon after the first is not challenged. This is deliberate: the list in front of you is every staff member at the school, and a stranger sitting at an unattended administrator's desk should not be able to work down it.
+ADAM asks you to confirm your identity first — your password, and a code from your own authenticator app if you have two-factor authentication set up yourself, or your own passkey on its own if you have registered one — unless you have confirmed recently, in which case a second removal soon after the first is not challenged. This is deliberate: the list in front of you is every staff member at the school, and a stranger sitting at an unattended administrator's desk should not be able to work down it.
 
 Once you confirm, ADAM returns you to the coverage screen. It does not remove the staff member's two-factor authentication for you — click **remove 2FA** again to finish the job.
 
