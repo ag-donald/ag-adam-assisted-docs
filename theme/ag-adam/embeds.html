@@ -1,15 +1,9 @@
 {# No key means no live embed; a quoted "false" must not switch the embeds on. #}
+{# One version-free tag: what it loads is decided per site token by the server it names. #}
 {% set ag_adam = config.extra.get('ag_adam', {}) %}
 {% if ag_adam.get('enabled') is sameas true and ag_adam.get('site_token', '') %}
-<script src="https://adam.agmercium.com/ag-search-0.17.0.js"
+<script src="https://adam.agmercium.com/embed/v1/loader.js"
     data-adam-assistant-token="{{ ag_adam.site_token|e }}"
-    data-adam-assistant-input="#adam-help-search"
-    data-adam-assistant-recent="false"
-    defer></script>
-<script src="https://adam.agmercium.com/ag-widget-2.6.0.js"
-    data-adam-assistant-token="{{ ag_adam.site_token|e }}"
-    data-adam-assistant-theme="light"
-    data-adam-assistant-persist="false"
-    data-adam-assistant-greeting="Ask about ADAM. Please omit personal details and passwords."
+    data-adam-assistant-source="{{ (page.file.src_uri if page else '')|e }}"
     defer></script>
 {% endif %}
