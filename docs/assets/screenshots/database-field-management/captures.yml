@@ -64,3 +64,23 @@
     900px viewport after a 600ms wait for the dialog's fade-in, which
     otherwise lets the page show through. Closed with Cancel.
   revert: none
+
+- image: database-field-management-08.png
+  captured: 2026-11-12
+  as: staff
+  path: Administration tab → Database Administration → Manage scratch list fields → Pupil → Edit
+  frame:
+    mode: span
+    selectors: >
+      From the "Pupil Fields" h2 down to the 5th row of table.sorted_table
+      tbody (field 133, Admin Number); horizontally from the h2's left edge
+      to the right edge of the table
+    padding: 8
+  setup: >
+    Re-capture so the Options column shows only enabled and hidden, after
+    the sensitive option was removed (ADAM commit 229385c911). Taken at a
+    900px viewport from a fresh db:install database (adam_agent_shots), so
+    every field shows its shipped defaults. The page focuses the first field
+    description on load; focus and the selection were cleared before the
+    shot.
+  revert: none

@@ -193,18 +193,19 @@ Choose which type of scratch list fields you want to manage and click on the **e
 -   Ordering the fields: If you wish to change the order that the fields are displayed in, you can do so by dragging the ![](assets/screenshots/database-field-management/database-field-management-07.png) icon up and down.
 -   Field description: If you wish to change the field name that is displayed, you can do so. If the field name is removed entirely, ADAM will restore the default field name.
 -   Category: ADAM will group the fields under different headings as specified.
--   Each field has three options:
+-   Each field has two options:
 
 -   Enabled: this setting determines whether the field is available or not to all users.
--   Sensitive: this setting determines whether the field is available to users with or without the sensitive information permission. Note that if a field is not set as sensitive here, but is based on a sensitive field as defined in the core database fields, ADAM will allow the field to be selected, but it will not show any information.
 -   Hidden: In an attempt to simplify the scratch list options, some options can appear hidden at first. If there are any hidden fields, ADAM will show an option to toggle the hidden fields on and off.
+
+To choose which staff groups can see a field, click on **Manage scratch list field permissions** under the same **Database Administration** heading.
 
 Once you’re done editing these options, click on the **Save** button at the bottom of the screen.
 
 ### Restoring the Default Settings
 
 Every scratch list field has a set of default settings — its name, its category, its position in the
-list and its three options — that ADAM ships with. Anything you change on this screen is stored as
+list and its two options — that ADAM ships with. Anything you change on this screen is stored as
 *your school’s customisation* of that field, sitting on top of those defaults.
 
 That means a customisation can always be undone:
