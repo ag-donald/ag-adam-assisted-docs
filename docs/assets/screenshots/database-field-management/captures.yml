@@ -84,3 +84,20 @@
     description on load; focus and the selection were cleared before the
     shot.
   revert: none
+
+- image: database-field-management-09.png
+  captured: 2026-11-12
+  as: staff
+  path: Administration tab → Database Administration → Manage scratch list fields → Pupil → Edit
+  frame:
+    mode: span
+    selectors: >
+      From the second-last row of table.sorted_table tbody (field 206,
+      Accommodations (External)) down to the "Restore all defaults" link;
+      horizontally the table
+    padding: 8
+  setup: >
+    Re-capture so the Options column shows only enabled and hidden, after
+    the sensitive option was removed (ADAM commit 229385c911). Same 900px
+    viewport and fresh db:install database as image 08.
+  revert: none
