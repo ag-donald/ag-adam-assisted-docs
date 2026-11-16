@@ -17,7 +17,15 @@ There are several sections that will appear in the next screen, and we’ll disc
 
 ### General Information
 
-In this section, you will enter simple information about the teacher of staff member. The following points are worth noting:
+In this section, you will enter simple information about the staff member: their names, title, initials, gender and date of birth.
+
+![The Add Staff Member page, showing the General Information section](assets/screenshots/staff-information/staff-information-01.png)
+
+### Personal Information
+
+![The Personal Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-25.png)
+
+The following points are worth noting:
 
 **ID Number:** if the teacher is a foreign national, please enter their passport number here. ADAM *will* produce a warning message saying that the number that is entered is not a valid South African ID number. This is not a problem since we know that we are entering a passport number.
 
@@ -27,13 +35,15 @@ The fields for **Population Grouping**, **Home Language**, **Disabilities** and 
 
 This section includes contact information for the teacher.
 
-![](assets/screenshots/staff-information/staff-information-02.png)
+![The Contact Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-02.png)
 
 Please take note of the following:
 
-**E-mail address** is the only field that ADAM uses to send emails to staff. The **Personal E-mail Address** field is only for information.
+**Work Email Address** is the address that ADAM uses for its own emails to the staff member, such as password resets and login notifications. Staff who [sign in with Google or Microsoft](configuring-logins.md#google-sign-in-for-staff-and-pupils) are recognised by this address too.
 
-**Dependents’ Names** should be listed one per line.
+**Personal Email Address** is only for information, unless **Send Bulk Mail to Personal Email** is set to “Yes”. Messages sent to staff from the [Messaging Centre](messaging-centre.md) then go to the personal address as well as the work address.
+
+**Dependants’ Names** should be listed one per line.
 
 All phone numbers in ADAM should be entered as simple 10-digit numbers. Do not use any spacing or punctuation. For example, we prefer “0821112222” to “(082) 111 2222”. Whenever ADAM has to display a telephone number, it automatically spaces it out for you.
 
@@ -41,19 +51,19 @@ All phone numbers in ADAM should be entered as simple 10-digit numbers. Do not u
 
 The next section collects information about the qualification levels of the teachers. Some of this information might seem redundant but this is because of the different reporting mechanisms that the Department of Education requires.
 
-The SACE and PERSAL Numbers should be entered without spaces or punctuation.
+The **SACE Number** and **LURITS Number** should be entered without spaces or punctuation.
 
-![](assets/screenshots/staff-information/staff-information-03.png)
+![The Qualification Information and Registration Information sections of the Add Staff Member page](assets/screenshots/staff-information/staff-information-03.png)
 
 ### Employment Information
 
 This is the most important part, as far as ADAM is concerned, of adding a new staff member to the database. The information that is captured here will determine even if they can log in to ADAM or not, so it must be captured carefully!
 
-![](assets/screenshots/staff-information/staff-information-04.png)
+![The Employment Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-04.png)
 
 All the headings from **Department** to **Teaching Level (Additional)** are for Departmental uses and so should be captured carefully.
 
-ADAM will automatically fill in today’s date as the **Start Date** for a teacher. If you know the start date of a teacher, please capture it accurately. This is so that ADAM can work out the length of time teachers have worked at the school automatically.
+ADAM will automatically fill in today’s date as the **Commencement Date** for a teacher. If you know the start date of a teacher, please capture it accurately. Set **Indefinite Employment** to “No” and fill in a **Termination Date** only for a fixed-term contract. This is so that ADAM can work out the length of time teachers have worked at the school automatically.
 
 The **Prior Teaching Experience** is a field that determines how much teaching experience a teacher has had *before* the started teaching at your school. With this number and the calculation that ADAM works out from the teacher’s start date, ADAM can also determine the total amount of teaching experience that a teacher has.
 
