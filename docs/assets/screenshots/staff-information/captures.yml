@@ -214,3 +214,87 @@
     them to the first available option and they turn up as changes at review
     alongside anything actually edited. That is demonstration data drift, not
     behaviour worth documenting.
+
+- image: staff-information-04.png
+  captured: 2026-11-16
+  as: staff
+  path: Staff tab → Staff Administration → Add a new staff member
+  frame:
+    mode: element
+    selectors: >
+      form#edit_staff tbody whose h3 is "Employment Information" — the whole
+      section, from its heading to Remuneration Source
+    padding: 0
+  setup: >
+    None. The form was captured unsubmitted, at its defaults: today's date as
+    the Commencement Date and Indefinite Employment set to Yes. The focused
+    field was blurred first. The viewport was made as tall as the page so the
+    sticky Save information bar rests below the form instead of over it.
+  revert: none
+  note: >
+    Captured against adam_agent_screenshot, a randomised copy of adam_dev
+    served at http://screenshot.localhost:8124/, not dev.theta. Replaces an
+    image from a much older ADAM that showed Login Name, Authentication Method
+    and Start/End Date fields in this section.
+
+- image: staff-information-01.png
+  captured: 2026-11-16
+  as: staff
+  path: Staff tab → Staff Administration → Add a new staff member
+  frame:
+    mode: span
+    selectors: >
+      main#body > h1 (Add Staff Member), the paragraph after it, and the
+      form#edit_staff tbody whose h3 is "General Information" (the New Staff
+      Member heading card sits between them and is included)
+    padding: 0
+  setup: >
+    None. Unsubmitted form at its defaults; the focused field was blurred and
+    the viewport made as tall as the page, so the sticky Save information bar
+    rests below the form.
+  revert: none
+  note: >
+    Captured against adam_agent_screenshot at http://screenshot.localhost:8124/.
+    Padding is 0 because 8px showed the edges of the neighbouring section
+    cards. The old image put ID Number to Marital Status in General
+    Information; they are now the Personal Information section
+    (staff-information-25.png).
+
+- image: staff-information-25.png
+  captured: 2026-11-16
+  as: staff
+  path: Staff tab → Staff Administration → Add a new staff member
+  frame:
+    mode: element
+    selectors: form#edit_staff tbody whose h3 is "Personal Information"
+    padding: 0
+  setup: Same capture run and page state as staff-information-01.png.
+  revert: none
+
+- image: staff-information-02.png
+  captured: 2026-11-16
+  as: staff
+  path: Staff tab → Staff Administration → Add a new staff member
+  frame:
+    mode: element
+    selectors: form#edit_staff tbody whose h3 is "Contact Information"
+    padding: 0
+  setup: Same capture run and page state as staff-information-01.png.
+  revert: none
+
+- image: staff-information-03.png
+  captured: 2026-11-16
+  as: staff
+  path: Staff tab → Staff Administration → Add a new staff member
+  frame:
+    mode: span
+    selectors: >
+      the form#edit_staff tbodies whose h3 is "Qualification Information" and
+      "Registration Information", which are adjacent
+    padding: 0
+  setup: Same capture run and page state as staff-information-01.png.
+  revert: none
+  note: >
+    Registration Information now holds SACE Number, LURITS Number, Union
+    Membership and Union Membership Number; the PERSAL Number in the old image
+    is not on the default form, and the text was changed to match.

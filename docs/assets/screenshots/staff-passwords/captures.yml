@@ -1,0 +1,24 @@
+- image: staff-passwords-01.png
+  captured: 2026-11-16
+  as: staff
+  path: >
+    Staff tab → Staff Administration → Edit a staff member's information →
+    Mtshali, Dr Moira (staff 66) → Next
+  frame:
+    mode: element
+    selectors: form#edit_staff tbody whose h3 is "ADAM Access"
+    padding: 0
+  setup: >
+    The demonstration login name for staff 66 is "M66". "mmtshali" was typed
+    into User Name to show a login name that follows a pattern, as the page
+    recommends, and the form was NOT saved. Authentication Method was already
+    Internal Password. The viewport was made as tall as the page so the sticky
+    Save information bar rests below the form instead of over this section,
+    which is the last one on the form.
+  revert: none (nothing saved)
+  note: >
+    Captured against adam_agent_screenshot, a randomised copy of adam_dev
+    served at http://screenshot.localhost:8124/, not dev.theta. Also used by
+    configuring-logins.md, whose own configuring-logins-03.png showed the same
+    section and was deleted. Replaces an image that still offered External
+    POP3 Server.

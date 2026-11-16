@@ -7,17 +7,25 @@ To add a new staff member to ADAM, click on the “**Staff**” tab and, under t
 There are several sections that will appear in the next screen, and we’ll discuss them individually:
 
 1.  General Information
-2.  Contact Information
-3.  Qualification Information
-4.  Registration Information
-5.  Employment Information
-6.  Custom Fields (this might not appear – see Custom Data Fields on page  for more information)
-
-### ![](assets/screenshots/staff-information/staff-information-01.png)
+2.  Personal Information
+3.  Contact Information
+4.  Employment Information
+5.  Qualification Information
+6.  Registration Information
+7.  ADAM Access
+8.  Custom Fields (this might not appear – see [Managing Custom Database Fields](database-field-management.md#managing-custom-database-fields) for more information)
 
 ### General Information
 
-In this section, you will enter simple information about the teacher of staff member. The following points are worth noting:
+In this section, you will enter simple information about the staff member: their names, title, initials, gender and date of birth.
+
+![The Add Staff Member page, showing the General Information section](assets/screenshots/staff-information/staff-information-01.png)
+
+### Personal Information
+
+![The Personal Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-25.png)
+
+The following points are worth noting:
 
 **ID Number:** if the teacher is a foreign national, please enter their passport number here. ADAM *will* produce a warning message saying that the number that is entered is not a valid South African ID number. This is not a problem since we know that we are entering a passport number.
 
@@ -27,13 +35,15 @@ The fields for **Population Grouping**, **Home Language**, **Disabilities** and 
 
 This section includes contact information for the teacher.
 
-![](assets/screenshots/staff-information/staff-information-02.png)
+![The Contact Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-02.png)
 
 Please take note of the following:
 
-**E-mail address** is the only field that ADAM uses to send emails to staff. The **Personal E-mail Address** field is only for information.
+**Work Email Address** is the address that ADAM uses for its own emails to the staff member, such as password resets and login notifications. Staff who [sign in with Google or Microsoft](configuring-logins.md#google-sign-in-for-staff-and-pupils) are recognised by this address too.
 
-**Dependents’ Names** should be listed one per line.
+**Personal Email Address** is only for information, unless **Send Bulk Mail to Personal Email** is set to “Yes”. Messages sent to staff from the [Messaging Centre](messaging-centre.md) then go to the personal address as well as the work address.
+
+**Dependants’ Names** should be listed one per line.
 
 All phone numbers in ADAM should be entered as simple 10-digit numbers. Do not use any spacing or punctuation. For example, we prefer “0821112222” to “(082) 111 2222”. Whenever ADAM has to display a telephone number, it automatically spaces it out for you.
 
@@ -41,27 +51,31 @@ All phone numbers in ADAM should be entered as simple 10-digit numbers. Do not u
 
 The next section collects information about the qualification levels of the teachers. Some of this information might seem redundant but this is because of the different reporting mechanisms that the Department of Education requires.
 
-The SACE and PERSAL Numbers should be entered without spaces or punctuation.
+The **SACE Number** and **LURITS Number** should be entered without spaces or punctuation.
 
-![](assets/screenshots/staff-information/staff-information-03.png)
+![The Qualification Information and Registration Information sections of the Add Staff Member page](assets/screenshots/staff-information/staff-information-03.png)
 
 ### Employment Information
 
 This is the most important part, as far as ADAM is concerned, of adding a new staff member to the database. The information that is captured here will determine even if they can log in to ADAM or not, so it must be captured carefully!
 
-![](assets/screenshots/staff-information/staff-information-04.png)
+![The Employment Information section of the Add Staff Member page](assets/screenshots/staff-information/staff-information-04.png)
 
 All the headings from **Department** to **Teaching Level (Additional)** are for Departmental uses and so should be captured carefully.
 
-ADAM will automatically fill in today’s date as the **Start Date** for a teacher. If you know the start date of a teacher, please capture it accurately. This is so that ADAM can work out the length of time teachers have worked at the school automatically.
+ADAM will automatically fill in today’s date as the **Commencement Date** for a teacher. If you know the start date of a teacher, please capture it accurately. Set **Indefinite Employment** to “No” and fill in a **Termination Date** only for a fixed-term contract. This is so that ADAM can work out the length of time teachers have worked at the school automatically.
 
 The **Prior Teaching Experience** is a field that determines how much teaching experience a teacher has had *before* the started teaching at your school. With this number and the calculation that ADAM works out from the teacher’s start date, ADAM can also determine the total amount of teaching experience that a teacher has.
 
-The **Login name** is an important field. This is the username that the teacher will use to log in to ADAM. If you are using an external authentication mechanism such as an Active Directory Server (see page ), then this username *must* match the username on that service. See also Staff Logins on page .
+### ADAM Access
 
-Finally, the **Authentication Method** tells ADAM how this user should log on. It is possible to have different teachers using different methods, if necessary. However, ADAM should choose, by default, the most common setting on your server when you add a new staff member.
+This section, at the bottom of the form, controls how the staff member logs in to ADAM.
 
-You will also have the chance to add in an initial password for the user. This is only necessary if you are adding in a user that will use the **Internal Password** option. Remember that if the user uses Active Directory LDAP Authentication then their password is never stored in ADAM and ADAM asks that other service each time whether the password supplied by the user is correct.
+-   **User Name** is the login name that the staff member types on the **Staff Login** page. If your school uses an Active Directory or LDAP server, it *must* match the staff member’s user name on that server.
+-   **Initial Internal Password** is a first password. Fill it in only if the staff member will use **Internal Password**. They must change it the first time they log in. This field appears only when you add a staff member: to change the password of an existing staff member, see [Resetting a staff member’s password](staff-passwords.md#resetting-a-staff-members-password).
+-   **Authentication Method** tells ADAM how to check the staff member’s password. Different staff can use different methods.
+
+To find or change these later, use **Edit a staff member’s information**. [Staff Logins and Passwords](staff-passwords.md#staff-passwords) explains each field, the authentication methods, and what to check when a staff member cannot log in.
 
 ### Custom Fields
 
@@ -327,7 +341,7 @@ A wrong password returns the same page, with the changes still intact, and the m
 A passkey is checked differently again. It must be the staff member’s own: anybody else’s passkey is refused with the message *“That passkey belongs to someone else. Please use your own passkey.”* Confirming with a passkey never counts against the wrong-password allowance. If the passkey is cancelled or fails, the page stays as it was, with the changes still intact.
 
 > [!WARNING]
-> Staff who sign in only through Google or Microsoft may never have needed a password and may not know one. They can still use **Skip for now** to put the prompt off, but they will not be able to save the form unless they have registered a [passkey](passkey-authentication.md#passkey-authentication). If this affects somebody at your school, have them register a passkey, or make sure they have a working password for the authentication method their record uses — see [Staff Passwords](staff-passwords.md#staff-passwords) — before asking them to update their details.
+> Staff who sign in only through Google or Microsoft may never have needed a password and may not know one. They can still use **Skip for now** to put the prompt off, but they will not be able to save the form unless they have registered a [passkey](passkey-authentication.md#passkey-authentication). If this affects somebody at your school, have them register a passkey, or make sure they have a working password for the authentication method their record uses — see [Staff Logins and Passwords](staff-passwords.md#staff-passwords) — before asking them to update their details.
 
 ### Approving the Information:
 
