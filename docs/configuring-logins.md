@@ -26,16 +26,16 @@ An internal password asks ADAM to manage a password for the teacher concerned. T
 
 This helps users by reducing the number of passwords that they need to remember. In the case of Active Directory, login policies that block users from after a number of incorrect attempts are also enforced. This increases the security of your data.
 
-The authentication method for each staff member is set in his or her staff information page and the school can have any combination of the different authentication methods.
+The authentication method for each staff member is set in their staff information and the school can have any combination of the different authentication methods. Where to find a staff member’s login name, and how to set up and reset their password, is explained in [Staff Logins and Passwords](staff-passwords.md#staff-passwords).
 
 ### Setting an authentication method
 
-Each staff member can use one of the three authentication methods. They are set individually.
+Each staff member has their own authentication method: **Internal Password**, **Active Directory Server**, **LDAP Server** or **Suspended**.
 
 > [!WARNING]
-> To change a staff member’s authentication method, you will need to edit the staff member’s information (Staff > Staff Administration > Edit a teacher’s personal information). At the bottom of the page is an option to choose the authentication method:
+> To change a staff member’s authentication method, click on the **Staff** tab and, under the **Staff Administration** heading, click on **Edit a staff member’s information**. Choose the staff member. The **Authentication Method** is in the **ADAM Access** section, near the bottom of the page:
 
-![](assets/screenshots/configuring-logins/configuring-logins-03.png)
+![The ADAM Access section of the Edit Staff Member page, showing the User Name field and the Authentication Method options](assets/screenshots/staff-passwords/staff-passwords-01.png)
 
 ### Configuring Active Directory Authentication
 
@@ -73,9 +73,9 @@ To restore someone's access, change their **Authentication Method** to **Interna
 
 ### Configuring Internal Passwords
 
-Sometimes, especially for temporary staff members, it is easier to create an internal password within ADAM. This is generally NOT a good idea since by using your Active Directory authentication (see page ), more sophisticated restrictions can apply to the passwords including lockout times if the password is guessed incorrectly after a certain amount of times. These features do not apply to internal passwords.
+Sometimes, especially for temporary staff members, it is easier to create an internal password within ADAM. If your school has an Active Directory server, it is usually better to use [Active Directory authentication](#configuring-active-directory-authentication): staff then have one password to remember, and your network’s own password rules apply to it.
 
-An internal password can be set when the staff member is created. Alternatively, a password can be set and changed using the “**Change a teacher’s password**” option on the “**Staff**” tab, under the “**Security Administration**” heading.
+An internal password can be set when the staff member is created. Alternatively, a password can be set and changed using the “**Change another staff member’s password**” option on the “**Staff**” tab, under the “**Security Administration**” heading. See [Resetting a staff member’s password](staff-passwords.md#resetting-a-staff-members-password).
 
 > [!WARNING]
 > Note that ADAM irreversibly encrypts the passwords that it stores according to currently recommended guidelines. To this end, we encrypt the passwords and store them as “salted hashes”. This dramatically increases the difficulty of brute-force cracking the passwords. This does mean that it is essentially impossible to tell what the password is. More information here: [Security Administration](security-administration-for-staff.md#security-administration-for-staff) and here [https://en.wikipedia.org/wiki/Salt\_(cryptography)](https://en.wikipedia.org/wiki/Salt_\(cryptography\))
@@ -84,7 +84,7 @@ An internal password can be set when the staff member is created. Alternatively,
 
 If staff use internal passwords, administrators should ensure that they belong to a permission group that gives them the ability to change their passwords (this is not needed with other login mechanisms, since ADAM never stores those passwords and thus cannot change them). For more information on changing permissions, see the section “[Security Administration](security-administration-for-staff.md#security-administration-for-staff)”.
 
-Staff can change their passwords by clicking on the “**Staff**” tab and then looking under the “**Security Administration**” heading. An option should appear there to “**Change your own password**”
+Staff can change their passwords by clicking on the “**Staff**” tab and then looking under the “**Security Administration**” heading. An option should appear there to “**Change your password**”.
 
 In the window that appears, the user will have to type in their existing password, and their new password *twice* for confirmation:
 
@@ -230,5 +230,5 @@ The login notification email appears as follows:
 In the email, a link is presented that will allow the user to block their ADAM user. This will have the effect of logging out all currently logged in instances of their user account (throwing a possible intruder out of the system) as well as preventing any future logins.
 
 > [!WARNING]
-> An ADAM Administrator will be required to allow access for the user again. When a user account is blocked in this fashion, their **Authentication Method** in their profile is set to **Disabled**. It would thus need to be changed to reflect their actual authentication method (normally either Internal Password or Active Directory).
+> An ADAM Administrator will be required to allow access for the user again. When a user account is blocked in this fashion, their **Authentication Method** in their profile is set to **Suspended**. It would thus need to be changed to reflect their actual authentication method (normally either **Internal Password** or **Active Directory Server**).
 
