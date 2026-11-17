@@ -34,14 +34,18 @@ Replace `serve --dev-addr=0.0.0.0:8000` with `build --strict` to produce a stati
 
 ## Screenshots
 
-Screenshots are captured against the local ADAM dev instance, never against production. An agent can
-capture them: see the `capturing-screenshots` skill in
+Screenshots are captured against the local screenshot site, `https://screenshot.theta.adam.co.za/`.
+Apache serves it from the ADAM checkout against `adam_agent_screenshot`, a randomised copy of the ADAM
+database. Never capture against production, or against
+`dev.theta.adam.co.za`, whose database holds a real school's data. An agent can capture them: see the
+`capturing-screenshots` skill in
 [`.claude/skills/capturing-screenshots/SKILL.md`](.claude/skills/capturing-screenshots/SKILL.md), and
-copy `.mcp.json.dist` to `.mcp.json` with two values filled in for your machine — both are placeholders
-in the template:
+copy `.mcp.json.dist` to `.mcp.json`. Check two values for your machine:
 
-- the dev host, in `--allowed-origins`;
-- the Chromium executable path, in `--executable-path`. This lives wherever Playwright cached the
+- the screenshot site's origin, in `--allowed-origins`. The template already names
+  `https://screenshot.theta.adam.co.za`; change it only if your screenshot site runs elsewhere, and never
+  to a host that serves real school data;
+- the Chromium executable path, in `--executable-path`, which is a placeholder. This lives wherever Playwright cached the
   browser it downloaded, typically `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome` — run
   `ls ~/.cache/ms-playwright/` to see the exact version installed and fill in the real path.
 

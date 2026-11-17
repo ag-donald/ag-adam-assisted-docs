@@ -9,7 +9,7 @@
         "--browser", "chromium",
         "--executable-path", "/path/to/ms-playwright/chromium-<version>/chrome-linux64/chrome",
         "--viewport-size", "900x1200",
-        "--allowed-origins", "https://dev.example.adam.co.za",
+        "--allowed-origins", "https://screenshot.theta.adam.co.za",
         "--output-dir", "/tmp/adam-docs-capture"
       ],
       "env": {

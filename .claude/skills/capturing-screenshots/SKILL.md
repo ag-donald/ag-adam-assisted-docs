@@ -1,23 +1,48 @@
 ---
 name: capturing-screenshots
-description: Use when capturing or re-capturing a screenshot for the ADAM manual — taking a brief from TODO.md or the user, driving the dev instance in a browser, framing the shot to house conventions, and placing it in the manual with its provenance recorded
+description: Use when capturing or re-capturing a screenshot for the ADAM manual — taking a brief from TODO.md or the user, driving the randomised screenshot site in a browser, framing the shot to house conventions, and placing it in the manual with its provenance recorded
 ---
 
 # Capturing Screenshots for the ADAM Manual
 
-Screenshots are captured against the local ADAM dev instance at
-`https://dev.theta.adam.co.za/`, never against a school's live site. The Playwright MCP server is
-configured so the browser physically cannot reach anything else.
+Screenshots are captured against the local **screenshot site** at
+`https://screenshot.theta.adam.co.za/`, never against a school's live site. The Playwright MCP server
+is configured so the browser physically cannot reach anything else.
+
+Apache serves the screenshot site from `~/dev/adam`, and the host name makes ADAM load
+`config.screenshot.ini`. Its database,
+`adam_agent_screenshot`, is a randomised copy of `adam_dev`. **Never capture on
+`https://dev.theta.adam.co.za/`.** That host serves `adam_dev` itself, which holds a real school's
+data. A whole capture run was thrown away on 2026-11-17 because this skill still pointed there.
 
 ## Before you start
 
-Confirm the instance is up:
+Confirm the site is up:
 
 ```bash
-curl -sk -o /dev/null -w "%{http_code}\n" --max-time 10 https://dev.theta.adam.co.za/login/staff
+curl -s -o /dev/null -w "%{http_code}\n" --max-time 10 https://screenshot.theta.adam.co.za/login/staff
 ```
 
-Expected `200`. Anything else — stop and report; do not begin a capture run.
+Expected `200`. Anything else — stop and report; do not begin a capture run. The Apache log for the
+site is `/var/log/apache2/screenshot-error.log`. A `503` with "Permission denied" on
+`config.screenshot.ini` in that log means PHP-FPM, which runs as `www-data`, cannot read the
+file: it must be mode `644`, like `config.dev.ini`.
+
+Confirm the data is randomised, once you are logged in as staff and before you open any pupil,
+family or staff page. The randomiser replaces every email address with a `testing+…@adam.co.za`
+address, including the school's own sending address. Check that setting:
+
+```js
+async () => {
+  const html = await (await fetch('/admin/settings/site')).text();
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  return doc.querySelector('[name="setting[emailfromaddress]"]')?.value;
+}
+```
+
+It must start with `testing+`. Anything else — a school's domain, or nothing at all — means the data
+is real or the check could not run. Stop, capture nothing, and report it. Do not log in as a family
+or pupil, and do not trigger anything that sends mail, until the user has confirmed the database.
 
 Confirm the real typeface is available, not a silent fallback. ADAM's stylesheet pulls Open Sans
 from `fonts.googleapis.com` and falls back to Arial, then to whatever sans-serif the system has —
@@ -72,7 +97,7 @@ has no font for.
 
 No credentials exist or are needed. `env = dev` enables a bypass:
 
-1. `browser_navigate` to `https://dev.theta.adam.co.za/login/staff`
+1. `browser_navigate` to `https://screenshot.theta.adam.co.za/login/staff`
 2. `browser_click` the **Login** button, `target: "#login-button"`, leaving both fields empty
 
 This signs you in as `staff_id` 1.
@@ -134,8 +159,9 @@ the crop will be wrong — resize taller, or frame from an element instead.
 - **No browser chrome, no page header or navigation**, unless the brief explicitly asks for it.
 - **No annotations.** The manual has no arrows or highlight boxes anywhere; adding them would make
   new images look foreign.
-- **No real school data.** The dev instance holds a randomised demonstration school, which is why it
-  is the only host the browser can reach.
+- **No real school data.** The screenshot site holds a randomised copy of the school, which is why it
+  is the only host the browser can reach. The data check under *Before you start* proves it each
+  run.
 
 ## Naming and placement
 
@@ -158,7 +184,7 @@ Reference it with empty alt text and a path relative to `docs/`:
 ## Setting a shot up
 
 Many briefs need the school configured before the picture means anything — a permission granted, a
-date moved, a time frame closed. Do it **through ADAM's interface**, never by writing to `adam_dev`
+date moved, a time frame closed. Do it **through ADAM's interface**, never by writing to `adam_agent_screenshot`
 directly, so the capture exercises the path a school would take. Record what you changed, and put it
 back if the brief says to.
 
@@ -209,23 +235,24 @@ taken.
 ## The checklist
 
 1. Restate what the image must show, before opening a browser.
-2. Confirm the instance is up.
-3. Log in as the role the brief needs.
-4. Confirm the real typeface is loaded, not a silent fallback — `browser_evaluate` with the canvas
+2. Confirm the screenshot site is up.
+3. Log in as staff and confirm the data is randomised — `emailfromaddress` starts with `testing+`.
+4. Log in as the role the brief needs.
+5. Confirm the real typeface is loaded, not a silent fallback — `browser_evaluate` with the canvas
    check above.
-5. Set the school up, if the brief calls for it.
-6. Navigate to the screen.
-7. Confirm light mode.
-8. Frame and capture.
-9. **Read the saved PNG back and check it against the brief** — every named element in shot, nothing
-   cut off, no development banner, no data that should not be there.
-10. Write the Markdown reference where the brief says.
-11. Append to `captures.yml`; revert any setup that should be reverted.
-12. Remove the entry from `TODO.md` — that file's own standing rule.
-13. Run `docker run --rm --user "$(id -u):$(id -g)" -v "$(pwd):/docs" -w /docs squidfunk/mkdocs-material:latest build --strict --site-dir /docs/.build-verify` and confirm it exits 0, then `rm -rf .build-verify`.
-14. Commit.
+6. Set the school up, if the brief calls for it.
+7. Navigate to the screen.
+8. Confirm light mode.
+9. Frame and capture.
+10. **Read the saved PNG back and check it against the brief** — every named element in shot, nothing
+    cut off, no development banner, no data that should not be there.
+11. Write the Markdown reference where the brief says.
+12. Append to `captures.yml`; revert any setup that should be reverted.
+13. Remove the entry from `TODO.md` — that file's own standing rule.
+14. Run `docker run --rm --user "$(id -u):$(id -g)" -v "$(pwd):/docs" -w /docs squidfunk/mkdocs-material:latest build --strict --site-dir /docs/.build-verify` and confirm it exits 0, then `rm -rf .build-verify`.
+15. Commit.
 
-Step 9 is the one that matters. You can see what you captured — a wrong crop caught there costs
+Step 3 keeps real people out of the manual, and step 10 is the one that matters most for quality. You can see what you captured — a wrong crop caught there costs
 nothing, while a wrong crop that ships is a page that misleads a reader.
 
 ## When it goes wrong
@@ -238,4 +265,6 @@ Every one of these ends in a report, never a substitute image.
 - **The data will not cooperate.** A section reading well without a picture is a legitimate outcome —
   the 2FA dashboard card was left without one for exactly this reason.
 - **The brief carries an open question.** Surface it. Do not paper over a discrepancy in the manual.
-- **The dev instance is unreachable.** Fail fast and say so.
+- **The screenshot site is unreachable.** Fail fast and say so. Do not fall back to
+  `dev.theta.adam.co.za` or any other host.
+- **The data check fails.** Stop before capturing anything, and say what `emailfromaddress` held.
