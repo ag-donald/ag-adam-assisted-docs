@@ -44,35 +44,35 @@ It must start with `testing+`. Anything else — a school's domain, or nothing a
 is real or the check could not run. Stop, capture nothing, and report it. Do not log in as a family
 or pupil, and do not trigger anything that sends mail, until the user has confirmed the database.
 
-Confirm the real typeface is available, not a silent fallback. ADAM's stylesheet pulls Open Sans
-from `fonts.googleapis.com` and falls back to Arial, then to whatever sans-serif the system has —
-but the allowed-origins rail blocks `fonts.googleapis.com` on purpose, so the webfont never loads
-here. If the machine also lacks Open Sans and Arial installed locally, the page renders in
-something like DejaVu Sans instead: it looks fine, nothing errors, and every screenshot taken that
-way has the wrong letterforms and won't match the manual's existing images. This failure is silent,
-so check for it explicitly rather than trusting that the page "looks right":
+Confirm the real typeface is available, not a silent fallback. ADAM's stylesheet imports Open Sans
+from `fonts.googleapis.com`, which the allowed-origins rail blocks on purpose. The screenshot site's
+Apache config rewrites that import to `/screenshot-fonts/open-sans.css`, which serves a copy of Open
+Sans from the site itself (the files are in `/mnt/c/dev/webdata/adam-screenshot/fonts/`). If that
+rewrite stops working, the page falls back to a locally installed Open Sans, then Arial, then
+something like DejaVu Sans. Nothing errors, and every screenshot taken that way has the wrong
+letterforms. This failure is silent, so check for it explicitly:
 
 ```js
-() => {
+async () => {
+  await document.fonts.ready;
   const c = document.createElement('canvas').getContext('2d');
   const s = 'Manage permissions groups — Birthdays 0123';
   c.font = '16px "Open Sans"';
   const openSans = c.measureText(s).width;
   c.font = '16px "DejaVu Sans"';
   const dejaVu = c.measureText(s).width;
-  return {openSans, dejaVu};
+  const served = performance.getEntriesByType('resource')
+    .some(r => r.name.endsWith('/screenshot-fonts/OpenSans.ttf'));
+  return {openSans, dejaVu, served};
 }
 ```
 
-If `openSans` and `dejaVu` come back identical, the browser has no real Open Sans and is silently
-substituting its generic fallback for both font names — stop and fix this before capturing anything.
-The fix is to install the font locally, not to widen the rail: install Open Sans (regular and
-italic) to `~/.local/share/fonts/`, run `fc-cache -f`, then **restart the browser**, since Chromium
-only reads fontconfig at startup and won't pick up a newly installed font in a running session.
-Re-run the measurement afterwards and confirm the two widths now differ. Do not "fix" this by
-adding `fonts.googleapis.com` to `--allowed-origins` instead — that would weaken the safety rail that
-keeps the browser off the open internet, and would make every future capture depend on Google's
-CDN being reachable, which is exactly the kind of external dependency the rail exists to remove.
+`served` must be `true` and the two widths must differ. If `served` is `false`, the browser console
+shows a blocked request to `fonts.googleapis.com`: the Apache rewrite is not active (the
+`substitute` module is not enabled, or the site config in `/etc/apache2/sites-available/` is out of
+date). Stop and report it. Do not "fix" this by adding `fonts.googleapis.com` to
+`--allowed-origins` — that would weaken the safety rail that keeps the browser off the open
+internet, and would make every capture depend on Google's CDN being reachable.
 
 Confirm the browser draws dates the South African way. Chromium renders date and time fields — and
 their empty placeholders — in its interface language, which it takes from the `LANG`, `LANGUAGE`
