@@ -490,6 +490,8 @@ The [**Unconfirmed Applications**](#unconfirmed-applications) table explains who
 
 ## The Application Process: Procedure for Parents
 
+If you are a parent, see [Online Applications: A Guide for Parents](online-applications-a-guide-for-parents.md), which explains each step of an application from the parent’s side. Schools can send that page to parents who need help with their application. This section describes the same process for staff, with the settings and email templates that control each step.
+
 Generally, schools will link through to the application form in ADAM from their website, or perhaps and email. Simply add on “apply” to the end of your ADAM URL for the correct address to visit:
 
 E.g. https://demo.adam.co.za**/apply**

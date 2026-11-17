@@ -52,6 +52,15 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Guides for Parents and Pupils:
+    - Logging on as a Parent: logging-on-to-adam-a-guide-for-parents.md
+    - Passkeys: passkeys-a-guide-for-parents-and-pupils.md
+    - Goal Setting: goal-setting-a-guide-for-pupils-and-parents.md
+    - Medical Examinations: medical-examinations-a-guide-for-parents-and-pupils.md
+    - Online Agreements: online-agreements-a-guide-for-parents-and-pupils.md
+    - Online Applications: online-applications-a-guide-for-parents.md
+    - Sign-ups: sign-ups-a-guide-for-parents-and-pupils.md
+    - Uploading Documents: uploading-documents-a-guide-for-parents-and-pupils.md
   - Absentee Administration: absentee-administration.md
   - Academic Points: academic-points.md
   - Academic Qualifications: academic-qualifications.md
@@ -94,7 +103,6 @@ nav:
   - Leave Module: leave-module.md
   - Level Descriptors: level-descriptors.md
   - Logging on to ADAM: logging-on-to-adam.md
-  - "Logging on to ADAM: A Guide for Parents": logging-on-to-adam-a-guide-for-parents.md
   - Login Messages: login-messages.md
   - LURITS: lurits.md
   - Mail Logging: mail-logging.md

@@ -39,9 +39,14 @@ that starts an application without an emailed link (`online-applications-18.png`
 `online-applications-06.png` showed the old "choose the number of children" screen, which no longer
 exists in ADAM, and the file has been deleted.
 
-One image is still outstanding.
+Two images are outstanding.
 
 ### 1. The start email — `online-applications-07.png` needs recapturing
+
+The image now in the file is not a start email at all: it is the old plain-link **New Application**
+email (the second email, which says the link stops working after 7 days). The current **New
+Application** template uses a **Continue Application** button instead. The image sits under the
+paragraph about the two start emails, so the replacement must be a start email.
 
 The email that carries the first link is now one of two templates, and the existing image shows
 neither. Capture the **Start an Application (Existing Parent)** message as received, since that is
@@ -54,6 +59,20 @@ The demonstration families' addresses are all `testing+…@adam.co.za`, so whoev
 mailbox can capture it. Trigger it by entering the ID number of a demonstration parent on
 **/apply** — the link is then emailed to the address on file for that parent, not to the address
 typed on the form. Note that ADAM sends at most three such emails per parent in 24 hours.
+
+### 2. The thank-you screen — `online-applications-05.png` needs recapturing
+
+The screen shown after the opening form is submitted has changed since this image was taken. It now
+bolds the sentence beginning “If you are already a parent at …”, and adds: “This is for your
+security and to protect your personal data… If you no longer have access to that email address,
+please contact the school so that we can update your details.”
+
+Capture it by submitting the form on **/apply**. Doing so sends a start email, so use the ID number of
+a demonstration parent (the email then goes to their `testing+…@adam.co.za` address on file) and
+capture image 1 from the same submission. Frame the whole message. The image is used on
+`docs/online-applications.md` (*The Application Process: Procedure for Parents*); the parent guide
+`docs/online-applications-a-guide-for-parents.md` leaves it out until it is current, so add it
+there too, after the paragraph that begins “After you click **Next**, ADAM thanks you”.
 
 ---
 
@@ -202,9 +221,9 @@ It goes immediately after image 2, before the sentence about the five-second lim
 
 ## Sign-up Module — family sign-ups (`docs/sign-up-module.md`)
 
-The **Family Sign-ups** section is written but has no pictures. **Capture these only once ADAM PR
-#496 has been deployed to the demonstration server**: before that, no family sign-up screens exist
-there. Set up one family event first: on **Pupils**, under **Sign Ups**, choose **Manage events**,
+The **Family Sign-ups** section is written but has no pictures. ADAM PR #496 is merged into ADAM's
+`main` branch (merge commit `f416744e9f`). **Check that the demonstration server runs a build that
+includes it before setting up**: before that, no family sign-up screens exist there. Set up one family event first: on **Pupils**, under **Sign Ups**, choose **Manage events**,
 pick a category, and add an event named "Parent-Teacher Evening: Mrs Smith" with **Sign up by** set
 to **Family (a family signs up, no pupil recorded)**, **Appointment Approval** set to **Approval by
 organising teacher required**, and a few ten-minute appointments with bookings open. Give the
@@ -235,6 +254,76 @@ row. It goes after the list of columns in **Seeing Who Has Booked**.
 The **Approve signups** page with the unapproved family booking, so that the **Attendee** column
 shows the family name and its children. It goes at the end of the first paragraph of **Approving
 Family Bookings**.
+
+---
+
+## Guides for Parents and Pupils — pictures still needed
+
+The parent and pupil guides (issue 20) reuse the staff pages' screenshots. These were recaptured on
+2026-11-17 against the Bhabha family (SJC Default permission group), and their setup is recorded in
+each folder's `captures.yml`: `medical-module-09.png`, `online-agreements-09.png` to `-12.png`, and
+`document-repository-08.png` and `-09.png`. The rest are below.
+
+### 1. Goal Setting — `goal-setting-07.png` and `goal-setting-08.png`
+
+Neither image is used any more. Both show goals that ADAM filled in by itself, with an “automatically
+set by ADAM” note. ADAM no longer writes that note: it suggests a value beside each subject instead.
+It does still pre-fill every goal with 60, which is a fault (see item 6 under *Portal faults found
+while writing the parent guides*).
+Recapture both, keeping the filenames, and place them in
+`docs/goal-setting-a-guide-for-pupils-and-parents.md`:
+
+- `goal-setting-07.png` — the **Academic Goal Setting** page as a pupil sees it while the window is
+  open: the “Goals and strategies for …” message, and the **Subject**, **Goal**, **Strategy** and
+  **Actions** table with **edit** links. Place it after the paragraph that ends “…an **edit** link
+  in the **Actions** column.”
+- `goal-setting-08.png` — the form opened by **edit**: two or three subjects, each with a goal box,
+  the “Based on your past performance in …” suggestion and the **My strategy to reach this goal:**
+  box, and **Save**. Place it after step 3 of *Setting Your Goals*.
+
+**Setup needed, and it cannot all be undone.** On **Reporting → Reporting Period Administration**,
+set the pupil’s grade to set goals in **Edit reporting period**, and open a **Capture Goals (for
+pupils)** time frame in **Edit reporting period timeframes**. Use a pupil whose permission group
+grants **Capture academic goals** to pupils. Opening the page creates a goal row for each of that
+pupil’s subjects, each set to 60, and goals cannot be removed from a reporting period once added (see the warning in
+*Choosing Which Grades Should Set Goals*), so use one pupil and say which in `captures.yml`. Close
+the time frame and reset the grade setting afterwards.
+
+`goal-setting-10.png` (the mark book with the **Goal** row) is still used on both pages. Its
+Afrikaans card shows the old automatic-strategy text; recapture it in the same session if the mark
+book shows a goal.
+
+### 2. Sign-ups — a picture of the pupil portal
+
+`docs/sign-ups-a-guide-for-parents-and-pupils.md` has no pictures. The family portal picture is
+already briefed as `sign-up-module-18.png` under *Sign-up Module — family sign-ups* above; place that
+one in the parent guide as well, at the end of *What the Family Sign-ups Page Shows*.
+
+Add `sign-up-module-21.png`: the **Sign ups** page as a pupil sees it from **View sign-ups**, with
+**Signed Up Events for** listing one booking and **Sign Up for Other Events** with an event open, so
+that the **Appointment**, **Booking** and **Actions** columns and a **sign up** link are in view.
+The pupil’s permission group must grant **View and allow sign-ups** to pupils. Place it in *For
+Pupils: Signing Yourself Up* of the parent guide, after the description of the page.
+
+### 3. Document Repository — `document-repository-07.png`
+
+The image on `docs/document-repository.md` (*Creating Upload Spaces*, after “…may look like this on
+the parent portal:”) shows the old portal styling and the old **Upload documents** button. The
+button now reads **Upload '<upload name>' documents**, and each document shows an *Accepted: …* line.
+The paragraph above it describes one upload space asking for three documents. The demonstration
+school’s spaces ask for one or two, so create a three-document upload space for families first
+(through **Manage parent and pupil uploads**), capture the family upload page, then delete the space.
+
+`document-repository-11.png` and `-12.png` are no longer used. They showed the rejected file in red
+and the button reading “Documents too large for upload”, neither of which ADAM does now. Delete them
+unless a new picture of the too-large state is wanted; the parent guide describes it in words.
+
+### 4. Passkeys — optional
+
+`docs/passkeys-a-guide-for-parents-and-pupils.md` has no pictures and reads well without them. If
+pictures are wanted, the two that would help are the “Log in with your fingerprint or face” card on
+the portal home page and the **Passkeys** page with one passkey listed. The card is hidden on “Login
+as a family” sessions, so it needs a real parent login, not the staff impersonation used above.
 
 ---
 
@@ -281,6 +370,104 @@ Two pupils genuinely have a birthday today, so no date of birth needs moving —
 with birthdays are **Yasmin Butcher** and **Coral Till**, in other families, which is exactly why the
 school-wide scope matters for this image.
 
+## Staff pages — wording found to be out of date while writing the parent guides
+
+Writing the parent and pupil guides (issue 20) meant checking each portal screen against the ADAM
+source. The guides follow the code. These staff-page passages, outside the sections that were
+rewritten, do not, and need correcting:
+
+- `docs/online-agreements.md`, *Creating Online Agreements*: the buttons read “I agree to the
+  conditions stated above.” and “I DO NOT agree to the conditions stated above.”, not “…conditions
+  above”. The audiences are **Families**, **Families (by Pupil Grade / Pupil Subject / Pupil Class /
+  Privilege Group / Registration Status)**, **Pupils**, **Pupils (by Grade / Privilege Group /
+  Registration Status)**, **Staff**, **Staff (by Privilege Group)** and **Applicants**, not
+  “Current Parents” and “Admissions Parents”. `docs/online-applications.md` also says “Admissions
+  Parents” (lines ~32 and ~544). The field walkthrough leaves out **Agreement is Rescindable**
+  (default No), which decides whether parents see **rescind response** at all.
+- `docs/goal-setting.md`, outside *Capturing Goals*: the page still says ADAM fills in goals itself
+  and shows a “created by ADAM” note. ADAM no longer writes the note, and it suggests a goal beside
+  each subject. Inside *Capturing Goals: Instructions for Pupils* (line ~105), “Goals start empty” is
+  wrong today: every goal opens at 60 (see item 6 under *Portal faults*). Say what the pupil sees
+  once that fault is settled. The
+  *Permissions* section presents **View academic goals** as what lets pupils and parents see goals
+  in the mark book; in the portal, any pupil or linked parent who can open the mark book sees them,
+  and **View academic goals** is checked only by the portal API. The menu option needs **Capture
+  academic goals**.
+- `docs/document-repository.md`, line ~71: the menu option is **Manage parent and pupil uploads**;
+  the longer wording on the page is its tooltip.
+- `docs/online-applications.md`, *Confirming the Details*: a used or expired start link opens
+  ADAM’s **Invalid Link** page. *This link has expired or has already been used.* appears only
+  when the confirmation page itself is reloaded or submitted after expiry. Opening the link without
+  clicking **Start Application** does not use it up. *Completing the Application Form* says parents
+  have “the 7 day window”; see the development note below. *Application Process: Procedure for
+  Staff* lists only **edit** for **Incomplete Applications**; there is also **resend link**.
+- `docs/medical-module.md`, *Adding and Editing Medical Examination Types* (~lines 207–215): still
+  framed around Covid-19, and refers to “selecting ‘Yes’ to this question” without naming **Show on
+  Summary Parent and Pupil Portal**.
+- `docs/passkey-authentication.md` and `docs/logging-on-to-adam.md`, the staff passkey steps: ADAM
+  does not ask for a name when a passkey is registered. It names the passkey after the
+  authenticator (for example “Windows Hello”), or “Passkey registered on <date>” if it does not
+  recognise it; the user can rename it afterwards.
+- `docs/sign-up-module.md`, *Creating Events* and *Creating Appointment Slots*: the **Create New
+  Event** form now has an **Appointment Type** field (**Team or group sign-up**, **Once-off event**,
+  **Single daily appointment**, **Multiple daily appointments**). Saving the event goes straight to
+  **View appointments**, not to a screen for choosing the type. The field list leaves the type out,
+  and the text and `sign-up-module-05.png` describe the old screen. `sign-up-module-04.png` probably
+  predates the field too; check it.
+- `docs/sign-up-module.md`, *Seeing Who Has Booked*: there is no number to click. The attendee list
+  opens from an **attendees** link in the **Actions** column of the appointment list, and that link
+  appears only once the appointment has at least one booking. So for an empty appointment, staff
+  cannot reach **Book a family** from the appointment list at all. Decide with development whether
+  the link should always show for family events, then document what ADAM does.
+
+---
+
+## Portal faults found while writing the parent guides (for development)
+
+None of these is documented as a feature. The guides are written so that they stay true after each
+is fixed; check the wording named against each when it is.
+
+1. **Online Applications — the form link ignores the expiry setting.** The emailed application-form link is
+   fixed at 7 days and 20 opens (`ApplicationStartConfirmation.php:106-107`, and the staff
+   **resend link** at `OnlineApplications.php:406`), whatever **Expire applications (days)** is
+   set to. The default **New Application** email promises `{expiredays}` days, so a school that
+   sets 14 days promises 14 and the link dies at 7.
+2. **Online Applications — a misleading message.** An expired, rejected or approved application
+   opened through a working link says “Sorry - this application has already been submitted.”
+   (`Applications.php:195`). The parent guide tells parents who see it without having submitted to
+   contact the school.
+3. **Document uploads — no size warning on the family page.** The family upload page does not load
+   `filesize.js` (`DocRepExternalUpload.php:479-482`); only the pupil page does (line 295). A
+   too-large family document gets no pop-up and is refused after it is sent.
+4. **Sign-ups — pupil bookings.** A pupil-path booking that fails because the appointment is full
+   shows no message (`AppointmentActionController::signUp`). The per-event limit for pupils is only
+   enforced by hiding the link; `signUpForAppointment` does not check it. A family booking that
+   needs approval still says “Your family is booked for this appointment.”
+5. **Medical — graphs.** `Metrics::fetchMetricsWithGraphs` ignores **Graph Type**, so the portal
+   graphs every metric with readings; text and choice readings plot as 0. A pupil with no
+   examinations of a published type can get graphs from other types under its heading.
+6. **Goal setting.** `Goals::getRecommendedGoal` passes the period as the subject to
+   `Reporting::getRecentTermResults`, so the term-results fallback looks up the wrong subject. The
+   deadline line joins `diffForHumans()` with “ to go”, giving “… from now to go.”
+
+   Found on 2026-11-17 while capturing: goals do not start empty. `Goals::ensureDefaultGoals`
+   (`Goals.php:789`) inserts each goal row without `goal_result`, and the column defaults to 60
+   (`database/datainstall.sql:141`). So every subject opens at 60, both on the **Academic Goal
+   Setting** list and in the form. `Goals::setDefaultGoals` sets the result to `null` explicitly,
+   which suggests empty was the intent. The form’s opening paragraph (`Goals.php:451`) also shows a
+   stray backslash, “if you don\'t agree”, because the apostrophe is escaped inside a double-quoted
+   string.
+8. **Sign-ups — family events offer “add to classes”.** On **View appointments**, a family
+   appointment with a booking shows an **add to classes** link (`Appointments.php:1273-1278`). It
+   checks only that there are attendees and that the user holds `signup_classregistration`, not
+   whether the event is a family event. The manual says family events cannot be used to add
+   attendees to a class. Not tested to see what the link then does. This one is on a staff screen,
+   not the portal.
+7. **Passkeys — wording.** The **Passkeys** page tells users to use the “Sign in with a passkey”
+   button; the button on the log-in pages reads **Log in with a passkey**.
+
+---
+
 ## Staff detail updates — the undo is still missing
 
 The two faults found while capturing `staff-information-23.png` on 2026-08-26 are fixed in the
@@ -317,11 +504,11 @@ not been built, so do not document it. Remove this entry once the page has been 
 
 ## Medical Module — answers from development
 
-Development has answered all eleven questions. The fixes are on the ADAM branch
-`fix/medical-module-permissions`, which is **not merged or deployed yet**. Until it reaches the
-demonstration server, the screens still behave the old way, so change the pages when the branch
-ships and not before. Each answer says what the page needs once it has shipped. Remove this section
-once the pages match.
+Development has answered all eleven questions. The fixes from the ADAM branch
+`fix/medical-module-permissions` have been merged into ADAM's `main` branch, so the pages can now be
+changed. Each answer says what the page needs. The two portal answers are done: *Parents and Pupils
+Viewing Their Results* no longer carries the warning or the five-exam note. Remove this section once
+the pages match.
 
 ### Permission checks on the wrong permission — none of the four was intended
 
@@ -346,13 +533,6 @@ A fifth menu option had the same fault: **View All Consultations for Chargeable 
 `medical_consultations_add` while its page checks `medical_view`. It now checks `medical_view`. If
 the manual says who can see that option, check the wording.
 
-### The portal refuses report viewers — fixed
-
-Each portal action now checks its own permission. **View Medical Examination Reports** needs
-**View medical reports** only, and completing an examination needs **Complete medical exams** only.
-Before the fix, **Complete medical exams** on its own also let a login read the reports by typing the
-address. *Change needed:* remove the warning under *Parents and Pupils Viewing Their Results*.
-
 ### Two fields labelled "Transaction Type" — fixed
 
 The second field now reads **Stock Group** on both reports. *Change needed:* remove the note and use
@@ -372,12 +552,6 @@ effect was a duplicated HTML id, which is now fixed. Nothing on `docs/medical-st
 The field has not been on the consultation form since 2017, and nothing in ADAM reads it. The
 stray default has been removed. The field stays off the form unless a school asks for it. Do not
 document it.
-
-### The portal report's five-exam limit — fixed
-
-The limit now applies to each examination type separately: up to five of each. *Change needed:*
-remove the note under *Parents and Pupils Viewing Their Results*. If the page mentions how many
-examinations are shown, make it five per type.
 
 ### `medical_exam_report`'s description — fixed
 

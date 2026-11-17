@@ -119,31 +119,11 @@ Look carefully at the example above. Within the one file upload section, we are 
 
 ### Instructions for Parents
 
-Depending on the permissions assigned to the parents and pupils, the options to upload documents will appear as follows in the portal:
-
-![](assets/screenshots/document-repository/document-repository-08.png)
-
-ADAM will list the documents that can be uploaded:
-
-![](assets/screenshots/document-repository/document-repository-09.png)
+Parents see each upload space as a box on an **Upload Documents for …** page in the portal, reached from **Upload pupil documents** on each child’s card or **Upload family documents** under the **Family** heading. Pupils with their own login see **Upload pupil documents** on their own card. They choose a file for each document and click the upload button for that box; each upload then waits for [approval](#approving-documents).
 
 Beneath each document, ADAM shows the file types that may be uploaded into that slot — for example *Accepted: PDF document, JPEG image*. These are the accepted types you ticked when [creating the upload space](#creating-upload-spaces). Where a slot has not had any file types configured, ADAM shows *Accepted: no file types configured* instead, and nothing can be uploaded until you tick at least one type.
 
-Parents should click on the **Choose file** button and select the file they wish to upload. They may choose one or more files. Once they have selected all the files they wish to upload, they should click on the **Upload documents** button below the files they have chosen.
-
-If a parent chooses a file whose type is not accepted for that slot, ADAM rejects it and shows a message naming the accepted types — for example *That file type is not accepted. Accepted types: PDF document, JPEG image.*
-
-Note that if they choose a file that is larger than the maximum size allowed, they will receive the following error message:
-
-![](assets/screenshots/document-repository/document-repository-10.png)
-
-Once they click on **Okay**, the offending file is shown in red and the button at the bottom is disabled until they correct the issue:
-
-![](assets/screenshots/document-repository/document-repository-11.png)
-
-To clear the file, click on **Choose file** and then either choose another file or click on the **Cancel** button in the file selection window to clear the file:
-
-![](assets/screenshots/document-repository/document-repository-12.png)
+Step-by-step instructions written for parents and pupils, including the messages they see when a file is the wrong type or too large, are in [Uploading Documents: A Guide for Parents and Pupils](uploading-documents-a-guide-for-parents-and-pupils.md#uploading-documents-a-guide-for-parents-and-pupils). You can send this link to parents.
 
 ### Approving Documents
 

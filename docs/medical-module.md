@@ -279,52 +279,17 @@ Once you’ve added a new metric, you may wish to have it [included in a specifi
 
 ### Parents and Pupils Completing Medical Examinations
 
-For the purposes of health screening, it may be desirable to have parents or pupils complete medical examinations in ADAM. For them to be able to do so, they will need to be [assigned the correct permissions](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils).
+Parents and pupils can complete any examination type set to **Allow Completion via Parent and Pupil Portal**. They click **Complete Medical Examination** under the **Medical Records** heading on the pupil’s card on the portal, choose the examination if more than one is available, answer every question, and click **Save Examination**. The examination is saved against the pupil with that day’s date, and ADAM emails it to any staff named in **Automatically notify staff**.
 
-> [!NOTE]
-> Where schools would like to provide instructions for parents to complete the medical examination, the instructions below should serve as a starting point and not be relied on to provide the specific information required for the medical exam as set up by the school.
+The option appears only to login groups holding **Complete medical exams** (see [Permissions for Parents and Pupils](#permissions-for-parents-and-pupils)). The form shows the **Instructions shown to parents or pupils** exactly as you capture them, so write them for that audience. Parents and pupils cannot edit or delete an examination once submitted; staff with edit rights must correct it.
 
-Parents and pupils with the permission to complete medical examinations will see a **Medical Records** heading in their portal menus:
-
-![](assets/screenshots/medical-module/medical-module-09.png)
-
-Once they select this option, one of three possible screens will appear.
-
-If there are **no medical examinations** that have been [set to display on the portal](#managing-the-medical-examinations), then they will see an error message to this effect: “There are no medical examinations available for completion.”
-
-![](assets/screenshots/medical-module/medical-module-10.png)
-
-If there are **two or more medical examinations** available, they will need to select which medical examination they wish to record. They must select the appropriate examination from the drop-down list and click on the **Next** button.
-
-![](assets/screenshots/medical-module/medical-module-11.png)
-
-The third possibility is that there is **only one medical examination** available. In this instance, they will taken immediately to a screen to collect the results.
-
-The following image shows an example of a medical examination that might be used for the Covid-19 pandemic information collection process. Please understand that this is provided as an illustrative example only and is not meant to reflect an actual Covid-19 pandemic screening test as might be required.
-
-![](assets/screenshots/medical-module/medical-module-12.png)
-
-Underneath the heading for the medical examination, ADAM displays the time that the last medical examination was recorded. This will hopefully help avoid people submitting examinations twice in error.
-
-The instructions for parents, as defined when editing the medical examination’s details are then shown. The instructions shown above are example instructions only and are the same as those reflected in the editing screenshot above.
-
-Note that all questions, except for the **Other notes**, require a response before the user will be permitted to click on the **Save Examination** button at the bottom of the form and submit their readings.
-
-Once submitted, ADAM will display a message confirming that the results have been saved:
-
-![](assets/screenshots/medical-module/medical-module-13.png)
+The step-by-step instructions for parents and pupils are in [Medical Examinations: A Guide for Parents and Pupils](medical-examinations-a-guide-for-parents-and-pupils.md#completing-a-medical-examination).
 
 ### Parents and Pupils Viewing Their Results
 
-A medical examination type can also be set to show its **summaries** on the portal. A family or pupil holding **View medical reports** sees a **View Medical Examination Reports** option in their portal menu under **Medical Records**.
+Any examination type set to **Show on Summary Parent and Pupil Portal** appears on the portal’s **View Medical Examination Reports** page, under the **Medical Records** heading. The page shows the pupil’s five most recent examinations of each published type, followed by graphs of the readings. The option appears only to login groups holding **View medical reports**; **Complete medical exams** is not needed.
 
-The screen shows a heading for each examination type that has been published this way, the pupil’s results for it, and — for any metric set to draw one — a graph of those readings over time.
-
-> [!NOTE]
-> Only the pupil’s five most recent examinations are considered, counted across all types rather than per type. A pupil who has had five examinations of one kind since their last vision test will find the vision heading empty until the next one is recorded. Publishing a small number of types to the portal keeps this from surprising anybody.
-
-> [!WARNING]
-> Viewing results currently also requires the **Complete medical exams** permission. A login group given only **View medical reports** is refused. Grant both until this is resolved.
+What parents and pupils see is described in [Medical Examinations: A Guide for Parents and Pupils](medical-examinations-a-guide-for-parents-and-pupils.md#viewing-medical-examination-results).
 
 ## Off Sport
 

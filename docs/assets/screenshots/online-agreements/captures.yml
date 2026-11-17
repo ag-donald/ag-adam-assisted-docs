@@ -1,0 +1,65 @@
+- image: online-agreements-09.png
+  captured: 2026-11-17
+  as: family (Beckley family, Dr Warwick and Mrs Brittany Beckley, family 4576, through Families → Security → Login as a family)
+  path: Family portal → Family → Manage Online Agreements
+  frame:
+    mode: element
+    selectors: main
+    padding: 8
+  setup: >
+    A demonstration agreement created through Administration → Manage Online Agreements → Add new
+    Online Agreement: "Parent Privacy Agreement", audience Families, Acceptance Required No,
+    responses "I agree to the terms" and "I do not agree to the terms", Agreement is Rescindable
+    Yes, Email Responses No (so that no email was sent), two paragraphs of agreement text. As the
+    Beckley family: answered "I do not agree to the terms", rescinded it, then answered "I agree to
+    the terms". This image is the Current Agreements table after the second answer. A first
+    attempt, with the van der Merwe family, left a "seen" row with no response in their past
+    agreements, so these four images use the Beckley family, who had no earlier responses.
+  revert: >
+    Every Parent Privacy Agreement created for these captures was disabled afterwards, so no other
+    family is asked to respond. They stay under Disabled Online Agreements with their responses.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), with a scripted Playwright Chromium on the same binary, viewport, en_ZA locale and single-origin request filter as .mcp.json, because the Playwright MCP server had not been restarted onto the new host. Replaces a capture taken earlier on 2026-11-17 against dev.theta.adam.co.za, whose database holds a real school's data.
+- image: online-agreements-10.png
+  captured: 2026-11-17
+  as: family (Beckley family, as for online-agreements-09.png)
+  path: Manage Online Agreements → view, on the current response
+  frame:
+    mode: element
+    selectors: main
+    padding: 8
+  setup: As for online-agreements-09.png.
+  revert: As for online-agreements-09.png.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot,
+    randomised data), in the same session as online-agreements-09.png.
+- image: online-agreements-11.png
+  captured: 2026-11-17
+  as: family (Beckley family, as for online-agreements-09.png)
+  path: Manage Online Agreements → rescind response, on the current response (page opened, not confirmed)
+  frame:
+    mode: element
+    selectors: main
+    padding: 8
+  setup: As for online-agreements-09.png.
+  revert: As for online-agreements-09.png.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot,
+    randomised data), in the same session as online-agreements-09.png.
+- image: online-agreements-12.png
+  captured: 2026-11-17
+  as: family (Beckley family, as for online-agreements-09.png)
+  path: Manage Online Agreements → View past agreements
+  frame:
+    mode: element
+    selectors: main
+    padding: 8
+  setup: >
+    As for online-agreements-09.png. The row is the rescinded "I do not agree to the terms"
+    response.
+  revert: As for online-agreements-09.png.
+  note: >
+    Replaces the 2021 image, which showed current and past agreements on one page. Past agreements
+    now have a page of their own. Captured on the screenshot site,
+    https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), in the same
+    session as online-agreements-09.png.

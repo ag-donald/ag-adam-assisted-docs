@@ -100,19 +100,11 @@ Pupils will only be able to set their goals while the window is open. Once the w
 
 ## Capturing Goals: Instructions for Pupils
 
-Pupils with the [necessary permissions to view or capture goals](#pupil-and-family-permissions) will see the following option appear in their ADAM login page:
+Pupils whose login group has the **Capture academic goals** permission see **Academic goals** under the **Academic** heading of their portal page. The option appears whenever the permission is granted, but pupils can only enter or change goals while a **Capture Goals (for pupils)** time frame is open and their grade is set to set goals for that reporting period (see [Setting up a Reporting Period for Goal Setting](#setting-up-a-reporting-period-for-goal-setting)). The **View academic goals** permission does not add this option.
 
-![](assets/screenshots/goal-setting/goal-setting-06.png)
+The form lists each academic subject the pupil is registered for in that reporting period. Pupils enter a goal (a whole-number percentage from 0 to 100) and a strategy for each subject. Goals start empty: beside each subject ADAM suggests a goal, calculated from the pupil’s recent assessment results (the mean plus one standard deviation of up to seven recent results, leaving out the highest and lowest when there are more than five, rounded to the nearest 5%). Where the pupil has no assessment results in a subject, ADAM usually makes no suggestion for that subject.
 
-Clicking on this option will show them any existing timeframes and goals that are set up. If this is the first time that they are clicking on it while a reporting period time frame is open, ADAM will automatically generate some goals for them based on past results. These initial goals are to be taken lightly: ADAM looks at their last five assessments and adds on 1 standard deviation to this mean, and then rounds to the nearest 5%. An automated note saying that the goal was created by ADAM is also shown:
-
-![](assets/screenshots/goal-setting/goal-setting-07.png)
-
-While the time frame for goal setting is open (ADAM reports the closing time at the top of the table: in the diagram above, there were 19 hours left to set their goals), each subject will show an “edit” option along side. Clicking on these takes the pupil to a page where they can see all their subjects, and their goals for this reporting period. They have the opportunity to make any changes they need to:
-
-![](assets/screenshots/goal-setting/goal-setting-08.png)
-
-Each subject should get a mark and a strategy. It is in this process that pupils will need guidance. The best goal setting exercises need to be realistic and need to have a strategy in place. More to the point, these strategies need to be transparent and known. For this reason, once the goals are set, ADAM displays them prominently for pupils, parents (if they have the permissions to see them) and staff.
+The step-by-step instructions for pupils, and what parents see, are in [Goal Setting: A Guide for Pupils and Parents](goal-setting-a-guide-for-pupils-and-parents.md#goal-setting-a-guide-for-pupils-and-parents). You can send that page to pupils and parents.
 
 ## Advising on Goals
 

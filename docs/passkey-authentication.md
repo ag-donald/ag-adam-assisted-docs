@@ -1,5 +1,8 @@
 # Passkey Authentication
 
+> [!NOTE]
+> If you are a parent or a pupil, see [Passkeys: A Guide for Parents and Pupils](passkeys-a-guide-for-parents-and-pupils.md#passkeys-a-guide-for-parents-and-pupils), which is written for you.
+
 ## Introduction
 
 A **passkey** is a safer, easier replacement for your password. Instead of typing in your username and password, you unlock ADAM using the same fingerprint, face recognition, or screen lock that you already use to unlock your phone, tablet, or computer.
@@ -41,13 +44,9 @@ To register additional pass keys you can:
 
 ### If you are a parent or pupil
 
-1.  Log in to the parent or pupil portal with your username and password.
-2.  Click the **Set up a passkey** link on the portal page. If you do not see it, open the portal menu and choose **Manage your passkeys**.
-3.  Click **Add a passkey**.
-4.  Your device will prompt you to confirm using your fingerprint, face, or PIN.
-5.  Give your passkey a name.
+Parents and pupils have their own guide: [Passkeys: A Guide for Parents and Pupils](passkeys-a-guide-for-parents-and-pupils.md#passkeys-a-guide-for-parents-and-pupils). It covers setting up a passkey from the portal, logging in with it, renaming and removing passkeys, and what to do about a lost or new phone. Schools are welcome to send that page to parents and pupils.
 
-That's it. Next time you visit the login page, you can skip typing your password.
+In short, a parent or pupil logs in with their password and clicks **Set up a passkey** on the “Log in with your fingerprint or face” card at the top of the portal page. If the card is not shown, they click **Manage your passkeys** under the **Security** heading of the portal menu. On the **Passkeys** page, they click **Register a new passkey** and confirm on their device.
 
 ## Logging in with a passkey
 
