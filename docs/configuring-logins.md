@@ -130,6 +130,9 @@ Click on the logo to begin the login process. If required, Microsoft will ask yo
 
 It is possible to enable either or both of Google and Microsoft Sign-in modules.
 
+> [!NOTE]
+> A [sandbox](sandbox-sites.md#sandbox-sites) does not offer Google or Microsoft Sign-in, even when your school has turned them on. Staff sign in to a sandbox with their ADAM password or their Active Directory or LDAP account.
+
 ## Two-factor authentication with Google or Microsoft Sign-In { #two-factor-authentication-with-google-or-microsoft-sign-in }
 
 By default, a staff member who has set up [two-factor authentication](two-factor-authentication.md#two-factor-authentication) is asked for their six-digit code after signing in with Google or Microsoft, just as they are after signing in with a password.
@@ -180,6 +183,8 @@ Subsequent logins will require their ID number and their recently set password.
 > [!WARNING]
 > We have compiled a separate document with [instructions for parents](https://docs.google.com/document/d/1vHiaDoheupdosNEEv32az8MjiVfSFUNmRiAk3TBZuuo/edit) that you can modify for your needs.
 
+Parents cannot sign in to a [sandbox](sandbox-sites.md#signing-in-to-a-sandbox), whatever these settings say.
+
 Permissions for parents are determined by [pupil login groups](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils).
 
 ## Pupil Logins
@@ -196,6 +201,8 @@ Pupil logins can be enabled and their authentication method set on the “Site S
 
 > [!WARNING]
 > The authentication method used for pupils is a global setting and cannot be controlled individually. They can make use of the Active Directory LDAP Authentication as used and described in the Staff Logins section.
+
+Pupils cannot sign in to a [sandbox](sandbox-sites.md#signing-in-to-a-sandbox), whatever these settings say.
 
 Permissions for pupils are determined by [pupil login groups](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils).
 
