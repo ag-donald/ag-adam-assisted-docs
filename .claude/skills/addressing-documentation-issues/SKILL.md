@@ -169,8 +169,11 @@ user wants the issue closed now:
 
 ```bash
 gh issue comment <N> --body "<comment>"
-gh issue close <N> --reason completed
+gh issue close <N>
 ```
+
+Do not pass `--reason`. The installed `gh` (2.4.0) has no such flag and refuses the command, and a
+plain close already records the issue as completed.
 
 The comment links the PR and repeats the help-link URLs, because the ADAM developer reads the issue
 rather than the PR.
