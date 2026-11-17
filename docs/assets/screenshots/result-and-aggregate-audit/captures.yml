@@ -1,0 +1,92 @@
+- image: result-and-aggregate-audit-01.png
+  captured: 2026-11-17
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026 (period 48)
+  frame:
+    mode: span
+    selectors: >
+      The p holding the academic records menu (the one containing the
+      selected "result and aggregate audit" link) down to the bottom of the
+      .section holding the reporting period table (td.align-centre).
+    padding: 8
+  setup: >
+    Pupil 5250 chosen because College Trinity Term 2026 has a stored term
+    and year-to-date mark for every subject, all of which match, and
+    several red "biggest pull" entries. emailfromaddress was
+    testing+defaultfrom@adam.co.za before capturing.
+  revert: none
+
+- image: result-and-aggregate-audit-02.png
+  captured: 2026-11-17
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026 (period 48)
+  frame:
+    mode: span
+    selectors: >
+      From the top of .section.result-audit (its heading and summary table)
+      to the bottom of the third collapsed details row (Life Orientation).
+    padding: 8
+  setup: >
+    The randomiser gives every assessment a long lorem-ipsum name, which
+    filled the "Biggest pull on term" column and overlapped every chart
+    label. Before capturing, the period-48 assessments of all nine of the
+    pupil's classes (3899, 3945, 3956, 3988, 4658, 4670, 4684, 4825, 4841)
+    were renamed through the Edit assessment form: "Classwork N" for the
+    Continuous Assessment category and "Exam Paper N" for Examinations;
+    in class 4658 (Physical Sciences) "Class Test 1", "Practical 1",
+    "Class Test 2", "Exam Paper 1" and "Exam Paper 2". Only the description
+    changed; the summary marks were checked unchanged afterwards.
+  revert: none (randomised data; the original names were placeholders)
+
+- image: result-and-aggregate-audit-03.png
+  captured: 2026-11-17
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026, subject 7 (Physical Sciences) opened
+  frame:
+    mode: span
+    selectors: >
+      From the top of details#result-audit-7 to the bottom of the
+      .result-audit__table in its first .result-audit__column (the term
+      side). The year-to-date side, and the note under the term table, are
+      below the crop.
+    padding: 8
+  setup: See result-and-aggregate-audit-02.png for the assessment renames.
+  revert: none
+  note: >
+    The crop stops above the note "This breakdown does not reproduce ADAM's
+    mark exactly", which appears here although stored and recalculated
+    match. That is recorded in TODO.md as a question for development, and
+    left out so the image stays right if the note is fixed.
+
+- image: result-and-aggregate-audit-04.png
+  captured: 2026-11-17
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026
+  frame:
+    mode: element
+    selectors: .section:has(table#aggregate_audit_subjects)
+    padding: 0
+  setup: none
+  revert: none
+  note: >
+    This grade uses a custom calculation string, so the Included,
+    Compulsory and Weighting columns are not shown.
+
+- image: result-and-aggregate-audit-05.png
+  captured: 2026-11-17
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026
+  frame:
+    mode: span
+    selectors: >
+      The first .result-audit__column of the .result-audit__pair outside any
+      details element (Term Aggregate), from its h3 to the bottom of its svg
+      chart.
+    padding: 8
+  setup: none
+  revert: none
