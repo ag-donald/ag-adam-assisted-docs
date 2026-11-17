@@ -4,7 +4,9 @@ The promotion decisions are based on ADAM’s Promotion Requirements. The set of
 
 ## Interpreting ADAM’s promotion decisions
 
-In the pupil’s **detailed academic history** page (Navigate to their **Pupil Info** page → **academic records** → **aggregate and promotion history**), ADAM will show the promotion criteria for a term as well as its reasoning for the decision.
+In the pupil’s **aggregate and promotion history** page (Navigate to their **Pupil Info** page → **academic records** → **aggregate and promotion history**), ADAM will show the promotion criteria for a term as well as its reasoning for the decision.
+
+To see how the pupil’s aggregate itself was worked out, open the [Result and Aggregate Audit](result-and-aggregate-audit.md#aggregate-audit) from the same menu. The aggregate and promotion history page no longer shows that calculation.
 
 ![](assets/screenshots/promotion-requirements/promotion-requirements-01.png)
 
@@ -28,7 +30,7 @@ ADAM will, under normal circumstances, automatically recalculate the promotion d
 
 There are times, however, when the promotion decisions are not automatically updated and you may therefore wish to force a manual recalculation of these for a grade.
 
-Head to **Reporting → Promotion Results → Recalculate Aggregates and Promotions**.
+Head to **Reporting → Promotion Results → Recalculate Aggregate and Promotions**.
 
 ADAM will ask you to specify which grade and which reporting period you’d like to have the decisions updated for. You can, once you’ve chosen those details, also specify which pupils you’d like to be recalculated, or you can select the whole grade.
 
@@ -299,7 +301,7 @@ Any subject:0:0:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18, 19,20,21,22,23,24,
 
 In each promotion criterion, there are a number of lines, each with a different criterion. ADAM must be able to apply ALL of the criteria for the promotion decision to be valid.
 
-If ADAM is not able to match a criterion within the list against a pupil’s marks, a note of the *failed* condition is made and this is shown later as part of the detailed explanation of the promotion decision in the pupils “Detailed Academic History” within their profile on ADAM. A screen shot of this is shown below.
+If ADAM is not able to match a criterion within the list against a pupil’s marks, a note of the *failed* condition is made and this is shown later as part of the detailed explanation of the promotion decision on the pupil’s **aggregate and promotion history** page within their profile on ADAM. A screen shot of this is shown below.
 
 ![](assets/screenshots/promotion-requirements/promotion-requirements-07.png)
 

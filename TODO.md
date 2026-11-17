@@ -699,3 +699,33 @@ photograph uploaded as a JPEG is therefore sent as PNG data with `Content-Type: 
 
 `docs/api-pupils.md` already warns readers to treat the data as PNG and not to trust the header.
 Once ADAM sends `image/png`, remove that warning.
+
+## Result and Aggregate Audit — faults found while capturing (for development)
+
+These are ADAM issues found on the screenshot site while writing
+`docs/result-and-aggregate-audit.md`. They were seen on pupil 5250, College Trinity Term 2026
+(period 48), on the `development` branch at commit 1c33fc7896.
+
+1. **Chart labels overlap and are clipped.** In the variable-width chart, the name under a narrow
+   column runs into its neighbours' names: "Class Test 1", "Practical 1" and "Class Test 2" in
+   Physical Sciences print over each other, even with short names. A bracket label near the left
+   edge is cut off by the edge of the chart: "Continuous Assessment · 79.33 · 25 of 100" shows as
+   "ontinuous Assessment …", and on the year-to-date side "College Easter Term 2026 (14 Jan - 1
+   Apr) · 70.46" shows as "ge Easter Term 2026 …". `result-and-aggregate-audit-03.png` shows the
+   overlap and the clipped label. Recapture it once the labels are fixed.
+2. **"This breakdown does not reproduce ADAM's mark exactly" appears where the marks match.** It
+   is under the term table of 6 of the pupil's 9 subjects. For Physical Sciences, Stored and
+   Recalculated both read 79.7143310. Working the category weightings by hand gives 79.71433107,
+   which differs from 79.7143310 by 0.00000007, just over the 0.00000005 tolerance. My guess,
+   not checked in the code, is that the recalculated term mark is rounded or truncated to seven
+   decimal places before the comparison and the breakdown is not. A note that appears on most
+   subjects teaches readers to ignore it. The manual describes the note but crops it out of
+   `result-and-aggregate-audit-03.png`.
+3. **Question: should the overview's Academic Progress Menu still need the subject progress
+   permission?** `PupilScreenRenderer` shows the **Academic Progress Menu** widget only to staff
+   with **View a Subject Progress Graph for a pupil**. The menu now leads to the audit and the two
+   history pages, which need no such permission, so a staff member who can see the academic
+   records but not the graphs does not get the menu on the overview. The issue (#21) said the
+   entry appears "in the academic progress block on the pupil overview" without that condition.
+   The manual describes the current behaviour. If the condition is dropped, remove the sentence
+   about it from the "Opening the Audit" section.
