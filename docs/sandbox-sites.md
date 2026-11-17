@@ -16,6 +16,9 @@ Nothing that you do in a sandbox changes your live site, and nothing that you se
 
 There are no settings for a sandbox, and there is no menu option to create one. To have a sandbox created, or refreshed, contact ADAM support at [help@adam.co.za](mailto:help@adam.co.za). ADAM support will give you the sandbox’s web address.
 
+> [!NOTE]
+> A sandbox site is essentially another copy of ADAM. As such, there are costs involved for having a sandbox because you are essentially running another copy of ADAM. This takes up additional server resources. Please contact [help@adam.co.za](mailto:help@adam.co.za) for more information about the costs involved. These include setup fees and hosting costs.
+
 ## Refreshing a sandbox
 
 When ADAM support refreshes a sandbox, everything in it is replaced with a new copy of the live site. Every change made in the sandbox since the last refresh is lost. This includes changes to information, settings, report layouts, passwords, passkeys and documents.
