@@ -1,0 +1,33 @@
+- image: document-repository-08.png
+  captured: 2026-11-17
+  as: family (van der Merwe family, Dr Alec van der Merwe and Ms Caitlyn Daniel, family 2304, through Families → Security → Login as a family)
+  path: Family portal home page
+  frame:
+    mode: span
+    selectors: >
+      From the top of the first child's card (Elizabeth van der Merwe) and the Family card, down to
+      the last item under General: on the first child's card (View sign-ups), across the full width
+      of the grid (x 20–880). 638px. With two children the Family card sits in the third column,
+      so the span starts at the top of the cards rather than at the General: heading.
+    padding: 8
+  setup: none. Both children are in the Full Access pupil permission group, which grants Upload pupil documents and Upload family documents to families.
+  revert: none
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), with a scripted Playwright Chromium on the same binary, viewport, en_ZA locale and single-origin request filter as .mcp.json, because the Playwright MCP server had not been restarted onto the new host. Replaces a capture taken earlier on 2026-11-17 against dev.theta.adam.co.za, whose database holds a real school's data.
+- image: document-repository-09.png
+  captured: 2026-11-17
+  as: family (van der Merwe family, as for document-repository-08.png)
+  path: Family portal → Family → Upload family documents
+  frame:
+    mode: element
+    selectors: main (focus removed from the first file input before capturing)
+    padding: 8
+  setup: >
+    The upload is the school's existing Family Government Identification Documentation. The
+    randomiser had replaced its descriptions with placeholder Latin, so they were rewritten through
+    Document Repository → Manage File Uploads → edit: the upload's description to "Copies of each
+    parent's ID document, passport or visa.", and each slot's description to "A clear copy of the
+    first (second) parent's ID document or passport."
+  revert: none. The new descriptions stay, for later captures.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), with a scripted Playwright Chromium on the same binary, viewport, en_ZA locale and single-origin request filter as .mcp.json, because the Playwright MCP server had not been restarted onto the new host. Replaces a capture taken earlier on 2026-11-17 against dev.theta.adam.co.za, whose database holds a real school's data.

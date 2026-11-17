@@ -43,7 +43,9 @@ Parents and pupils manage their passkeys through the portal:
 
 The Pupil Portal menu item is only shown to pupils whose accounts have logins enabled (see [Enabling and Disabling Pupil Logins](#enabling-and-disabling-pupil-logins)).
 
-Whenever a parent or pupil signs in without using a passkey, the top of the portal page will also show a “Log in with your fingerprint or face” card with a Set up a passkey button, which is a shortcut to the same page. As with staff, the card is hidden only on sessions where the user signed in with a passkey, so it will reappear on any later password login. The registration steps are the same as those described under [Setting Up a Passkey for Staff](#setting-up-a-passkey-for-staff).
+Whenever a parent or pupil signs in without using a passkey, the top of the portal page will also show a “Log in with your fingerprint or face” card with a Set up a passkey button, which is a shortcut to the same page. As with staff, the card is hidden on sessions where the user signed in with a passkey, and on “log in as” sessions, so it will reappear on any later password login. The registration steps are the same as those described under [Setting Up a Passkey for Staff](#setting-up-a-passkey-for-staff).
+
+Instructions written for parents and pupils are on [Passkeys: A Guide for Parents and Pupils](passkeys-a-guide-for-parents-and-pupils.md#passkeys-a-guide-for-parents-and-pupils), which schools can send to them.
 
 ### Managing Your Passkeys
 

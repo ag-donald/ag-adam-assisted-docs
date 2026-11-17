@@ -130,7 +130,16 @@ If you want to verify the information that can be seen by a specific family, sys
 
 ## Parent Login Instructions
 
-[Please see this separately maintained instruction guide for parents.](https://docs.google.com/document/d/1vHiaDoheupdosNEEv32az8MjiVfSFUNmRiAk3TBZuuo/edit) You are welcome to amend this guide for your own purposes, or simply send it to parents in its current form.
+The manual has a set of guides written for parents and pupils, listed under **Guides for Parents and Pupils** in the navigation. You are welcome to send them to parents and pupils as they are, or to adjust them for your own uses:
+
+-   [Logging on to ADAM: A Guide for Parents](logging-on-to-adam-a-guide-for-parents.md#logging-on-to-adam-a-guide-for-parents)
+-   [Passkeys: A Guide for Parents and Pupils](passkeys-a-guide-for-parents-and-pupils.md#passkeys-a-guide-for-parents-and-pupils)
+-   [Goal Setting: A Guide for Pupils and Parents](goal-setting-a-guide-for-pupils-and-parents.md#goal-setting-a-guide-for-pupils-and-parents)
+-   [Medical Examinations: A Guide for Parents and Pupils](medical-examinations-a-guide-for-parents-and-pupils.md#medical-examinations-a-guide-for-parents-and-pupils)
+-   [Online Agreements: A Guide for Parents and Pupils](online-agreements-a-guide-for-parents-and-pupils.md#online-agreements-a-guide-for-parents-and-pupils)
+-   [Online Applications: A Guide for Parents](online-applications-a-guide-for-parents.md#online-applications-a-guide-for-parents)
+-   [Sign-ups: A Guide for Parents and Pupils](sign-ups-a-guide-for-parents-and-pupils.md#sign-ups-a-guide-for-parents-and-pupils)
+-   [Uploading Documents: A Guide for Parents and Pupils](uploading-documents-a-guide-for-parents-and-pupils.md#uploading-documents-a-guide-for-parents-and-pupils)
 
 ## Accessing the QR Code
 

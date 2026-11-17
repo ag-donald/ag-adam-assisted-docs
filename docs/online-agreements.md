@@ -75,33 +75,28 @@ The report shows those who have responded as well as their response and, in a se
 
 ## Online Agreements in the Parent Portal
 
-Parents are able to see and manage their online agreements in the Parent Portal. A menu option is provided in the **Family** block.
+Parents and pupils are asked to respond to their outstanding agreements when they log in to the portal. ADAM sends them to the first outstanding agreement every time they open the main portal page, and they cannot see the portal until they have responded to every one. Parents are shown agreements for the **Families** audiences, and pupils are shown agreements for the **Pupils** audiences. If a password change is required, ADAM asks for it first.
 
-![](assets/screenshots/online-agreements/online-agreements-08.png)
+ADAM records one response per family. Once either parent on a family profile has responded, the other parent is not asked again.
 
-Clicking on this will show them a lis of all the agreements that they have responded to and the option to **view** or **rescind** their answers to any of the agreements:
+Where **Acceptance Required** is set to “Yes”, the only button is “**I agree to the conditions stated above.**”, so a parent or pupil cannot use the portal without accepting the agreement.
 
-![](assets/screenshots/online-agreements/online-agreements-09.png)
+Parents can view the agreements their family has responded to under the **Family** heading of the portal, by clicking **Manage Online Agreements**. Pupils have no equivalent page, so they cannot view or change their responses after answering.
 
-Viewing the agreement shows them the text of the agreement and their response:
-
-![](assets/screenshots/online-agreements/online-agreements-10.png)
+For step-by-step instructions that you can send to parents and pupils, see [Online Agreements: A Guide for Parents and Pupils](online-agreements-a-guide-for-parents-and-pupils.md#online-agreements-a-guide-for-parents-and-pupils).
 
 ### Rescission of Online Agreements
 
-If a parent chooses to rescind an agreement, they are presented with the following screen:
+A parent can rescind (withdraw) their family’s response only if the agreement has **Agreement is Rescindable** set to “Yes”. The default is “No”. Where it is “Yes”, a **rescind response** link appears next to the agreement on the parent’s **Manage Online Agreements** page. Pupils cannot rescind their responses.
 
-![](assets/screenshots/online-agreements/online-agreements-11.png)
+When a parent rescinds a response:
 
-Once rescinded by clicking on the button at the bottom to **Rescind my response**, ADAM will list the agreement and their past response in a list of rescinded agreements:
+-   The original response is kept, with the date and time it was given and the date and time it was rescinded. Neither the parent nor the school can modify it.
+-   The rescinded response moves to the parent’s **Past Agreements** list.
+-   ADAM treats the agreement as outstanding again, and the family must respond to it before they can use the portal. If **Acceptance Required** is “Yes”, they can only agree again.
+-   Because there is one response per family, rescinding clears the response for both parents on the family profile.
 
-![](assets/screenshots/online-agreements/online-agreements-12.png)
-
-Note that the previous response, the date and time it was agreed to and the date and time that it was rescinded are shown and cannot be modified.
-
-As soon as the agreement is rescinded and the parent returns to the main page, ADAM will identify that there is an agreement outstanding and prompt the parents to respond to that agreement once again. They will not be able to view the parent portal until such time as they have responded to the agreement.
-
-If the online agreement requires an affirmative response, they will not be able to proceed unless they once again agree to the terms set out in the agreement.
+The parent-facing steps are in [Online Agreements: A Guide for Parents and Pupils](online-agreements-a-guide-for-parents-and-pupils.md#changing-your-response).
 
 ### Viewing Rescinded Agreements
 

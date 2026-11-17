@@ -249,7 +249,11 @@ Family sign-up events cannot be used here, because nobody signs up a pupil for t
 
 ### On the Pupil Portal
 
-When pupils log in to the pupil portal, if they have been given permissions to access the sign-up module, they will click through to see all the available appointments that they can sign up for. They simply need to click on the **sign up** link next to the appointments that they wish to sign up for.
+Pupils sign themselves up on the pupil portal. On their card, under the **General** heading, they click **View sign-ups**, open an event and click **sign up** next to an appointment. They can **cancel** or **withdraw** a sign-up until bookings close. Parents see the same **View sign-ups** option on each child’s card, so a parent can also sign a child up for a pupil event.
+
+The option appears only if the pupil’s login group has the **View and allow sign-ups** permission ticked for pupils, or for families in the parents’ case. See [Managing Permissions](security-administration-for-families-and-pupils.md#managing-permissions).
+
+The steps that pupils and parents follow are described in [Sign-ups: A Guide for Parents and Pupils](sign-ups-a-guide-for-parents-and-pupils.md#for-pupils-signing-yourself-up). You can send that page to pupils and parents.
 
 ## Family Sign-ups
 
@@ -273,12 +277,9 @@ Families book on the family portal. Their login group needs the **View and allow
 
 ### Booking on the Family Portal
 
-When a parent logs in to the family portal, they click on **Family sign-ups** under the **Family** heading. The **Family Sign-ups** page has two parts:
+Parents book family events on the family portal, under the **Family** heading, by clicking **Family sign-ups**. The page lists the family’s bookings under **Your family’s sign-ups** and the events open to the family under **Sign Up for Other Events**. Parents click **sign up** to book, and **cancel** or **withdraw** to cancel. Once bookings close, a family can no longer cancel online and must contact the school. You can then [remove the booking](#seeing-who-has-booked) for them.
 
--   **Your family’s sign-ups** lists the appointments the family has booked. Next to each one, the parent can click **cancel** to cancel the booking. If the booking is still waiting for the organiser’s approval, it reads “Your family has requested this appointment. Approval is still outstanding.” and the link reads **withdraw** instead.
--   **Sign Up for Other Events** lists the family events open to the family. The parent clicks on the **sign up** link next to the appointment they want.
-
-There is no **sign up** link when the appointment is full, when bookings are not open, or when the family has reached the event’s limit. Once bookings close, a family can no longer cancel online and must contact the school.
+The steps that parents follow are described in [Sign-ups: A Guide for Parents and Pupils](sign-ups-a-guide-for-parents-and-pupils.md#for-parents-booking-for-your-family). You can send that page to parents. For the permission that families need, see [Giving families access](#giving-families-access).
 
 ### Seeing Who Has Booked
 

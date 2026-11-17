@@ -126,3 +126,21 @@
     and Grade Tutor. The Illness alert was then edited to add Mrs Nicky Barnes, because with no
     staff chosen its row read "Unknown, Grade Tutor, Register Class" — see TODO.md.
   revert: none
+- image: medical-module-09.png
+  captured: 2026-11-17
+  as: family (van der Merwe family, Dr Alec van der Merwe and Ms Caitlyn Daniel, family 2304, through Families → Security → Login as a family)
+  path: Family portal home page, first child's card (Elizabeth van der Merwe)
+  frame:
+    mode: element
+    selectors: div.childinfo (first)
+    padding: 8
+  setup: >
+    Complete medical exams and View medical reports ticked for Families on the Full Access pupil
+    permission group (Pupils → Security → Manage permissions groups → privileges), so that the
+    card shows the Medical Records heading with both options. Both children are in Full Access,
+    the only group with pupils assigned on the screenshot site.
+  revert: >
+    Both permissions unticked again for Families on Full Access straight after the capture, and
+    the privileges page checked to confirm.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), with a scripted Playwright Chromium on the same binary, viewport, en_ZA locale and single-origin request filter as .mcp.json, because the Playwright MCP server had not been restarted onto the new host. Replaces a capture taken earlier on 2026-11-17 against dev.theta.adam.co.za, whose database holds a real school's data.
