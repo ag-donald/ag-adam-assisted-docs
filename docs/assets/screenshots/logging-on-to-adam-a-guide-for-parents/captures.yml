@@ -1,0 +1,201 @@
+# Every capture below was taken on https://screenshot.theta.adam.co.za/ (database
+# adam_agent_screenshot; emailfromaddress was testing+defaultfrom@adam.co.za, Open Sans served,
+# navigator.languages ['en-GB'], light mode).
+#
+# Two steps apply to every capture:
+# - The development banner was removed with display: none before measuring, so the page closes
+#   up and the frame starts at the page header or the main content.
+# - On the Parent Login page, the development environment draws the Login button with a
+#   "smile-wink" icon (LoginViews::renderParentLoginForm). Production draws "sign-in". The icon
+#   was swapped for Font Awesome's own far/sign-in icon, rendered by the page's FontAwesome
+#   library, so that the button looks as it does on a school's site.
+
+- image: logging-on-to-adam-a-guide-for-parents-01.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page (/ redirects to the login menu)
+  frame:
+    mode: span
+    selectors: header, and the first div.section in #body (the "login" card)
+    padding: 0 top (the header has its own), 8 bottom
+  setup: none
+  revert: none
+  note: >
+    -10.png and -14.png are copies of this file: the same screen is shown in three sections.
+
+- image: logging-on-to-adam-a-guide-for-parents-02.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page → Parent Login
+  frame:
+    mode: span
+    selectors: "#body (the Parent Login heading down to the New account? Forgotten password? button)"
+    padding: 8
+  setup: focus removed from the ID field before capturing
+  revert: none
+  note: >
+    -15.png is a copy of this file. The Remember Me period (30 days) is the screenshot site's
+    setting. The Log in with a passkey panel shows because the browser supports passkeys.
+
+- image: logging-on-to-adam-a-guide-for-parents-03.png
+  captured: 2026-11-17
+  as: logged out
+  path: Parent Login → New account? Forgotten password?
+  frame:
+    mode: span
+    selectors: "#body"
+    padding: 8
+  setup: ID or Passport Number filled with 123456789
+  revert: none
+  note: A copy of -16.png. The page and the entry are the same in both sections.
+
+- image: logging-on-to-adam-a-guide-for-parents-04.png
+  captured: 2026-11-17
+  as: logged out
+  path: Parent Login → New account? Forgotten password? → Send me a reset link (ID 123456789)
+  frame:
+    mode: span
+    selectors: "#body of the Parent Login page that ADAM returns to, with the flash toast"
+    padding: 8
+  setup: >
+    ID 123456789 belongs to Dr Alec van der Merwe (family 2304) on the screenshot site, so a real
+    reset email went to the family's testing+ address in the Mailtrap sandbox. The toast closes
+    after 5 seconds; hovering over it pauses the timer, so the pointer was left on it. The
+    viewport is 588px high, so the toast, which is fixed to the bottom of the window, overlaps
+    the New account? Forgotten password? button, as it does on a short screen.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-07.png
+  captured: 2026-11-17
+  as: logged out
+  path: the link from the reset email requested for -04.png (family 2304)
+  frame:
+    mode: span
+    selectors: "#body"
+    padding: 8
+  setup: >
+    The randomiser had replaced the email template's body with placeholder Latin, so the email
+    in Mailtrap held no link. The user approved reading the link instead: one read-only SELECT on
+    click_redirect in adam_agent_screenshot gave the newest key for /portal/family/password
+    (family 2304, member primary), opened as /api/click/<key>. Both fields filled with a made-up
+    password that has upper and lower case letters and a number. The breached-password check
+    cannot reach api.pwnedpasswords.com, so the green check mark comes from ADAM's fallback
+    complexity check.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-08.png
+  captured: 2026-11-17
+  as: logged out
+  path: the same Password Reset page as -07.png
+  frame:
+    mode: viewport
+    selectors: >
+      dialog.adam-dialog, which is fixed in the centre of the window, over the blurred page.
+      Viewport 900×300, scrolled to the top of #body less 8px, so that the blurred form is
+      behind the dialog.
+    padding: about 41px above and below the dialog
+  setup: >
+    New password set to "password1", then focus moved to Confirm password. This is the fallback
+    dialog ("This is not a good choice for a password."), which ADAM shows when the
+    breached-password service cannot be reached; the browser cannot reach it. A school's site
+    normally shows the breached-password version ("This password is compromised." or "THIS IS A
+    COMMON, WEAK PASSWORD."), also titled "Warning!".
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-09.png
+  captured: 2026-11-17
+  as: logged out
+  path: the same Password Reset page as -07.png → Change password
+  frame:
+    mode: span
+    selectors: "#body of the Parent Login page that ADAM returns to, with the flash toast"
+    padding: 8
+  setup: >
+    The toast "Your password has been changed." was paused by hovering over it, as for -04.png.
+    This set a password for Dr Alec van der Merwe (family 2304) on the screenshot site and used
+    up the reset link. The development login bypass still logs in with an empty password.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-11.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page → Parent Login
+  frame:
+    mode: span
+    selectors: div.login-methods
+    padding: 8
+  setup: >
+    ID or Passport Number 123456789; Password filled with a made-up password (shown as dots).
+    The New account? Forgotten password? form below the frame was set to visibility: hidden,
+    because its shadow showed along the bottom edge.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-13.png
+  captured: 2026-11-17
+  as: family 2304 (Dr Alec van der Merwe), through Parent Login with ID 123456789 and the development login bypass (empty password)
+  path: Family portal home page
+  frame:
+    mode: span
+    selectors: header down to the bottom of #body (the end of the second child's card)
+    padding: 0 top (the header has its own), 8 bottom
+  setup: >
+    none. Family 2304 already had ID number 123456789, and both children (Elizabeth and
+    Geoffrey van der Merwe) are in the Full Access pupil permission group. Family 100 (Caleb
+    Lewis) was tried first: ID number 8001015009087 was added through Families → Edit a Family,
+    but that family has no portal access, so the ID number was cleared again straight away.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-16.png
+  captured: 2026-11-17
+  as: logged out
+  path: Parent Login → New account? Forgotten password?
+  frame:
+    mode: span
+    selectors: "#body"
+    padding: 8
+  setup: ID or Passport Number filled with 123456789, focus removed
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-17.png
+  captured: 2026-11-17
+  as: logged out
+  path: Parent Login, ID 123456780 (one digit off) and a made-up password → Login
+  frame:
+    mode: span
+    selectors: "#body of the Parent Login page, with the flash toast"
+    padding: 8
+  setup: >
+    The toast "The username and password are not a valid combination." was paused by hovering
+    over it, as for -04.png. A 670px viewport was tried so that the toast would sit below the
+    button, but the page cannot scroll far enough and the toast then covers the footer instead;
+    an element capture of the toast cut off its icon. The 588px frame is the clearest.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-18.png
+  captured: 2026-11-17
+  as: family Tumisho Baker (the most recently created family), through Parent Login with both fields empty (development login bypass)
+  path: Family portal home page
+  frame:
+    mode: span
+    selectors: header down to the bottom of #body
+    padding: 0 top (the header has its own), 8 bottom
+  setup: none. This family has no portal access on the screenshot site.
+  revert: none
+
+- image: logging-on-to-adam-a-guide-for-parents-10.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page
+  note: A copy of -01.png, captured on the screenshot site as recorded there.
+
+- image: logging-on-to-adam-a-guide-for-parents-14.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page
+  note: A copy of -01.png, captured on the screenshot site as recorded there.
+
+- image: logging-on-to-adam-a-guide-for-parents-15.png
+  captured: 2026-11-17
+  as: logged out
+  path: ADAM home page → Parent Login
+  note: A copy of -02.png, captured on the screenshot site as recorded there.
