@@ -89,6 +89,9 @@ Once you have composed your message, click on the **Send** button to have ADAM q
 > [!WARNING]
 > Note that regardless of your selected delivery time, all messages are queued with a minimum of 5 minutes lead time before they are processed.
 
+> [!NOTE]
+> Messages sent from a [sandbox](sandbox-sites.md#nothing-is-delivered) are never delivered. They stay in their batch, waiting to be sent, and the **Send a test email** and **Send a test SMS** buttons are not shown.
+
 ### Messaging applicants and their parents
 
 Applicants — pupils who have applied to the school but have not yet enrolled — are not part of the ordinary pupil audiences, and they have two audiences of their own. Both require the **SMS and Email Admissions** permission, described under [Permissions Required for using the Messaging Centre](#permissions-required-for-using-the-messaging-centre) below.

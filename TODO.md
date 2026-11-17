@@ -327,6 +327,20 @@ as a family” sessions, so it needs a real parent login, not the staff imperson
 
 ---
 
+## Sandbox Sites — the banner (`docs/sandbox-sites.md`)
+
+The page has no pictures. Add `sandbox-sites-01.png`: the **Sandbox** banner at the top of a staff
+page, with enough of the page below it to show that it sits above ordinary content. Place it in
+*Recognising a sandbox*, after the quoted banner text.
+
+**The screenshot site is not a sandbox.** The banner shows only when the site's configuration sets
+`env = sandbox` and `sandbox_source`. Do not set these on the screenshot site's own configuration
+without the developer: `sandbox:prepare` deletes the contents of folders the configuration names,
+and the banner prints the `sandbox_source` host, which must not be a real school's address. Ask for
+a sandbox of the demonstration school, then capture it.
+
+---
+
 # Missing Written Content
 
 ## Parent and Pupil Portal — Today's Birthdays (`docs/parent-and-pupil-portal.md`)

@@ -118,6 +118,10 @@ Passkeys are entirely dependent on the web browser and require a compatible web 
 > [!WARNING]
 > One area of incompatibility that we have seen involves mobile apps that link through to ADAM. In many instances, these mobile links open ADAM in an internal application web browser and not the device's native browser. Such "in-app browsers" are inherently handicapped by the mobile operating system for security and privacy reasons and do not support passkey authentication.
 
+### Does my passkey work in a sandbox?
+
+No. A passkey belongs to one web address, so a passkey made on your school’s live site does not work in its [sandbox](sandbox-sites.md#sandbox-sites). Sign in to the sandbox with your password. You can then add a new passkey in the sandbox, but it is lost when the sandbox is next refreshed.
+
 ## For Administrators
 
 No server-side setup is required to enable passkeys. Passkey login is available to all users out of the box.
