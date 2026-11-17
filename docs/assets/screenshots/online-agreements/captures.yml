@@ -30,6 +30,9 @@
     padding: 8
   setup: As for online-agreements-09.png.
   revert: As for online-agreements-09.png.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot,
+    randomised data), in the same session as online-agreements-09.png.
 - image: online-agreements-11.png
   captured: 2026-11-17
   as: family (Beckley family, as for online-agreements-09.png)
@@ -40,6 +43,9 @@
     padding: 8
   setup: As for online-agreements-09.png.
   revert: As for online-agreements-09.png.
+  note: >
+    Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot,
+    randomised data), in the same session as online-agreements-09.png.
 - image: online-agreements-12.png
   captured: 2026-11-17
   as: family (Beckley family, as for online-agreements-09.png)
@@ -54,4 +60,6 @@
   revert: As for online-agreements-09.png.
   note: >
     Replaces the 2021 image, which showed current and past agreements on one page. Past agreements
-    now have a page of their own.
+    now have a page of their own. Captured on the screenshot site,
+    https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), in the same
+    session as online-agreements-09.png.
