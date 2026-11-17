@@ -267,7 +267,9 @@ each folder's `captures.yml`: `medical-module-09.png`, `online-agreements-09.png
 ### 1. Goal Setting — `goal-setting-07.png` and `goal-setting-08.png`
 
 Neither image is used any more. Both show goals that ADAM filled in by itself, with an “automatically
-set by ADAM” note; ADAM now starts each goal empty and only suggests a value beside each subject.
+set by ADAM” note. ADAM no longer writes that note: it suggests a value beside each subject instead.
+It does still pre-fill every goal with 60, which is a fault (see item 6 under *Portal faults found
+while writing the parent guides*).
 Recapture both, keeping the filenames, and place them in
 `docs/goal-setting-a-guide-for-pupils-and-parents.md`:
 
@@ -282,8 +284,8 @@ Recapture both, keeping the filenames, and place them in
 **Setup needed, and it cannot all be undone.** On **Reporting → Reporting Period Administration**,
 set the pupil’s grade to set goals in **Edit reporting period**, and open a **Capture Goals (for
 pupils)** time frame in **Edit reporting period timeframes**. Use a pupil whose permission group
-grants **Capture academic goals** to pupils. Opening the page creates empty goal rows for that
-pupil, and goals cannot be removed from a reporting period once added (see the warning in
+grants **Capture academic goals** to pupils. Opening the page creates a goal row for each of that
+pupil’s subjects, each set to 60, and goals cannot be removed from a reporting period once added (see the warning in
 *Choosing Which Grades Should Set Goals*), so use one pupil and say which in `captures.yml`. Close
 the time frame and reset the grade setting afterwards.
 
@@ -383,7 +385,10 @@ rewritten, do not, and need correcting:
   Parents” (lines ~32 and ~544). The field walkthrough leaves out **Agreement is Rescindable**
   (default No), which decides whether parents see **rescind response** at all.
 - `docs/goal-setting.md`, outside *Capturing Goals*: the page still says ADAM fills in goals itself
-  and shows a “created by ADAM” note. ADAM now starts each goal empty and only suggests one. The
+  and shows a “created by ADAM” note. ADAM no longer writes the note, and it suggests a goal beside
+  each subject. Inside *Capturing Goals: Instructions for Pupils* (line ~105), “Goals start empty” is
+  wrong today: every goal opens at 60 (see item 6 under *Portal faults*). Say what the pupil sees
+  once that fault is settled. The
   *Permissions* section presents **View academic goals** as what lets pupils and parents see goals
   in the mark book; in the portal, any pupil or linked parent who can open the mark book sees them,
   and **View academic goals** is checked only by the portal API. The menu option needs **Capture
@@ -403,6 +408,17 @@ rewritten, do not, and need correcting:
   does not ask for a name when a passkey is registered. It names the passkey after the
   authenticator (for example “Windows Hello”), or “Passkey registered on <date>” if it does not
   recognise it; the user can rename it afterwards.
+- `docs/sign-up-module.md`, *Creating Events* and *Creating Appointment Slots*: the **Create New
+  Event** form now has an **Appointment Type** field (**Team or group sign-up**, **Once-off event**,
+  **Single daily appointment**, **Multiple daily appointments**). Saving the event goes straight to
+  **View appointments**, not to a screen for choosing the type. The field list leaves the type out,
+  and the text and `sign-up-module-05.png` describe the old screen. `sign-up-module-04.png` probably
+  predates the field too; check it.
+- `docs/sign-up-module.md`, *Seeing Who Has Booked*: there is no number to click. The attendee list
+  opens from an **attendees** link in the **Actions** column of the appointment list, and that link
+  appears only once the appointment has at least one booking. So for an empty appointment, staff
+  cannot reach **Book a family** from the appointment list at all. Decide with development whether
+  the link should always show for family events, then document what ADAM does.
 
 ---
 
@@ -433,6 +449,20 @@ is fixed; check the wording named against each when it is.
 6. **Goal setting.** `Goals::getRecommendedGoal` passes the period as the subject to
    `Reporting::getRecentTermResults`, so the term-results fallback looks up the wrong subject. The
    deadline line joins `diffForHumans()` with “ to go”, giving “… from now to go.”
+
+   Found on 2026-11-17 while capturing: goals do not start empty. `Goals::ensureDefaultGoals`
+   (`Goals.php:789`) inserts each goal row without `goal_result`, and the column defaults to 60
+   (`database/datainstall.sql:141`). So every subject opens at 60, both on the **Academic Goal
+   Setting** list and in the form. `Goals::setDefaultGoals` sets the result to `null` explicitly,
+   which suggests empty was the intent. The form’s opening paragraph (`Goals.php:451`) also shows a
+   stray backslash, “if you don\'t agree”, because the apostrophe is escaped inside a double-quoted
+   string.
+8. **Sign-ups — family events offer “add to classes”.** On **View appointments**, a family
+   appointment with a booking shows an **add to classes** link (`Appointments.php:1273-1278`). It
+   checks only that there are attendees and that the user holds `signup_classregistration`, not
+   whether the event is a family event. The manual says family events cannot be used to add
+   attendees to a class. Not tested to see what the link then does. This one is on a staff screen,
+   not the portal.
 7. **Passkeys — wording.** The **Passkeys** page tells users to use the “Sign in with a passkey”
    button; the button on the log-in pages reads **Log in with a passkey**.
 
