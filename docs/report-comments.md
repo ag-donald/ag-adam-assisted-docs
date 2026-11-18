@@ -38,6 +38,8 @@ Whichever perspective you choose, ADAM guides you through a short sequence of se
 
 The chosen reporting period is shown as a heading at the top of each screen so that you always know which period you are working in. On the reporting screen, you can click on the pupil’s or staff member’s name card to step back and pick a different pupil or teacher without starting the whole sequence again.
 
+Report checkers and editors who work after entry has closed use the same screens. The **Edit report comments** permission adds any reporting period whose editing window is open to the **Reporting Period** list, and allows you to choose any staff member under **Report comments (by teacher)**. On the reporting screen, you can change only the parts of the report whose editing window is open to you, as described under [Reporting Period Actions](reporting-period-administration.md#reporting-period-actions). The other parts are shown, but cannot be changed.
+
 > [!NOTE]
 > In previous versions of ADAM these selections were all made on a single, growing page. They are now split across separate screens, each with its own **Next** button, but the choices you make and the reporting screen you end up on are exactly the same.
 

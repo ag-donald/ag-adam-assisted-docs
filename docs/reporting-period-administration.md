@@ -136,7 +136,7 @@ Each time, after you add or edit a reporting period’s information, or click on
 ![](assets/screenshots/reporting-period-administration/reporting-period-administration-09.png)
 
 > [!WARNING]
-> The deadlines listed under **Editing Time Frames** require specific *editing* permissions to be assigned to staff. See “**[Security Administration](security-administration-for-staff.md#security-administration-for-staff)**”.
+> The deadlines listed under **Editing Time Frames** apply only to staff who hold the matching *editing* permission. Each editing action has its own permission, named under that action in [Reporting Period Actions](#reporting-period-actions) below. The permissions are granted by [changing the permissions of a group](security-administration-for-staff.md#changing-the-permissions-of-a-group).
 
 If none of the editing actions has a time frame for this reporting period, ADAM hides the **Editing Time Frames** section, so that schools that do not use editing teams do not see a block of empty lines. A **Show the editing time frames** tick box appears below the table instead. Tick it to show the editing actions.
 
@@ -186,7 +186,11 @@ Because the time frame already starts on 17 July, ADAM detects the overlap and m
 
 ### Reporting Period Actions
 
-There are a number of different deadlines that can be set. Note that apart from Markbook Embargo, all other actions have both an “Entry” and an “Editing” option. Broadly speaking, the Entry option is required for normal teachers to perform their reporting functions, while the Editing is rather for teachers who may be required to Edit comments after the teachers have finished capturing their results. Not all schools use editing teams and thus nor all schools will make use of the Editing options in this list.
+There are a number of different deadlines that can be set. Note that apart from Markbook Embargo, all other actions have both an “Entry” and an “Editing” option. Broadly speaking, the Entry option is required for normal teachers to perform their reporting functions, while the Editing is rather for teachers who may be required to Edit comments after the teachers have finished capturing their results. Not all schools use editing teams and thus not all schools will make use of the Editing options in this list.
+
+Each of the four report editing actions has its own permission, on the **Reporting Admin** tab under the **Reports** heading. While an editing window is open, staff who hold its permission can edit that part of the report for any class, not only the classes they teach. At other times the permission does nothing. While only the entry window is open, these staff can enter reports only for the classes that they may normally enter.
+
+A head of subject who holds **Edit report marks for headed subjects** can use all four report editing windows, not only Report Mark Editing, but only for the classes in the subjects that they head. This permission does nothing on its own: the staff member must also be assigned as a [head of the subject](subjects.md#heads-of-subject) concerned.
 
 #### Markbook Entry
 
@@ -235,20 +239,31 @@ As with the other deadlines discussed above, this provides times when behavioura
 
 #### Report Comment Editing
 
-This time frame allows those teachers who specifically have the ability to edit report comments to do their editing. This will allow them to continue with their editing work while report entry is closed off for most other teachers.
+This window re-opens report comments after **Report Comment Entry** has closed, but only for staff who hold the **Edit report comments** permission. It allows report checkers and editors to continue with their editing work while report entry is closed off for most other teachers. While the window is open, they can edit the report comments of any class, including comments changed through **Modify multiple report comments**.
+
+Learning outcome comments are not covered by this window. They follow [Report Level Editing](#report-level-editing).
 
 #### Report Mark Editing
 
-If report mark entry is enabled, this allows those teachers who specifically have the permissions to edit report marks to do so. When schools use the mark book, this is often the best permission to give to an Academic Head who would have the ability to decide on condonations. It is worth noting that this should only start once the mark book entry has closed since if any marks in the mark book are adjusted after the editing has taken place, those edits could be overwritten.
+If report mark entry is enabled, this window allows staff who hold the **Edit report marks** permission to edit report marks for any class after **Report Mark Entry** has closed. It covers the term and year-to-date marks and symbols, and resetting their automatic calculation. When schools use the mark book, this is often the best permission to give to an Academic Head who would have the ability to decide on condonations. It is worth noting that this should only start once the mark book entry has closed since if any marks in the mark book are adjusted after the editing has taken place, those edits could be overwritten.
 
 #### Report Level Editing
 
-Where schools use Learning Outcome symbols, this allows those teachers who specifically have the permission to edit learning outcomes to  do so. Again, these teachers can edit once the normal report mark entry time frame has closed.
+Where schools use Learning Outcome symbols, this window allows staff who hold the **Edit report levels** permission to edit them for any class after **Report Level Entry** has closed. It covers learning outcome levels and marks, learning outcome comments and assessment standards.
 
 #### Behavioural Indicator Editing
 
-Similarly, this permission allows the editing of Behavioural Indicators by teachers who specifically have the permission to do so.
+Similarly, this window allows staff who hold the **Edit behavioural indicators** permission to edit behavioural indicators for any class after **Behavioural Indicator Entry** has closed.
 
 #### Capture Goals (for pupils)
 
 If set, this setting determines when pupils are able to set and make changes to their goals. See elsewhere in the manual for more information on [Goal Setting](goal-setting.md#goal-setting).
+
+### Entering Reports Outside the Time Frames
+
+Two permissions allow a staff member to enter reports when no time frame is open. Both are on the **Reporting Admin** tab, under the **Reports** heading, when [changing the permissions of a group](security-administration-for-staff.md#changing-the-permissions-of-a-group):
+
+-   **Ignore reporting timeframes** — allows the staff member to enter report comments, marks, levels and behavioural indicators in the current reporting period, even when none of its time frames is open. The current reporting period is the one whose start and end dates include today.
+-   **Edit any comments from any period** — does the same for every reporting period, open or closed, including past ones. Its description in ADAM says that it is typically reserved for administrators.
+
+Neither permission changes which classes the staff member may work on. They still need to teach the class or be its teaching assistant and hold **Enter Own Report Comments**, hold **Enter Others’ Report Comments**, or head the subject and hold **Enter report comments for headed subjects**. These two permissions only lift the time restriction.

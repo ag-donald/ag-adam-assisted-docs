@@ -173,6 +173,8 @@ These are the permissions that the head-of-subject assignment scopes. Each one d
 
 The last of the assessment permissions is the one that matters for the two-stage close-off of the mark book, described under [Markbook Editing](reporting-period-administration.md#markbook-editing).
 
+**Edit report marks for headed subjects** is named for marks, but it covers all four report editing windows. During each window, it allows a head of subject to edit that part of the report for the classes in the subjects they head: report comments during **Report Comment Editing**, report marks during **Report Mark Editing**, learning outcome levels during **Report Level Editing** and behavioural indicators during **Behavioural Indicator Editing**. See [Reporting Period Actions](reporting-period-administration.md#reporting-period-actions).
+
 > [!NOTE]
 > **Manage aggregated result calculations from subjects taught**, on the **Reporting Admin** tab under the **Aggregated Result Calculations** heading, reads as though it belongs in this list, but it does not. It is scoped by the subjects a staff member **teaches**, not the subjects they head, so a head-of-subject assignment makes no difference to it.
 
