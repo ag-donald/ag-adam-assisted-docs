@@ -14,11 +14,13 @@ We won’t discuss exactly *how* to set up the permissions for the pupil login g
 
 ![](assets/screenshots/goal-setting/goal-setting-01.png)
 
-There are two permissions that apply: the ability to capture academic goals and the ability to view them once captured.
+There are two permissions that apply: **Capture academic goals** and **View academic goals**.
 
-It is not advised to give families the ability to capture academic goals - this will allow them to override and change their children’s goals which, we believe, should always be done in discussion with the child concerned and not unilaterally.
+**Capture academic goals** adds **Academic goals** under the **Academic** heading of the portal page. This is where pupils set their goals (see [Capturing Goals: Instructions for Pupils](#capturing-goals-instructions-for-pupils)). It is not advised to give families the ability to capture academic goals - this will allow them to override and change their children’s goals which, we believe, should always be done in discussion with the child concerned and not unilaterally.
 
-The permission to view the goals should be given to both pupils and families to allow for proactive monitoring of their achievement towards their goals. Note that viewing academic goals should be done in conjunction with viewing markbooks online. Without this information, the goals will lack context and pupils won’t know how they are progressing towards their goals.
+Pupils and parents do not need **View academic goals** to see goals in the portal. Any pupil, and any parent linked to that pupil, who can open the **Mark book** sees the goals there. The **Mark book** needs **View the current term’s marks** or **View archived terms’ marks**. Give pupils and families the mark book to allow for proactive monitoring of their achievement towards their goals. Without the marks, the goals will lack context and pupils won’t know how they are progressing towards their goals.
+
+ADAM checks **View academic goals** only when an app that a pupil or parent has connected to ADAM asks for goals. With this permission, the app can read the goals for every reporting period, not only for the periods whose mark book the pupil or parent can open.
 
 The interface that pupils will see and interact with is discussed later in this section.
 

@@ -204,20 +204,25 @@ When adding a new Medical Examination Type or editing an existing one, ADAM will
 
 The **Exam Type Description** will be used as a heading to describe the reason for the Medical Examination.
 
-Medical Examinations can be optionally **completed on the parents’ and pupils’ portal**. Parents and pupils have the option, [based on their permissions](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils), to complete medical examinations. These can be used to record the results screening examinations that are required to be completed by schools during the Covid-19 pandemic. Note that these instructions appear exactly as you capture them [on the portal screen](#parents-and-pupils-completing-medical-examinations).
+Set **Allow Completion via Parent and Pupil Portal** to “Yes” if parents and pupils should be able to complete this examination themselves, on the portal. This suits an examination that a family can answer without a medical professional, such as a health questionnaire or a declaration before a tour. Parents and pupils have the option, [based on their permissions](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils), to complete it — see [Parents and Pupils Completing Medical Examinations](#parents-and-pupils-completing-medical-examinations).
 
 > [!NOTE]
 > Note that the medical examinations are completed from a pupil’s perspective and are recorded against the pupil’s profile. It is not possible to record a medical examination for a parent.
 
 > [!NOTE]
-> Note that “out of the box”, parents and pupils do *not* have permissions to complete medical examinations. You may wish to differentiate based on primary school (allow only parents to complete) or high school (allow parents and pupils to complete). It is not possible to make this differentiation per medical examinations - one setting applies to all medical examinations.
+> Note that “out of the box”, parents and pupils do *not* have permissions to complete medical examinations. You may wish to differentiate based on primary school (allow only parents to complete) or high school (allow parents and pupils to complete). It is not possible to make this differentiation per medical examination — one setting applies to all medical examinations.
 
-Additionally, **medical examination summaries** can be shown on the Pupil and Parent portal by selecting “Yes” to this question.
+Set **Show on Summary Parent and Pupil Portal** to “Yes” to show the results of this examination to parents and pupils, on the portal’s **View Medical Examination Reports** page — see [Parents and Pupils Viewing Their Results](#parents-and-pupils-viewing-their-results). The two settings are independent: an examination recorded only by staff can still be shown on the portal, and one completed on the portal need not be. Both default to “No”.
 
 > [!WARNING]
-> The permission group for the pupils must also be assigned the permissions to view medical examination summaries.
+> The login groups for parents and pupils must also be given the **View medical reports** permission before the results appear on the portal.
 
-The indicated **Instructions** are shown to the staff who are completing the medical examination or to the parents/pupils in the portal. Thus differentiated instructions can be shown if required.
+The staff chosen under **Automatically notify staff** are emailed the readings each time an examination of this type is saved, whether by a member of staff or on the portal.
+
+The **Instructions shown to parents or pupils** appear at the top of the form on the portal, exactly as you capture them, so write them for that audience.
+
+> [!WARNING]
+> **Instructions shown to staff** is saved with the examination type, but ADAM does not currently show it on the form staff use to record an examination. Until this is fixed, instructions for staff need to be given to them some other way.
 
 #### Adding and removing metrics from a test
 
@@ -409,7 +414,7 @@ The medical permissions sit in the **Wellbeing** group, and are [assigned to sta
 
 | Permission | What it allows |
 | --- | --- |
-| **View medical information** (`medical_view`) | See a pupil’s medical records at all. Without it every tab shows a message in place of its contents. |
+| **View medical information** (`medical_view`) | See a pupil’s medical records at all. Without it every tab shows a message in place of its contents. It also opens the **Consultation Report** and **View All Consultations for Chargeable Entities**. |
 | **Add Medical Consultations** (`medical_consultations_add`) | Record consultations for pupils, staff and chargeable entities. |
 | **Edit and Delete Medical Consultations** (`medical_consultations_edit_delete`) | Change or remove a consultation after it has been saved. |
 | **Add Medical Exams** (`medical_exams_add`) | Record a medical examination for a pupil. |
@@ -431,16 +436,13 @@ The medical permissions sit in the **Wellbeing** group, and are [assigned to sta
 | **Manage Off Sport** (`medical_offsport_manage`) | Add and edit off sport entries, types and locations. |
 | **Edit Off Sport Alerts** (`offsportalert_edit`) | Create and edit the off sport alerts. |
 | **Manage Chargeable Entites** (`medical_billing_manage`) | Maintain the [chargeable entities](medical-stock.md#chargeable-entities). |
-| **View Medical Transactions Report** (`medical_transaction_view`) | Intended for the [stock transaction reports](medical-stock.md#the-stock-transaction-reports). |
+| **View Medical Transactions Report** (`medical_transaction_view`) | Run the three [stock transaction reports](medical-stock.md#the-stock-transaction-reports). |
 | **Manage Medical Examination Details** (`medical_exam_manage`) | Maintain examination types and metrics. |
 | **View Medical Examination Report** (`medical_exam_report`) | Run the medical examinations report. |
 
 The **Medical report** on the **Lists and Labels** menu has its own permission, **Medical report** (`reportmedical_view`), which sits with the other pupil reports rather than in the Wellbeing group.
 
-Staff medical records are governed by **View medical staff information** (`medical_view_staff`), in the **Staff Admin** group.
-
-> [!WARNING]
-> **View medical staff information** is what puts the **Medical Records** section on a staff profile, but the consultations inside it are shown only to somebody who *also* holds **View medical information**. Until this is resolved, grant both together, or the section will appear empty.
+Staff medical records are governed by **View medical staff information** (`medical_view_staff`), in the **Staff Admin** group. It is the only permission needed to see them: **View medical information** covers pupils and has no effect on staff records.
 
 ### Permissions for Parents and Pupils
 

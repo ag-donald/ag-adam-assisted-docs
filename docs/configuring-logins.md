@@ -168,7 +168,7 @@ If your ADAM website does not show “Parent Login” on the Login tab, then you
 
 Note that simply allowing the menu option to appear will not automatically allow parents to log in.
 
-Parent logins can be enabled on the “Site Settings” page (Administration / Site Administration / Edit Site Settings) and clicking on the “Pupil & Family Login” section. Once there, the “Allow family logins?” option should be set to “Yes”.
+Parent logins can be enabled on the “Site Settings” page (Administration / Site Administration / Edit site settings) and clicking on the “Pupil & Family Login” section. Once there, the “Allow family logins?” option should be set to “Yes”.
 
 The ADAM database requires three pieces of information to allow parent logins:
 
@@ -197,7 +197,7 @@ If your ADAM website does not show “Pupil Login” on the Login tab, then you 
 
 Note that simply allowing the menu option to appear will not automatically allow pupils to log in.
 
-Pupil logins can be enabled and their authentication method set on the “Site Settings” page (Administration / Site Administration / Edit Site Settings) and clicking on the “Pupil & Family Login” section. Once there, the “Allow pupil logins?” option should be set to “Yes”.
+Pupil logins can be enabled and their authentication method set on the “Site Settings” page (Administration / Site Administration / Edit site settings) and clicking on the “Pupil & Family Login” section. Once there, the “Allow pupil logins?” option should be set to “Yes”.
 
 > [!WARNING]
 > The authentication method used for pupils is a global setting and cannot be controlled individually. They can make use of the Active Directory LDAP Authentication as used and described in the Staff Logins section.

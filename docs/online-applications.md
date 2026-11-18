@@ -29,7 +29,7 @@ Parents visit the online application form and submit their ID or passport number
 
 #### Step 2:
 
-After submitting their details, the parent receives an email containing a link that is valid for 24 hours. Clicking it shows them their details to check, and nothing is created until they click **Start Application**. ADAM then creates the application, emails them a second link to the application form itself, and takes them straight to it. If the school has set up [online agreements](online-agreements.md#online-agreements) for the **Admissions Parents** audience, applicants are first asked to read and respond to each outstanding agreement before the application form is shown. The parent will be asked to complete the application form with both their and the applicant child’s information.
+After submitting their details, the parent receives an email containing a link that is valid for 24 hours. Clicking it shows them their details to check, and nothing is created until they click **Start Application**. ADAM then creates the application, emails them a second link to the application form itself, and takes them straight to it. If the school has set up [online agreements](online-agreements.md#online-agreements) for the **Applicants** audience, applicants are first asked to read and respond to each outstanding agreement before the application form is shown. The parent will be asked to complete the application form with both their and the applicant child’s information.
 
 Some parents never click the link. The school can still see these parents in the [**Unconfirmed Applications**](#unconfirmed-applications) table, and the [status email](#online-application-status-email) lists those who have waited more than a day.
 
@@ -529,7 +529,9 @@ Parents the school does know are asked where to send the rest of the corresponde
 
 If anything is typed incorrectly here, ADAM says so and shows the screen again without using up the link.
 
-The link works once. Following it again, or after 24 hours have passed, gives the message *This link has expired or has already been used.* with a **Start a new application** button. This is the same message whatever the reason, so the page never confirms whether an ID number is known to the school.
+Opening the link does not use it up. A parent can open it, close the page and come back to it later, as long as they have not yet clicked **Start Application** and the 24 hours have not passed. ADAM allows the link to be opened up to 20 times, because some email security systems open links before the parent does.
+
+The link stops working once **Start Application** has been clicked, or once 24 hours have passed. Following it after that opens ADAM’s **Invalid Link** page, which says *The link you followed was either limited by time or usage and is no longer valid.* If the confirmation screen is already open when the link stops working, reloading it or clicking **Start Application** gives the message *This link has expired or has already been used.* with a **Start a new application** button. Each of these is the same whatever the reason, so neither confirms whether an ID number is known to the school.
 
 ### Starting from the Parent Portal
 
@@ -543,7 +545,7 @@ Once **Start Application** has been clicked, ADAM creates the application, email
 
 ### Responding to Online Agreements
 
-When parents click on the link provided, ADAM first checks whether the school has set up any [online agreements](online-agreements.md#online-agreements) for the **Admissions Parents** audience. If there are any, parents must read and respond to each outstanding agreement before they can continue. Where an agreement has **Acceptance Required** set to Yes, parents are given a single button to accept it; where it is set to No, they may also decline. Once every outstanding agreement has been answered, ADAM moves the parent on to the application form automatically.
+When parents click on the link provided, ADAM first checks whether the school has set up any [online agreements](online-agreements.md#online-agreements) for the **Applicants** audience. If there are any, parents must read and respond to each outstanding agreement before they can continue. Where an agreement has **Acceptance Required** set to Yes, parents are given a single button to accept it; where it is set to No, they may also decline. Once every outstanding agreement has been answered, ADAM moves the parent on to the application form automatically.
 
 If the school has not set up any agreements for applicants, this step is skipped and parents go straight to the application form.
 
@@ -557,7 +559,7 @@ The contents of this application form can be customised by controlling which fie
 
 Where an application was started for the parent by another system — an application-fee payment provider, for example, using the [API](api-applications.md#applicationscreatepost) — some of the form may already be filled in. Fields that the other system has supplied are pre-filled, and those it has marked as fixed are shown but cannot be changed by the parent. Values supplied that way are also the ones written to the family and pupil records when a member of staff approves the application, even where the parent was allowed to edit them.
 
-Parents can return at any time within the 7 day window they are given to continue completing the form. To return to the screen, they simply need to use the email link that was sent to them.
+Parents can return to the form at any time until the application expires, which is the number of days set in **Expire applications (days)** after the application was started. To return, they use the link in the **New Application** email, or the link in any [reminder email](#online-application-reminder-emails). If that link stops working before the application has been submitted or has expired, staff can email the parent a new one with **resend link** (see [Application Process: Procedure for Staff](#application-process-procedure-for-staff)).
 
 From this point on, a progress bar is shown across the top of each screen so that parents can see where they are in the process. It shows **Parents**, one step per child, **Documents** and **Review & Submit**. A child’s step shows **Child 1**, **Child 2** and so on until the child’s first name has been saved, and then shows the name. A tick next to a step means that page is complete; a warning sign means something on it is still needed. Parents can click the **Parents** step or any child’s step at any time, and can click **Documents** or **Review & Submit** once they have reached it; the page they are leaving is saved first. On a phone the progress bar wraps onto a second line. The **Documents** step only appears if the school has [asked for supporting documents](#collecting-supporting-documents-during-the-application).
 
@@ -599,7 +601,7 @@ At this point a notification is sent to the system administrator, or the configu
 
 The content of this email can be [changed in the email templates](email-message-templates.md#email-message-templates). This template is called “Notify School of Completed Application”.
 
-The staff member can now visit **Admissions → Online Applications → Manage Online Applications** within ADAM. Here they will see a list of all the applications and their statuses. This list will include any applications that might be incomplete, might have expired (not completed within the 7 days) or which were rejected. Parents who have not yet clicked the link ADAM emailed them have no application yet. They are shown separately, in the [**Unconfirmed Applications**](#unconfirmed-applications) table near the top of the page.
+The staff member can now visit **Admissions → Online Applications → Manage online applications** within ADAM. Here they will see a list of all the applications and their statuses. This list will include any applications that might be incomplete, might have expired (not completed within the number of days set in **Expire applications (days)**) or which were rejected. Parents who have not yet clicked the link ADAM emailed them have no application yet. They are shown separately, in the [**Unconfirmed Applications**](#unconfirmed-applications) table near the top of the page.
 
 ![](assets/screenshots/online-applications/online-applications-13.png)
 
@@ -620,7 +622,13 @@ At the bottom of this form are two options:
 -   **Approving the Application** will add the pupil and family (if it is new) to the database. The pupil is added as an applicant in the [default admissions status](enrolment-process.md#managing-the-registration-statuses). This does *not* guarantee them a place or add them as a current pupil. *Remember that no communication is sent by ADAM.* Any documents the parent uploaded during the application are filed automatically into the document repository against the new pupil and family at this point — there is no separate document approval step for them.
 -   **Reject Application** will remove the application from the pile. Typically, applicants are rejected here for technical reasons (incomplete form, incorrect grades, incorrect gender for monastic schooling, and so on). Rejection here essentially means tossing the application form into the bin. The pupil and the family will *not* be added to the database.
 
-To leave an application on the list without approving or rejecting it, simply leave the page. Applications in the **Incomplete Applications** list also have an **edit** option. It opens **Edit Application Request**, where the ID number, contact number, email address and number of applicants given when the application was started can be corrected and saved. It does not change the parents’ answers on the form.
+To leave an application on the list without approving or rejecting it, simply leave the page.
+
+Applications in the **Incomplete Applications** list also have these options:
+
+-   **resend link** emails the parent a new link to the application form, using the **New Application** template. It goes to the email address shown in the **Email** column. ADAM asks *Are you sure?* before sending. Use it when a parent has lost the email or their link has stopped working. It does not give the parent more time: the application still expires the number of days set in **Expire applications (days)** after it was started.
+-   **edit** opens **Edit Application Request**, where the ID number, contact number, email address and number of applicants given when the application was started can be corrected and saved. It does not change the parents’ answers on the form. Correct the email address here first if the new link must go to a different address.
+-   **expire** opens **Expire an application**. Clicking **Expire the application** moves the application to **Expired Applications** straight away. Use it when the application is definitely not going to be completed.
 
 > [!WARNING]
 > “Accepting” and “Rejecting” applications refers specifically to the **application form**. This will add these details into your database as an Applicant profile. **No decisions about enrolment into the school have been made** at this point. Enrolment (or not!) will only happen at the very end of the application process.

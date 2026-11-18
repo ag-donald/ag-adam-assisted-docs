@@ -108,7 +108,7 @@ Clicking on this option allows you to select specific staff members who will be 
 
 ![](assets/screenshots/enrolment-process/enrolment-process-06.png)
 
-The registration status alerts are sent daily at set times. These can be configured in the [Site Settings](changing-site-settings.md#changing-site-settings) on the **cron** tab, under the heading **Registration Status Alerts**.
+The registration status alerts are sent daily at set times. These can be configured in the [Site Settings](changing-site-settings.md#changing-site-settings) on the **Notifications & Scheduling** tab, under the heading **Registration Status Alerts**, with the **Times to send registration alerts** setting.
 
 ![](assets/screenshots/enrolment-process/enrolment-process-07.png)
 

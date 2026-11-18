@@ -59,7 +59,17 @@ GET /api/families/email/<family_id>[/(primary|secondary)]
 
 #### Response {#familiesemailget-response}
 
-This query returns an array of zero or more email address records.
+This query returns an array of zero or more email address records. Each record has these properties:
+
+- `email_id`: the identifier of the email address record.
+- `email_family_id`: the internal identifier of the family.
+- `email_member`: `primary` or `secondary`, the parent the address belongs to.
+- `email_address`: the email address.
+- `email_description`: the description of the email address.
+- `email_maillog`: `Yes` or `No`.
+- `email_modify`: the date and time the record was last changed, in ISO 8601 format and in UTC.
+
+The records do not show which types of communication each address receives. To change those, use [Families/emailpreferences:patch](#familiesemailpreferencespatch).
 
 ```json
 {
@@ -70,11 +80,8 @@ This query returns an array of zero or more email address records.
       "email_member": "primary",
       "email_address": "testing+245@test.adam.co.za",
       "email_description": "",
-      "email_bulkmail": "Yes",
-      "email_reports": "Yes",
-      "email_alerts": "Yes",
       "email_maillog": "Yes",
-      "email_modify": "2025-02-21 12:00:42"
+      "email_modify": "2025-02-21T10:00:42.000000Z"
     }
   ],
   "message": "",
@@ -157,7 +164,7 @@ Response codes:
 
 ### Families/email:delete
 
-Remove an email address to a family member.
+Remove an email address from a family member.
 
 #### Request {#familiesemaildelete-request}
 
@@ -168,15 +175,20 @@ DELETE /api/families/email/<family_id>/(primary|secondary)
 #### Parameters {#familiesemaildelete-parameters}
 
 - `<family_id>`: The internal identifier of the family.
-- (primary|secondary): Which parent the email address should be added to
+- (primary|secondary): Which parent the email address should be removed from
 
 In the body which must be x-www-form-urlencoded:
 
 - email: a string containing the email address to delete
 
+Deleting an email address also deletes its communication preferences.
+
 #### Response {#familiesemaildelete-response}
 
-200 if deleted successfully, 404 if not found, with an appropriate error message in the response.error property.
+Response codes:
+
+- Code 200: The email address was removed. The response.error property is `<address> was removed from the family`, where `<address>` is the email address.
+- Code 404: The email address was not removed. The response.error property is `Email address '<address>' not found`. ADAM returns this when the parent has no such email address, when the body has no `email` field (the message is then `Email address '' not found`), and when the database could not remove the address.
 
 ### Families/emailpreferences:patch
 

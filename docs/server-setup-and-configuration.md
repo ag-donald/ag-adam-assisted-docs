@@ -8,7 +8,7 @@ ADAM has a “Maintenance Mode” which will prevent most users from logging int
 
 ### Enabling and Disabling Maintenance Mode
 
-Navigate to the Site Settings (**Administration → Site Administration → Edit Site Settings**). On the **General** tab, scroll down to find the **Maintenance Mode** heading.
+Navigate to the Site Settings (**Administration → Site Administration → Edit site settings**). On the **General** tab, scroll down to find the **Maintenance Mode** heading.
 
 ![](assets/screenshots/server-setup-and-configuration/server-setup-and-configuration-01.png)
 

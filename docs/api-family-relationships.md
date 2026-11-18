@@ -32,16 +32,16 @@ The **data** attribute contains an array of 0 or more objects.
 - The **index** of each array object is the identifier of the pupil.
 - A **primary** and **secondary** key contain the relationship between the primary or secondary family member and the pupil. Note that a relationship will be returned even in instances where there may not be a secondary family member. Other logic must determine whether to discard this value or not.
 
-Possible values include:
+Each value is one of the following, in lower case, or `null` if that relationship has never been set:
 
 - biological
 - adoptive parent
-- stepparent
+- step parent
 - foster parent
 - guardian
 - sponsor
 - relative
-- Other
+- other
 
 ```
 GET /api/familyrelationships/family/123
@@ -49,18 +49,16 @@ GET /api/familyrelationships/family/123
 
 ```json
 {
-  "data": [
-    {
-      "111": {
-        "primary": "biological",
-        "secondary": "step parent"
-      },
-      "321": {
-        "primary": "step parent",
-        "secondary": "biological"
-      }
+  "data": {
+    "111": {
+      "primary": "biological",
+      "secondary": "step parent"
+    },
+    "321": {
+      "primary": "step parent",
+      "secondary": "biological"
     }
-  ],
+  },
   "message": "",
   "response": {
     "error": "OK",
@@ -178,7 +176,7 @@ The **data** attribute contains an array of 0 or more objects.
 - The **index** of each array object is the identifier of the family.
 - A **primary** and **secondary** key contain the relationship between the primary or secondary family member and the pupil. Note that a relationship will be returned even in instances where there may not be a secondary family member. Other logic must determine whether to discard this value or not.
 
-Possible values include:
+Each value is one of the following, in lower case, or `null` if that relationship has never been set:
 
 - biological
 - adoptive parent
@@ -187,7 +185,7 @@ Possible values include:
 - guardian
 - sponsor
 - relative
-- Other
+- other
 
 ```
 GET /api/familyrelationships/pupil
