@@ -1,0 +1,70 @@
+---
+- image: sign-up-module-17.png
+  captured: 2026-11-18
+  as: staff (staff_id 1, Wade Beckley, development login bypass)
+  path: Pupils tab → Sign Ups → Manage event categories → events (Parent-Teacher Meetings) → Add a new event
+  frame:
+    mode: span
+    selectors: >
+      From the top of the "Event information:" row to the foot of the "Limit to classes:" row of the
+      Create New Event form. 493px.
+    padding: 8
+  setup: >
+    The screenshot site had no sign-up categories, so a category "Parent-Teacher Meetings" was
+    created first through Add new Sign-up Category (defaults kept). Form filled in the browser:
+    Event name "Parent-Teacher Evening: Mr Smith", Appointment Type Multiple daily appointments,
+    Organising Teacher Smith, Mr Caden (staff 1189), Event information "Book a ten-minute meeting
+    with Mr Smith to discuss your children's progress this term. Meetings are held in the school
+    hall.", Sign up by Family, Limit per family 1, Appointment Approval Approval by organising
+    teacher required. Limit to classes left empty. The event was saved after the capture and kept
+    for images 18 to 20.
+  revert: none — the category, event and bookings stay for later captures
+  note: >
+    TODO.md named the event "Mrs Smith". The school has no Mrs Smith, only Mr Caden Smith, so the
+    event was named after him. The form's floating Save this event bar covers the foot of the
+    viewport; it was hidden with visibility:hidden for the shot and shown again before saving.
+- image: sign-up-module-18.png
+  captured: 2026-11-18
+  as: family (van der Merwe family, family 2304, Parent Login with ID number 123456789)
+  path: Family portal → Family → Family sign-ups
+  frame:
+    mode: element
+    selectors: main, with the Parent-Teacher Evening: Mr Smith bar under Sign Up for Other Events opened
+    padding: 0
+  setup: >
+    Four ten-minute appointments added to the event through Add new appointments and Add a new
+    consecutive appointment: Thu 26 Nov 2026, 18:00 to 18:40, limit 2 each, bookings open
+    18 Nov 2026 08:00 to 25 Nov 2026 23:59. The limit is 2 so that a second family could be
+    booked into the same appointment for image 19. The family booked 18:00–18:10 by clicking sign
+    up on this page; the booking is awaiting approval. View and allow sign-ups was already granted
+    to families on the Full Access group, so no permission was changed.
+  revert: none
+  note: >
+    With the family limit of 1 reached, the other three appointments show no sign up link but
+    still read "(2 spaces available)". That is how ADAM draws them.
+- image: sign-up-module-19.png
+  captured: 2026-11-18
+  as: staff (staff_id 1, Wade Beckley)
+  path: Pupils tab → Sign Ups → View appointment slots for an event → Parent-Teacher Evening: Mr Smith → attendees (Thu, 26 Nov, 18:00–18:10)
+  frame:
+    mode: element
+    selectors: main (toast removed and focus cleared first)
+    padding: 0
+  setup: >
+    The de Villiers family (Mr Evan and Miss Jodie de Villiers, children Chase and Christian) was
+    booked into the same appointment with Book a family, then approved with the approve button
+    on this list. The van der Merwe booking from image 18 was left awaiting approval, so its row
+    shows remove, approve and reject.
+  revert: none
+- image: sign-up-module-20.png
+  captured: 2026-11-18
+  as: staff (staff_id 1, Wade Beckley)
+  path: Pupils tab → Sign Ups → Approve signups
+  frame:
+    mode: element
+    selectors: main (the approve button has focus on load; focus cleared first)
+    padding: 0
+  setup: >
+    Same bookings as image 19. The page shows the van der Merwe request under Approve
+    Appointments and the approved de Villiers booking under Recently Approved Appointments.
+  revert: none
