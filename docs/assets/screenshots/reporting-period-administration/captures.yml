@@ -45,3 +45,30 @@
 
     Focus is cleared before shooting: an early attempt caught a focus ring on
     the Markbook Entry row's "clear" button, left over from adding the window.
+
+- image: reporting-period-administration-19.png
+  captured: 2026-11-18
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: >
+    Reporting tab → Reporting Administration → Edit reporting period time
+    frames → College Michaelmas Term 2026 (period id 52,
+    /admin/reporting/timeframes/52)
+  frame:
+    mode: span
+    selectors: >
+      The "Behavioural Indicator Entry" row (the last row of Entry Time
+      Frames) through the paragraph holding the "Show the editing time
+      frames" tick box, below the table.
+    padding: 8
+  setup: >
+    None. Period 52 is the current term and none of its editing actions has
+    a time frame, so the Editing Time Frames section is hidden on load. The
+    tick box was left unticked.
+  revert: none
+  note: >
+    New image for the hidden editing section (ADAM branch
+    feature/timeframes-hide-editing, commit bfa01da22e, checked out in
+    ~/dev/adam at capture). reporting-period-administration-09.png was not
+    retaken: its period (Term 2, 2026) has editing time frames, so that
+    screen is unchanged and the image still shows all four sections.
