@@ -31,7 +31,8 @@
     would be a ~3,900px strip, against a corpus whose images are a few hundred
     pixels tall. Captured the readable region instead and left the Move control
     outstanding rather than shipping an unusable image or silently dropping a
-    requirement.
+    requirement. Decided 2026-11-18: no second image. The control is one
+    drop-down and one button, and the page now describes it in numbered steps.
 
 - image: profile-overview-customisation-16.png
   captured: 2026-08-04
