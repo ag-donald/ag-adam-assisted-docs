@@ -212,6 +212,7 @@ The **Actions** column has these links:
 -   **cancel** cancels the appointment. Any pupils who might already have signed up for this appointment (or, for a family sign-up, the families who booked it) will receive an email notifying them that the appointment has been cancelled.
 -   **reinstate** appears instead of **cancel** on a cancelled appointment, and restores it.
 -   **attendees** opens the list of people who have signed up. This link appears only once at least one person has signed up for the appointment, and only to staff with the **View Appointment Attendance** permission.
+-   **add to classes** enrols the pupils who have signed up into a class. This link appears only once at least one person has signed up for the appointment, and only to staff with the **Add signups to classes** permission. See [Adding Attendees to a Class](#adding-attendees-to-a-class).
 
 The **edit**, **cancel** and **reinstate** links are shown to staff with the **Manage Events** permission, and to the event’s organiser if they have the **Manage Own Events** permission. **cancel** and **reinstate** disappear once both the appointment and its booking period are over.
 
@@ -264,6 +265,36 @@ The option appears only if the pupil’s login group has the **View and allow si
 
 The steps that pupils and parents follow are described in [Sign-ups: A Guide for Parents and Pupils](sign-ups-a-guide-for-parents-and-pupils.md#for-pupils-signing-yourself-up). You can send that page to pupils and parents.
 
+## Adding Attendees to a Class
+
+Once pupils have signed up for an appointment, you can enrol them into a class in one step. This is useful when a sign-up decides who belongs to a group, for example a sports team or a club. ADAM treats such groups as classes. See [Class Registration](class-registration.md#class-registration).
+
+You need the **Add signups to classes** permission. You also need one of **Manage Events**, **Manage Own Events** or **View Appointment Attendance** to open the list of appointments.
+
+1.  Open the “**View appointments**” page for the event. See [Navigating through without creating a new event](#navigating-through-without-creating-a-new-event).
+2.  In the **Actions** column, click on **add to classes** next to the appointment. The link appears only once at least one pupil has signed up.
+3.  On the “**Assign Attendees to a Class**” page, choose the **Subject** and click on **Next**.
+4.  Choose the **Class** and click on **Next**.
+5.  Set the two options and choose the pupils, as described below.
+6.  Click on **Enrol pupils**.
+
+ADAM shows the message “The enrolments have been made.” and takes you back to the “View appointments” page.
+
+The form has these fields:
+
+-   **Remove all current enrolments for the class:** If you choose “Yes”, ADAM removes every pupil from the class who is not ticked in the list of pupils. If you choose “No”, the pupils already in the class stay in it. The help text shows how many pupils are in the class now, with a link to a class list.
+-   **Move pupils from other … classes:** A pupil can be in only one class per subject. If you choose “Yes”, a ticked pupil who is in another class of the same subject is removed from that class and enrolled in this one. Their marks move with them, as when you [change a pupil’s class](class-registration.md#registering-classes-for-a-pupil). If you choose “No”, that pupil stays in their current class and is not enrolled in this one.
+-   **Please select which pupils to enrol:** This lists every pupil who has signed up for the appointment, and all of them are ticked. Pupils whose sign-up is still waiting for approval are included. Untick any pupil you do not want to enrol.
+
+Both options start at “No”.
+
+> [!WARNING]
+> Removing a pupil from a class deletes their report comments for that subject in the current and future reporting periods. This happens when **Remove all current enrolments for the class** removes a pupil, and when **Move pupils from other … classes** takes a pupil out of their old class.
+
+ADAM enrols only pupils who are currently at the school. It skips any other pupil without a message. A ticked pupil who is already in the class stays in it.
+
+You cannot add attendees of a [family sign-up](#family-sign-ups) to a class, because no pupil is recorded against a family booking.
+
 ## Family Sign-ups
 
 Some bookings are made by parents rather than by pupils. The clearest example is a parent-teacher evening: the family books a meeting with a teacher, and the meeting is about their children rather than something a pupil attends. For these, set **Sign up by** to **Family (a family signs up, no pupil recorded)** when you [create the event](#creating-events).
@@ -276,7 +307,7 @@ A family sign-up differs from a pupil sign-up in these ways:
 -   **Only the organiser can approve.** A family event can require **Approval by organising teacher required**, but not the approval of another subject teacher.
 -   **Only the booking family is told.** Reminders, approvals and cancellation notices go to the family that made the booking and to no other family. Where a pupil’s parents are separated and each has their own family login, one parent cannot see, cancel or be reminded of the other parent’s booking.
 -   **Pupils never see family bookings.** Family bookings do not appear on the pupil portal.
--   **Family events cannot be used to sign up a class** or to add attendees to a class.
+-   **Family events cannot be used to sign up a class** or to [add attendees to a class](#adding-attendees-to-a-class).
 
 Once an event has bookings, you cannot change **Sign up by**. The edit form shows the current setting and the message “Cancel the existing bookings before changing who signs up.”
 
