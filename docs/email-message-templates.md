@@ -15,6 +15,17 @@ Depending on the template you are editing, you may see one or more of the follow
 
 Click on **Save Message** when done.
 
+## Restoring the Default Wording
+
+If you have changed a template and want ADAM’s original wording back, click on **edit** next to the template. Then click on **Restore default**, below the **Save Message** button. ADAM asks you to confirm. Click on **Yes** to restore the template.
+
+Restoring a template replaces its **Email Subject**, **Top of Message** and **Bottom of Message** with ADAM’s wording. The **Reply-To Email Address** is kept. Emails that ADAM sends from then on use the restored wording.
+
+The **Restore default** link only appears when the template’s subject or message differs from ADAM’s wording. A template that has never been changed, or that has just been restored, does not show it.
+
+> [!WARNING]
+> Your school’s own wording cannot be recovered once a template has been restored. If you might need it again, copy it somewhere safe before you click on **Restore default**.
+
 ## The Email Templates
 
 The table below lists the email templates that ADAM provides, grouped by the headings under which they appear on the **Manage Email Messages** screen. Every template is always listed, regardless of which modules your school uses, but a template is only ever sent when the feature it belongs to is in use. The detailed workflow behind each email is covered on the documentation page for the relevant module.
@@ -81,14 +92,14 @@ The table below lists the email templates that ADAM provides, grouped by the hea
 | Staff Alerts | Off-sport Alert | The scheduled digest of pupils currently excused from sport. |
 
 > [!TIP]
-> The wording of most of these emails can be tailored to your school in exactly the way described above — click **edit** next to the template, change the **Email Subject** and message sections, then click **Save Message**. The **Valid Merge Codes** shown on each template tell you which `{codes}` that particular email understands.
+> The wording of most of these emails can be tailored to your school in exactly the way described above — click **edit** next to the template, change the **Email Subject** and message sections, then click **Save Message**. The **Valid Merge Codes** shown on each template tell you which `{codes}` that particular email understands. To undo your changes, see [Restoring the Default Wording](#restoring-the-default-wording).
 
 ## Editing the Default Template
 
 Where schools have demanding CI requirements, ADAM allows for the customisation and modification of the default email template.
 
 > [!WARNING]
-> Kindly note that we do not provide any support for the modification or formatting of email messages. This feature is provided for your use entirely at your risk. In the event that your email template is changed in any way, our only offer of support is to replace this with the default message template.
+> Kindly note that we do not provide any support for the modification or formatting of email messages. This feature is provided for your use entirely at your risk. In the event that your email template is changed in any way, our only offer of support is the default message template. You can put it back yourself with **Restore default**, as described in [Restoring the Default Wording](#restoring-the-default-wording).
 
 Navigate to **Administration → Site Administration → Manage Email Messages**. Click on **edit** next to the **All Email** template, listed under the **General** heading.
 
