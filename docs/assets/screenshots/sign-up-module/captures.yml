@@ -1,6 +1,7 @@
 ---
 - image: sign-up-module-17.png
   captured: 2026-11-18
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
   as: staff (staff_id 1, Wade Beckley, development login bypass)
   path: Pupils tab → Sign Ups → Manage event categories → events (Parent-Teacher Meetings) → Add a new event
   frame:
@@ -25,6 +26,7 @@
     viewport; it was hidden with visibility:hidden for the shot and shown again before saving.
 - image: sign-up-module-18.png
   captured: 2026-11-18
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
   as: family (van der Merwe family, family 2304, Parent Login with ID number 123456789)
   path: Family portal → Family → Family sign-ups
   frame:
@@ -44,6 +46,7 @@
     still read "(2 spaces available)". That is how ADAM draws them.
 - image: sign-up-module-19.png
   captured: 2026-11-18
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
   as: staff (staff_id 1, Wade Beckley)
   path: Pupils tab → Sign Ups → View appointment slots for an event → Parent-Teacher Evening: Mr Smith → attendees (Thu, 26 Nov, 18:00–18:10)
   frame:
@@ -58,6 +61,7 @@
   revert: none
 - image: sign-up-module-20.png
   captured: 2026-11-18
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
   as: staff (staff_id 1, Wade Beckley)
   path: Pupils tab → Sign Ups → Approve signups
   frame:
