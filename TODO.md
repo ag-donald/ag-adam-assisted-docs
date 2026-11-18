@@ -90,51 +90,6 @@ nothing is outstanding there.
 
 ---
 
-## Messaging Centre — audiences and the admissions filter (`docs/messaging-centre.md`)
-
-Two new sections were written without pictures: *Choosing an audience* and *Messaging applicants and
-their parents*. Neither is unreadable as it stands — both are lists and steps rather than screens
-that need pointing at — but the manual illustrates every other stage of the messaging flow, so these
-two look bare by comparison.
-
-The existing captures on the page run `messaging-centre-02.png` (choosing a module) straight to
-`-03.png` (choosing a subject), which is exactly the step the *Choosing an audience* section now
-describes. Number the new images from `-20.png` upward rather than renumbering the existing set.
-
-### 1. The audience list — `messaging-centre-20.png`
-
-**Admissions tab → Messaging and Communications → Messaging Centre for Admissions**, or open the
-Messaging Centre from any tab and choose the Email module. The screen shows the sentence *"Please
-select an audience to send your email to:"* — the wording names the module, so an SMS module reads
-*"...your SMS to:"* — followed by the audiences the signed-in user may use.
-
-Capture it as a user holding **all** of the messaging permissions, so that every audience appears —
-**Pupils by class**, **Pupils by grade**, **Pupils by filter**, **Staff**, **Admissions**,
-**Admissions by filter**, **Alumni** and **Leavers**. A shorter list would be misleading, because the
-text explains that the list varies with permissions. Frame the heading and the full list of links.
-
-Place it in *Choosing an audience*, immediately after the sentence quoting the prompt.
-
-### 2. The admissions filter builder — `messaging-centre-21.png`
-
-**Admissions tab → Messaging and Communications → Messaging Centre for Admissions (by filter)**.
-
-Build a filter that matches a believable handful of demonstration applicants — a criterion or two, not
-an empty form and not the whole intake — and click **Update the filter** so the capture shows the
-result. Frame the criteria table, the **Update the filter** button, the sentence reporting how many
-records match, the names listed beneath it, and the **Next** button at the foot with its count.
-
-That single image carries the whole section: the builder, the running count, the name check and the
-way out. Place it in *By filter*, after the paragraph that ends "...as many times as you need."
-
-> [!NOTE]
-> The demonstration school must have applicants with enough variety to make a meaningful filter —
-    check that **Admissions → Lists and Labels → Admissions scratch list using filters** returns rows
-    before setting up the shot. If it does not, the demonstration data needs seeding first and that
-    is the blocker, not the screenshot.
-
----
-
 ## Medical Module — consultation form width (`docs/medical-module.md`)
 
 All the medical screenshots are captured and in place. One thing is left to come back to, and it
