@@ -132,7 +132,9 @@ The **Login time out** is the amount of time in minutes that must elapse between
 
 The **Remember logged-in machines for** setting stores a long-term cookie on a computer so that ADAM can recognise it on a later visit. It works together with the two-factor authentication settings, and both are described in [Two-Factor Authentication for Administrators](two-factor-authentication-for-administrators.md#the-settings).
 
-Some schools may chose to **Allow “Remember Me” Logins**. This will prevent the login time-out from affecting the user. Schools should be cautioned against allowing this if the computers that staff use are often left unsupervised and unlocked (consider a desktop computer in a classroom which may have pupils in unsupervised, as opposed to a laptop which is more likely to be turned off and locked). The number of days that ADAM can remember a user for can be set with the **Remember Me Duration** setting.
+Some schools may choose to let users stay logged in on a computer. The **“Remember Me” Duration** setting decides how many days ADAM remembers a login for: 7, 14, 30 (the default), 60, 90, 180 or 365 days. The days are counted from the moment the user logged in, however much the computer is used. While a login is remembered, the login time-out does not affect it. This works the same way for staff, parents and pupils, who see a “Remember my login on this computer” tick box on their login pages.
+
+Choose **Do not remember logins** to remove the tick box from the login pages. Every login then ends after the login time-out, and any login that is already remembered ends the next time that user loads a page. Schools should be cautioned against remembering logins if the computers that staff use are often left unsupervised and unlocked (consider a desktop computer in a classroom which may have pupils in it unsupervised, as opposed to a laptop which is more likely to be turned off and locked).
 
 ## Staff Logins
 
