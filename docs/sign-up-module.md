@@ -83,9 +83,9 @@ The fields have the following meanings:
 
 -   **Category Description:** This is the name of the category and is used in the displaying and sorting of events and appointments.
 -   **About this category:** This field is a note field and is not used for display purposes.
--   **Notify teacher for each sign-up:** If this option is set to “Yes”, the organising teacher will receive an email after each pupil signs up for the event. Please choose this setting carefully as a wildly popular event could cause a lot of mail to be delivered.
--   **Notify teacher of final sign-up list:** If this option is set to “Yes”, then the organising teacher will receive a list of signed-up participants when the booking time closes.
--   **Limit number of signups:** This option sets a default limit for each appointment (it is easily overridden later). This serves to prevent an activity being oversubscribed.
+-   **Default notify teacher after each sign-up:** This is the starting value of **Notify teacher on each sign-up** for each new event in the category. If it is “Yes”, the organising teacher will receive an email after each pupil signs up for the event. Please choose this setting carefully as a wildly popular event could cause a lot of mail to be delivered.
+-   **Default notify teacher of final sign-up list:** This is the starting value of **Notify teacher on sign-up close** for each new event in the category. If it is “Yes”, the organising teacher will receive a list of signed-up participants when the booking time closes.
+-   **Default Appointment Limit:** This option sets a default limit for each appointment (it is easily overridden later). This serves to prevent an activity being oversubscribed.
 
 Click on “**Save this Sign-up Category**” to save it.
 
@@ -116,6 +116,9 @@ Please note that only future appointments count towards a pupil’s limit. If an
 
 -   **Sign up by:** Choose **Pupil (each pupil signs up)** for an ordinary event. Choose **Family (a family signs up, no pupil recorded)** when parents book as a family, such as parent-teacher meetings. See [Family Sign-ups](#family-sign-ups) for how these differ.
 -   **Limit per family:** For a family sign-up, this is how many appointments one family may book for this event. It is ignored for pupil sign-ups.
+
+![](assets/screenshots/sign-up-module/sign-up-module-17.png)
+
 -   **Limit to classes:** The event and its appointments will only be shown to pupils who are members of the selected classes. If no classes are selected, it will be available to all pupils. It may be useful, for example, when setting up appointments for pupils to see teachers to limit those appointments to appear for pupils taught by the organising teacher. For a family sign-up, the event is shown to families who have a child in one of the selected classes.
 -   **Confirmation reminders:** Choose when ADAM should send a reminder to the people who signed up, or **No reminders**.
 -   **Send confirmation reminders to:** Choose whether reminders go to the **Pupils**, their **Families**, or both. For a family sign-up, this setting is ignored: the reminder always goes to the family that made the booking, and to no one else.
@@ -287,6 +290,8 @@ Parents book family events on the family portal, under the **Family** heading, b
 
 The steps that parents follow are described in [Sign-ups: A Guide for Parents and Pupils](sign-ups-a-guide-for-parents-and-pupils.md#for-parents-booking-for-your-family). You can send that page to parents. For the permission that families need, see [Giving families access](#giving-families-access).
 
+![](assets/screenshots/sign-up-module/sign-up-module-18.png)
+
 ### Seeing Who Has Booked
 
 On the list of appointments for a family event, click on the **attendees** link in the **Actions** column, as for any other event. This link appears only once the appointment has at least one booking, and it needs the **View Appointment Attendance** permission. For a family event the list has these columns:
@@ -295,6 +300,8 @@ On the list of appointments for a family event, click on the **attendees** link 
 -   **Pupils:** the family’s children that the booking concerns, with their grades.
 -   **Details:** when the family booked and, if the event needs approval, who approved it and when.
 -   **Actions:** **remove** cancels the booking and tells the family it was removed. If the booking is waiting for approval and you may approve it, **approve** and **reject** also appear.
+
+![](assets/screenshots/sign-up-module/sign-up-module-19.png)
 
 The link **Scratch list of the pupils** opens a scratch list of every child the bookings concern.
 
@@ -309,6 +316,8 @@ This link is shown to staff with the **Manage Events** permission, and to the ev
 ### Approving Family Bookings
 
 If a family event needs the organiser’s approval, the organiser receives an email when a family books, with a link to the approvals page. On the **Pupils** tab, under the **Sign Ups** heading, click on **Approve signups**. Family requests appear next to pupil requests. The **Attendee** column shows the family name followed by the children the booking concerns. Click **approve** or **reject**. The family receives an email either way.
+
+![](assets/screenshots/sign-up-module/sign-up-module-20.png)
 
 The organiser needs the **Approve designated signups** permission. Staff with **Approve any signups** can approve any family booking.
 

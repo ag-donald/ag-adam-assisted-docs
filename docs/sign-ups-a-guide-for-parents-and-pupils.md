@@ -41,6 +41,8 @@ Each list is a table with three columns: **Appointment** (the date, time or name
 
 An event may be open only to families with a child in certain classes. If none of your children is in those classes, the event does not appear on your list.
 
+![](assets/screenshots/sign-up-module/sign-up-module-18.png)
+
 ### Booking an Appointment
 
 1.  Under **Sign Up for Other Events**, click the event’s bar to open it.
