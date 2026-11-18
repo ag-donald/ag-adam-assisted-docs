@@ -1,16 +1,18 @@
 # Health Monitoring
 
-With the reopening of schools amidst the Covid-19 pandemic, schools are required to do daily monitoring of pupils’ temperatures. ADAM brings together features of the Medical and Absentee modules to allow schools to quickly record this information in their system as well as mark the pupils as present at school, or sent home.
+Health Monitoring lets staff examine many pupils, one after another, and record at the same time whether each pupil stays at school. It brings together the Medical and Absentee modules. Each check saves a [medical examination](medical-module.md#medical-examinations) against the pupil and sets the pupil’s attendance for the day: present, or absent with a reason.
+
+A school might use it for a temperature check at the gate, a screening before a sports event, or any other check that is done for a large group of pupils at once.
 
 ## Using the Health Monitoring feature
 
 Navigate to **Pupils → Medical Records → Health Monitoring**.
 
-Choose a [Medical Examination](medical-module.md#medical-examinations) that will be conducted. For the Covid-19 pandemic, a simple examination which records a temperature reading has been added to all servers. You can add your own medical exams to this list which can include a number of other readings if required.
+Under **Medical Exam**, choose the [Medical Examination](medical-module.md#medical-examinations) that will be conducted. Any examination type can be used, and each one asks for its own readings. Every server has a **Covid-19** examination type and a **Temperature** reading, both added during the pandemic. You can rename that type, or [add your own](medical-module.md#managing-the-medical-examinations) with the readings your check needs.
 
 ![](assets/screenshots/health-monitoring/health-monitoring-01.png)
 
-ADAM also gives the option to **show the most recent results** from the various types of examinations. This will allow the user conducting the health monitoring to see if any prerequisite examinations have been conducted and when they were conducted.
+Under **Show recent results from**, you can choose one or more other examination types. For each pupil, ADAM then shows when that pupil last had each of those examinations. This lets the person doing the check see whether an earlier examination has been done, and when. Click **Perform Health Monitoring** to begin.
 
 You will be given the opportunity to search for a pupil. You can either type in a few characters of their name or click on the option to scan a QR code. [Student cards](student-cards.md#student-cards) with QR codes can be printed and laminated for each student. Alternatively, any pupil with access to ADAM’s pupil portal will be able to get an electronic version of their QR code for their phone.
 
@@ -26,7 +28,9 @@ Once a pupil has been identified, complete the necessary health information and 
 
 ![](assets/screenshots/health-monitoring/health-monitoring-02.png)
 
-If you selected to have the most recent results of another medical examination shown, ADAM shows a message displaying when that medical examination was conducted. An option to **show details** is provided below and allows only users with the permission to see medical exam results to see the results. The idea here, specifically for the Covid-19 pandemic, is to ensure that pupils have submitted a health declaration prior to their temperature being scanned.
+If you chose examination types under **Show recent results from**, ADAM lists them under **Previous Medical Examinations** and says when each was last conducted for this pupil. If the pupil has never had one, ADAM says “No recent medical examinations were found.” Staff with the **View Medical Examination Report** permission also see a **show details...** link, which shows the readings from that examination. Other staff see only the date.
+
+For example, a school can ask families to complete a health declaration [on the portal](medical-module.md#parents-and-pupils-completing-medical-examinations), and then check at the gate that each pupil’s declaration has been done before taking the pupil’s temperature.
 
 The medical examination then begins asking its necessary questions. In the example above, these are “Temperature” and “Fatigue”.
 
@@ -51,4 +55,4 @@ For users who are recording the results of Health Monitoring, there is only one 
 For staff that are viewing the medical examination report, they should be given the permission **Wellbeing → Medical Administration → View Medical Examination Report** (medical\_exam\_report).
 
 > [!WARNING]
-> Kindly note that this permission allows the staff member to see *all* medical exam information, not just that related to Covid-19 or the health monitoring. Thus this permission should be given to appropriately authorised staff members only.
+> Kindly note that this permission allows the staff member to see *all* medical exam information, not only the examinations recorded through Health Monitoring. Thus this permission should be given to appropriately authorised staff members only.

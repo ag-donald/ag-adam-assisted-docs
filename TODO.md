@@ -348,9 +348,6 @@ these:
   way to reach **Book a family**. So staff cannot make the first booking for a family appointment,
   and the page now says a parent must make it in the portal. Decide with development whether the
   link should always show for family events. If it changes, update both sections.
-- `docs/health-monitoring.md`: the introduction (lines 3, 9 and 29) is still framed around
-  Covid-19, as the medical examination types section was until 2026-11-18. Rewrite it as a general
-  description.
 
 ---
 

@@ -138,6 +138,12 @@ Each time, after you add or edit a reporting period’s information, or click on
 > [!WARNING]
 > The deadlines listed under **Editing Time Frames** require specific *editing* permissions to be assigned to staff. See “**[Security Administration](security-administration-for-staff.md#security-administration-for-staff)**”.
 
+If none of the editing actions has a time frame for this reporting period, ADAM hides the **Editing Time Frames** section, so that schools that do not use editing teams do not see a block of empty lines. A **Show the editing time frames** tick box appears below the table instead. Tick it to show the editing actions.
+
+![](assets/screenshots/reporting-period-administration/reporting-period-administration-19.png)
+
+While any editing action has a time frame for the reporting period, the section is always shown and the tick box does not appear. If you clear the last editing time frame, the section is hidden again.
+
 Each line represents a reporting action, which are discussed below, and on each line can be multiple windows, each with a start and end time. The start times are listed in green below the dates on which they take effect, and the end times are shown in red.
 
 As you make changes to the time frames below, be aware that the changes you make take effect immediately.
@@ -145,6 +151,8 @@ As you make changes to the time frames below, be aware that the changes you make
 ### Adding Time Frames
 
 To add a window to any particular line, click on the **add** option that appears on that line. A pop-up window will appear. Choose the appropriate dates and times that the window should be active for and click on the **Add time frame** button that appears at the bottom of the window.
+
+To add a window to one of the editing actions when the **Editing Time Frames** section is hidden, first tick **Show the editing time frames** below the table. Once the time frame is added, the section stays shown.
 
 ![](assets/screenshots/reporting-period-administration/reporting-period-administration-11.png)
 
