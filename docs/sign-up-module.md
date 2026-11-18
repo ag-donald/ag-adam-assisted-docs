@@ -102,7 +102,12 @@ This will display any events that have been created for this category. Because o
 The fields on this page are explained as follows:
 
 -   **Event name:** Type in the name of the event. See the [examples above](#terminology-event-categories-vs-events-vs-appointments) for ideas.
--   **Category:** This should already reflect the category of the event, but you can change it if you need to.
+-   **Category:** This shows the category you chose. To move the event to a different category, edit the event after you have saved it.
+-   **Appointment Type:** This sets the kind of appointments the event has, and so which details you enter for each appointment when you [create the appointment slots](#creating-appointment-slots). Choose one of these:
+    -   **Team or group sign-up:** several separate options, each with its own description and a date when it finishes, such as sports teams or clubs.
+    -   **Once-off event:** a single appointment with a date, a start time and an end time, such as a presentation by a visiting speaker.
+    -   **Single daily appointment:** one appointment on each of a number of days, with a date but no time, such as hot lunches.
+    -   **Multiple daily appointments:** appointments with a date, a start time and an end time, several on one day or spread over several days, such as parent-teacher meetings.
 -   **Organising Teacher:** Please select the organising teacher from the list. This teacher will receive attendance lists and more from the appointments that will be scheduled later. If you may only manage your own events, this is always you.
 -   **Event information:** The information for this event will be shown to pupils (or, for a family sign-up, to families) and should explain what the event is about.
 -   **Limit pupil signups:** This will prevent pupils from signing up for too many appointments. If these are schedules for one-on-one appointments, for example, you may wish that a pupil only signs up for only one of them. This setting is ignored for family sign-ups.
@@ -114,6 +119,7 @@ Please note that only future appointments count towards a pupil’s limit. If an
 -   **Limit to classes:** The event and its appointments will only be shown to pupils who are members of the selected classes. If no classes are selected, it will be available to all pupils. It may be useful, for example, when setting up appointments for pupils to see teachers to limit those appointments to appear for pupils taught by the organising teacher. For a family sign-up, the event is shown to families who have a child in one of the selected classes.
 -   **Confirmation reminders:** Choose when ADAM should send a reminder to the people who signed up, or **No reminders**.
 -   **Send confirmation reminders to:** Choose whether reminders go to the **Pupils**, their **Families**, or both. For a family sign-up, this setting is ignored: the reminder always goes to the family that made the booking, and to no one else.
+-   **Notify teacher on each sign-up** and **Notify teacher on sign-up close:** These start with the settings of the event category. See [Adding a new Signup Category](#adding-a-new-signup-category) for what they do. You can change them for this event.
 -   **Appointment Approval:** It may be possible that your appointment or sign-up requires teacher approval. If this is the case, it is possible to set either the organising teacher or another teacher that teaches the pupil, to approve the appointment. A family sign-up can only use **No approval required** or **Approval by organising teacher required**. ADAM will not save a family event that asks for another subject teacher’s approval.
 
 For example, it may be necessary for the pupil’s Home Room Teacher to approve sign up to an extension activity. In this case, one would choose “Approval by another subject teacher required” and in the “**Approving Subject Teacher**” dropdown, choose the “Home Room” subject. When a pupil signed up for this event, an email would be sent to their Home Room teacher requesting their approval. The subject that is in this list is otherwise ignored.
@@ -122,25 +128,26 @@ Click on the “**Save this event**” button.
 
 ### Creating Appointment Slots
 
-After saving a new event, you are automatically taken to this screen:
+After saving a new event, ADAM takes you to the “**View appointments**” page for the event and shows the message “The event has been created.” The event has no appointments yet. Click on “**Add new appointments**”.
 
-![](assets/screenshots/sign-up-module/sign-up-module-05.png)
+The “**Add appointments**” page shows a table with one row for the first appointment. The columns of the table depend on the **Appointment Type** that you chose for the event. To use a different type, edit the event and change its **Appointment Type**.
 
-This screen allows you to choose the type of appointment you require. There are four options. Each displays slightly different information and is displayed slightly differently to the user. Use the descriptions to guide you to which appointment type would best suit your needs.
+Instead of adding appointments one by one, you can click on “**Copy appointments from another event**” on the “View appointments” page. This copies the future appointments of another event in the same category.
 
-We will work through each example:
+We will work through each appointment type:
 
-#### Team sign-up
+#### Team or Group Sign-up
 
 ![](assets/screenshots/sign-up-module/sign-up-module-06.png)
 
--   In this instance, the **Description** is the most important option since it will differentiate it from the other appointments.
+-   In this instance, the description (**Descrp.**) is the most important option since it will differentiate it from the other appointments.
+-   The **Finish Date** and **Finish Time** are when the activity finishes, for example the end of the season.
 -   The **Limit** will default to what you set in the event category. You can override it here on an appointment-by-appointment basis.
 -   Please ensure to choose the signup **start** and **end** dates and times carefully. ADAM currently does not check for poorly chosen entries (such as things that close before they open). When the signup end date is reached, ADAM will automatically send the organising teacher a list of attendees.
 
-Below the table is an option to “**Add a new appointment**”. Clicking on this will duplicate the row, including the signup start and end dates. Before you add new appointments, set the sign-up start and end times to appropriately before you add new appointments!
+Below the table is an option to “**Add a new appointment**”. Clicking on this will duplicate the row, including the signup start and end dates. Set the sign-up start and end dates and times on the first row before you add more appointments, so that each new row copies the right values.
 
-Use the “**del**” option on any row to remove the appointment, except that ADAM won’t let you remove the last row in the appointment table. Every event must have at least one appointment in order to be useful!
+Click on the bin icon at the end of any row to remove the appointment, except that ADAM won’t let you remove the last row in the appointment table. Every event must have at least one appointment in order to be useful!
 
 Here is an example of what a “Team sign-up” set of appointments may look like:
 
@@ -156,7 +163,7 @@ This is a single event which generally has a time and date associated with it, b
 
 With this particular appointment type, there is no option to add a second appointment.
 
-#### Daily Signup
+#### Single Daily Appointment
 
 This option allows you to create similar appointments on successive days.
 
@@ -164,15 +171,13 @@ For this particular type of appointment, a description is not necessary since it
 
 ![](assets/screenshots/sign-up-module/sign-up-module-09.png)
 
-Clicking on the “Add next day” option will add a new appointment for the next *weekday* date. It will also advance the sign-up *end date* by a day also, but keep the signup start date the same. In the example below, on the second entry, ADAM kept the sign-up start date for the event the same (2 Feb), but changed the end date to a day later (9 Feb).
+Clicking on the “**Add next day**” option will add a new appointment for the next day, including Saturdays and Sundays. Weekend rows are shaded darker so that you can spot them. It will also advance the sign-up *end date* by a day also, but keep the signup start date the same. In the example below, on the second entry, ADAM kept the sign-up start date for the event the same (2 Feb), but changed the end date to a day later (9 Feb).
 
 ![](assets/screenshots/sign-up-module/sign-up-module-10.png)
 
-Clicking on the option for “**Add for rest of reporting period**” will again add in options for all *weekday* appointments from the last date in the form until the end of the reporting period.
+Clicking on the option for “**Add for rest of reporting period**” will add an appointment for every day, weekends included, from the last date in the form until the end of the reporting period.
 
-If you wish to add in weekend appointments, these can be done manually at the bottom of the form. It does not matter that these might be out of order. Simply click on “Add next day” (which will add a “week day”) and then change the date of that appointment to be a weekend.
-
-Additionally, if you wish to delete certain appointments (e.g. no Fridays), then this must also be done manually by clicking on the “**del**” option next to the rows that you don’t want. Each event must have at least one appointment, so you won’t be able to delete the last entry.
+If you do not want appointments on certain days (e.g. weekends or Fridays), click on the bin icon next to each row that you don’t want. Each event must have at least one appointment, so you won’t be able to delete the last entry.
 
 #### Multiple Daily Appointments
 
@@ -180,7 +185,7 @@ This option allows you to set starting and finishing times for your appointment 
 
 ![](assets/screenshots/sign-up-module/sign-up-module-11.png)
 
-By clicking on the “**add a new consecutive appointment**” option, ADAM will create a new appointment that starts where the previous one ends and for the same duration as the previous appointment. Note that it does not affect the signup start or end time:
+By clicking on the “**Add a new consecutive appointment**” option, ADAM will create a new appointment that starts where the previous one ends and for the same duration as the previous appointment. Note that it does not affect the signup start or end time:
 
 ![](assets/screenshots/sign-up-module/sign-up-module-12.png)
 
@@ -192,19 +197,20 @@ Therefore you may have to adjust the appointment time before adding in new conse
 
 Once you’re happy with your appointments, click on “**Save appointments**”. Importantly, nothing is saved until you click on that button.
 
-![](assets/screenshots/sign-up-module/sign-up-module-14.png)
-
-Clicking on the option “see the list of appointments for this event” will show you the list of appointments we created:
+ADAM then takes you back to the “**View appointments**” page, which lists the appointments we created:
 
 ![](assets/screenshots/sign-up-module/sign-up-module-15.png)
 
-Next to each option, the number of people that are signed up for the event are shown, and the options to edit or cancel the event.
+The **Attendance** column shows who has signed up for each appointment. If between one and nine people have signed up, it lists their names. Otherwise, it shows the number signed up and the limit, for example “0 / unlimited”.
 
-To see a list of people who are attending the event, click on the **number of attendees**.
+The **Actions** column has these links:
 
-To edit the appointment, click on the “**edit**” link. *CURRENTLY THIS DOES NOT WORK*.
+-   **edit** changes the appointment’s details, such as its name, date, times, limit and booking dates.
+-   **cancel** cancels the appointment. Any pupils who might already have signed up for this appointment (or, for a family sign-up, the families who booked it) will receive an email notifying them that the appointment has been cancelled.
+-   **reinstate** appears instead of **cancel** on a cancelled appointment, and restores it.
+-   **attendees** opens the list of people who have signed up. This link appears only once at least one person has signed up for the appointment, and only to staff with the **View Appointment Attendance** permission.
 
-To cancel the appointment, click on the “**cancel**” link. Any pupils who might already have signed up for this appointment will receive an email notifying them that the appointment has been cancelled.
+The **edit**, **cancel** and **reinstate** links are shown to staff with the **Manage Events** permission, and to the event’s organiser if they have the **Manage Own Events** permission. **cancel** and **reinstate** disappear once both the appointment and its booking period are over.
 
 ## Navigating through without creating a new event
 
@@ -283,7 +289,7 @@ The steps that parents follow are described in [Sign-ups: A Guide for Parents an
 
 ### Seeing Who Has Booked
 
-On the list of appointments for a family event, click on the **number of attendees** as usual. This needs the **View Appointment Attendance** permission. For a family event the list has these columns:
+On the list of appointments for a family event, click on the **attendees** link in the **Actions** column, as for any other event. This link appears only once the appointment has at least one booking, and it needs the **View Appointment Attendance** permission. For a family event the list has these columns:
 
 -   **Family:** the family that booked.
 -   **Pupils:** the family’s children that the booking concerns, with their grades.
@@ -295,6 +301,8 @@ The link **Scratch list of the pupils** opens a scratch list of every child the 
 ### Booking for a Family
 
 Staff can book an appointment on a family’s behalf, for example when a parent phones the school. On the attendee list of a family event, click on **Book a family**, search for the family by either parent’s first or last name, and choose the family from the results.
+
+Because the attendee list opens only for an appointment that already has a booking, you can book a family this way only into an appointment that has at least one booking. Staff cannot make the first booking for an appointment in a family event: a parent must book it on the family portal.
 
 This link is shown to staff with the **Manage Events** permission, and to the event’s organiser if they have the **Manage Own Events** permission. When staff book for a family, ADAM ignores the booking dates and the family’s limit. Only staff with **Manage Events** can book a family into an appointment that is already full.
 

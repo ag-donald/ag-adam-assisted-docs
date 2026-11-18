@@ -4,12 +4,21 @@ ADAM has the ability to ask staff, families and pupils to agree to, or decline, 
 
 ## Creating Online Agreements
 
-Online Agreements can be created for one of four different audiences:
+Online Agreements can be created for one of these audiences:
 
+-   Families
+-   Families (by Pupil Grade)
+-   Families (by Pupil Subject)
+-   Families (by Pupil Class)
+-   Families (by Privilege Group)
+-   Families (by Registration Status)
 -   Pupils
--   Current Parents
--   Admissions Parents
+-   Pupils (by Grade)
+-   Pupils (by Privilege Group)
+-   Pupils (by Registration Status)
 -   Staff
+-   Staff (by Privilege Group)
+-   Applicants
 
 Agreements can be drafted and saved via **Administration → Online Agreements → Manage Online Agreements**.
 
@@ -21,13 +30,19 @@ When setting up a new agreement, the following screen is displayed:
 
 The agreement should be given a **name**. This is used to identify the broad contents and purpose of the document.
 
-The **audience** can then be chosen. Pupils, Current Parents and Staff are prompted to agree to the terms the next time they log in to ADAM. The **Admissions Parents** audience is a special case: applicants do not log in to ADAM, so they are shown any outstanding agreements as a step *during* the [online application](online-applications.md#responding-to-online-agreements) — after they have confirmed their email address and before they reach the application form.
+The **audience** can then be chosen. Parents, pupils and staff are prompted to agree to the terms the next time they log in to ADAM. The **Families** audiences are answered by parents, the **Pupils** audiences by pupils and the **Staff** audiences by staff.
 
-The next two fields determine whether acceptance is required and which responses are acceptable. If “**Acceptance Required**” is set to “Yes”, then ADAM provides a single button for the user to click on which reads “I agree to the conditions above”. If this option is set to “No”, then an additional button is shown which reads “I do NOT agree to the conditions above”.
+An audience with “by” in its name is narrowed to part of that group. When one is chosen, ADAM shows a further field for the selection: **Grades**, **Subjects**, **Classes**, **Pupil Privilege Groups**, **Staff Privilege Groups** or **Registration Statuses**. Select the entries the agreement applies to. For example, an agreement for **Families (by Pupil Grade)** with Grade 8 selected is shown to the families of Grade 8 pupils.
+
+The **Applicants** audience is a special case: applicants do not log in to ADAM, so they are shown any outstanding agreements as a step *during* the [online application](online-applications.md#responding-to-online-agreements) — after they have clicked **Start Application** and before they reach the application form.
+
+The next two fields determine whether acceptance is required and which responses are acceptable. If “**Acceptance Required**” is set to “Yes”, then ADAM provides a single button for the user to click on which reads “I agree to the conditions stated above.” If this option is set to “No”, then an additional button is shown which reads “I DO NOT agree to the conditions stated above.”
 
 However, should the second option be set to “No”, ADAM will also consider the possible responses listed in the next box: “**Acceptable Responses**”. These should be listed one-per-line. There can be as many as you’d like. Note that the first option will appear as a bright blue button (the “default” option) and any others will appear as a light blue button. The first option, therefore, should be the one that you expect most of your audience to choose.
 
-We can now set whether we would like the text of the agreement and the response chosen by the parent to be **emailed** to them.
+**Agreement is Rescindable** sets whether a parent may withdraw their family’s response later and respond again. The default is “No”. Parents see the **rescind response** link only when this is set to “Yes”. See [Rescission of Online Agreements](#rescission-of-online-agreements) below.
+
+We can now set, with **Email Responses**, whether we would like the text of the agreement and the response chosen by the parent to be **emailed** to them.
 
 > [!WARNING]
 > Note that changing this setting on old agreements will cause users to be emailed a copy, even if they responded a long time ago.

@@ -4,7 +4,7 @@
 
 In order to send emails from ADAM’s [Messaging Centre](messaging-centre.md#messaging-centre), and to receive automated notifications from ADAM, it will be necessary to link ADAM up to an SMTP service provider through which it can send emails.
 
-Navigate to **Administration → Site Administration → Edit Site Settings**. On the **Communications** tab, scroll down to the **Email Settings** section.
+Navigate to **Administration → Site Administration → Edit site settings**. On the **Communications** tab, scroll down to the **Email Settings** section.
 
 ![](assets/screenshots/communication-settings-in-adam/communication-settings-in-adam-01.png)
 

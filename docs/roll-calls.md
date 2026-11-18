@@ -167,9 +167,10 @@ If pupils are marked as absent in the absentee module, they will show as absent 
 #### Leave Module
 
 Any pupil who is listed as being on leave in the Leaves module (mostly used by boarding schools) will show as being on
-leave in their roll calls. Note that in the [Site Settings](changing-site-settings.md#changing-site-settings)(**Cron Settings → Roll
-Call → Reason to show for Leaves**) you must select the absentee reason that ADAM will use for a pupil on Leave. You
-might need to create your own [absentee reason](absentee-administration.md#absentee-reasons)for this reason, first.
+leave in their roll calls. You must select the absentee reason that ADAM will use for a pupil on leave: in the
+[Site Settings](changing-site-settings.md#changing-site-settings), on the **Attendance** tab under the **Roll Call**
+heading, set **Reason to show for Leaves**. You might need to create your own
+[absentee reason](absentee-administration.md#absentee-reasons) for this reason, first.
 
 #### Medical Module
 
@@ -181,7 +182,7 @@ heading, set **Reason to show for Off Sport**.
 
 ## Configuring Roll Calls
 
-In the [Site Settings](changing-site-settings.md#changing-site-settings), The **Cron Settings** tab has a section with **Roll Call**
+In the [Site Settings](changing-site-settings.md#changing-site-settings), the **Attendance** tab has a section with **Roll Call**
 settings.
 
 ![](assets/screenshots/roll-calls/roll-calls-13.png)
@@ -544,8 +545,8 @@ The delay also handles bulk-marking: if a teacher opens a roll call and marks 10
 The dispatcher that sends alerts runs as an automatic cron job. By default it runs every minute, so the time between an
 alert becoming due (after its delay) and it being delivered is at most one minute plus normal email delivery time.
 
-The cadence is controlled by a setting under **Administration → Site Administration → Edit Site Settings → Absences →
-Roll Call → Absence Alerts**:
+The cadence is controlled by a setting under **Administration → Site Administration → Edit site settings**, on the
+**Attendance** tab under the **Roll Call** heading:
 
 - Setting name: Cron interval (minutes)
 - Internal name: cron\_rollcallabsencealerts\_interval

@@ -358,6 +358,45 @@ needs a person.
 
 ---
 
+## Pictures made out of date by the text corrections of 2026-11-18
+
+The text of these pages was corrected against ADAM on 2026-11-18. The images below still show the
+old screens. Recapture each on the screenshot site under the same file name.
+
+- `medical-module-03.png` (*Adding and Editing Medical Examination Types*): the example is a
+  “Covid-19: Self-declaration Form”, which the rewritten section no longer uses. The help text under
+  **Allow Completion via Parent and Pupil Portal** now says “permissions … pupil permissions groups”,
+  not “privileges … pupil privilege groups”. Capture the **Add** form for an ordinary examination
+  type, such as a height and weight check.
+- `online-agreements-01.png` (*Creating Online Agreements*): has no **Agreement is Rescindable** row.
+  Choose an audience with “by” in its name, such as **Families (by Pupil Grade)**, so that its
+  selection field shows as well.
+- `online-applications-13.png` (*Application Process: Procedure for Staff*): dates from 2018. The
+  current **Manage Online Applications** page has an **Unconfirmed Applications** table, **Email**
+  and **Phone** columns, and **resend link**, **edit** and **expire** on incomplete applications. The
+  old image also shows a staff member's own name as a family name.
+- `roll-calls-13.png` (*Configuring Roll Calls*): the **Roll Call** heading on the **Attendance**
+  tab now starts with **Cron interval (minutes)** and ends with **Reason to show for Leaves** and
+  **Reason to show for Off Sport**. The image has none of the three.
+- `goal-setting-01.png` (*Permissions required for Goal Setting*): says “privilege” where ADAM now
+  says “permission”. Wait until the **View academic goals** help-text fault below is settled, or the
+  new image will show the misleading description.
+- `sign-up-module.md`: the images date from 2015 and use the old styling.
+  - `sign-up-module-04.png` (the **Create New Event** form) has no **Appointment Type**, **Sign up
+    by**, **Limit per family**, **Send confirmation reminders to** or notify fields, and shows
+    **Category** as a drop-down. On the create form it is now read-only text.
+  - `sign-up-module-06.png` and `-07.png` (team or group appointments) have no **Finish Date** or
+    **Finish Time** columns.
+  - `-06`, `-07`, `-08`, `-09` and `-11` show a “del” link instead of the bin icon, and a “No limit”
+    option where the form now offers “Unlimited”. `-10`, `-12` and `-13` were not checked and are
+    probably the same.
+  - `sign-up-module-15.png` (the appointment list) has no **Add new appointments**, **Copy
+    appointments from another event** or **attendees** link.
+  - `sign-up-module-05.png` (the old type-choice screen) and `sign-up-module-14.png` (the old
+    confirmation screen) are no longer used by the page. Delete the files.
+
+---
+
 # Missing Written Content
 
 ## Parent and Pupil Portal — Today's Birthdays (`docs/parent-and-pupil-portal.md`)
@@ -401,55 +440,25 @@ Two pupils genuinely have a birthday today, so no date of birth needs moving —
 with birthdays are **Yasmin Butcher** and **Coral Till**, in other families, which is exactly why the
 school-wide scope matters for this image.
 
-## Staff pages — wording found to be out of date while writing the parent guides
+## Staff pages — wording still to correct
 
-Writing the parent and pupil guides (issue 20) meant checking each portal screen against the ADAM
-source. The guides follow the code. These staff-page passages, outside the sections that were
-rewritten, do not, and need correcting:
+The corrections found while writing the parent guides (issue 20) were made on 2026-11-18, except
+these:
 
-- `docs/online-agreements.md`, *Creating Online Agreements*: the buttons read “I agree to the
-  conditions stated above.” and “I DO NOT agree to the conditions stated above.”, not “…conditions
-  above”. The audiences are **Families**, **Families (by Pupil Grade / Pupil Subject / Pupil Class /
-  Privilege Group / Registration Status)**, **Pupils**, **Pupils (by Grade / Privilege Group /
-  Registration Status)**, **Staff**, **Staff (by Privilege Group)** and **Applicants**, not
-  “Current Parents” and “Admissions Parents”. `docs/online-applications.md` also says “Admissions
-  Parents” (lines ~32 and ~544). The field walkthrough leaves out **Agreement is Rescindable**
-  (default No), which decides whether parents see **rescind response** at all.
-- `docs/goal-setting.md`, outside *Capturing Goals*: the page still says ADAM fills in goals itself
-  and shows a “created by ADAM” note. ADAM no longer writes the note, and it suggests a goal beside
-  each subject. Inside *Capturing Goals: Instructions for Pupils* (line ~105), “Goals start empty” is
-  wrong today: every goal opens at 60 (see item 6 under *Portal faults*). Say what the pupil sees
-  once that fault is settled. The
-  *Permissions* section presents **View academic goals** as what lets pupils and parents see goals
-  in the mark book; in the portal, any pupil or linked parent who can open the mark book sees them,
-  and **View academic goals** is checked only by the portal API. The menu option needs **Capture
-  academic goals**.
-- `docs/document-repository.md`, line ~71: the menu option is **Manage parent and pupil uploads**;
-  the longer wording on the page is its tooltip.
-- `docs/online-applications.md`, *Confirming the Details*: a used or expired start link opens
-  ADAM’s **Invalid Link** page. *This link has expired or has already been used.* appears only
-  when the confirmation page itself is reloaded or submitted after expiry. Opening the link without
-  clicking **Start Application** does not use it up. *Completing the Application Form* says parents
-  have “the 7 day window”; see the development note below. *Application Process: Procedure for
-  Staff* lists only **edit** for **Incomplete Applications**; there is also **resend link**.
-- `docs/medical-module.md`, *Adding and Editing Medical Examination Types* (~lines 207–215): still
-  framed around Covid-19, and refers to “selecting ‘Yes’ to this question” without naming **Show on
-  Summary Parent and Pupil Portal**.
-- `docs/passkey-authentication.md` and `docs/logging-on-to-adam.md`, the staff passkey steps: ADAM
-  does not ask for a name when a passkey is registered. It names the passkey after the
-  authenticator (for example “Windows Hello”), or “Passkey registered on <date>” if it does not
-  recognise it; the user can rename it afterwards.
-- `docs/sign-up-module.md`, *Creating Events* and *Creating Appointment Slots*: the **Create New
-  Event** form now has an **Appointment Type** field (**Team or group sign-up**, **Once-off event**,
-  **Single daily appointment**, **Multiple daily appointments**). Saving the event goes straight to
-  **View appointments**, not to a screen for choosing the type. The field list leaves the type out,
-  and the text and `sign-up-module-05.png` describe the old screen. `sign-up-module-04.png` probably
-  predates the field too; check it.
-- `docs/sign-up-module.md`, *Seeing Who Has Booked*: there is no number to click. The attendee list
-  opens from an **attendees** link in the **Actions** column of the appointment list, and that link
-  appears only once the appointment has at least one booking. So for an empty appointment, staff
-  cannot reach **Book a family** from the appointment list at all. Decide with development whether
-  the link should always show for family events, then document what ADAM does.
+- `docs/goal-setting.md`, *Capturing Goals: Instructions for Pupils* (line ~105): “Goals start
+  empty” is wrong today: every goal opens at 60 (see item 6 under *Portal faults*). Say what the
+  pupil sees once that fault is settled.
+- `docs/sign-up-module.md`, *Seeing Who Has Booked* and *Booking for a Family*: the **attendees**
+  link appears only once an appointment has at least one booking, and the attendee list is the only
+  way to reach **Book a family**. So staff cannot make the first booking for a family appointment,
+  and the page now says a parent must make it in the portal. Decide with development whether the
+  link should always show for family events. If it changes, update both sections.
+- `docs/sign-up-module.md`: the **add to classes** link on the appointment list is not documented.
+  Its permission is **Add signups to classes** (`Signup.php:119`). Read the enrolment flow in
+  `AppointmentAdminController.php` before writing the section.
+- `docs/health-monitoring.md`: the introduction (lines 3, 9 and 29) is still framed around
+  Covid-19, as the medical examination types section was until 2026-11-18. Rewrite it as a general
+  description.
 
 ---
 
@@ -459,13 +468,15 @@ None of these is documented as a feature. The guides are written so that they st
 is fixed; check the wording named against each when it is.
 
 1. **Online Applications — the form link ignores the expiry setting.** The emailed application-form link is
-   fixed at 7 days and 20 opens (`ApplicationStartConfirmation.php:106-107`, and the staff
-   **resend link** at `OnlineApplications.php:406`), whatever **Expire applications (days)** is
+   fixed at 7 days and 20 opens (`ApplicationStartConfirmation.php:30-31,144-145`, the staff
+   **resend link** at `OnlineApplications.php:405-407`, and an application started through the API
+   at `Applications.php:567-572`), whatever **Expire applications (days)** is
    set to. The default **New Application** email promises `{expiredays}` days, so a school that
-   sets 14 days promises 14 and the link dies at 7.
+   sets 14 days promises 14 and the link dies at 7. Reminder emails already set the link to last
+   until the application expires (`ApplicationReminders.php:206-215`).
 2. **Online Applications — a misleading message.** An expired, rejected or approved application
    opened through a working link says “Sorry - this application has already been submitted.”
-   (`Applications.php:195`). The parent guide tells parents who see it without having submitted to
+   (`OnlineApplicationFlowController.php:294,404,503,661,918`). The parent guide tells parents who see it without having submitted to
    contact the school.
 3. **Document uploads — no size warning on the family page.** The family upload page does not load
    `filesize.js` (`DocRepExternalUpload.php:479-482`); only the pupil page does (line 295). A
@@ -492,10 +503,38 @@ is fixed; check the wording named against each when it is.
    appointment with a booking shows an **add to classes** link (`Appointments.php:1273-1278`). It
    checks only that there are attendees and that the user holds `signup_classregistration`, not
    whether the event is a family event. The manual says family events cannot be used to add
-   attendees to a class. Not tested to see what the link then does. This one is on a staff screen,
-   not the portal.
+   attendees to a class. The link leads nowhere: every step of the enrolment flow refuses a family
+   event and returns to **View appointments** with “Family sign-up events cannot be used for class
+   sign-up or class lists.” (`AppointmentAdminController.php:202-207`). The design spec
+   (`docs/superpowers/specs/2026-06-23-family-signup-staff-side-design.md:79-83`) says to hide the
+   link for family events, and the plan has a `!$isFamily` guard that did not ship. This one is on a
+   staff screen, not the portal.
 7. **Passkeys — wording.** The **Passkeys** page tells users to use the “Sign in with a passkey”
-   button; the button on the log-in pages reads **Log in with a passkey**.
+   button (`PasskeyManagementView.php:79`); the button on the log-in pages reads **Log in with a
+   passkey**. The manual uses the button's label.
+
+---
+
+## Faults found while correcting the staff pages on 2026-11-18 (for development)
+
+1. **Medical — staff instructions are never shown.** The examination type form saves **Instructions
+   shown to staff** (`ExamTypesController.php:52`), and its help text says they appear at the top of
+   the staff form. Nothing reads `type_instructions_staff`: the staff examination form and Health
+   Monitoring show no instructions. `docs/medical-module.md` carries a warning. Remove it once fixed.
+2. **Online Agreements — applicants never see Acceptable Responses.** The application flow always
+   shows the two standard buttons (`OnlineApplicationFlowController.php:213-219`); the portal uses
+   the school's own responses (`OnlineAgreements.php:368-397`). `docs/online-agreements.md`
+   describes **Acceptable Responses** with no exception. Decide whether this is intended, then
+   document it or fix it.
+3. **Goal setting — the View academic goals help text.** It says the permission lets pupils and
+   parents see goals against their results (`Goals.php:329`). In the portal it only affects the API
+   (`PortalResultsController.php:182`). The help text should say so.
+4. **Sign-ups — a typo.** The **cancel** confirmation says “has bee cancelled”
+   (`Appointments.php:1255`).
+5. **API — Families/email.** `Families/email:get` returns `email_modify` in ISO 8601 through the
+   DTO; `Families/email:patch` returns the raw row, presumably `Y-m-d H:i:s`. Neither format was
+   tested against a real response. `Families/email:get` with a member other than primary or
+   secondary reaches an unhandled `match` (`FamilyEmail.php:579`) and probably returns 500.
 
 ---
 
@@ -508,93 +547,6 @@ application, and this page is written against the fixed behaviour:
   note above the list accounts for them; and
 - the ADAM home page no longer redirects a staff member to a prompt that would refuse them, so a
   request made before the permission existed simply waits instead of breaking the page.
-
----
-
-## Heads of Subject — one question for development
-
-The **Heads of Subject** section is now written, on `docs/subjects.md` between *Editing a Subject* and
-*Changing the Order of Subjects*. The cross-links from `docs/mark-book-administration.md` and
-`docs/reporting-period-administration.md` now point at it instead of restating the two-halves rule,
-and both screenshots are captured and placed. One thing is left.
-
-### Answered: `rep_aggregated_subject` follows teaching
-
-Development confirmed that **Manage aggregated result calculations from subjects taught** is meant to
-follow the subjects a staff member **teaches**. The section as written is correct, and its note
-stays.
-
-The permission has been taken out of `SubjectHeadController::SUBJECT_SCOPED_PRIVILEGES` on the ADAM
-branch `fix/aggregated-subject-not-head-scoped`, which is not merged yet. Once it ships, saving a
-head who holds only this permission shows the "no head-of-subject privileges" warning. If
-*Heads of Subject* lists the permissions that stop that warning, make sure this one is not among
-them. The original intention was a separate head-of-subject version of this permission. That has
-not been built, so do not document it. Remove this entry once the page has been checked.
-
----
-
-## Medical Module — answers from development
-
-Development has answered all eleven questions. The fixes from the ADAM branch
-`fix/medical-module-permissions` have been merged into ADAM's `main` branch, so the pages can now be
-changed. Each answer says what the page needs. The two portal answers are done: *Parents and Pupils
-Viewing Their Results* no longer carries the warning or the five-exam note. Remove this section once
-the pages match.
-
-### Permission checks on the wrong permission — none of the four was intended
-
-In every case the page itself checked the right permission and the menu or link did not. The menus
-and links now match their pages.
-
-1. **Consultation Report** now appears to anyone with `medical_view`
-   (**View medical information**). That is what the report page has always required.
-   `medical_exams_add` has nothing to do with it.
-2. **Add a new off-sport entry** on the pupil's **Off Sport** tab now needs
-   `medical_offsport_manage`, like every other off sport control.
-3. The three **stock transaction report** menu options now need `medical_transaction_view`
-   (**View Medical Transactions Report**). The fault also ran the other way: staff with
-   **Manage Medications** saw the three options and were refused on clicking them. *Change needed:*
-   remove the caveat from `docs/medical-stock.md`. The reports need **View Medical Transactions
-   Report** alone, and **Manage Medications** no longer shows them.
-4. A staff member's **Medical Records** section now needs `medical_view_staff` throughout, for the
-   photograph as well as the **Consultations** tab. `medical_view` is the pupil permission and no
-   longer affects staff records. *Change needed:* remove the caveat and the advice to grant both.
-
-A fifth menu option had the same fault: **View All Consultations for Chargeable Entities** checked
-`medical_consultations_add` while its page checks `medical_view`. It now checks `medical_view`. If
-the manual says who can see that option, check the wording.
-
-### Two fields labelled "Transaction Type" — fixed
-
-The second field now reads **Stock Group** on both reports. *Change needed:* remove the note and use
-**Stock Group** as the field name.
-
-The by-item report leaving out the stock group filter is deliberate. You choose one stock item, and
-an item belongs to exactly one group, so the filter would add nothing.
-
-### The Group radio on the stock item form — works, no caveat needed
-
-Editing a stock item's group saves correctly. The form code renames every field to its own column
-before the page is drawn, so the wrong name in the constructor never reached the browser. The only
-effect was a duplicated HTML id, which is now fixed. Nothing on `docs/medical-stock.md` changes.
-
-### `consultation_follow_up` — unused, stays out of the manual
-
-The field has not been on the consultation form since 2017, and nothing in ADAM reads it. The
-stray default has been removed. The field stays off the form unless a school asks for it. Do not
-document it.
-
-### `medical_exam_report`'s description — fixed
-
-It now reads "This allows a staff member to view a report of medical examinations." If the manual
-quotes permission descriptions, update this one.
-
-### The off sport alert form's thresholds — fixed
-
-The help text now reads "Staff members selected here will always receive a full list of the pupils
-on the off sport list for this reason." and "If a subject is selected, then a teacher of that
-subject will be notified if anyone in their class is on the off sport list for this reason." Nothing
-needs to change, unless the manual quotes either sentence.
 
 ---
 
@@ -653,57 +605,11 @@ sentence saying a category can be typed into **or new:** to start a new one.
 
 ---
 
-## Roll Calls — a stale settings path
+## API pages — the portal and profile endpoints are undocumented
 
-Not medical, but found from the medical side. In `docs/roll-calls.md`, the *Leave Module* subsection
-sends the reader to "**Cron Settings → Roll Call → Reason to show for Leaves**". That category no
-longer exists: `rollcall-leave-reason` sits on the **Attendance** tab under the **Roll Call** heading,
-next to `rollcall-offsport-reason`. The neighbouring *Medical Module* subsection, added at the same
-time, uses the correct path, so the two now disagree on the same screen.
-
-Worth a sweep of the whole manual for "Cron Settings" and for "**Cron** tab" while somebody is in
-there — the settings screen was reorganised into the categories in
-`ADAM\Support\Settings\SettingCategory` and other pages are likely to be stale in the same way.
-
----
-
-## API pages — known errors in the entries moved from the old appendix
-
-The API appendix was split into one page per module on `docs/api-split`. The entries were moved
-as they were, without rewriting, so these errors came across with them. Each was checked against
-the ADAM source on 2026-10-26.
-
-### 1. `Families/email:get` shows columns that no longer exist (`docs/api-families.md`)
-
-The example response includes `email_bulkmail`, `email_reports` and `email_alerts`. ADAM no
-longer has these columns: an address's communication choices are now preferences, set through
-`Families/emailpreferences:patch`. The `Families/email:patch` entry on the same page lists the
-record's real properties (`email_id`, `email_family_id`, `email_member`, `email_address`,
-`email_description`, `email_maillog`, `email_modify`), so the two entries disagree. Remove the
-three properties from the example, and check whether the response should also show the
-preferences.
-
-### 2. Relationship values on the `FamilyRelationships` get entries (`docs/api-family-relationships.md`)
-
-`FamilyRelationships::isValidRelationship` accepts exactly `biological`, `adoptive parent`,
-`step parent`, `foster parent`, `guardian`, `sponsor`, `relative` and `other`, all in lower case.
-The list under `FamilyRelationships/family:get` shows `stepparent` instead of `step parent`, and
-the lists under both `FamilyRelationships/family:get` and `FamilyRelationships/pupil:get` show
-`Other` instead of `other`. The list under `FamilyRelationships/family:patch` is already correct;
-copy it.
-
-### 3. `Families/email:delete` is worded as if it adds an address (`docs/api-families.md`)
-
-Checked against `FamilyEmail::apiDeleteEmail` and `FamilyEmail::removeAddress`:
-
-- The summary says "Remove an email address **to** a family member"; it removes it **from** one.
-- The `(primary|secondary)` parameter says "Which parent the email address should be **added
-  to**"; it is the parent the address is removed from.
-- The response line says only "200 if deleted successfully, 404 if not found". On success,
-  response.error is `<address> was removed from the family`, not `OK`. A request with no `email`
-  field, or a database error, also returns 404 (`Email address '' not found` for the missing
-  field). The entry does not say that deleting the address also deletes its communication
-  preferences.
+`scripts/audit_api_endpoints.py`, run on 2026-11-18, reports 48 undocumented endpoints: every
+`portal/*` endpoint and `profile/me:get`. No page declares the `portal` or `profile` prefix. Decide
+where they belong (see the `auditing-api-docs` skill) and write the entries.
 
 ---
 

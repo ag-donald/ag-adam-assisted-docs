@@ -68,7 +68,7 @@ ADAM can allow parents, and potentially pupils, to upload documents to ADAM for 
 
 ADAM allows you to create a number of different upload spaces and, within each of these, specify a number of files, with descriptions, for parents to upload. All uploads are optional and cannot be forced.
 
-Navigate to **Administration → Document Repository → Manage parent and pupil uploads to the document repository**.
+Navigate to **Administration → Document Repository → Manage parent and pupil uploads**.
 
 ![](assets/screenshots/document-repository/document-repository-05.png)
 

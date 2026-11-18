@@ -183,7 +183,7 @@ Using Records and Points Alerts, ADAM is able to send emails to staff on a regul
 
 ### Timing of the Alerts
 
-To configure the time at which ADAM sends Records and Points alerts, navigate to **Administration → Site Administration → Edit Site Settings**. On the Site Settings page navigate to the **Cron Settings** tab and scroll down to the **Alerts** section. Within that is a time selector for  **Records and Points alerts times**.
+To configure the time at which ADAM sends Records and Points alerts, navigate to **Administration → Site Administration → Edit site settings**. On the Site Settings page navigate to the **Notifications & Scheduling** tab and scroll down to the **Records and Points Alerts** section. Within that is a time selector for  **Records and Points alerts times**.
 
 Click to select a time to send the alert. It is possible to send alerts multiple times each day. Alerts will only be sent for items that were added since the last time the assessments were run.
 

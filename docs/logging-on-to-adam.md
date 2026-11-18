@@ -4,7 +4,7 @@
 
 A passkey is a credential stored on the user’s device (phone, tablet or computer) that signs the user in to ADAM using a fingerprint, face recognition or device PIN, instead of a password. Passkeys are resistant to phishing, are not reusable across sites, and never travel across the internet, so they are considerably safer than passwords. ADAM supports passkeys for staff, parents and pupils.
 
-Each user may enrol more than one passkey — for example, one on their phone and one on their work laptop — and each passkey can be named so that it is easy to identify later. Passkeys never replace a user’s password and Two-Factor Authentication settings: they are an additional, optional way to log in, and the password and one-time PIN remain available as a fallback.
+Each user may enrol more than one passkey — for example, one on their phone and one on their work laptop — and each passkey has a name so that it is easy to identify later. Passkeys never replace a user’s password and Two-Factor Authentication settings: they are an additional, optional way to log in, and the password and one-time PIN remain available as a fallback.
 
 For a more detailed walkthrough, see the dedicated [Passkey Authentication](passkey-authentication.md#passkey-authentication) page.
 
@@ -30,9 +30,10 @@ The card is hidden whenever the staff member signs in with a passkey (and on adm
 To register a new passkey:
 
 1.  On the Passkeys page, click Register a new passkey.
-2.  Enter a name for the passkey when prompted (for example, “My iPhone” or “Office laptop”). The name is only used to identify the passkey on this management page.
-3.  The browser will ask the operating system to create a passkey. On a phone or tablet this typically requires a fingerprint or face scan; on a desktop it may use Windows Hello, Touch ID, a security key, or a paired phone.
-4.  Once the device confirms the gesture, the passkey is saved and listed on the management page.
+2.  The browser will ask the operating system to create a passkey. On a phone or tablet this typically requires a fingerprint or face scan; on a desktop it may use Windows Hello, Touch ID, a security key, or a paired phone.
+3.  Once the device confirms the gesture, the passkey is saved and listed on the management page.
+
+ADAM does not ask for a name. It names the passkey after the device or service that stores it (for example, “Windows Hello”). If ADAM does not recognise it, the passkey is named “Passkey registered on” followed by the date. The user can rename the passkey afterwards (for example, to “My iPhone” or “Office laptop”); see [Managing Your Passkeys](#managing-your-passkeys). The name is only used to identify the passkey on the management page.
 
 ### Setting Up a Passkey for Parents and Pupils
 

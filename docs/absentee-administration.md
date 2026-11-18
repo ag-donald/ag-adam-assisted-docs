@@ -125,7 +125,7 @@ ADAM is able to send out an email reminder to staff who might not have recorded 
 
 This alert can only be sent to teachers of the “Default Subject” - which is normally a home room or registration class in most schools.
 
-To enable the reminders, navigate to the Site Settings (**Administration → Site Administration → Edit Site Settings**) and, on the **Attendance** tab, scroll down to the **Absentee Alerts** heading.
+To enable the reminders, navigate to the Site Settings (**Administration → Site Administration → Edit site settings**) and, on the **Attendance** tab, scroll down to the **Absentee Alerts** heading.
 
 Add in a **Time at which to send absentee recording reminders**.
 
@@ -201,13 +201,13 @@ It is possible for more than a single time to be chosen and in this instance, AD
 
 ADAM sends out the Absentee Alerts from the configured default “From” address (see [Communication Settings](communication-settings-in-adam.md#communication-settings-in-adam)). However, it is often useful for the person in charge of absentees to get responses from teachers who may wish to report errors or changes to the absentees (i.e. a pupil arrives late, yet was marked as absent).
 
-To set a specific reply address, navigate to **Administration → Site Administration → Edit Site Settings** and look on the **Attendance** tab under the **Absentee Alerts** heading for the **Absentee Alert Reply Address**. Add in the email address of the person who should receive replies to the alerts.
+To set a specific reply address, navigate to **Administration → Site Administration → Edit site settings** and look on the **Attendance** tab under the **Absentee Alerts** heading for the **Absentee Alert Reply Address**. Add in the email address of the person who should receive replies to the alerts.
 
 ## Absentee Recording Report
 
 ADAM is able to send an emailed report to one or more email addresses with a summary of the absentees for the day. This will include a list of all the default classes, the number of pupils present, absent and unaccounted for.
 
-To enable the reminders, navigate to the Site Settings (**Administration → Site Administration → Edit Site Settings**) and, on the **Cron** tab, scroll down to the **Absentees** heading.
+To enable the reminders, navigate to the Site Settings (**Administration → Site Administration → Edit site settings**) and, on the **Attendance** tab, scroll down to the **Absentee Alerts** heading.
 
 Add in a **Time at which to send absentee recording report**. Also add in one or more email addresses in the **Recipients for absentee recording report** setting.
 

@@ -84,15 +84,12 @@ Each report is split into a section per charge type, so the pupil transactions, 
 
 All three share the same criteria:
 
--   a **Start** and **End** date and time;
--   a **Transaction Type**, from **Issue**, **Direct Issue**, **Adjustment**, **Received** and **Write Off**;
+-   a **Start Date** and **End** date and time (on the report by stock item the first is labelled **Start**);
+-   a **Transaction Type**, from **Issue**, **Direct Issue**, **Adjustment**, **Received** and **Write Off** (the grouped report offers fewer; see below);
 -   a **Consultation Type** and a **Charge Type**, which filter on the consultation a transaction belongs to;
 -   an **Output Format** of either **Web Browser** or **Excel**.
 
-The first two reports add a stock group filter offering **Consolidated**, **Chargeable**, **Pharmacy** and **Old**, so a school that only bills for one group can exclude the rest.
-
-> [!NOTE]
-> That stock group filter is labelled **Transaction Type** on screen, which is the same label as the list above it. It is the second of the two. This is a known labelling error rather than a second set of transaction types.
+The first two reports add a **Stock Group** filter offering **Consolidated**, **Chargeable**, **Pharmacy** and **Old**, so a school that only bills for one group can exclude the rest. The report by stock item does not need one, because the item you choose belongs to a single group.
 
 All of the multiple-selection lists start with everything selected, so a report run without narrowing anything down returns the lot. Click **View Report** to produce it.
 
@@ -108,7 +105,7 @@ It defaults to the previous calendar month, which is the period most schools bil
 
 ![](assets/screenshots/medical-stock/medical-stock-04.png)
 
-Only **Issue** and **Direct Issue** are selected by default here, since receipts and write-offs are not chargeable to anybody. This is the report to use for billing.
+The **Transaction Type** list here offers only **Issue** and **Direct Issue**, since receipts and write-offs are not chargeable to anybody. This is the report to use for billing.
 
 ### Stock Transaction Report (by Stock Item)
 
@@ -127,12 +124,12 @@ Either may be a core field or a [custom field](database-field-management.md#data
 
 ## Permissions
 
-Two permissions govern this page, both under the **Wellbeing** group in the [staff permissions](security-administration-for-staff.md#changing-the-permissions-of-a-group):
+Three permissions govern this page, all under the **Wellbeing** group in the [staff permissions](security-administration-for-staff.md#changing-the-permissions-of-a-group):
 
 | Permission | What it allows |
 | --- | --- |
-| **Medical Administration → Manage Medications** (`medical_medication_manage`) | Managing stock items, receiving, adjusting and writing off stock, and reaching the three transaction reports. |
+| **Medical Administration → Manage Medications** (`medical_medication_manage`) | Managing stock items, and receiving, adjusting and writing off stock. |
+| **Medical Administration → View Medical Transactions Report** (`medical_transaction_view`) | Running the three transaction reports. |
 | **Medical Administration → Manage Chargeable Entites** (`medical_billing_manage`) | Adding and editing chargeable entities. |
 
-> [!NOTE]
-> A third permission, **View Medical Transactions Report** (`medical_transaction_view`), also exists and guards the reports themselves. Because the menu options that lead to them currently check **Manage Medications** instead, a staff member given only **View Medical Transactions Report** has no menu entry to click. Give the bursar **Manage Medications** until this is resolved.
+**Manage Medications** and **View Medical Transactions Report** are independent. A bursar who only bills for medication needs **View Medical Transactions Report** alone, and **Manage Medications** does not show the reports.
