@@ -348,9 +348,9 @@ still shows the old email from “Random High School”, in an old mail client.
 
 The screenshot site cannot produce the email yet. The randomiser replaced the body of the
 password reset email template with placeholder Latin, so the email that reaches Mailtrap has no
-greeting, no text and no link. Restore the template first, through ADAM's email message editor
-(the `family_passwordreset` message, and `family_password_new` for a parent without a password),
-using the wording a school receives by default. Then request a link through **Parent Login → New
+greeting, no text and no link. Restore the template first: open it in ADAM's email message editor
+(the `family_passwordreset` message, and `family_password_new` for a parent without a password)
+and click **Restore default**. Then request a link through **Parent Login → New
 account? Forgotten password?** with ID number `123456789` (Dr Alec van der Merwe, family 2304), and
 capture the email as it appears in Mailtrap. It must show the school name and a
 `testing+…@adam.co.za` address only. The capture browser cannot reach Mailtrap, so this capture
