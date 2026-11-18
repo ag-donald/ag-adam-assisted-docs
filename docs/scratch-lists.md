@@ -74,6 +74,27 @@ It is also possible to produce scratch lists with families as the primary area o
 
 This is essentially no different from the pupil grade list mentioned above, except that families are listed first and in order of family surname.
 
+### Building a Filter
+
+Three of the lists above start with a filter: **Scratch list using filters**, **Admissions scratch list using filters** and **Staff scratch list using filters**. All three use the same filter builder. The Messaging Centre uses it too, for its **Pupils by filter** and **Admissions by filter** audiences.
+
+The builder is a table with the columns **Field**, **Comparison** and **Values**. Each row holds one criterion. When the page first opens there are no criteria, so every pupil, applicant or staff member matches.
+
+To add a criterion:
+
+1.  In the empty row at the bottom of the table, choose a field from the drop-down in the **Field** column. The list includes any custom fields your school has added.
+2.  Choose a comparison in the **Comparison** column, such as “is equal to”, “includes the text” or “is greater than”. The comparisons offered depend on the field. A field with a fixed set of options offers only “is equal to” and “is not equal to”. Text, date and number fields offer more.
+3.  Enter the value to compare against in the **Values** column. The value box appears once you have chosen a comparison. For a field with a fixed set of options, choose the option from the drop-down instead. The comparison “is included in the range” shows two boxes, for the lowest and the highest value.
+4.  Click on **Update the filter**.
+
+ADAM reports how many records match, for example “12 records match the criteria supplied.” If 200 or fewer match, ADAM lists their names underneath, so that you can check that you have the right people. If more than 200 match, ADAM shows “There are too many records to display.” A new empty row appears below your criteria, ready for the next one.
+
+A record must meet every criterion to match. Adding a criterion can never make the list longer. The builder cannot find records that meet one criterion or another.
+
+To remove a criterion, set its **Field** back to “(Select a field)” and click on **Update the filter**.
+
+When the list is right, click on the button at the bottom of the page. It reads **Next – with 12 pupils selected** (or **staff selected** on the staff list), with your own count in place of 12. A scratch list then goes on to the options described under [Choosing the List Options](#choosing-the-list-options). The Messaging Centre goes on to its list of recipients.
+
 ## Choosing the List Options
 
 Each scratch lists will have a slightly different path from the options you choose above. This manual will not attempt to describe them all! However, once you have made the choices for which subject, teacher, class, grade and so on, there are some standard options that you will be faced with at the end which bear some discussion. The options might change for pupils, alumni, families and staff, but the principles will remain the same.

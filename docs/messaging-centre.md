@@ -25,7 +25,7 @@ Having chosen a module, ADAM asks you to select an audience — *“Please selec
 
 -   **Pupils by class** — choose a subject, then the classes within it. This is the option described in the rest of this section, and is the one most people use.
 -   **Pupils by grade** — choose one or more grades.
--   **Pupils by filter** — build a filter, in the same way you would for a [scratch list](scratch-lists.md#scratch-lists), and message everybody it matches.
+-   **Pupils by filter** — build a filter, in the same way you would for a [scratch list](scratch-lists.md#building-a-filter), and message everybody it matches.
 -   **Staff** — choose from the staff of the school.
 -   **Admissions** — applicants and their parents, chosen by the year and the grades they are entering and by their registration statuses.
 -   **Admissions by filter** — applicants and their parents, chosen with a filter. See [Messaging applicants and their parents](#messaging-applicants-and-their-parents) below.
@@ -110,13 +110,16 @@ This is the quickest way to reach a whole intake, but it can only ask those thre
 
 #### By filter
 
-Choose the **Admissions by filter** audience, or navigate to **Admissions → Messaging and Communications → Messaging Centre for Admissions (by filter)**.
+Choose the **Admissions by filter** audience, or navigate to **Admissions → Messaging and Communications → Messaging Centre for Admissions (by filter)**. ADAM shows the heading **Message Admissions by Filter**.
 
-Instead of the three fields above, you build a filter — exactly the same filter builder you would use for a [scratch list](scratch-lists.md#scratch-lists), and with the same fields available. That means you can select applicants on anything ADAM records about them, including **Date of Application**, **Months Since Application**, **Previous School**, **Siblings At School**, and any custom fields your school has added.
+Instead of the three fields above, you build a filter. It is the same filter builder that the scratch lists use, with the same fields, and it is described in full under [Building a Filter](scratch-lists.md#building-a-filter). That means you can select applicants on anything ADAM records about them, including **Date of Application**, **Months Since Application**, **Previous School**, **Siblings At School**, and any custom fields your school has added.
 
-Add your criteria and click on **Update the filter** to see how many applicants match. As long as the filter matches 200 applicants or fewer, ADAM lists their names underneath so that you can check you have caught the right people. Adjust the criteria and update the filter as many times as you need.
+1.  Add your criteria, one to a row, in the **Field**, **Comparison** and **Values** columns. When the page first opens there are no criteria, so every applicant matches.
+2.  Click on **Update the filter**. ADAM reports how many applicants match, for example “12 records match the criteria supplied.” As long as the filter matches 200 applicants or fewer, ADAM lists their names underneath so that you can check you have caught the right people. An applicant is included only if they meet every criterion.
+3.  Adjust the criteria and update the filter as many times as you need. A new empty row appears below your criteria each time, ready for another one.
+4.  When you are satisfied, click on the button at the bottom of the page. It reads **Next – with 12 pupils selected**, with your own count in place of 12.
 
-When you are satisfied, click on the button at the bottom of the page — it reads **Next – with 12 pupils selected**, or however many your filter has matched — and ADAM shows you the list of recipients in the usual way, from which you continue to the composer.
+ADAM shows you the list of recipients in the usual way, from which you continue to the composer.
 
 > [!NOTE]
 > This audience only ever sees applicants. Pupils already enrolled at the school are reached with the **Pupils by filter** audience instead, which offers the same filter builder over current pupils. Neither audience can see the other’s pupils, and the two are controlled by different permissions.
