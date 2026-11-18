@@ -207,12 +207,24 @@ The list names every current staff member, the layout they are on, and how they 
 -   **own choice** — they chose this layout themselves.
 -   **assigned** — an administrator put them on it.
 -   **following the default** — they have no layout of their own, so they get the school's default.
+    ADAM shows the name of the default layout in brackets.
 
 ![](assets/screenshots/profile-overview-customisation/profile-overview-customisation-15.png)
 
-To move people, tick them in the list, choose where they should go next to **Move selected to:**,
-and click on **Move selected**. The destination can be any layout, or **Follow the school default**,
-which takes the layout off their record so that they follow the default from then on.
+Click on any column heading to sort the list by that column. Sorting by **Layout** or **How** brings
+together the people you are likely to move as a group.
+
+To move people:
+
+1.  Tick each person in the **Select** column. The tick box in the column heading ticks everybody
+    in the list.
+2.  Below the list, next to **Move selected to:**, choose where they should go. The destination can
+    be any layout, or **Follow the school default**, which takes the layout off their record so
+    that they follow the default from then on.
+3.  Click on **Move selected**.
+
+ADAM reports how many staff members it moved, and shows the list for the whole staff again. If
+nobody is ticked, ADAM reports “Nobody was selected.” and moves nobody.
 
 This is how you would give, say, every register teacher the layout suited to their work, without
 waiting for each of them to find it for themselves.

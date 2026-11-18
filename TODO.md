@@ -76,29 +76,6 @@ there too, after the paragraph that begins “After you click **Next**, ADAM tha
 
 ---
 
-## Profile Overview Layouts (`docs/profile-overview-customisation.md`)
-
-The demonstration school now has three pupil layouts — **Default** (the default), **Admin Layout**
-and **Medical** — and they appear in the captures already in the manual. Use the same three for
-anything below.
-
-### 1. The **Move selected to:** control — still needs a picture
-
-`profile-overview-customisation-15.png` is captured and in place. It shows the **Pupil Overview: who
-uses what** heading, the sentence about moving someone, the table, and all three **How** states —
-**own choice**, **assigned** and **following the default** — which was the point of it.
-
-What it does not show is the **Move selected to:** control and its **Move selected** button. Those sit
-at the foot of the screen, and with 97 staff on the demonstration school and no filter on the list,
-they are some 3,900px below the heading. One image spanning both would be an unreadable strip.
-
-**A decision is needed** rather than another capture attempt: either add a second image (say
-`profile-overview-customisation-17.png`) framing just the **Move selected to:** control at the bottom,
-placed in *Seeing and Changing Who Uses What* after the paragraph that describes it, or accept that
-the control is adequately described in prose and drop the requirement.
-
----
-
 ## Two-Factor Authentication (`docs/two-factor-authentication.md`,
 `docs/two-factor-authentication-for-administrators.md`)
 
