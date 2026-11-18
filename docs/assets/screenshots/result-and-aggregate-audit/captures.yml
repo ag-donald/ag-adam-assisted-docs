@@ -41,7 +41,7 @@
   revert: none (randomised data; the original names were placeholders)
 
 - image: result-and-aggregate-audit-03.png
-  captured: 2026-11-17
+  captured: 2026-11-18
   host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
   as: staff
   path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026, subject 7 (Physical Sciences) opened
@@ -50,16 +50,19 @@
     selectors: >
       From the top of details#result-audit-7 to the bottom of the
       .result-audit__table in its first .result-audit__column (the term
-      side). The year-to-date side, and the note under the term table, are
-      below the crop.
+      side). The year-to-date side is below the crop.
     padding: 8
   setup: See result-and-aggregate-audit-02.png for the assessment renames.
   revert: none
   note: >
-    The crop stops above the note "This breakdown does not reproduce ADAM's
-    mark exactly", which appears here although stored and recalculated
-    match. That is recorded in TODO.md as a question for development, and
-    left out so the image stays right if the note is fixed.
+    Recaptured 2026-11-18 on development at f8b0439615 (phinor/adam#598),
+    which shortens column names that do not fit ("Class…", "Practi…",
+    "Cla…") and puts each bracket's mark and weighting on a second line.
+    The first capture, on 2026-11-17, showed the names printed over each
+    other and the Continuous Assessment caption cut off at the left edge.
+    The term side has no bracket weighted zero, so it has no "Show the
+    sections weighted zero" tick box, and the "does not reproduce" note no
+    longer appears under it.
 
 - image: result-and-aggregate-audit-04.png
   captured: 2026-11-17
@@ -77,7 +80,7 @@
     Compulsory and Weighting columns are not shown.
 
 - image: result-and-aggregate-audit-05.png
-  captured: 2026-11-17
+  captured: 2026-11-18
   host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
   as: staff
   path: Pupil profile of pupil 5250 → academic records → result and aggregate audit, College Trinity Term 2026
@@ -90,3 +93,8 @@
     padding: 8
   setup: none
   revert: none
+  note: >
+    Recaptured 2026-11-18 on development at f8b0439615 (phinor/adam#598).
+    The aggregate chart uses the same drawing code as the result audit's
+    chart, so the "Group 1" caption is now on two lines ("Group 1" above
+    "84.27 · 300 of 650"). The first capture was on 2026-11-17.

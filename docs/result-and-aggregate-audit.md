@@ -67,10 +67,12 @@ The detail explains the term mark first and the year-to-date mark second. On a w
 Each column in the chart is one input to the mark. For a term mark, the inputs are usually assessments. For a year-to-date mark, they are an assessment category in a term, a whole term, or an assessment, depending on the year-to-date calculation.
 
 - A column’s **width** is the input’s share of the mark. The widths add up to 100%.
-- A column’s **height** is the input’s percentage. The percentage is written above the column, and the input’s name and share below it.
+- A column’s **height** is the input’s percentage. The percentage is written above the column, and the input’s name and share below it. When a column is too narrow for its name, the name is shortened and ends in “…”, for example “Practi…”. When the column is too narrow for its share or its percentage as well, those are left out.
 - The **dashed line** marks the final mark.
-- The **brackets** below the columns group them, for example by assessment category. Each bracket gives its name, its mark and its weighting.
+- The **brackets** below the columns group them, for example by assessment category. Each bracket’s caption has two lines: its name, then its mark and its weighting, for example “Continuous Assessment” above “79.33 · 25 of 100”. A caption that would run into the caption beside it moves down to a second row. When there is still no room, only the bracket’s name is shown, or no caption at all.
 - An input that was absent, or that was not counted (for example by a “best of” rule), has no share, so it is left out of the chart. The table still lists it.
+
+Hover over a column to see the input’s full name, its percentage and its share of the mark. Hover over a bracket to see its whole caption. The table below the chart also gives every name in full.
 
 A wide column that sits far below the dashed line is pulling the mark down. A column shown in red meets the warning rule below.
 
@@ -88,12 +90,14 @@ The table lists the same inputs as the chart, grouped under a row for each brack
 
 Each bracket’s row gives its weighting (for example “weighting 75 of 100”), its share, and the mark without it. The last row gives the final mark.
 
+A bracket that the calculation gives no weight starts hidden in the table, together with its inputs. It has no width in the chart either, so it does not show there. A year-to-date mark often has several such brackets: a reporting period with no category weightings in the year-to-date calculation counts for nothing. To show them, tick the box under the table. It counts the hidden brackets, for example **Show the 7 sections weighted zero**, or reads **Show the section weighted zero** when there is only one. When every bracket is weighted zero, none is hidden.
+
 A row is red when leaving it out would **raise** the mark by 5 marks or more. An assessment is also red when it sits inside a red bracket and is below the final mark. A category is often split over several assessments, and none of them may move the mark much on its own while the category as a whole does.
 
 Two notes may appear under the table:
 
 - *“This grade requires every category to have a mark. ‘Without’ figures ignore that rule.”* The **Without** column answers “what if this input did not exist?”, not “what would ADAM print?”.
-- *“This breakdown does not reproduce ADAM’s mark exactly, so some figures may be incomplete.”* Rely on the stored and recalculated marks at the top, and treat the chart and table as a guide.
+- *“This breakdown does not reproduce ADAM’s mark exactly, so some figures may be incomplete.”* The chart and table do not add up to the recalculated mark, beyond the small differences that rounding causes. Rely on the stored and recalculated marks at the top, and treat the chart and table as a guide.
 
 ## Aggregate Audit
 
