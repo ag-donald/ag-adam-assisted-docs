@@ -105,7 +105,7 @@ When editing an assessment, a list of previous changes is shown below the assess
 
 Once you’ve added an assessment, there is a link provided to capture the results immediately. However, it might not be a convenient time to capture the results at that point and so you will need to come back later to do so.
 
-Navigate to **Assessment → Assessment Administration → Change task results**. Or, from the Assessment Management screen (**Assessment → Assessment Administration → Manage assessments and weightings**), choose the **results** action that appears next ot the assessment:
+Navigate to **Assessment → Assessment Administration → Change task results**. Or, from the Assessment Management screen (**Assessment → Assessment Administration → Manage assessments and weightings**), choose the **results** action that appears next to the assessment:
 
 ![](assets/screenshots/mark-book-administration/mark-book-administration-13.png)
 
@@ -117,7 +117,9 @@ For each student, simply type in the number of marks scored for each question. T
 
 You will notice in the illustration above that all the pupils are absent (“Ab”). If a pupil scores 0 (zero) for the test, simply enter “0” for each question and their total will display as 0.
 
-The comment box allows a teacher to make a comment about a pupil’s performance in the assessment. However, teachers should be aware that if the mark book is open to parents and pupils, then they will be able to see the comment that has been entered here. Be polite and constructive!
+The comment box allows a teacher to make a comment about a pupil’s performance in the assessment. When you click or tab into it, the box grows to show the whole comment, so you can read back what you have typed. When you move on to the next pupil, it shrinks back to one line, and a comment that is too long for that line ends in “…”. Printing the screen shows every comment in full. A comment is a single paragraph: pressing Enter in a comment box saves the results, as it does in the mark boxes, and line breaks in pasted text become spaces.
+
+However, teachers should be aware that if the mark book is open to parents and pupils, then they will be able to see the comment that has been entered here. Be polite and constructive!
 
 Once you have finished capturing the marks, remember to click on the “Save results” button at the bottom of the screen.
 
