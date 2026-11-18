@@ -532,6 +532,28 @@ photograph uploaded as a JPEG is therefore sent as PNG data with `Content-Type: 
 `docs/api-pupils.md` already warns readers to treat the data as PNG and not to trust the header.
 Once ADAM sends `image/png`, remove that warning.
 
+## Report editing permissions — the period lists (for development)
+
+Found while documenting the report editing windows for issue #41, on ADAM `origin/main`. The
+reporting screen checks time through `ReportEntryAccess`, but the **Reporting Period** lists on
+the Report comments screens and **Modify multiple report comments** choose their periods
+separately (`ReportCommentsAdminController::getPeriodType`,
+`GenericCommentController::getReportingFilter`).
+
+1. **Only Edit report comments adds editing-only periods.** A period whose only open window is
+   Report Mark Editing, Report Level Editing or Behavioural Indicator Editing is listed for
+   holders of **Edit report comments**, but not for staff who hold only **Edit report marks**,
+   **Edit report levels**, **Edit behavioural indicators** or **Edit report marks for headed
+   subjects**. They are allowed to edit, but cannot reach the period.
+2. **Ignore reporting timeframes does not add the current period.** The permission lets the
+   staff member write in the current period when no time frame is open, but the period lists
+   ignore it, so with every window closed the period is not offered.
+
+`docs/reporting-period-administration.md` describes what the permissions allow, and
+`docs/report-comments.md` says only that **Edit report comments** adds periods. Neither page
+mentions these gaps. The separate problem that editors without **Enter Own Report Comments** do
+not see the Report comments menu items is already being handled in ADAM, and is not documented.
+
 ## Result and Aggregate Audit — faults found while capturing (for development)
 
 These are ADAM issues found on the screenshot site while writing
