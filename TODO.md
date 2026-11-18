@@ -348,9 +348,6 @@ these:
   way to reach **Book a family**. So staff cannot make the first booking for a family appointment,
   and the page now says a parent must make it in the portal. Decide with development whether the
   link should always show for family events. If it changes, update both sections.
-- `docs/sign-up-module.md`: the **add to classes** link on the appointment list is not documented.
-  Its permission is **Add signups to classes** (`Signup.php:119`). Read the enrolment flow in
-  `AppointmentAdminController.php` before writing the section.
 - `docs/health-monitoring.md`: the introduction (lines 3, 9 and 29) is still framed around
   Covid-19, as the medical examination types section was until 2026-11-18. Rewrite it as a general
   description.
@@ -430,6 +427,14 @@ is fixed; check the wording named against each when it is.
    DTO; `Families/email:patch` returns the raw row, presumably `Y-m-d H:i:s`. Neither format was
    tested against a real response. `Families/email:get` with a member other than primary or
    secondary reaches an unhandled `match` (`FamilyEmail.php:579`) and probably returns 500.
+6. **Sign-ups — the add to classes form.** The help text for **Remove all current enrolments for
+   the class** says that pupils “who are not in the list below” are removed. The code removes every
+   pupil in the class who is not *ticked* (`AppointmentAdminController.php:333-342`), so an attendee
+   who is unticked and already in the class is removed too. After **Enrol pupils**, ADAM always
+   says “The enrolments have been made.”, even when it skipped pupils who are not current or who
+   are in another class of the subject. **Subject registrations for a class** reports the real
+   count instead. `docs/sign-up-module.md` (*Adding Attendees to a Class*) describes what the code
+   does.
 
 ---
 
