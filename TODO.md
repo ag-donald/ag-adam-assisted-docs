@@ -351,9 +351,6 @@ these:
 - `docs/sign-up-module.md`: the **add to classes** link on the appointment list is not documented.
   Its permission is **Add signups to classes** (`Signup.php:119`). Read the enrolment flow in
   `AppointmentAdminController.php` before writing the section.
-- `docs/health-monitoring.md`: the introduction (lines 3, 9 and 29) is still framed around
-  Covid-19, as the medical examination types section was until 2026-11-18. Rewrite it as a general
-  description.
 
 ---
 
