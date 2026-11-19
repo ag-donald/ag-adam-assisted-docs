@@ -39,21 +39,9 @@ An authenticator app makes the six-digit codes. You only need one app. These are
 - **Twilio Authy Authenticator** (it used to be called **Authy**)
 - **1Password**
 
-![](assets/screenshots/two-factor-authentication/two-factor-authentication-01.png)
-
-Google Authenticator
-
-![](assets/screenshots/two-factor-authentication/two-factor-authentication-02.png)
-
-Microsoft Authenticator
-
-![](assets/screenshots/two-factor-authentication/two-factor-authentication-03.png)
-
-Twilio Authy Authenticator
-
-![](assets/screenshots/two-factor-authentication/two-factor-authentication-16.png)
-
-1Password
+| ![](assets/screenshots/two-factor-authentication/two-factor-authentication-01.png) | ![](assets/screenshots/two-factor-authentication/two-factor-authentication-02.png) | ![](assets/screenshots/two-factor-authentication/two-factor-authentication-03.png) | ![](assets/screenshots/two-factor-authentication/two-factor-authentication-16.png) |
+|:---:|:---:|:---:|:---:|
+| Google Authenticator | Microsoft Authenticator | Twilio Authy Authenticator | 1Password |
 
 Get the app from the App Store or Google Play.
 
