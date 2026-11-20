@@ -38,7 +38,17 @@ Whichever perspective you choose, ADAM guides you through a short sequence of se
 
 The chosen reporting period is shown as a heading at the top of each screen so that you always know which period you are working in. On the reporting screen, you can click on the pupil’s or staff member’s name card to step back and pick a different pupil or teacher without starting the whole sequence again.
 
-Report checkers and editors who work after entry has closed use the same screens. The **Edit report comments** permission adds any reporting period whose editing window is open to the **Reporting Period** list, and allows you to choose any staff member under **Report comments (by teacher)**. On the reporting screen, you can change only the parts of the report whose editing window is open to you, as described under [Reporting Period Actions](reporting-period-administration.md#reporting-period-actions). The other parts are shown, but cannot be changed.
+Report checkers and editors who work after entry has closed use the same screens. The **Reporting Period** list offers every reporting period in which you may change some part of a report. A period whose entry window is open is listed for everyone. Each editing permission adds the periods whose matching editing window is open:
+
+-   **Edit report comments** adds the periods whose Report Comment Editing window is open.
+-   **Edit report marks** adds the periods whose Report Mark Editing window is open.
+-   **Edit report levels** adds the periods whose Report Level Editing window is open.
+-   **Edit behavioural indicators** adds the periods whose Behavioural Indicator Editing window is open.
+-   **Edit report marks for headed subjects** adds the periods with any of these four editing windows open, for a staff member who is assigned as a [head of a subject](subjects.md#heads-of-subject).
+
+**Ignore reporting timeframes** adds the current reporting period, even when none of its time frames is open. **Edit any comments from any period** and **View Past Report Comments** list every reporting period.
+
+The **Edit report comments** permission also allows you to choose any staff member under **Report comments (by teacher)**. The other four editing permissions do not open these screens on their own. A staff member who holds only **Edit report marks**, for example, also needs a permission such as **Enter Own Report Comments** before the report comments items appear in the menu. On the reporting screen, you can change only the parts of the report whose editing window is open to you, as described under [Reporting Period Actions](reporting-period-administration.md#reporting-period-actions). The other parts are shown, but cannot be changed.
 
 > [!NOTE]
 > In previous versions of ADAM these selections were all made on a single, growing page. They are now split across separate screens, each with its own **Next** button, but the choices you make and the reporting screen you end up on are exactly the same.
@@ -192,6 +202,14 @@ The feature can be found via **Reporting → Reporting → Modify multiple repor
 First, choose the reporting period:
 
 ![](assets/screenshots/report-comments/report-comments-13.png)
+
+The **Reporting Period** list offers only the periods in which you may change report comments:
+
+-   the periods whose Report Comment Entry window is open;
+-   the periods whose Report Comment Editing window is open, if you hold **Edit report comments**;
+-   the current reporting period, if you hold **Ignore reporting timeframes**.
+
+**Edit any comments from any period** lists every reporting period. A period that is open only for marks, levels or behavioural indicators is not listed. If only one period is available to you, ADAM skips this screen. If none is, ADAM shows “There are no reporting periods currently available.”
 
 In the following screen, you will type in your comment, choose what you want ADAM to do with it, and the classes that should get the comment:
 
