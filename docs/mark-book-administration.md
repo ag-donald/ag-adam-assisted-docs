@@ -143,7 +143,7 @@ When you open an **individual pupil’s** marks for an assessment, a **View mark
 | Column | Meaning |
 | ------ | ------- |
 | **When** | The date and time of the change. |
-| **Who** | The staff member who made the change. A change that ADAM could not attribute to a person — for example one made directly in the database — is shown as **Unknown (not attributed)** rather than left blank. |
+| **Who** | The staff member who made the change. A change that ADAM made itself, with nobody signed in, names the process that made it, such as **ADAM background job**. A change that ADAM could not attribute to a person — for example one made directly in the database — is shown as **Unknown (not attributed)** rather than left blank. |
 | **Change** | A plain-language description of what happened, such as “Set the mark to 33”, “Changed the mark from 33 to 45”, “Cleared the mark (was 33)”, or a change to the comment. |
 
 > [!NOTE]

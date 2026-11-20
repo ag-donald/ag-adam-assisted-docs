@@ -15,7 +15,7 @@ To open the report, navigate to **Administration → Change Log → Group change
 The opening page is split into two lists:
 
 - **By group** – a list of every staff group. Click a group to see its full change history.
-- **By staff member who made changes** – a list of every staff member who has made a group change. Click a name to see everything that person changed.
+- **By staff member who made changes** – a list of every staff member who has made a group change. Click a name to see everything that person changed. If ADAM has changed a group itself, the process that made the change, such as **ADAM upgrade**, is listed here too.
 
 ### Viewing a single group's history
 
@@ -29,7 +29,7 @@ The table has three columns:
 | ------ | ------- |
 | **When** | The date and time of the change. |
 | **Change** | A plain-language description – for example, a member being added or removed, a permission being granted or revoked, the group being renamed, disabled, or locked. |
-| **By** | The staff member who made the change. Automatic changes made by ADAM itself are shown as **System**. |
+| **By** | The staff member who made the change. When ADAM made the change itself, with nobody signed in, the process that made it is named instead: **ADAM upgrade**, **ADAM scheduled task**, **ADAM command line** or **ADAM background job**. Such changes made before ADAM started naming the process are shown as **System**. |
 
 > [!TIP]
 > You can also reach a group's history directly from the group list. Navigate to **Administration → Staff Groups → Manage staff groups** and click the **history** (clock) icon next to a group. When you open the history this way, the **Back** button returns you to the group list rather than to the audit report.
@@ -61,7 +61,7 @@ The table lists every setting change, newest first:
 | **Setting** | The section and name of the setting that changed. |
 | **Old Value** | The value before the change. |
 | **New Value** | The value after the change. |
-| **Changed By** | The staff member who made the change. |
+| **Changed By** | The staff member who made the change, or the ADAM process that made it, as in the Group Change Audit. Changes ADAM made before it started naming the process are shown as **Unknown**. |
 
 > [!WARNING]
 > Secret settings – such as passwords – are never written to the history, so their values are not exposed here.
@@ -69,7 +69,7 @@ The table lists every setting change, newest first:
 > [!NOTE]
 > The Site Settings History page is visible to **super administrators** only.
 
-Separately from this report, ADAM also emails a digest whenever a site setting changes, so that administrators are alerted even if they do not check the history page. See [Changing Site Settings](changing-site-settings.md) for more on the settings themselves, and [Change Log Notifications](change-log-notifications.md) for how to watch individual settings for change alerts.
+Separately from this report, ADAM also emails a digest whenever someone changes a site setting, so that administrators are alerted even if they do not check the history page. See [Changing Site Settings](changing-site-settings.md) for more on the settings themselves, and [Change Log Notifications](change-log-notifications.md) for how to watch individual settings for change alerts.
 
 ## Assessment Mark Change History
 

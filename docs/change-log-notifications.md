@@ -30,6 +30,8 @@ Finally, if you require **additional information** to be included - perhaps an a
 
 Finally, click on the button at the bottom to save the notification.
 
+Each notification lists who made each change in the **Changed By** column. Changes that ADAM makes itself are included too, and name the process that made them: **ADAM upgrade**, **ADAM scheduled task**, **ADAM command line** or **ADAM background job**.
+
 ## Watching Site Settings
 
 As well as profile fields, you can watch your **site settings** for changes. In the field selection you will find a **Site Settings** group listing every setting that can be monitored.
