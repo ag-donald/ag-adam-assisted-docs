@@ -69,7 +69,7 @@ Access is only granted if all three steps can be followed.
 
 POP3 authentication was removed from ADAM on 1 October 2026 because it is not secure. Any staff member or pupil who was still using it had their authentication method changed to **Suspended**, which prevents them from logging in.
 
-To restore someone's access, change their **Authentication Method** to **Internal Password**, **Active Directory Server** or **LDAP Server**. Once they are no longer suspended, staff can also use **Sign in with Google** or **Sign in with Microsoft** if your school has turned these on. To list everyone who is suspended, create a **scratchlist by filter** with the **Authenticate** field equal to "Suspended".
+To restore someone's access, change their **Authentication Method** to **Internal Password**, **Active Directory Server** or **LDAP Server**. Once they are no longer suspended, staff can also use **Sign in with Google** or **Sign in with Microsoft** if your school has turned these on. To list everyone who is suspended, use **Staff scratch list using filters** on the **Staff** tab, or **Scratch list using filters** on the **Pupils** tab, both under the **Lists and Labels** heading. Filter on the **Authentication** field with **is equal to**, and choose **Suspended** from the drop-down.
 
 ### Configuring Internal Passwords
 
