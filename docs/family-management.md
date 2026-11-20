@@ -6,6 +6,8 @@ To edit or update a family’s details, navigate to **Families → Family Admini
 
 After making the necessary changes to the family information, please remember to save your changes using the button at the bottom.
 
+Each parent has an **ID or Passport Number** field. Parents use this number to log in to ADAM. Type it with or without spaces: ADAM removes the spaces from a parent’s number when it saves the family, whether it is a South African ID number or a passport number. A valid South African ID number also loses any hyphens. A parent can log in with the number typed either way.
+
 ## Linking Children to a Family
 
 If you are adding a new pupil to the database, once you’ve saved the pupil, ADAM will provide a short-cut link at the end of that process to add a new family or link the pupil to an existing family. However, it is not always convenient to add a family at that point. It can always be done later in the following manner.
