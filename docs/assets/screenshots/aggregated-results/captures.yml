@@ -15,3 +15,51 @@
   note: >
     Re-capture. The previous image showed the older wording "the weightings
     specified below", from when this block sat at the top of the screen.
+- image: aggregated-results-05.png
+  captured: 2026-11-20
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Reporting tab → Aggregated Result Calculations → Manage and view aggregated results → 2026 → edit "Year mark" (Lower IV English Home Language, calculation 67)
+  frame:
+    mode: span
+    selectors: From the page's h2 heading to the bottom of form.formtable, which includes the Total weight line and the buttons.
+    padding: 8
+  setup: >
+    Created calculation 67 through the add screens: a specific grade and
+    subject, 2026, Lower IV, English Home Language (College), Reporting
+    Periods, description "Year mark". Every weighting started at 0. Set
+    College Easter Term 2026 to 1, College Trinity Term 2026 to 2 and College
+    Michaelmas Term 2026 to 4 (the 1, 2, 4 example in the page's note) and
+    saved. The school's year has 11 reporting periods across its sections,
+    so the other eight show 0.
+  revert: none
+  note: >
+    Re-capture for phinor/adam#606. The previous image showed drop-down
+    lists; the screen now has number fields with a percentage beside each
+    and a Total weight line.
+- image: aggregated-results-07.png
+  captured: 2026-11-20
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Reporting tab → Aggregated Result Calculations → Manage and view aggregated results → 2026 → edit "Year mark" (Lower IV English Home Language, Assessment Categories, calculation 68)
+  frame:
+    mode: span
+    selectors: >
+      From the College Trinity Term 2026 heading row of form.formtable to the
+      bottom of the form (the last five reporting periods, the Total weight
+      line and the buttons).
+    padding: 8
+  setup: >
+    Created calculation 68 through the add screens: a specific grade and
+    subject, 2026, Lower IV, English Home Language (College), Assessment
+    Categories, description "Year mark". Set College Trinity Term 2026
+    Continuous Assessment 1 and Examinations 2, College Michaelmas Term 2026
+    Continuous Assessment 1 and Examinations 4, and saved. The whole form is
+    about 1,800px tall (11 reporting periods with two categories each), so
+    only its last five periods are framed; every non-zero weighting falls
+    inside the frame, so the percentages and the total of 8 can be checked
+    from the image.
+  revert: none
+  note: >
+    Re-capture for phinor/adam#606: one Total weight for the whole form,
+    where the old screen had drop-down lists and a share per term.
