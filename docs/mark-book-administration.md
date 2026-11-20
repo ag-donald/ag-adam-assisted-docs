@@ -445,13 +445,21 @@ Choose the appropriate reporting period for the results to be imported into and 
 
 Click on “Next” to begin the import process.
 
-ADAM will then upload the file and start by showing you the first 15 lines of its contents. ADAM now needs to know where in the file to find the different information. This includes the first row of data (ignore any headings!), which column contains pupils’ names, which column contains the subjects (if any) and which column contains the results.
+ADAM will then upload the file and start by showing you the first 15 lines of its contents. ADAM now needs to know where in the file to find the different information. This includes the **First Row of Data** (ignore any headings!), the column that contains the pupil identifiers, which column contains the subjects (if any) and which column contains the results.
+
+The **Identification to use** option tells ADAM how to find each pupil. **Match by name** is selected by default: ADAM reads each value as a name, as described in [How ADAM Matches a Name](matching-uploads-to-people.md#how-adam-matches-a-name). You can choose a pupil field instead, such as an admin number or a custom field. ADAM then looks for the pupil whose field equals the value.
 
 If you are importing for a single assessment in a single subject, you can choose “There is no subject column” for the subject.
 
-When you move to the next page, ADAM will match pupils as best it can with existing pupils in the database. Where it comes across even the slighted ambiguity in names, ADAM will ask you to confirm. Similarly, with subjects - where there is ambiguity, ADAM will ask you to confirm.
+Click on **Next**. ADAM now matches each different value in the pupil column to a pupil, and shows the review page, “Import assessment results”. ADAM only searches the pupils enrolled during the reporting period you chose. Check the matches there, choose a pupil for each row that needs one or tick **Ignore**, and click **Confirm**. [Matching Uploads to People](matching-uploads-to-people.md#the-review-page) describes the review page. Nothing is imported yet.
+
+After you confirm, ADAM shows the subject step, which starts “After checking the csv data, we need to clarify a few things.” Under **Subject Matching**, ADAM matches the subjects as best it can. Where there is ambiguity, ADAM asks you to confirm.
 
 Once all is correct, click the **Next** button to begin the import.
+
+A value that you ignored on the review page, or that matched nobody, imports nothing.
+
+If ADAM finds no values in the column you chose, it returns you to the start with the message “No pupil identifiers were found in the column you chose. Please check the file and try again.” If you start another import before you finish this one, ADAM tells you “These pupil matches belong to an import that was replaced or lost. Please start the import again.”
 
 ### Notes
 

@@ -176,16 +176,16 @@ Pupil and staff documents can be uploaded in bulk to the document repository.
 
 ### Naming of Documents
 
-In order to be uploaded in bulk, the documents must be named so that ADAM can match them to the pupils or staff members. Documents can be named in any of four ways:
+ADAM matches each document to a pupil or staff member by its file name. The upload page lists these rules:
 
-1.  First-Name Last-Name: e.g. John Smith.pdf
-2.  Last-Name First-Name: e.g. Smith John.pdf
-3.  AdminNumber: e.g. AB01234.pdf
-4.  Username: e.g. 53johns.pdf
+-   The person’s name can be anywhere in the file name, with other words around it and in any order. For example, `Term 3 report Mokoena Thabo 9B.pdf` is matched to Thabo Mokoena. The name is not case sensitive.
+-   An admin number, username or ID number on its own also matches. For example, `12345.pdf`.
+-   You can upload a ZIP file of documents. Each document in it is matched by its own file name.
+-   Anything ADAM is unsure of is shown for checking before anything is saved.
 
-The document names are not case sensitive and so a document named john smith.pdf would be matched to John Smith.
+You can mix these in one upload. [How ADAM Matches a Name](matching-uploads-to-people.md#how-adam-matches-a-name) gives the full rules.
 
-You can also mix methods in a single upload. So ADAM will check all possible versions of each file to match it.
+Documents can only be uploaded for current staff and pupils.
 
 ### Uploading the Documents
 
@@ -193,35 +193,38 @@ Navigate to **Pupils → Document Repository → Upload documents in bulk** or t
 
 ![](assets/screenshots/document-repository/document-repository-15.png)
 
-Take special note of the limitations with regards to uploading files. These are server specific and so yours may well be different to the limits shown in the diagram above.
+Take special note of the limitations with regards to uploading files. These are server specific and so yours may well be different to the limits shown in the diagram above. A ZIP file counts as one file against these limits.
 
--   Choose the appropriate **document repository category** to upload the documents into. It is important that you choose an appropriate category for the document uploads. If you choose a pupil category, only pupil names will be checked when trying to match documents. Similarly, if you choose a staff category, only staff names will be checked.
--   Add in a **description** for the documents. This description is important because all your documents are currently named to identify which pupil they belong to and so it will not be apparent what their content is.
+-   Choose the appropriate **Document Repository Category** to upload the documents into. The category decides who the documents are matched against. If you choose a pupil category, ADAM matches the documents against current pupils. If you choose a staff category, ADAM matches them against current staff.
+-   Add in a **Description** for the documents. This description is important because all your documents are currently named to identify which pupil they belong to and so it will not be apparent what their content is.
 -   Finally, use the **Choose Documents** button to select the files that you wish to upload. You can select multiple files, subject to the limits set on your server.
 
-Once you have provided the information, please click on the **Upload Documents** button to begin the document upload process.
+Click on the **Upload Documents** button. ADAM does not save anything yet. If some files are of a type ADAM does not accept, ADAM leaves them out and names them in a warning that starts “These files were not uploaded, because ADAM does not accept their type or could not read them”. If none of the files can be used, ADAM returns you to the form.
 
-ADAM then shows a **Bulk Upload Results** page summarising what happened. A short summary line at the top counts the outcomes (for example *8 uploaded, 1 no match, 1 multiple matches.*), followed by a table with a row for each file you uploaded:
+ADAM then shows the review page, “Upload documents to the Document Repository”. Check the matches there, choose a person for each row that needs one or tick **Ignore**, and click **Confirm**. [Matching Uploads to People](matching-uploads-to-people.md#the-review-page) describes the review page.
+
+After you confirm, ADAM saves the documents and shows a **Bulk Upload Results** page. A short summary line at the top counts the outcomes (for example *8 uploaded, 1 ignored.*), followed by a table with a row for each file you uploaded:
 
 -   **File** — the name of the file you uploaded.
--   **Matched person** — the pupil or staff member the file was matched to. For pupils, the current grade is shown in brackets to help you confirm the right match. A dash (—) appears where nothing was matched.
--   **Status** — the outcome for that file: **Uploaded**, **No match**, **Multiple matches** or **Upload failed**.
+-   **Person** — the pupil or staff member the document was saved for. For a current pupil, the grade and class are shown in brackets. A dash (—) appears for a file you ignored.
+-   **Status** — the outcome for that file: **Uploaded**, **Ignored** or **Upload failed**. A failed file also shows the reason.
 
 ![](assets/screenshots/document-repository/document-repository-16.png)
 
 An **Upload more documents** link appears above and below the table so that you can start another upload straight away.
 
 > [!NOTE]
-> This results page can only be viewed once, immediately after the upload. If you navigate away and try to return to it, ADAM shows the message *These results are no longer available. Please upload your documents again.* — you would need to upload the documents again to see a fresh report.
+> Only you can see the results of your upload, and only for one day after you confirm it. After that, the page is gone.
 
 ### Troubleshooting Failed Matches
 
-Sometimes ADAM fails to match documents. This can happen for a number of reasons. Most commonly are:
+The review page shows every file that ADAM could not match with certainty, so you can choose the person yourself before anything is saved. When you correct a file name that ADAM could not match, ADAM remembers your choice and matches the same file name next time. See [Remembered Matches](matching-uploads-to-people.md#remembered-matches).
+
+If ADAM finds nobody, or the wrong people, for many files, check these causes:
 
 -   You chose the wrong category. If you are uploading staff documents, you must choose a staff category, and if you are uploading pupil documents, you must choose a pupil category. ADAM will specifically look at the category to decide which people to check the documents against.
 -   The document name has a spelling mistake.
--   The document uses a nickname or other variation of the name. ADAM uses the first name field to match documents against.
--   There is more than one person with the same name. If ADAM finds two (or more) possible matches for a document, it will not be uploaded to either. In this case you will need to either rename the document using an Admin number or username. Alternatively, you may have to upload these documents manually.
+-   The document uses a nickname or other variation of the name. ADAM matches the first name or the full first names as they are stored in ADAM.
 -   The pupil is not a currently registered pupil or the staff member is not an active member of staff. ADAM won’t allow bulk uploading for people who are not currently enrolled or engaged in the school.
 
 ## Removing Documents
