@@ -25,7 +25,7 @@ The four kinds of alert, and where their content is controlled, are:
 |-------|-----------------|------------------------------|
 | Absentee Records | Whole-day absentee records | The **Include in Family Alerts** setting on each [absentee reason](#absentee-records) |
 | Roll Call | Individual roll call marks | The **Include in alert** setting on each [roll call reason](#roll-call) |
-| Records and Points | Records and points awarded to the pupil | The **Publish to Parent/Pupil Portal** setting on each [category](#records-and-points), and whether its group is marked **Sensitive** |
+| Records and Points | Records and points awarded to the pupil | The **Publish to parents and pupils** setting on each [category](#records-and-points), and whether its group is marked **Sensitive** |
 | Assessment Results | Marks that have been released to parents | The [**Results Release Time**](#assessment-results) on each assessment, and its **Permanently Hide from Parents and Pupils** setting |
 
 Absentee Records and Records and Points are only offered as alerts if those modules are switched on for your school.
@@ -99,20 +99,21 @@ Two things about roll call are worth knowing:
 
 ### Records and Points
 
-Records and points follow the same settings that decide whether a category is shown on the Parent Portal. Navigate to **Administration → Pastoral Administration → Edit the Records and Points categories**, click **edit** next to a category, and look at **Publish to Parent/Pupil Portal**.
+Records and points follow the same setting that decides whether a category is shown on the Parent Portal. Navigate to **Administration → Pastoral Administration → Edit the Records and Points categories**, click **edit** next to a category, and look at **Publish to parents and pupils**.
 
-![The Publish to Parent/Pupil Portal setting on a Records and Points category.](assets/screenshots/family-alerts/family-alerts-06.png)
+![The Publish to parents and pupils and Show teacher name to parents and pupils settings on a Records and Points category.](assets/screenshots/family-alerts/family-alerts-06.png)
 
 There are three options, and each behaves differently in the alert:
 
--   **Available for parent and student viewing after recording:** the record is reported in the next alert after it is recorded.
--   **Available for parent and student viewing after attendance:** the record is held back until the pupil has been marked as having attended, and is reported in the next alert after *that*. This option only appears for categories that have an attendance register. It is the right choice for something like a detention, where the parent should hear that it was served rather than only that it was set.
--   **Hidden from parent and student viewing:** the record never appears in an alert.
+-   **Publish once the record is added:** the record is reported in the next alert after it is recorded.
+-   **Publish once attendance is recorded:** the record is held back until the pupil has been marked as having attended, and is reported in the next alert after *that*. This option only appears for categories that have an attendance register. It is the right choice for something like a detention, where the parent should hear that it was served rather than only that it was set.
+-   **Do not publish:** the record never appears in an alert. This is the default for a new category.
 
-Two further settings shape what the parent sees:
+Three more things shape what the parent sees:
 
 -   Categories in a group marked **Sensitive** are never included in an alert, whatever their publishing setting. Groups are managed under **Administration → Pastoral Administration → Edit the Records and Points Category Groups**. See [Managing Records and Points Category Groups](records-and-points-administration.md#managing-records-and-points-category-groups).
 -   For a points category, the entry is prefixed with the number of points awarded, so a parent sees “3 x Merit” rather than just “Merit”.
+-   **Show teacher name to parents and pupils**, on the same screen, decides whether the alert names the teacher who added the record. Set to **No**, the alert leaves the teacher out, as the portal does.
 
 More can be found in the information regarding [adding and editing Records and Points](records-and-points-administration.md#adding-a-new-records-and-points-category) later in this manual.
 

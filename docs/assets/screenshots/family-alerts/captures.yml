@@ -65,18 +65,29 @@
     columns, which the page text distinguishes.
 
 - image: family-alerts-06.png
-  captured: 2026-08-13
+  captured: 2026-11-20
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
   as: staff
-  path: Administration tab → Pastoral Administration → Edit the Records and Points categories → edit (Break Detention, id 16)
+  path: Administration tab → Pastoral Administration → Edit the Records and Points categories → edit (Behaviour Card, id 19)
   frame:
-    mode: element
-    selectors: "the table row containing 'Publish to Parent/Pupil Portal'"
-    padding: 0
+    mode: span
+    selectors: >
+      The form.formtable rows for "Publish to parents and pupils" and
+      "Show teacher name to parents and pupils".
+    padding: 8
   setup: >
-    Break Detention was chosen because it has an attendance register, so the
-    "after attendance" option the page describes is available in the dropdown.
-    Nothing was changed or saved.
+    Behaviour Card was chosen because it has an attendance register (so the
+    "Publish once attendance is recorded" option exists) and is already set
+    to "Publish once the record is added". The sticky save bar
+    (form.formtable div.control) was hidden with visibility:hidden for the
+    shot. Nothing was changed or saved.
   revert: none
+  note: >
+    Re-capture for the renamed settings (ADAM development, 2026-11-20). The
+    frame now includes the teacher-name row, which the page also describes.
+    The previous image (2026-08-13, one row, padding 0) showed "Publish to
+    Parent/Pupil Portal" and Category id 16, which on the screenshot site is
+    now "Tie".
 
 - image: family-alerts-07.png
   captured: 2026-08-13
