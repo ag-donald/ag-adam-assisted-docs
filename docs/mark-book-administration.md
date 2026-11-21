@@ -449,9 +449,13 @@ ADAM will then upload the file and start by showing you the first 15 lines of it
 
 The **Identification to use** option tells ADAM how to find each pupil. **Match by name** is selected by default: ADAM reads each value as a name, as described in [How ADAM Matches a Name](matching-uploads-to-people.md#how-adam-matches-a-name). You can choose a pupil field instead, such as an admin number or a custom field. ADAM then looks for the pupil whose field equals the value.
 
+![The second page of the import: the first 15 lines of the file, then the form with Row 2 as the first row of data, Column 1 for pupil identifiers, Match by name, Column 2 for subjects and Column 3 for results](assets/screenshots/mark-book-administration/mark-book-administration-39.png)
+
 If you are importing for a single assessment in a single subject, you can choose “There is no subject column” for the subject.
 
 Click on **Next**. ADAM now matches each different value in the pupil column to a pupil, and shows the review page, “Import assessment results”. ADAM only searches the pupils enrolled during the reporting period you chose. Check the matches there, choose a pupil for each row that needs one or tick **Ignore**, and click **Confirm**. [Matching Uploads to People](matching-uploads-to-people.md#the-review-page) describes the review page. Nothing is imported yet.
+
+![The review page of an assessment import: 6 values, 5 certain, 1 to check, matched against the pupils at the school during the reporting period, with one No match row](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-03.png)
 
 After you confirm, ADAM shows the subject step, which starts “After checking the csv data, we need to clarify a few things.” Under **Subject Matching**, ADAM matches the subjects as best it can. Where there is ambiguity, ADAM asks you to confirm.
 

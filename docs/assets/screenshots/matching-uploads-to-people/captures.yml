@@ -1,0 +1,146 @@
+- image: matching-uploads-to-people-01.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Document Repository bulk upload (/mod/docrep/bulk-upload) → review page
+  frame:
+    mode: span
+    selectors: main h1, the to-check table.match-review-table and details.match-review-folded
+    padding: 8
+  setup: >
+    Eight one-page PDFs uploaded to Pupils (Top Level) > Reports with the
+    description "Term 3 report": "KennedyM.pdf" (Probable, Mitchell Kennedy),
+    "Singh Damian.pdf" (Check, two current pupils named Damian Singh),
+    "Wheelr Thatho.pdf" (No match, Thato Wheeler misspelt) and five full
+    names (certain). The batch was cancelled afterwards.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+  note: >
+    The brief asked for the Check row's drop-down list to be open. A native
+    select's open list is drawn outside the page and does not appear in a
+    Playwright screenshot, so the list is shown closed at "— choose: 2
+    candidates —".
+
+- image: matching-uploads-to-people-02.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Document Repository bulk upload → review page, certain matches opened
+  frame:
+    mode: span
+    selectors: main h1, the to-check table.match-review-table and details.match-review-folded
+    padding: 8
+  setup: >
+    Earlier in the run, "KerrJ.jpg" was confirmed in Upload pupil pictures
+    (Junior Kerr) and "HadebeK.pdf" in a Document Repository upload (Keith
+    Hadebe). This upload held KerrJ.pdf ("You matched this in Upload pupil
+    pictures"), HadebeK.pdf (Remembered) and two certain names. The folded
+    details element was opened before capture; the batch was cancelled.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+  note: >
+    The brief suggested a pupil's surname and initial for the Remembered row.
+    "Singh Damian" was tried first: it was remembered in the same feature, but
+    two pupils share the name, so the row stayed Check rather than Remembered.
+
+- image: matching-uploads-to-people-03.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Assessment → Assessment Administration → Import assessment results → mapping → review page
+  frame:
+    mode: span
+    selectors: main h1, the to-check table.match-review-table and details.match-review-folded
+    padding: 8
+  setup: >
+    Period 52 (College Michaelmas Term 2026). Its mark book time frame had
+    closed, so a markbook window from 2026-11-21 07:00 to 2026-12-31 17:00 was
+    added on the period's time frames page. A CSV of six pupils (Name, Subject,
+    Result) with "Wheelr Thatho" misspelt, Match by name. The import was
+    cancelled on the review page, so nothing was imported.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+
+- image: matching-uploads-to-people-04.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: The review page of image 01, Confirm clicked with the Check and No match rows empty
+  frame:
+    mode: clip
+    selectors: from the to-check table to the bottom of the error message (.flash-message.flash-error)
+    padding: 8
+  setup: >
+    Same batch as image 01. The viewport was 900x900, so that the error
+    message, which ADAM draws fixed at the bottom right of the window, sits
+    just below the buttons. The page footer was hidden before capture: at that
+    window height its copyright line runs level with the message.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+
+- image: matching-uploads-to-people-05.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Staff → General → Your remembered name matches (/match/remembered)
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    Four remembered matches made earlier in the run: kennedym (Upload pupil
+    pictures), rosel (Upload staff pictures), damian singh and hadebek (Upload
+    documents to the Document Repository). hadebek has a Last used date; the
+    other three read Never.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+
+- image: matching-uploads-to-people-06.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Staff → General → Your remembered name matches, after removing every match
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    Every remembered match removed with its Remove link.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.

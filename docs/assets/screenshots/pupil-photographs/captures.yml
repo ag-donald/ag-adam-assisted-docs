@@ -116,3 +116,46 @@
     pupil-photographs-09.png. Uploader reads "Antonio Watson" because the dev
     login bypass signs in as staff_id 1.
   revert: none
+
+- image: pupil-photographs-01.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Pupils tab → Names and Faces → Upload new pupil photographs
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    None. The form is empty.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+
+- image: pupil-photographs-03.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Upload new pupil photographs, Current Pupils, four pictures → review page → Ignore unmatched
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    KerrJ.jpg (Probable, Junior Kerr), Bennett Xavier.jpg, Mills Andrew.jpg
+    and Wheelr Thatho.jpg (No match). Ignore unmatched was clicked. The
+    pictures are the cartoon figures cropped from staff-photographs-03.png's
+    previous version.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.

@@ -46,6 +46,8 @@ The rows that need checking are listed first. Each row shows the **File** (or th
 
 The certain matches are folded away under a line such as “9 certain matches”. Click on the line to open them. They are not saved until you click **Confirm**, and you can still change or ignore any of them.
 
+![The review page of a Document Repository upload: 8 files, 5 certain, 3 to check, with a Probable row, a Check row with its drop-down list and a No match row, and the 5 certain matches folded away](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-01.png)
+
 ### Choosing a Person
 
 Most rows have a search box, “Search for a pupil…” or “Search for a staff member…”. Type part of a name and choose the person from the list. The search only offers people in the group the upload is matched against.
@@ -57,6 +59,8 @@ Tick **Ignore** to leave a row out. ADAM saves nothing for an ignored row, even 
 ### Status Words
 
 The status tells you how sure ADAM is about the row.
+
+![A review page with a row reading “You matched this in Upload pupil pictures” and, among the opened certain matches, a Remembered row](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-02.png)
 
 #### Certain
 
@@ -87,6 +91,8 @@ ADAM found nobody. Search for the person, or tick **Ignore**.
 Click **Confirm** to save the upload. Every row needs a person or the **Ignore** tick. If a row has neither, ADAM saves nothing and shows the review page again with the message “Choose a person for every row, or tick Ignore, before you confirm. Your choices so far are saved.”
 
 After you confirm, ADAM saves what you confirmed and shows the results. For a document or photograph upload this is the upload’s results page. For an assessment import, ADAM takes you to the subject step of the import.
+
+![The review page after Confirm was clicked with two rows left empty: the rows, the Cancel, Ignore unmatched and Confirm buttons, and the message “Choose a person for every row, or tick Ignore, before you confirm. Your choices so far are saved.”](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-04.png)
 
 ### Ignore unmatched
 
@@ -135,11 +141,15 @@ The page lists your remembered matches, newest first, in these columns:
 -   **Remembered** — when you confirmed it.
 -   **Last used** — when ADAM last used it to make a row certain, or “Never”.
 
+![Your remembered name matches, with the Filter box and four remembered matches from pupil pictures, staff pictures and Document Repository uploads, each with a Remove button](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-05.png)
+
 Type in the **Filter** box and click **Filter** to show only the matches whose text, person, class or upload contains what you typed.
 
 Click **Remove** to stop ADAM using a match. ADAM shows “That match is no longer remembered.” Remove a match when it is wrong, or when the same file name now belongs to somebody else.
 
 If you have no remembered matches, the page says “ADAM is not remembering any name matches for you.” If none fits the filter, it says “No remembered match fits the filter.”
+
+![Your remembered name matches with no matches: “ADAM is not remembering any name matches for you.”](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-06.png)
 
 ADAM clears remembered matches for people who no longer exist once a day.
 
