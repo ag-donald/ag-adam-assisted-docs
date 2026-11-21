@@ -1,0 +1,17 @@
+- image: two-factor-authentication-for-administrators-01.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Administration tab → Security Administration → Manage Two-Factor Authentication for staff (/admin/security/2fa/management)
+  frame:
+    mode: span
+    selectors: main h1 through table#2fa-not-set-up
+    padding: 8
+  setup: none
+  revert: none
+  note: >
+    Recaptured for phinor/adam#616: shows the "Listed below" line and the
+    Authentication Method column. Framed from the heading to the end of the
+    Not set up table rather than to the end of the Set up table, as the brief
+    asked: the screenshot database has 324 staff in Never signed in, so the
+    whole page is several metres long. The Not set up table already shows
+    both changes.

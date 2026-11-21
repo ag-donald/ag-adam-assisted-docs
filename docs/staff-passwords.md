@@ -38,7 +38,7 @@ To hand out logins to many staff at once, print a list of everyone’s login nam
 
 1.  Click on the **Staff** tab and, under the **Lists and Labels** heading, click on **Staff scratch list by contract**.
 2.  Tick **Current contracts** and click on **Next**.
-3.  Choose the **Username** field. Add the **Authentication** field as well if you want to see each person’s authentication method.
+3.  Choose the **Username** field. Add the **Authentication** field as well if you want to see each person’s authentication method. It shows the same names as the **Authentication Method** field, such as **Internal Password**.
 
 See [Finding current, past and future staff](staff-information.md#finding-current-past-and-future-staff) for more about this list.
 

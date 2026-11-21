@@ -71,9 +71,13 @@ Click on the **Administration tab**, then under the **Security Administration** 
 
 ![](assets/screenshots/two-factor-authentication-for-administrators/two-factor-authentication-for-administrators-01.png)
 
-The screen opens with a single line telling you where the school stands — for example, “**34 of 51 staff are set up**”. Beneath it, a sentence says whether this server requires two-factor authentication yet and names the date it becomes required; once that date has passed on a school that still has not switched the requirement on, it says so. Below that, every current staff member appears in one of four tables, each headed with the number of people in it.
+The screen opens with a single line telling you where the school stands — for example, “**34 of 51 staff are set up**”. Under the headline, ADAM lists how many people are in each table, for example “Listed below: Not set up (12), Never signed in (3), Suspended (2) and Set up (34).” These numbers always add up to the total in the headline. If the **Not set up** table seems one or two short, look in **Never signed in** and **Suspended** further down the page.
 
-**Not set up** — they have signed in before, they can sign in now, and they have not set two-factor authentication up. This is the list that matters: these are the people who will be stopped at the door when the requirement takes effect.
+Beneath that, a sentence says whether this server requires two-factor authentication yet and names the date it becomes required; once that date has passed on a school that still has not switched the requirement on, it says so. Below that, every current staff member appears in one of four tables, each headed with the number of people in it.
+
+Each table has a **Staff Member**, a **Username** and an **Authentication Method** column. The **Authentication Method** column uses the same names as the field of that name on the staff member's record: **Internal Password**, **Active Directory Server**, **LDAP Server** or **Suspended**. See [Authentication methods](staff-passwords.md#authentication-methods).
+
+**Not set up** — they have signed in before, they can sign in now, and they have not set two-factor authentication up. Staff who have never signed in are not in this table, even though they are not set up either. This is the list that matters: these are the people who will be stopped at the door when the requirement takes effect.
 
 **Never signed in** — an account exists but has never been used. Setting up two-factor authentication is part of their first sign-in, so there is usually nothing to chase here.
 
