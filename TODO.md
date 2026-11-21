@@ -290,19 +290,6 @@ old screens. Recapture each on the screenshot site under the same file name.
   - `sign-up-module-05.png` (the old type-choice screen) and `sign-up-module-14.png` (the old
     confirmation screen) are no longer used by the page. Delete the files.
 
-## Report Comments — the period chooser of Modify multiple report comments (`docs/report-comments.md`)
-
-`report-comments-13.png` (*Modifying Multiple Report Comments*) shows the paragraph “This feature
-will modify the pupils' existing personal report comments …” between the heading and the
-instruction. The period chooser no longer has that paragraph: it shows the **Modify Multiple Report
-Comments** heading, then “Please select the reporting period from the list below:”, the **Reporting
-Period** drop-down and **Next**. The drop-down now groups the periods under a heading for each year.
-
-Open **Reporting → Reporting → Modify multiple report comments** as a staff member who holds
-**Write Generic Report Comments** and who has at least two periods open for report comments, or
-ADAM skips the screen. Frame the heading, the instruction, the drop-down and **Next**. Recapture
-under the same file name.
-
 ---
 
 # Missing Written Content
