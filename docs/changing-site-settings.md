@@ -10,4 +10,4 @@ The site settings are broken up into several different sections which should mak
 
 Once you have changed the settings, click on the “**Save Settings**” button at the bottom of the screen to save your changes.
 
-Each time a setting is changed, the system administrator, as configured in the settings, is emailed. If the system administrator’s address is changed, the *old* address is used for the confirmation email.
+Each time a setting is changed, the system administrator, as configured in the settings, is emailed. Changes that ADAM makes itself, such as during an upgrade, are left out of this email. If the system administrator’s address is changed, the *old* address is used for the confirmation email.
