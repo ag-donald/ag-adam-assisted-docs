@@ -1,0 +1,13 @@
+- image: report-comments-13.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, a super-administrator, dev blank-password login)
+  path: Reporting tab → Reporting → Modify multiple report comments (/admin/report/generic-comment)
+  frame:
+    mode: span
+    selectors: main h1, form#generic-comment-period, the Next button
+    padding: 8
+  setup: >
+    None. The brief asked for a staff member holding Write Generic Report
+    Comments with at least two periods open; staff_id 1 lists every period,
+    and the closed drop-down looks the same either way.
+  revert: none
