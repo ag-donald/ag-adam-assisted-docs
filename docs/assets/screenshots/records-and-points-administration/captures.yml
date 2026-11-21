@@ -47,3 +47,19 @@
     All eight records listed. The third (de Villiers, Justin) unticked. New
     effective date: 9 October 2026. Change dates was not clicked.
   revert: none (throwaway database)
+
+- image: records-and-points-administration-03.png
+  captured: 2026-11-20
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration tab → Pastoral Administration → Edit the Records and Points categories → Add new Records and Points Category
+  frame:
+    mode: span
+    selectors: From the page's h1 (Manage Records and Points Categories) to the bottom of form.formtable, including the save button.
+    padding: 8
+  setup: Empty add form; nothing typed or saved.
+  revert: none
+  note: >
+    Re-capture for the renamed "Publish to parents and pupils" and "Show
+    teacher name to parents and pupils" settings. The previous image had no
+    captures.yml entry and showed the old labels in the older theme.
