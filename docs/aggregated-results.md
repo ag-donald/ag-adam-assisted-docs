@@ -52,9 +52,9 @@ For example:
 
 https://www.youtube.com/watch?v=F1z8DAcEVbo
 
-To create a new Aggregated Result Calculation, navigate to **Reporting → Aggregated Result Calculations → Manage aggregated result calculations**. A list of already created calculations will be shown to you, if any exist.
+To create a new Aggregated Result Calculation, navigate to **Reporting → Aggregated Result Calculations → Manage and view aggregated results**. Choose the **Academic Year** and click on **Next**. A list of the calculations already created for that year will be shown to you, if any exist.
 
-At the top of the screen, click on the option to **Add a new Aggregated Result Calculation**.
+At the top of the screen, click on the option to **Add new aggregated result calculation**.
 
 Specify which audience you’d like this calculation to be made available to:
 
@@ -80,28 +80,27 @@ Depending on the type of calculation, you will see one of the following screens.
 
 ### Reporting Periods {#creating-aggregated-result-calculations-reporting-periods}
 
-A list of reporting periods from the chosen academic year is displayed. The initial weightings are calculated automatically and are equally divided. You are welcome to change them to suit your needs.
+A list of reporting periods from the chosen academic year is displayed, with a weighting field for each. A new calculation starts with every weighting set to 0. Type a weighting for each reporting period that should count towards the result, and leave the others at 0.
+
+Beside each field, ADAM shows that reporting period’s share of the total, as a percentage. Under the list, **Total weight** shows the sum of all the weightings. Both update as you type.
 
 ![](assets/screenshots/aggregated-results/aggregated-results-05.png)
 
-> [!WARNING]
-> While these numbers look suspiciously like percentages in the screenshot above, they are not: ADAM will treat them as proportions of a total.
-
 > [!NOTE]
-> For example, if we entered the weightings for the three terms as 1, 2 and 4, ADAM would see that the total for the terms is 7 and weight Term 1 as 1 out of 7 (14,29%), Term 2 will be 2 out of 7 (28,57%) and Term 3 will be weighted as 4 out of 7 (57,14%).
+> The weightings are not percentages, and they do not need to add up to 100. ADAM uses each weighting as a fraction of the total. In the screenshot above, the weightings for the three College terms are 1, 2 and 4. The total is 7, so ADAM weights the first term as 1 out of 7 (14.3%), the second as 2 out of 7 (28.6%) and the third as 4 out of 7 (57.1%). These are the percentages shown beside each field.
 
 Once happy with the weightings you’ve captured, click on **Save changes**.
 
 ### Assessment Categories {#creating-aggregated-result-calculations-assessment-categories}
 
-ADAM will show a list of assessment categories for the chosen academic year. The initial weightings are calculated automatically and are divided equally. You are then welcome to change them to suit your needs.
+ADAM will show each reporting period of the chosen academic year, with a weighting field for each assessment category under it. A new calculation starts with every weighting set to 0. Type a weighting for each combination of reporting period and assessment category that should count towards the result. Leave the others at 0, for example the examinations of a term that has none.
 
 ![](assets/screenshots/aggregated-results/aggregated-results-07.png)
 
-In the diagram above, one might set the “Examinations” section of “Term 1” to 0 since there are no exams to take into account. Other weightings could be set accordingly.
+ADAM works out one weighted average across the whole form. Beside each field, it shows that weighting’s share of the total of all the weightings on the form, across every reporting period. At the bottom, **Total weight** shows that total. Both update as you type.
 
-> [!WARNING]
-> Take note that the numbers you see are not strictly percentages (they can be if you want them to be). ADAM will work them out as fractions of the total. Above, the total of all the 17s adds to 102. ADAM will actually use 17 / 102 as the fraction to work out the percentage weighting (16.67%)
+> [!NOTE]
+> The weightings are not percentages, and they do not need to add up to 100. ADAM uses each weighting as a fraction of the total. In the screenshot above, the weightings are 1 and 2 for College Trinity Term 2026, and 1 and 4 for College Michaelmas Term 2026. The total is 8, so ADAM uses 4 out of 8 (50%) for the Michaelmas examinations. These are the percentages shown beside each field.
 
 Click on the **Save changes** button when you’re happy with your weightings.
 
