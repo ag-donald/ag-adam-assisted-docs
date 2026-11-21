@@ -27,7 +27,7 @@ In this section, you will enter simple information about the staff member: their
 
 The following points are worth noting:
 
-**ID Number:** if the teacher is a foreign national, please enter their passport number here. ADAM *will* produce a warning message saying that the number that is entered is not a valid South African ID number. This is not a problem since we know that we are entering a passport number.
+**ID Number:** type a South African ID number with or without spaces. ADAM removes the spaces when it saves the record, so “800101 5009 08 7” is saved as “8001015009087”. If the teacher is a foreign national, please enter their passport number here. ADAM *will* produce a warning message saying that the number that is entered is not a valid South African ID number. This is not a problem since we know that we are entering a passport number. A passport number is saved as typed.
 
 The fields for **Population Grouping**, **Home Language**, **Disabilities** and **Marital Status** are used for reporting to the Department of Basic Education through the LURITS system.
 
