@@ -88,27 +88,6 @@ management screen — and have been deleted; the *Removing Two-Factor Authentica
 to appear on the demonstration server, and the section reads perfectly well without a picture, so
 nothing is outstanding there.
 
-### 1. The coverage screen — `two-factor-authentication-for-administrators-01.png` needs recapturing
-
-**Wait until phinor/adam#616 is released and checked out on the screenshot site.** The screen in the
-image has changed in two ways. A new line under the headline lists the count in each table, for
-example “Listed below: Not set up (1), Never signed in (3), Suspended (0) and Set up (2).” The column
-headed **Authentication Source**, which showed internal codes such as `ad` and `pass`, is now headed
-**Authentication Method** and shows names such as **Active Directory Server** and
-**Internal Password**.
-
-Reach it at **Administration → Security Administration → Manage Two-Factor Authentication for
-staff**. Frame the whole page content, from the **Two-factor authentication coverage** heading to the
-end of the **Set up** table, at the 900px house width. Check that the new **Listed below** line and
-the **Authentication Method** column are both in view. The data should have at least one person in
-**Not set up**, **Never signed in** and **Set up**, so that each table and its columns appear. Record
-the setup in a new `docs/assets/screenshots/two-factor-authentication-for-administrators/captures.yml`:
-the image has no entry yet.
-
-No other screenshot in the manual shows the **Authentication** column. The password statistics
-screen has no picture, and no scratch-list image includes that field, so nothing else needs
-recapturing for this change.
-
 ---
 
 ## Medical Module — consultation form width (`docs/medical-module.md`)
