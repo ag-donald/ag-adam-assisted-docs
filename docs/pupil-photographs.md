@@ -6,22 +6,21 @@ Staff members see this image throughout ADAM. It can also be shown to other fami
 
 ## Naming of Photographs
 
-The photographs should be named in one of the following ways, each of which allows ADAM to work out which pupil the picture belongs to:
+ADAM matches each picture to a pupil by its file name. The upload page lists these rules:
 
-1.  `AdminNumber.jpg`
-2.  `FirstName LastName.jpg`
-3.  `LastName FirstName.jpg`
-4.  `LastName FirstInitial.jpg` — the space is optional, so both `Alcock K.jpg` and `AlcockK.jpg` work
-5.  `Username.jpg`
+-   The pupil’s name can be anywhere in the file name, with other words around it and in any order. For example, `Mokoena Thabo 2026.jpg`. The name is not case sensitive.
+-   An admin number, username or ID number on its own also matches. For example, `12345.jpg`.
+-   You can upload a ZIP file of JPG pictures. Each picture in it is matched by its own file name.
+-   Anything ADAM is unsure of is shown for checking before anything is saved.
 
-Capital letters make no difference. A picture is only accepted when exactly one pupil matches its name, so a misspelling, or a name that two pupils in the same dataset share, will leave the picture unmatched.
+The surname and first initial also work, separated by a space, such as `Alcock K.jpg`. Without the space, as in `AlcockK.jpg`, ADAM shows the picture as **Probable** with the pupil selected, so that you check it once. After you confirm it, ADAM remembers it for you, and the same file name is certain next time. [How ADAM Matches a Name](matching-uploads-to-people.md#how-adam-matches-a-name) gives the full rules.
 
 > [!NOTE]
-> You may also place the photographs, named as above, inside a ZIP file and upload that instead. ADAM opens the archive and matches each picture within it. This is the easiest way to send a whole year group at once, because the archive counts as a single file against the upload limits described below.
+> A ZIP file is the easiest way to send a whole year group at once, because the archive counts as a single file against the upload limits described below.
 
 ## Uploading Pupil Photographs
 
-Photographs can be uploaded for Pupils by visiting **Pupils → Names and Faces → Upload new pupil photographs**.
+Photographs can be uploaded for Pupils by visiting **Pupils → Names and Faces → Upload new pupil photographs**. The same page is on the Admissions tab, as **Admissions → Pupil Administration → Upload pupil photos (in a batch)**.
 
 ![](assets/screenshots/pupil-photographs/pupil-photographs-01.png)
 
@@ -33,16 +32,18 @@ Click on the **Choose Files** button. A normal file selection window will appear
 
 ![](assets/screenshots/pupil-photographs/pupil-photographs-02.png)
 
-Finally, click on the **Upload pictures** button.
+Click on the **Upload pictures** button. ADAM does not save anything yet. Files that are not JPG pictures are left out, and ADAM names them in a warning that starts “These files were not uploaded, because they are not JPG pictures or could not be read”.
 
-ADAM will now upload the photographs and match them to pupils in your database.
+ADAM then shows the review page, “Upload pupil pictures”. Check the matches there, choose a pupil for each row that needs one or tick **Ignore**, and click **Confirm**. [Matching Uploads to People](matching-uploads-to-people.md#the-review-page) describes the review page.
+
+After you confirm, ADAM saves the photographs and shows the results.
 
 ![](assets/screenshots/pupil-photographs/pupil-photographs-03.png)
 
-Each picture that was matched is shown with the pupil’s name, which links to their profile. Note that one file above, “Anabel Atkinson.jpg”, was not matched, because the name has been spelled incorrectly. The number in brackets after **NOT FOUND** tells you how many pupils the name matched: zero means ADAM found nobody of that name, and any number above one means the name is shared and ADAM will not guess between them. Correct any errors and try again.
+A line at the top says how many pictures were saved. Each saved picture is shown with the pupil’s name, which links to their profile, and the file name. Under the pictures, “These pictures were not saved:” lists each picture you ignored or that ADAM could not save, with the reason. The **Upload more pictures** link takes you back to the upload form.
 
 > [!WARNING]
-> You do not have to upload all the files again, just the ones that needed corrections.
+> You do not have to upload all the files again, just the ones that were not saved.
 
 Now, when searching for a pupil or viewing their profile, their picture will be displayed:
 
@@ -80,7 +81,6 @@ When using the upload feature described above, ADAM will automatically search fo
 Some examples include:
 
 -   A photograph was incorrectly named with the wrong pupil, but the pupil in question has no new photograph.
--   The pupil’s photograph won’t upload or match because of accented or other characters in the pupil’s name.
 -   An older photograph already in the repository should be displayed again.
 
 ### Managing Photographs in the Document Repository

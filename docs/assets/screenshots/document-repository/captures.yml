@@ -31,3 +31,45 @@
   revert: none. The new descriptions stay, for later captures.
   note: >
     Captured on the screenshot site, https://screenshot.theta.adam.co.za/ (adam_agent_screenshot, randomised data), with a scripted Playwright Chromium on the same binary, viewport, en_ZA locale and single-origin request filter as .mcp.json, because the Playwright MCP server had not been restarted onto the new host. Replaces a capture taken earlier on 2026-11-17 against dev.theta.adam.co.za, whose database holds a real school's data.
+
+- image: document-repository-15.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Document Repository bulk upload (/mod/docrep/bulk-upload)
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    None. The form is empty.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.
+
+- image: document-repository-16.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Bulk Upload Results (/mod/docrep/bulk-upload/results/1)
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    The first upload of image matching-uploads-to-people-01's files (with
+    HadebeK.pdf in place of KennedyM.pdf), confirmed with Damian Singh chosen
+    on the Check row and Wheelr Thatho.pdf ignored: 7 uploaded, 1 ignored.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.

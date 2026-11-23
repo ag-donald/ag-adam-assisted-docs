@@ -42,3 +42,27 @@
     Captured at a 1200px viewport, not 900px. The class table's two
     drop-down columns make the page about 1180px wide, so a 900px viewport
     cuts the Year-to-Date Result column off.
+
+- image: mark-book-administration-39.png
+  captured: 2026-11-21
+  as: staff (staff_id 1, dev blank-password login)
+  path: Assessment → Assessment Administration → Import assessment results → Next
+  frame:
+    mode: span
+    selectors: main > *
+    padding: 8
+  setup: >
+    As matching-uploads-to-people-03.png. First Row of Data set to Row 2,
+    pupil identifiers Column 1, Identification to use Match by name (the
+    default), subjects Column 2, results Column 3. The viewport was 1800px
+    tall for this shot, so the form's sticky button bar sat in place below the
+    form rather than over it.
+  revert: none — adam_agent_screenshot_pm is a throwaway copy
+  site: >
+    Captured before phinor/adam#615 (feature/person-matching) was merged, so
+    not on the Apache screenshot site: the person-matching worktree at
+    7045a686cd/127e96cfb7 (with two review-page fixes made during this run)
+    served by php -S at http://screenshotpm.localhost:8125/ against
+    adam_agent_screenshot_pm, a copy of adam_agent_screenshot taken
+    2026-11-21 with the branch's migrations applied. Open Sans was served from
+    the same font files the Apache site uses.

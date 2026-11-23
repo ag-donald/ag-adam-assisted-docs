@@ -4,31 +4,36 @@ ADAM stores staff photographs in the Document Repository and uses one of them as
 
 ## Naming of Photographs
 
-The photographs should be named in one of three ways that will allow ADAM to identify which staff member it belongs to:
+ADAM matches each picture to a staff member by its file name. The upload page lists these rules:
 
-4.  LoginName.jpg
-5.  FirstName LastName.jpg
-6.  LastName FirstName.jpg
+-   The staff member’s name can be anywhere in the file name, with other words around it and in any order. For example, `Mokoena Thabo 2026.jpg`. The name is not case sensitive.
+-   An admin number, username or ID number on its own also matches. For example, `12345.jpg`.
+-   You can upload a ZIP file of JPG pictures. Each picture in it is matched by its own file name.
+-   Anything ADAM is unsure of is shown for checking before anything is saved.
+
+The surname and first initial also work, separated by a space, such as `Clark B.jpg`. Without the space, as in `ClarkB.jpg`, ADAM shows the picture as **Probable** with the staff member selected, so that you check it once. After you confirm it, ADAM remembers it for you, and the same file name is certain next time. [How ADAM Matches a Name](matching-uploads-to-people.md#how-adam-matches-a-name) gives the full rules.
 
 ## Uploading Staff Photographs
 
-Photographs can be uploaded for staff members by visiting **Staff → Names and Faces → Upload new staff photographs**.
+Photographs can be uploaded for staff members by visiting **Staff → Names and Faces → Upload new staff photographs**. ADAM matches the pictures against current staff.
 
 ![](assets/screenshots/staff-photographs/staff-photographs-01.png)
 
-Click on the **Choose Files** button. A normal file selection window will appear. Click on a batch of files to upload, bearing in mind the limits that your server has in place. The page displays these limits for you — the maximum number of files you may upload at a time and the maximum total size — so you can select your batch accordingly. Click on the “Open” button at the bottom (this may differ depending on your web browser)
+Click on the **Choose Files** button next to **Pictures**. A normal file selection window will appear. Click on a batch of files to upload, bearing in mind the limits that your server has in place. The page displays these limits for you — the maximum number of files you may upload at a time and the maximum total size — so you can select your batch accordingly. A ZIP file counts as one file. Click on the “Open” button at the bottom (this may differ depending on your web browser)
 
 ![](assets/screenshots/staff-photographs/staff-photographs-02.png)
 
-Finally, click on the **Upload pictures** button.
+Click on the **Upload pictures** button. ADAM does not save anything yet. Files that are not JPG pictures are left out, and ADAM names them in a warning that starts “These files were not uploaded, because they are not JPG pictures or could not be read”.
 
-ADAM will now upload the photographs and match them to staff in your database.
+ADAM then shows the review page, “Upload staff pictures”. Check the matches there, choose a staff member for each row that needs one or tick **Ignore**, and click **Confirm**. [Matching Uploads to People](matching-uploads-to-people.md#the-review-page) describes the review page.
+
+After you confirm, ADAM saves the photographs and shows the results.
 
 ![](assets/screenshots/staff-photographs/staff-photographs-03.png)
 
-Note that one staff member above, Brandon Clark was not matched. In this case, his name has been spelled incorrectly in the photograph. Correct any errors and try again.
+A line at the top says how many pictures were saved. Each saved picture is shown with the staff member’s name, which links to their profile, and the file name. Under the pictures, “These pictures were not saved:” lists each picture you ignored or that ADAM could not save, with the reason. The **Upload more pictures** link takes you back to the upload form.
 
-*You do not have to upload all the files again, just the ones that needed corrections.*![](assets/screenshots/staff-photographs/staff-photographs-04.png)
+*You do not have to upload all the files again, just the ones that were not saved.*
 
 Now, when searching for a staff member or viewing their profile, their picture will be displayed:
 
@@ -43,7 +48,6 @@ When using the upload feature described above, ADAM will automatically search fo
 Some examples include:
 
 -   A photograph was incorrectly named with the wrong person, but the staff member in question has no new photograph.
--   The staff member’s photograph won’t upload or match because of accented or other characters in the name.
 
 ### Managing Photographs in the Document Repository
 
