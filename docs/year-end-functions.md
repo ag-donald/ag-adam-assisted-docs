@@ -2,7 +2,7 @@
 
 The following video provides a walk through of the process. Each step is also described below.
 
-https://www.youtube.com/watch?v=E0Ek21XQAqM
+https://www.youtube.com/watch?v=HsoeHjKWUcw
 
 ## Before You Begin
 
