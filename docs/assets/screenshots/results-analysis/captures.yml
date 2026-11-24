@@ -35,26 +35,30 @@
     capturing.
   revert: none
 - image: results-analysis-03.png
-  captured: 2026-11-24
+  captured: 2026-11-24 (recaptured the same day)
   host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
   as: staff
   path: >
     View results summary (by grade) → Next, with Reporting Period College
     Trinity Term 2026 (48), Compare Results Against College Easter Term 2026
-    (42), Grade Upper IV (10), Term Results, 80 % and 30 %
+    (42), Grade 10, Term Results, 80 % and 30 %
   frame:
     mode: span
     selectors: >
-      From the top of the h1 (Reporting Period Summary of Results: Upper IV:
+      From the top of the h1 (Reporting Period Summary of Results: Grade 10:
       College Trinity Term 2026) to the bottom of the paragraph holding the
       View the full promotions report... link; viewport 900x752, scrollY 316
     padding: 8
   setup: >
-    None. Upper IV was chosen because it has results in both periods and five
+    None. Grade 10 was chosen because it has results in both periods and five
     promotion decisions.
   revert: none
+  note: >
+    Recaptured after the screenshot site's grade names were reset to
+    "Grade n" on Administration → Edit grade settings (grades 3 to 22; this
+    grade was "Upper IV"). Same parameters and framing as the first capture.
 - image: results-analysis-04.png
-  captured: 2026-11-24
+  captured: 2026-11-24 (recaptured the same day)
   host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
   as: staff
   path: The same summary as results-analysis-03.png
@@ -69,3 +73,5 @@
   note: >
     The failures and distinctions table was not captured. It has the same
     two-column layout as this one, and the section describes it in words.
+    Recaptured after the grade names were reset to "Grade n" (see
+    results-analysis-03.png); the class column now reads "Grade 10 CG3".
