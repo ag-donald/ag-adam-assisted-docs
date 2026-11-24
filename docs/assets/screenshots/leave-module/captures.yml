@@ -1,0 +1,33 @@
+- image: leave-module-01.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration → Pastoral Administration → Manage Leave Types → Add new Leave Type
+  frame:
+    mode: span
+    selectors: the "Add Leave Type" h2 and form#newdatum
+    padding: 8
+  setup: >
+    None. The form is shown empty, as it opens, with the Description field
+    blurred. emailfromaddress was testing+defaultfrom@adam.co.za before
+    capturing.
+  revert: none
+  note: >
+    Recaptured for issue 67. The earlier image predated the Use Scheduler
+    field and the Leave Options question editor.
+
+- image: leave-module-07.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration → Pastoral Administration → Manage Leave Types → Add new Leave Type, Leave Options row
+  frame:
+    mode: element
+    selectors: tr:has(.leave-options-editor)
+    padding: 0
+  setup: >
+    On the unsaved Add Leave Type form, two questions were added: "Saturday
+    Lunch" (Choices: Yes, No) and "Driver’s name" (Text answer, Must be
+    answered ticked). The viewport was set to 900×1500 so the whole form fits
+    and the sticky save bar does not overlap the row. The form was not saved.
+  revert: none (nothing was saved)
