@@ -47,7 +47,7 @@ Additionally, if a decision regarding a pupil’s promotion is made only after t
 
 ![](assets/screenshots/year-end-functions/year-end-functions-04.png)
 
--   ADAM lists the pupils in the school, with a tab for each grade. Each tab shows how many of its pupils are ticked: “Grade 12 (140/141)” means that 140 of the 141 pupils in Grade 12 will be promoted. Untick each pupil who is being held back a year. **Select All**, at the top of each tab, ticks or unticks every pupil in that grade.
+-   ADAM lists the pupils who were in the school at the end of the year’s last reporting period and are still in the school on 31 December, with a tab for each grade, starting with the highest grade. A pupil you have already deregistered from a date before 31 December is not listed and is not affected by these decisions. A pupil who joined after the last reporting period is not listed either, and is promoted with their grade. Each tab shows how many of its pupils are ticked: “Grade 12 (140/141)” means that 140 of the 141 pupils in Grade 12 will be promoted. Untick each pupil who is being held back a year. **Select All**, at the top of each tab, ticks or unticks every pupil in that grade.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-05.png)
 
@@ -129,7 +129,7 @@ If, however, ADAM gives you the option of entering in a random string of capital
 ![](assets/screenshots/year-end-functions/year-end-functions-09.png)
 
 -   To give classes an action, tick them and click on the button for the action, next to **Give the ticked classes this action:**. Each button shows how many classes are ticked. You can also drag a class, or a group of ticked classes, onto one of the four boxes below the list.
--   To deal with many classes at once, type in the filter box. ADAM then shows only the classes whose names contain every word that you have typed, for example **grade 12** or **grade 9 perspectives**. Tick **Tick all shown** to tick every class in the filtered list, and click on the action. Each word matches any part of a class’s name, including its description and its teacher, so **grade 1** also shows the Grade 10, 11 and 12 classes. Add more words to narrow the list.
+-   To deal with many classes at once, type in the filter box. ADAM then shows only the classes whose names contain every word that you have typed, for example **grade 12** or **grade 9 perspectives**. Tick **Tick all shown** to tick every class in the filtered list, and click on the action. Each word must match the start of a word in the class’s name (its subject, grade, description or teacher), and a number must match the whole number, so **grade 1** shows the Grade 1 classes but not Grade 10, and **grade 12** still shows a class named “Grade 12A”. A class whose subject name itself contains a number, such as “Mathematics - Paper 1”, can still appear. Add more words to narrow the list.
 -   Once a class has an action, it leaves the list and appears in the box for that action, so filtering and ticking again cannot change it by accident. Each box explains its action, and each class in a box shows what will happen to it, for example “Moves up to Grade 11. 24 pupils move with it.” A class that will be treated differently from the box’s name is marked with a ⚠, such as “⚠ Deleted: Grade 12 is a leaving grade.”, and the box’s heading counts how many of its classes are marked.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-12.png)
