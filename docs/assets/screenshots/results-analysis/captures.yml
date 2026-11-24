@@ -18,3 +18,54 @@
     rows with marks start about 90 rows down, so no 900px frame shows the
     column headings and any averages together. The section describes the
     table in words instead.
+- image: results-analysis-02.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Reporting → Results Analysis → View results summary (by grade) (the Reporting Period Summary of Results form)
+  frame:
+    mode: element
+    selectors: form#subject_summary
+    padding: 0
+  setup: >
+    None. The form is shown as it opens. ADAM preselected Prep Second Cycle
+    Report 2026 for both Reporting Period and Compare Results Against, which
+    the section points out. Focus was removed from the first drop-down before
+    capturing. emailfromaddress was testing+defaultfrom@adam.co.za before
+    capturing.
+  revert: none
+- image: results-analysis-03.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: >
+    View results summary (by grade) → Next, with Reporting Period College
+    Trinity Term 2026 (48), Compare Results Against College Easter Term 2026
+    (42), Grade Upper IV (10), Term Results, 80 % and 30 %
+  frame:
+    mode: span
+    selectors: >
+      From the top of the h1 (Reporting Period Summary of Results: Upper IV:
+      College Trinity Term 2026) to the bottom of the paragraph holding the
+      View the full promotions report... link; viewport 900x752, scrollY 316
+    padding: 8
+  setup: >
+    None. Upper IV was chosen because it has results in both periods and five
+    promotion decisions.
+  revert: none
+- image: results-analysis-04.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: The same summary as results-analysis-03.png
+  frame:
+    mode: span
+    selectors: >
+      From the top of table#table_2 (Biggest drops / Biggest improvements)
+      to the bottom of its fifth tbody row; viewport 900x304, scrollY 1099
+    padding: 8
+  setup: None.
+  revert: none
+  note: >
+    The failures and distinctions table was not captured. It has the same
+    two-column layout as this one, and the section describes it in words.
