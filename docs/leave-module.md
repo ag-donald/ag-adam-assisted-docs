@@ -66,11 +66,14 @@ The questions appear on every leave request form for this leave type: **Submit a
 
 #### Seeing the answers
 
-The answers are shown to the people who approve the leave:
+The answers are shown to the people who approve the leave, and to the pupil:
 
 -   The lists of leave requests on **Pupils → Leave Management → View Leave Requests For Your Approval** and **View Leave Requests by Class** have a **Choices** column with each request’s answers. The column is shown only when at least one request in the list has answers.
--   On the parent portal, **Approve Leave Requests** shows the **Choices** column in the list of past leaves that the parent approved or denied. The cards for upcoming leaves do not show the answers.
+-   On the parent portal, **Approve Leave Requests** shows the answers on each card under **Upcoming Leaves**, so a parent sees them before clicking **approve**. The list of past leaves that the parent approved or denied has a **Choices** column.
+-   On the parent and pupil portals, **Leave Requests** shows the answers on each card under **Upcoming Leaves**. The list of **Past Leaves** has a **Choices** column.
 -   When a member of staff clicks **update** in the **School Approval** column, the **Update leave status** page lists each answer below the request’s details.
+
+On a card, each answer is on its own line, as the question followed by the answer, below the destination and host. A card for a leave without answers has no such lines.
 
 To count or list the answers across many requests, use the [Leave Reports](#leave-reports).
 
