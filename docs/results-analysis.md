@@ -74,7 +74,7 @@ Click **Next**. The summary opens in a new tab or window, so the form stays open
 
 ### Reading the summary
 
-The heading names the grade and the reporting period, for example “Reporting Period Summary of Results: Upper IV: College Trinity Term 2026”. The summary counts the pupils who were in the grade on the last day of the reporting period and who have an aggregate for that period. A pupil without an aggregate is left out of every part of the summary. The summary uses the results as they are now, whether or not the reports have been published.
+The heading names the grade and the reporting period, for example “Reporting Period Summary of Results: Grade 10: College Trinity Term 2026”. The summary counts the pupils who were in the grade on the last day of the reporting period and who have an aggregate for that period. A pupil without an aggregate is left out of every part of the summary. The summary uses the results as they are now, whether or not the reports have been published.
 
 ![](assets/screenshots/results-analysis/results-analysis-03.png)
 
