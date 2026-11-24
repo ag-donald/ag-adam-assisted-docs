@@ -1,0 +1,61 @@
+- image: transfer-cards-01.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Alumni → Lists and Labels → Transfer Cards
+  frame:
+    mode: span
+    selectors: >
+      From the "Transfer Cards" h1 to the eighth pupil label in #leaversList,
+      with the viewport set to 900×392 so the sticky Generate Transfer Cards
+      bar sits just below the eighth pupil.
+    padding: 8
+  setup: Year Left set to 2026 (49 leavers, all ticked by the page).
+  revert: none
+
+- image: transfer-cards-02.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Alumni → Lists and Labels → Future-dated Transfer Cards
+  frame:
+    mode: span
+    selectors: The "Future-Dated Transfer Cards" h1 to the bottom of the form.
+    padding: 8
+  setup: >
+    Date 2026-12-04; Registration Status "CURRENT: Withdrawal Notice Received"
+    (3 pupils). Focus removed from the date field before capturing.
+  revert: none
+
+- image: transfer-cards-03.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Transfer card generated with date=2026-12-04 for pupil 5554 (Grade 11), as Future-dated Transfer Cards would
+  frame:
+    mode: span
+    selectors: >
+      The card div (parent of .logo), top of the badge to the bottom of the
+      family table. body padding-bottom set to 8px in the browser so the
+      page could scroll far enough for bottom padding.
+    padding: 8
+  setup: none
+  revert: none
+  note: >
+    The randomised data has no family addresses, so Residential Address and
+    Postal Address are empty, and no Citizenship.
+
+- image: transfer-cards-04.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Transfer card generated without a date for pupil 5208 (Grade 9), as Print a transfer card would
+  frame:
+    mode: span
+    selectors: The "Transfer Card" h1 to the bottom of the pupil details table.
+    padding: 8
+  setup: none
+  revert: none
+  note: >
+    Shows the First Additional Language line from phinor/adam#633, which is on
+    development but not yet released.
