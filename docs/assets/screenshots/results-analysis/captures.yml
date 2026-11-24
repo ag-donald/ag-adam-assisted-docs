@@ -1,0 +1,20 @@
+- image: results-analysis-01.png
+  captured: 2026-11-23
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: Reporting → Results Analysis → View subject averages (the School Subject Averages form)
+  frame:
+    mode: element
+    selectors: form#schoolaverages
+    padding: 0
+  setup: >
+    None. The form is shown as it opens, with ADAM's preselected reporting
+    period (Prep Second Cycle Report 2026) and Term Marks.
+    emailfromaddress was testing+defaultfrom@adam.co.za before capturing.
+  revert: none
+  note: >
+    The results table was not captured. On this school's data it has 126
+    subject rows and 26 grade columns (1860px wide, 7300px tall), and the
+    rows with marks start about 90 rows down, so no 900px frame shows the
+    column headings and any averages together. The section describes the
+    table in words instead.
