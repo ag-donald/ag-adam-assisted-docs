@@ -2,6 +2,8 @@
 
 ADAM is capable of allowing individual pupil records to be transferred between ADAM schools. This is useful for feeder prep schools where children apply to the high school automatically, for example.
 
+To print a one-page summary of a pupil who is leaving for any school, see [Transfer Cards](transfer-cards.md).
+
 The following information is transferred:
 
 -   Pupil Profile Information

@@ -32,6 +32,8 @@ If you **don’t know** which pupils might be transferring, don’t worry: dereg
 
 Repeat these steps for each transferring pupil.
 
+To print a transfer card for each of these pupils, see [Transfer Cards](transfer-cards.md).
+
 ## Step 2: Finalising Promotion Decisions
 
 This step tells ADAM which pupils should be moved up into the next grade and which pupils should not be. Although ADAM can calculate promotion decisions based on results, these calculated decisions may not always reflect accurate promotions and transfers to subsequent grades. For this reason, ADAM asks you to check which pupils must be moved to the next grade, and which should be kept in the same grade.
