@@ -36,21 +36,21 @@ Repeat these steps for each transferring pupil.
 
 This step tells ADAM which pupils should be moved up into the next grade and which pupils should not be. Although ADAM can calculate promotion decisions based on results, these calculated decisions may not always reflect accurate promotions and transfers to subsequent grades. For this reason, ADAM asks you to check which pupils must be moved to the next grade, and which should be kept in the same grade.
 
-ADAM will assume that any pupil with a promotion result of “Fail” will not be promoted. This assumption can easily be changed by following the instructions below. A pupil who reflects “Fail” in their promotion decision can most certainly be promoted! As it happens, the promotion decision calculated by ADAM’s promotion results is only a guide and ADAM does not enforce this decision, letting you override it easily.
+ADAM starts with every pupil ticked, which means that every pupil will be promoted unless you untick them. The promotion decision calculated by ADAM’s promotion results is only a guide and is not used here: a pupil who reflects “Fail” in their promotion decision is still ticked until you untick them.
 
 Additionally, if a decision regarding a pupil’s promotion is made only after the roll-over is complete, don’t worry: it is possible to change the promotions later. Changing it after the roll-over requires a [slightly more manual approach](pupil-information.md#how-adam-works-out-a-pupils-grade) which is otherwise automated in the roll-over process.
 
--   On the **Administration** tab, click on **Finalise Promotion Results** under the **Year-End Functions** heading.
--   Select the **current academic year** to process promotions. ADAM allows you to choose a previous year, but this *should only be used in special circumstances and under guidance from support staff!* For a standard end-of-year procedure, you will always choose the year of the academic cycle just past.
+-   On the **Administration** tab, click on **Finalise promotion results** under the **Year-end Functions** heading.
+-   Choose the **Academic Year** to process and click on **Next**. ADAM allows you to choose a previous year, but this *should only be used in special circumstances and under guidance from support staff!* For a standard end-of-year procedure, you will always choose the year of the academic cycle just past.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-04.png)
 
--   A list of pupils will appear. If ADAM has determined a promotion status for the pupil, they will have a tick next to their names. If they have been determined to fail, there will be no tick. You may change these ticks as you require. Many administrators click on the “Select All” tickbox at the top and then go through and manually deselect the pupils who are being held back a year.
+-   ADAM lists the pupils in the school, with a tab for each grade. Each tab shows how many of its pupils are ticked: “Grade 12 (140/141)” means that 140 of the 141 pupils in Grade 12 will be promoted. Untick each pupil who is being held back a year. **Select All**, at the top of each tab, ticks or unticks every pupil in that grade.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-05.png)
 
--   Click on the **Save Results** button to record these changes. It is possible to come back and change these promotion decisions, but all changes must be completed before moving to Step 3, below.
--   In the confirmation screen, a list of pupils who are NOT progressing to a higher grade will be displayed. Double check this list and, if necessary, repeat the process described in Step 2 to correct the list to ensure that the correct pupils are promoted.
+-   Click on the **Save Promotion Decisions** button, at the bottom of the page, to record these changes. It is possible to come back and change these promotion decisions, but all changes must be completed before moving to Step 3, below.
+-   ADAM shows the page again, with a list of the pupils who are NOT progressing to a higher grade above the tabs. Double check this list and, if necessary, change the ticks and save again to ensure that the correct pupils are promoted.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-06.png)
 
@@ -60,82 +60,96 @@ The largest and most important aspect of the roll-over is telling ADAM how to he
 
 ### Background Information
 
-ADAM will ask you what it should do with all the classes that you have created on your system for the current academic year. There are four possible options:
+ADAM will ask you what it should do with each of the classes that you have created on your system for the current academic year. There are four possible actions:
 
-1.  **Move** will transfer all currently registered students in the class into the next grade.
+1.  **Move up with pupils** moves the class to the next grade and keeps its pupils in it.
 
-Using this option will cause “Grade 8 C English” to become “Grade 9 C English” and all the pupils that were in “Grade 8 C English” will now be in “Grade 9 C English”.
+Using this action will cause “Grade 8 C English” to become “Grade 9 C English” and all the pupils that were in “Grade 8 C English” will now be in “Grade 9 C English”.
 
-Use this option if the class will remain largely the same from year to year, even if the teacher will change.
+Use this action if the class will remain largely the same from year to year, even if the teacher will change.
 
--   If the grade year exceeds the maximum allowed at the school (e.g. “Grade 12 A Mathematics” would become “Grade 13 A Mathematics”) then the class will automatically be deleted.
--   Moving has *no effect* on classes that are not assigned to a specific grade. So “Blue House” will remain “Blue House” and all pupils will remain registered for it.
+2.  **Move up, empty** moves the class to the next grade and removes all its pupils from it. This is useful when the subject will be carried through to the following year but the class groups will change significantly.
 
-2.  **Empty and move** will remove all students from the class and change the grade year associated with the class to the next year. This is useful when the subject will be carried through to the following year but the class groups will change significantly.
+Using this action will cause “Grade 8 C English” to become “Grade 9 C English”, but the pupils who were in “Grade 8 C English” will no longer be registered for an English class. “Grade 9 C English” will still have the same teacher, but none of the pupils.
 
-Using this option will cause “Grade 8 C English” becomes “Grade 9 C English”, but the pupils who were in “Grade 8 C English” will no longer be registered for an English class. “Grade 9 C English” will still have the same teacher, but none of the pupils.
+3.  **Keep, empty** leaves the class in its grade and removes all its pupils from it.
 
--    If the class has no grade assigned to it, then this option is equivalent to “Empty”.
+Using this action will cause “Grade 8 C English” to remain as “Grade 8 C English” and all the pupils who were registered for “Grade 8 C English” will no longer be registered for an English class.
 
-3.  **Empty** will leave the class as is, but deregister all students from the class.
+Use this action if you have the same classes with the same teachers in the same grades each year, or for a class that runs every year with new pupils, such as a club. This is mostly used with Primary Schools.
 
-Using this option will cause “Grade 8 C English” to remain as “Grade 8 C English” and all the pupils who were registered for “Grade 8 C English” will no longer be registered for an English class.
+4.  **Delete** deletes the class and removes all its pupils from it.
 
-Use this option if you have the same classes with the same teachers in the same grades each year. This is mostly used with Primary Schools.
+The following table summarises these four actions:
 
-4.  **Delete** will deregister all pupils from the class and delete it.
+| Action | Keeps the class and the teacher | Changes the grade of the class | Keeps the pupils in the class |
+|---|:-:|:-:|:-:|
+| Move up with pupils | Yes | Yes | Yes |
+| Move up, empty | Yes | Yes | No |
+| Keep, empty | Yes | No | No |
+| Delete | No | No | No |
 
-The following table summarises these four options:
+Two kinds of class are treated differently from what the action’s name suggests:
 
-![](assets/screenshots/year-end-functions/year-end-functions-07.png)
+-   **A class in a leaving grade.** A class in the final grade of the school, or in any other [graduating grade](grade-settings.md#grade-settings), has no grade to move up to. If you choose either “Move up” action for it, ADAM deletes it instead.
+-   **A class that is not assigned to a grade**, such as a sports house or a school club. It cannot move up. “Move up with pupils” leaves it exactly as it is, with all its pupils, and “Move up, empty” only removes its pupils, which is the same as “Keep, empty”.
 
-If a class is not assigned to a grade (e.g. a sports house or school club), then the options that offer to “change the grade of the class” (i.e. the two options which involve “Moving”) will simply ignore the grade-change aspect of that instruction. This effectively means that for classes with no grade assigned, options 2 (Empty and Move) and 3 (Empty) are identical.
+You do not need to remember these rules: ADAM marks each of these classes with a ⚠ when you choose its action, and says what will happen to it.
 
-If a class has the same grade as the final grade allowed in the school, then options 1, 2 and 4 will all result in that class being deleted since it will have an invalid grade.
+The following examples might provide some context for when to use the different actions:
 
-If you choose to “change a grade” for a class (options 1 or 2) in the highest grade of the school, that class will be deleted.
+-   In a high school, subjects like “Geography” and “History” in Grades 10 and 11 usually keep the same enrolments from year to year. These classes would be given “Move up with pupils” to merely change the class grade, but keep the pupils enrolled. If the teacher changes, this could be done later.
 
-The following examples might provide some context for when to use the different options:
+-   If the class is going to change significantly in its make up, it might help to have a new, empty class ready in the following grade, but to remove the pupils from it which will allow them to be entered into new classes. In this scenario, choose “Move up, empty”. *This action is chosen least often. This is not to say that it is* never *chosen, but you are probably doing something inefficient if you choose it for most of your classes!*
+-   In primary schools, class teachers generally remain the same in each grade. It may thus be best to choose “Keep, empty”. This will keep the classes for a particular grade, but deregister the pupils who will have moved up to the next grade.
 
--   In a high school, subjects like “Geography” and “History” in Grades 10 and 11 usually keep the same enrolments from year to year. These classes would be set with option 1 (“Move”) to merely change the class grade, but keep the pupils enrolled. If the teacher changes, this could be done later.
-
--   If the class is going to change significantly in its make up, it might help to have a new, empty class ready in the following grade, but to remove the pupils from it which will allow them to be entered into new classes. In this scenario, choose option 2 (“Empty and Move”). *This option is chosen least often. This is not to say that it is* never *chosen, but you are probably doing something inefficient if this is your default option!*
--   In primary schools, class teachers generally remain the same in each grade. It may thus be best to choose option 3 (“Empty”). This will keep the classes for a particular grade, but deregister the pupils who will have moved up to the next grade.
-
--   Finally, any class which does not need to be taken into account in the following year should be removed using option 4 (“Delete”).
-
--   If the grade of the class is already at the highest grade that the school allows, then the class will also be deleted if options 1 or 2 are chosen. This is because there is no valid higher grade for those classes to move to.
+-   Finally, any class which does not need to be taken into account in the following year should be given “Delete”.
 
 ### Performing the Roll-over
 
--   On the **Administration** tab under the **Year-End Functions** heading, click on the **Perform year-end functions** option.
+-   On the **Administration** tab under the **Year-end Functions** heading, click on the **Perform year-end functions** option.
 -   If ADAM detects any problems at this point, you will be notified. Common problems include:
 
 1.  Having a reporting period still open. All reporting periods must be closed and finalised. Ideally, the publishing date should also have passed.
 
 2.  Not having processed the promotions yet (see [Step 2](#step-2-finalising-promotion-decisions)).
 
-If, however, ADAM gives you the option of entering in a random string of letters and numbers to proceed with the roll-over, then your system has met all the requirements.
+3.  Having already performed the roll-over for the year.
 
--   Type in the random characters and click on the “**Go!**” button.
+If, however, ADAM gives you the option of entering in a random string of capital letters to proceed with the roll-over, then your system has met all the requirements.
+
+-   Type the random characters into the **Confirmation** box and click on the “**Go!**” button.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-08.png)
 
--   ADAM now shows you a list of all the classes in the school. At the top of the list is a **Default Setting** which allows you to choose how to deal with classes in bulk.
+-   ADAM now lists the classes that do not have an action yet, under **Classes without an action**, grouped by subject. To begin with, this is every class in the school: ADAM gives no class an action until you choose one.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-09.png)
 
-Any of the classes that are visible on the page will be updated to match the selection chosen in the “Default Settings” at the top. By typing in the **Filter the classes** block, the list of classes will be filtered to only show classes that contain the text that you have specified. For example, if you were to type **Grade 5**, then only the classes containing the text “Grade 5” would be displayed. At this point, if you were to select a new option at the top, all the classes shown (in our example, “Grade 5”) would be updated to match. Clearing the text would then show all the classes again.
+-   To give classes an action, tick them and click on the button for the action, next to **Give the ticked classes this action:**. Each button shows how many classes are ticked. You can also drag a class, or a group of ticked classes, onto one of the four boxes below the list.
+-   To deal with many classes at once, type in the filter box. ADAM then shows only the classes whose names contain every word that you have typed, for example **grade 12** or **grade 9 perspectives**. Tick **Tick all shown** to tick every class in the filtered list, and click on the action. Each word matches any part of a class’s name, including its description and its teacher, so **grade 1** also shows the Grade 10, 11 and 12 classes. Add more words to narrow the list.
+-   Once a class has an action, it leaves the list and appears in the box for that action, so filtering and ticking again cannot change it by accident. Each box explains its action, and each class in a box shows what will happen to it, for example “Moves up to Grade 11. 24 pupils move with it.” A class that will be treated differently from the box’s name is marked with a ⚠, such as “⚠ Deleted: Grade 12 is a leaving grade.”, and the box’s heading counts how many of its classes are marked.
 
--   Once you are happy with the options chosen for each class, you are ready for the final step in this process. Click on the “**Next**” button at the bottom of the screen.
+![](assets/screenshots/year-end-functions/year-end-functions-12.png)
 
--   At this point, **ADAM creates a backup of the database** and, once done, begins transferring pupils, and performing the required operations on the classes. This process should take between 1 and 5 minutes. Please be patient! If you end up waiting for longer than 5 minutes, please contact us!
+-   To change your mind about a class, click on the **×** next to it, or on **Return all** at the bottom of its box to return every class in that box. The classes go back to the list, where you can choose again.
+-   ADAM remembers your choices in this browser, so you can reload the page or come back to it later. When it restores earlier choices, it says so at the top of the page and offers a **Start again** button, which clears every action.
+-   The bar at the top of the page counts the classes that still need an action, and the **Next** button is not available until every class has one. Once the bar reads “Every class has an action. You can continue.”, you are ready for the final step in this process. Click on the “**Next**” button.
 
--   ADAM will the process the roll-over and move the classes as you’ve requested. You will see a report that the end-of-year procedure has been completed successfully.
+-   At this point, **ADAM creates a backup of the database** and, once done, performs the required operations on the classes and processes the promotions and graduations. A progress page shows how far it has got. The backup can take as long as 10 minutes, during which it is normal for the progress bar to remain at 5%. Please be patient! If you end up waiting for much longer than this, please contact us!
 
 ![](assets/screenshots/year-end-functions/year-end-functions-10.png)
 
-Once ADAM has completed the roll-over, you will notice that as you work your way back to the menu and into other functions in ADAM, ADAM will report that it is in “**Roll-over mode**”. This happens only if the roll-over was completed before the end of the calendar year. If the roll-over is performed at the start of the next calendar year (in January), then ADAM will not enter the roll-over mode. “Roll-over mode” automatically stops automatically on 1 January when normal operation can resume.
+-   When the roll-over is finished, ADAM reports “Congratulations! Your roll-over is complete.”
+
+ADAM does not start the roll-over, and explains why, if:
+
+-   a roll-over is already in progress, for example because **Back** was clicked during the backup. ADAM offers a link to the roll-over’s progress instead;
+-   the roll-over for that year has already been completed;
+-   the classes have changed since the page was loaded, for example because someone else added a class. Start the year-end procedure again;
+-   a backup of the database could not be made.
+
+Once ADAM has completed the roll-over, you will notice that as you work your way back to the menu and into other functions in ADAM, ADAM will report that it is in “**Roll-over mode**”. This happens only if the roll-over was completed before the end of the calendar year. If the roll-over is performed at the start of the next calendar year (in January), then ADAM will not enter the roll-over mode. “Roll-over mode” stops automatically on 1 January when normal operation can resume.
 
 ![](assets/screenshots/year-end-functions/year-end-functions-11.png)
 

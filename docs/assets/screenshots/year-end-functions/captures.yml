@@ -1,0 +1,107 @@
+- image: year-end-functions-04.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Administration tab → Year-end Functions → Finalise promotion results
+  frame:
+    mode: element
+    selectors: main
+    padding: 0
+  setup: >
+    Site in its prepared state (reset.sh): every reporting period closed and no
+    promotion decisions saved for 2026.
+  revert: none
+- image: year-end-functions-05.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Administration tab → Year-end Functions → Finalise promotion results → 2026 → Next (first visit, before any decision is saved)
+  frame:
+    mode: span
+    selectors: From the page's h1 to the "Cox, Massimo" row in the Grade 12 tab.
+    padding: 8
+  setup: >
+    Unticked Massimo Cox (Grade 12), so the tab reads "Grade 12 (140/141)".
+    The floating control bar was hidden with visibility:hidden for the shot,
+    because at this viewport height it covers the last rows. The four-column
+    layout comes from commit cb175b1bbe on the PR #635 branch.
+  revert: The promotion decisions were saved for 06, and the site was then reset with reset.sh.
+- image: year-end-functions-06.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Same page, after Save Promotion Decisions with Massimo Cox unticked
+  frame:
+    mode: span
+    selectors: From the page's h1 to the list of pupils who have not been promoted.
+    padding: 8
+  setup: >
+    Saved the decisions from 05. The floating control bar was hidden with
+    visibility:hidden, because its shadow showed along the bottom edge.
+  revert: Site reset with reset.sh after the run.
+- image: year-end-functions-08.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Administration tab → Year-end Functions → Perform year-end functions
+  frame:
+    mode: element
+    selectors: main
+    padding: 0
+  setup: >
+    Promotion decisions saved (from 06). The red "It appears to be the middle
+    of the academic year!" warning was hidden with display:none: it shows only
+    from March to November, and schools do the roll-over in December. Focus
+    was taken off the Confirmation box so its text is not shown selected.
+  revert: none
+- image: year-end-functions-09.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Perform year-end functions → random characters typed → Go!
+  frame:
+    mode: span
+    selectors: From the page's h1 to the bottom of section.yearend-undecided (the action buttons).
+    padding: 8
+  setup: >
+    No class had an action. Typed "grade 9 perspectives" in the filter and
+    ticked Tick all shown, so 7 classes are ticked and the buttons show (7).
+  revert: none
+- image: year-end-functions-12.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Same page, after giving some classes an action
+  frame:
+    mode: element
+    selectors: "#yearend-columns"
+    padding: 0
+  setup: >
+    Started again with the browser's saved decisions cleared, then filtered,
+    ticked all shown and pressed an action for each of: grade 9 perspectives →
+    Delete; geography grade 10, grade 12 fs english and house ac1 → Move up
+    with pupils; grade 11 dramatic arts → Move up, empty; grade 0000 fine
+    motor → Keep, empty.
+  revert: none
+- image: year-end-functions-10.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Same page → every remaining class given Move up with pupils → Next (the roll-over's progress page, during the backup)
+  frame:
+    mode: element
+    selectors: main
+    padding: 0
+  setup: The roll-over really ran on the demonstration database.
+  revert: Site reset with reset.sh after 11.
+- image: year-end-functions-11.png
+  captured: 2026-11-24
+  host: yearend.theta.adam.co.za (database adam_agent_yearend_demo, a copy of the randomised adam_agent_screenshot; ADAM PR #635 branch)
+  as: staff
+  path: Home page after the roll-over in 10 finished
+  frame:
+    mode: element
+    selectors: "#rollover-2026"
+    padding: 0
+  setup: none
+  revert: Site reset with reset.sh.
