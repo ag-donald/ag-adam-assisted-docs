@@ -222,6 +222,21 @@ as a family” sessions, so it needs a real parent login, not the staff imperson
 
 ---
 
+## Pupil Comments — an AI summary (`docs/pupil-comments.md`)
+
+The *AI Summaries* section has no picture of a summary. Add `pupil-comments-06.png`: the
+**Summary** block above a pupil’s comments on the **Comments** tab of the **Pupil’s Info** page,
+with the note under it that names who wrote it. Place it after the first paragraph of
+*AI Summaries*.
+
+It could not be captured on 2026-11-24. The randomiser blanks every stored summary
+(`ai_summary.ai_response`), so no pupil on the screenshot site has one to show, and a new one needs
+ADAM’s in-house assistant to answer the screenshot site. Ask the developer how to get a summary
+written for a pupil with randomised comments, then capture it as a staff member with the
+**View AI Summary** permission.
+
+---
+
 ## Sandbox Sites — the banner (`docs/sandbox-sites.md`)
 
 The page has no pictures. Add `sandbox-sites-01.png`: the **Sandbox** banner at the top of a staff
