@@ -5,7 +5,7 @@ api_prefixes:
 
 # Online Applications
 
-Use these endpoints to find the fields on the online application form, submit an application, and start an application for a parent to finish. They also check whether an ID number belongs to an existing family login.
+Use these endpoints to find the fields on the online application form, submit an application, and start an application for a parent to finish. They also attach supporting documents to an application, and check whether an ID number belongs to an existing family login.
 
 All endpoints on this page are under `/api/applications/`.
 
@@ -268,7 +268,7 @@ A minimum set of required fields is:
 #### Response {#applicationsapplypost-response}
 
 A simple object providing notification of success or failure. The application field gives a code unique to this
-application which will, in a future development, allow for editing of the application.
+application. Keep this code: the [documents endpoints](#applicationsdocumentspost) use it to identify the application.
 
 ```json
 {
@@ -389,8 +389,9 @@ authoritative source.
 
 On success the data object contains two items:
 
-- `application`: A code unique to this application, for the sending system’s own record keeping. It is not a
-  credential and cannot be used to open the application form.
+- `application`: A code unique to this application. It is not a credential and cannot be used to open the
+  application form. Keep this code: the [documents endpoints](#applicationsdocumentspost) use it to identify the
+  application.
 - `continue_url`: The same continuation link that has been emailed to the parent. A sending system can present this
   directly — as a “Continue your application” button after a payment, for instance — so that the parent does not have
   to wait for the email. The link expires after 7 days and may be used at most 20 times.
@@ -441,6 +442,210 @@ to complete the family section again. In that case locked **family** fields are 
 existing family record when the application is approved; this is the same protection that stops an application
 overwriting an existing family’s details. Locked **pupil** fields are applied as normal. Sending systems whose locked
 information is about the children — payment references and the like — are unaffected by this.
+
+### Applications/documentslots:get
+
+Lists the document slots an application can carry. Use these endpoints to attach supporting documents to an
+application before it is approved, in the same way that a parent uploads them on the web application form. Admissions
+sees the documents on the application’s review page. When the application is approved, ADAM files each document into
+the new pupil’s or family’s document repository. When the application is rejected, ADAM deletes them.
+
+The slots are the school’s applicant document requests. The API does not create slots. A school sets them up first, as
+described under [Collecting Supporting Documents During the
+Application](online-applications.md#collecting-supporting-documents-during-the-application).
+
+Each slot holds one document per child, or one document per application for a family slot, as on the web form.
+
+#### Request {#applicationsdocumentslotsget-request}
+
+```
+GET /api/applications/documentslots
+```
+
+#### Parameters {#applicationsdocumentslotsget-parameters}
+
+None
+
+#### Response {#applicationsdocumentslotsget-response}
+
+The data attribute is a list of slots. Each slot has:
+
+- `slot_id`: The identifier to send to `Applications/documents`.
+- `name`, `description`: The slot’s name and description, as the school entered them.
+- `group`: The name of the document request the slot belongs to.
+- `who`: `family` for one document per application, or `pupil` for one document per child.
+- `requirement`: `None`, `Requested` or `Mandatory`. `None` is shown as **Optional** in ADAM.
+- `category_id`: The document repository category the document is filed into when the application is approved.
+- `max_size_mb`: The largest file the slot accepts, in MB.
+- `extensions`: The file extensions the slot accepts.
+
+```json
+{
+  "data": [
+    {
+      "slot_id": 12,
+      "name": "Birth certificate",
+      "description": "A certified copy of the child’s unabridged birth certificate.",
+      "group": "Application documents",
+      "who": "pupil",
+      "requirement": "Mandatory",
+      "category_id": 108,
+      "max_size_mb": 2.5,
+      "extensions": [
+        "pdf",
+        "jpg"
+      ]
+    }
+  ],
+  "message": "",
+  "response": {
+    "error": "OK",
+    "code": 200
+  }
+}
+```
+
+### Applications/documents:post
+
+Adds a document to an empty slot on an application.
+
+The token needs **add** permission on the slot’s document category, as well as this resource. See [Document Category
+Permissions](api-access-to-adam.md#document-category-permissions).
+
+Documents can be added while the application is being completed or is waiting for approval. This includes an
+application sent to `Applications/apply:post` with the ID number of an existing family, which waits for that parent to
+log in before it waits for approval.
+
+#### Request {#applicationsdocumentspost-request}
+
+```
+POST /api/applications/documents
+```
+
+#### Parameters {#applicationsdocumentspost-parameters}
+
+None - data sent by message body.
+
+#### Body
+
+The body must be JSON. Unlike `Applications/apply:post`, an encoded query string is not accepted.
+
+- `application`: The code that `Applications/apply:post` or `Applications/create:post` returned.
+- `slot_id`: The slot, from `Applications/documentslots:get`.
+- `child`: For a `pupil` slot, the child’s position in the application’s `pupil` list, counting from 0. Leave it out
+  for a `family` slot.
+- `filename`: The file’s name, including its extension. The extension must be one that the slot accepts.
+- `file_data`: The file’s contents, encoded as a base64 string.
+
+`slot_id` and `child` can be sent as JSON numbers or as strings of digits.
+
+##### Example (JSON):
+
+```json
+{
+  "application": "6ESKmQYMWH3KbJUdAESsZUi3BysaLx",
+  "slot_id": 12,
+  "child": 0,
+  "filename": "birth-certificate.pdf",
+  "file_data": "JVBERi0xLjQK..."
+}
+```
+
+#### Response {#applicationsdocumentspost-response}
+
+On success, the data object holds `application`, `slot_id`, `child` and `filename`, and the message is
+`Document staged`. For a `family` slot, `child` is `null`.
+
+```json
+{
+  "data": {
+    "application": "6ESKmQYMWH3KbJUdAESsZUi3BysaLx",
+    "slot_id": 12,
+    "child": 0,
+    "filename": "birth-certificate.pdf"
+  },
+  "message": "Document staged",
+  "response": {
+    "error": "OK",
+    "code": 200
+  }
+}
+```
+
+#### Errors {#applicationsdocumentspost-errors}
+
+These errors apply to all three documents endpoints. Where an error applies to only some of them, the list says so.
+
+- `400 (Bad request)`: the body is not valid JSON; `application`, `slot_id`, `filename` or `file_data` is missing;
+  `child` is missing or out of range for a `pupil` slot; `child` was sent for a `family` slot; the slot does not accept
+  the file’s extension; or `file_data` is not valid base64, or is empty.
+- `403 (Forbidden)`: no API token was sent, or the token lacks **add** permission (POST and PUT) or **delete**
+  permission (DELETE) on the slot’s category.
+- `404 (Not found)`: the application code is unknown; the slot is unknown or is not an applicant slot; or, for PUT and DELETE, the
+  slot holds no document.
+- `409 (Conflict)`: for POST, the slot already holds a document, so use PUT to replace it. For all three, the
+  application has been approved, rejected or has expired, so its documents can no longer change.
+- `413 (Payload too large)`: the file is larger than the slot allows.
+- `500 (Internal server error)`: ADAM could not store or remove the document.
+
+### Applications/documents:put
+
+Replaces the document a slot holds. If ADAM refuses the new file, the existing document stays.
+
+The token needs **add** permission on the slot’s document category, as well as this resource.
+
+#### Request {#applicationsdocumentsput-request}
+
+```
+PUT /api/applications/documents
+```
+
+#### Parameters {#applicationsdocumentsput-parameters}
+
+None - data sent by message body.
+
+#### Body
+
+The same JSON body as for [`Applications/documents:post`](#applicationsdocumentspost).
+
+#### Response {#applicationsdocumentsput-response}
+
+The same as for `Applications/documents:post`, except that the message is `Document replaced`. See [Errors](#applicationsdocumentspost-errors).
+
+### Applications/documents:delete
+
+Removes the document a slot holds.
+
+The token needs **delete** permission on the slot’s document category, as well as this resource.
+
+#### Request {#applicationsdocumentsdelete-request}
+
+```
+DELETE /api/applications/documents
+```
+
+#### Parameters {#applicationsdocumentsdelete-parameters}
+
+None - data sent by message body.
+
+#### Body
+
+A JSON body with `application`, `slot_id` and, for a `pupil` slot, `child`, as for
+[`Applications/documents:post`](#applicationsdocumentspost). It does not take `filename` or `file_data`. The
+application code goes in the body rather than the URL, so that it does not appear in web server logs.
+
+```json
+{
+  "application": "6ESKmQYMWH3KbJUdAESsZUi3BysaLx",
+  "slot_id": 12,
+  "child": 0
+}
+```
+
+#### Response {#applicationsdocumentsdelete-response}
+
+On success, the data object holds `application`, `slot_id` and `child`, and the message is `Document removed`. See
+[Errors](#applicationsdocumentspost-errors).
 
 ### Applications/verifyid:get
 

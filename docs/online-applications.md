@@ -132,6 +132,8 @@ Each slot also has an **Accepted Types** column, where you tick which kinds of f
 
 The full set of options for creating these uploads — audience, document scope (per family or per child), descriptions, maximum file size, the file types each slot accepts and the document repository category each document is filed into — is described under [Parent Uploads into the Document Repository](document-repository.md#parent-uploads-into-the-document-repository).
 
+An external system that sends applications to ADAM through the API can attach documents to the same slots. Admissions sees those documents on the application in the same way. See [Online Applications](api-applications.md#applicationsdocumentslotsget) in the API documentation.
+
 If the school has not configured any **Applicant** uploads, the document step is skipped entirely and parents move straight from their details to the review screen.
 
 ### Finding the address of your Application Form
