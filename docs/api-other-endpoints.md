@@ -317,6 +317,10 @@ GET /api/leaves/approved/6050
 
 The **data** attribute contains an array of 0 or more leave records.
 
+**leave_request_choices** holds the answers to the leave type’s questions, one per line. Each line is the question,
+a colon, then the answer. A question cannot contain a colon, but an answer can, so split each line at the
+**first** colon only. See [Questions asked with a leave request](leave-module.md#questions-asked-with-a-leave-request).
+
 ### Medical/offsport:get
 
 Returns a list of pupil IDs currently off sport due to medical reasons.

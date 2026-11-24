@@ -38,6 +38,41 @@ The fields are defined as follows:
 -   **Subject for Approval** defines which subject ADAM should look at to find which teachers are allowed to approve leaves for a pupil. The teachers and Teaching Assistants of a class in this subject, will be able to approve leaves for all pupils in those classes. They will not be able to approve leaves for pupils in other classes that they are not teachers of. If notification emails are turned on then the teachers of pupils in the subject here specified will be notified of their required approval.
 -   **Submission Permissions** tells ADAM who may submit these leave requests. Options including all combinations of Pupils, Staff and Families.
 -   **Off Campus** tells ADAM whether this leave counts as the pupil being away from school. For example, a pupil who has signed out of the boarding house for the evening might be in the school library - out of their boarding house, but still on campus. This impacts catering and roll-call lists.
+-   **Use Scheduler** — if set to “Yes”, users can only select dates and times from the leave scheduler for this leave type.
+-   **Leave Options** are the questions asked when someone requests this leave, such as whether the pupil needs Saturday lunch. They are described [below](#questions-asked-with-a-leave-request).
+
+### Questions asked with a leave request
+
+The **Leave Options** field holds the questions that appear on the leave request form once this leave type is chosen. Leave it empty if the leave type needs no questions.
+
+![](assets/screenshots/leave-module/leave-module-07.png)
+
+To add a question:
+
+1.  Click **+ Add question**.
+2.  Type the question in the **Question** box.
+3.  Choose the kind of answer:
+    -   **Choices** gives a list of answers to pick one from, shown as radio buttons. Type each answer in the **+ Add choice** box and press Enter after each one. To remove an answer, click the **×** next to it. An example is *Saturday Lunch*, with the choices *Yes* and *No*.
+    -   **Text answer** gives a box to type a short answer in, of up to 255 characters. An example is *Driver’s name*, for the person collecting the pupil.
+4.  Tick **Must be answered** if a request should not be submitted without an answer to this question.
+
+To remove a question, click the bin icon next to it. Click **Save this Leave Type** to keep the changes.
+
+ADAM removes any colon from a question and any comma from a choice, because it uses these characters to store the answers.
+
+#### Answering the questions
+
+The questions appear on every leave request form for this leave type: **Submit a Leave Request for a Pupil** and **Submit Leave Requests by Class** for staff, and **Leave Requests** on the parent and pupil portals. A question that must be answered is marked with an asterisk (\*). A request cannot be submitted until every such question has an answer. If one is missing, ADAM names the questions that still need an answer and does not save the request.
+
+#### Seeing the answers
+
+The answers are shown to the people who approve the leave:
+
+-   The lists of leave requests on **Pupils → Leave Management → View Leave Requests For Your Approval** and **View Leave Requests by Class** have a **Choices** column with each request’s answers. The column is shown only when at least one request in the list has answers.
+-   On the parent portal, **Approve Leave Requests** shows the **Choices** column in the list of past leaves that the parent approved or denied. The cards for upcoming leaves do not show the answers.
+-   When a member of staff clicks **update** in the **School Approval** column, the **Update leave status** page lists each answer below the request’s details.
+
+To count or list the answers across many requests, use the [Leave Reports](#leave-reports).
 
 ### Editing a Leave Type
 
@@ -98,6 +133,8 @@ ADAM offers reports for reviewing the leaves that pupils have requested. They ar
 - **Leave Option Responses** shows, for a chosen leave type and date range, *how many* pupils selected each option — for example, how many requested Saturday lunch.
 - **Leave Option Lists** lists the *named pupils* who selected particular options. This is described below.
 
+Both reports filter and count only **Choices** questions. A **Text answer** question has no fixed answers to count or tick, so it does not appear in **Leave Option Responses** or in the filter of **Leave Option Lists**. See [Questions asked with a leave request](#questions-asked-with-a-leave-request).
+
 ### Leave Option Lists
 
 Where the **Leave Option Responses** report gives you totals, the **Leave Option Lists** report gives you the actual names. It is ideal for building a working list — for example, the pupils who requested transport back to school for a given weekend, or who signed up for Saturday lunch.
@@ -105,7 +142,7 @@ Where the **Leave Option Responses** report gives you totals, the **Leave Option
 To open it, navigate to **Pupils → Leave Management → Leave Option Lists** and complete the filter form:
 
 - **Leave Type** — required. Choose the leave type to report on. The options to tick appear only once a leave type has been chosen, because each leave type defines its own options.
-- **Options** — once a leave type is chosen, its options (such as *Saturday Lunch* or *Transport Back*) appear as tick boxes. Tick the values you want to list. You can:
+- **Options** — once a leave type is chosen, its **Choices** questions (such as *Saturday Lunch* or *Transport Back*) appear as tick boxes. **Text answer** questions are not listed here. Tick the values you want to list. You can:
     - leave everything unticked to list **all** pupils on this leave type within the date range;
     - tick more than one value of the *same* option to match pupils who chose **any** of those values;
     - tick values across *different* options to match only pupils who chose **all** of them — for example, *Saturday Lunch = yes* **and** *Transport Back = yes*.
@@ -115,7 +152,7 @@ To open it, navigate to **Pupils → Leave Management → Leave Option Lists** a
 
 Click **Generate Report**. The report opens in a new window.
 
-Only **approved** leave requests are included. The report lists each matching pupil with their **Name**, **Grade** and **Class**, a column for each of the leave type’s options showing what that pupil chose, and the **Leaving** and **Returning** dates and times. The headings confirm the leave type, the date range and the options you filtered on.
+Only **approved** leave requests are included. The report lists each matching pupil with their **Name**, **Grade** and **Class**, a column for each of the leave type’s questions showing that pupil’s answer (typed answers included), and the **Leaving** and **Returning** dates and times. The headings confirm the leave type, the date range and the options you filtered on.
 
 ![](assets/screenshots/leave-module/leave-module-06.png)
 
