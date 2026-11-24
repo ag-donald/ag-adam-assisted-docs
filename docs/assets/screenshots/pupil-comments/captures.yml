@@ -1,0 +1,20 @@
+- image: pupil-comments-05.png
+  captured: 2026-11-24
+  host: screenshot.theta.adam.co.za (database adam_agent_screenshot, randomised)
+  as: staff
+  path: >
+    Administration → Site Administration → Edit site settings → Integrations
+    → Choose who writes AI summaries, then Provider set to Claude (Anthropic)
+    and Show
+  frame:
+    mode: span
+    selectors: >
+      From the top of the h1 "AI summaries" to the bottom of the Check and
+      save button, stopping above the "Back to the site settings" link;
+      viewport 900x813, scrollY 316
+    padding: 8
+  setup: >
+    None. The settings were shown, not saved: the active provider stays
+    ADAM (in-house), which is why the status box says so while the form
+    shows Claude's settings. No key was entered and nothing was sent.
+  revert: none
