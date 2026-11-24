@@ -106,6 +106,19 @@ The difference between the two ways of stopping a token is important:
 - **Delete** is permanent and cannot be undone. The token is removed from the list entirely and cannot be recovered; a
   new token would have to be created and shared with the external system.
 
+### Document Category Permissions
+
+A token that reads, adds or deletes documents needs a second set of permissions, one for each document category it
+works with. This applies to the [Documents](api-documents.md) endpoints, and to the endpoints that attach documents to
+an [online application](api-applications.md#applicationsdocumentspost).
+
+In ADAM: Navigate to **Administration → Security Administration → Document Repository API Permissions**.
+
+ADAM lists every token whose resources include one of these endpoints. Click **Edit Permissions** in the **Actions**
+column of a token’s row. ADAM shows each document category with a **Read**, **Add** and **Delete** tick box. A column
+appears only when the token’s resources include an endpoint that needs it. Tick the permissions the token needs, then
+click **Save Permissions**.
+
 ## Best Practice Security Principals
 
 The following are provided as best practice guidelines for managing API tokens.
