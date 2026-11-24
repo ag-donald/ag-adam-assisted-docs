@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=HsoeHjKWUcw
 Please ensure that your ADAM installation meets the following requirements:
 
 -   **Ensure that there are no open [reporting periods](reporting-period-administration.md#reporting-period-administration).** ADAM will warn you during the upgrade if there are any open. In particular, check that the reporting **period end-date** has passed and that the reporting period is **published**.
--   **Download a copy of your [SA-SAMS database](roll-calls.md#roll-calls)** before you proceed with the roll-over. Getting this database after the roll-over requires restoring a backup copy. Most provinces require a submission of the SA-SAMS database at year-end.
+-   **Download a copy of your [SA-SAMS database](roll-calls.md#roll-calls)** before you proceed with the roll-over. Most provinces require a submission of the SA-SAMS database at year-end. Now is a good time to download it before you change any pupil registrations.
 -   **The roll-over process will affect your class lists.** Until you have an opportunity to add in your classes for the following year, we suggest that you temporarily [remove the permission which allows pupils and families to see a list of teachers](security-administration-for-families-and-pupils.md#security-administration-for-families-and-pupils) in the pupil and parent portal. This will, of course, depend on how you perform the roll-over and which options you choose when processing your classes below.
 -   **Check your graduating grades.** ADAM allows for a school to have multiple exit points. These are defined by the [graduating grades](grade-settings.md#grade-settings). During the roll-over, any pupil in a graduating grade is moved to the alumni status.
 
