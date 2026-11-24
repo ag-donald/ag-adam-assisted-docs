@@ -70,12 +70,9 @@ The answers are shown to the people who approve the leave:
 
 -   The lists of leave requests on **Pupils → Leave Management → View Leave Requests For Your Approval** and **View Leave Requests by Class** have a **Choices** column with each request’s answers. The column is shown only when at least one request in the list has answers.
 -   On the parent portal, **Approve Leave Requests** shows the **Choices** column in the list of past leaves that the parent approved or denied. The cards for upcoming leaves do not show the answers.
--   When a member of staff clicks **update** in the **School Approval** column, the **Update leave status** page lists each answer below the request’s details, together with the **Host Contact**.
+-   When a member of staff clicks **update** in the **School Approval** column, the **Update leave status** page lists each answer below the request’s details.
 
 To count or list the answers across many requests, use the [Leave Reports](#leave-reports).
-
-> [!NOTE]
-> Leave types set up before this editor was introduced keep their questions. ADAM converted them to the new editor, and none of them is marked **Must be answered**.
 
 ### Editing a Leave Type
 
