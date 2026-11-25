@@ -40,6 +40,8 @@ ADAM uses a hierarchical structure when determining which qualification should b
 
 If a pupil has not - which is typically the case and which should be considered the ideal case in schools where a dual qualification is not offered - then ADAM will use the qualification that has been set as part of the  [Grade Specific Settings](reporting-period-administration.md#editing-a-reporting-period) within Reporting Period Administration.
 
+A pupil who has been assigned a qualification other than the one set for their grade is checked only against [promotion requirements](promotion-requirements.md#creating-your-own-promotion-criteria) that name that qualification. Promotion requirements with no qualifications selected apply only to pupils on the qualification set for their grade.
+
 ### Changing an Individual Pupil’s Qualification
 
 When [editing a pupil’s information](pupil-information.md#editing-a-pupil), one of the options in that page will be “Registered Qualification”. Here, ADAM will allow you to choose either “Default” or one of the enabled qualifications.

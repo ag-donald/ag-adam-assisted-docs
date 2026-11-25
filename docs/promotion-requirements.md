@@ -22,7 +22,7 @@ ADAM awards then pupil the first promotion result for which they meet all the cr
 
 Where a pupil has been listed as failed, note carefully the checks that ADAM lists. This may give you a clue as to why the pupil did not pass. Specifically, make sure that the pupil belongs to the qualification you imagine they should (or “default”) in the [pupil details](pupil-information.md#editing-a-pupil) and that there are appropriate promotion requirements for that grade and qualification.
 
-ADAM will only check against promotion criterion that match the pupils’ grade and qualifications.
+ADAM will only check against promotion criteria that match the pupil’s grade and qualification. A pupil on the qualification set for their grade in the Reporting Period Settings is checked against criteria that name that qualification and against criteria with no qualifications selected. A pupil who has been assigned a different qualification is checked only against criteria that name it: criteria with no qualifications selected do not apply to them.
 
 ## Recalculating promotion decisions
 
@@ -88,8 +88,8 @@ For each decision, enter the following information:
 
 -   **Description:** this is an internal description of the promotion decision for your records. It does not get used when publishing or displaying reports.
 -   **Priority:** the priority of the promotion decisions is crucial. ADAM tests these promotion decisions in order and will award the first one that works for a pupil. As such, the *hardest* promotion criteria should be set first and the *easiest* ones later.
--   **Grades:** select one or more grades that should consider this promotion criterion. You must have at least one grade, otherwise the promotion criteria will not be used.
--   **Qualifications:** select one or more qualifications that should consider this promotion criterion. You must have at least one qualification selected.
+-   **Grades:** select one or more grades that should consider this promotion criterion. A promotion criterion with no grades is never checked automatically. It is offered only when staff override a pupil’s promotion decision by hand.
+-   **Qualifications:** select the qualifications that this promotion criterion applies to. Leave this blank to apply it to pupils on the qualification set for their grade in the [Reporting Period Settings](reporting-period-administration.md#editing-a-reporting-period). A pupil who has been [assigned a different qualification](academic-qualifications.md#changing-an-individual-pupils-qualification) in their pupil details is checked only against promotion criteria that name that qualification. The list of promotion requirements shows **(Period settings)** in the **Qualifications** column for a criterion with no qualifications selected.
 -   **Result:** this is the text that is printed on the report and in mark schedules. It will typically say something like “Promoted” or “Promoted with Bachelor Degree Pass”.
 -   **Subject Codes:** the promotion criteria that are added at the bottom of the screen in the **Criteria** box are all based on subject codes. You can tell ADAM whether you want to use the Department subject codes (based on the DBE subject link in the subject settings) or ADAM’s internal subject code. The contents of the **Criteria** box are discussed below.
 

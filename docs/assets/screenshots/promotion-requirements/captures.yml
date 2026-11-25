@@ -1,0 +1,16 @@
+- image: promotion-requirements-05.png
+  captured: 2026-11-25
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration → Academic Administration → Edit promotion requirements → Add new promotion decision
+  frame:
+    mode: span
+    selectors: >
+      The "Add Promotion Requirement" h1 to the bottom of the
+      form[action$="/admin/academic/promotions/add"], viewport 900×1169.
+    padding: 8
+  setup: >
+    Nothing entered. The Grades list was scrolled to start at Grade 3 so that
+    Grades 8 to 12 show; the screenshot site's grades run from "Grade 0000" to
+    "Grade 22". Focus removed from the Description field.
+  revert: none
