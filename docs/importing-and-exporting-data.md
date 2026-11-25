@@ -4,18 +4,23 @@ ADAM can import and export data directly from a number of tables in the database
 
 ## CSV Export
 
-The CSV Export is a straightforward process to empty the contents of the table into a file that can be edited locally. To export the contents, find the export feature under **Administration → Database Administration → Export Data to CSV**.
+The CSV Export is a straightforward process to empty the contents of the table into a file that can be edited locally. To export the contents, find the export feature under **Administration → Import & Export → Export data to CSV**.
 
-In the page that follows, choose from the tables that are available to you:
+In the page that follows, choose the **Data** to export:
 
--   Pupils
+-   Current Pupils
+-   Admissions Pupils
+-   Alumni Pupils
 -   Staff
 -   Families
+-   Subjects
 -   Classes
+-   Learning Outcomes
+-   Assessment Standards
 
 ![](assets/screenshots/importing-and-exporting-data/importing-and-exporting-data-01.png)
 
-You can also tick the box which includes old (deleted) records for editing. In the case of pupils or staff, for example, ticking this box would include alumni or past staff members in the export. Otherwise, ADAM exports only current pupils and staff members.
+You can also set **Include old or deleted records** to **Yes**. For **Current Pupils** or **Staff**, for example, this includes alumni or past staff members in the export. Otherwise, ADAM exports only current pupils and staff members.
 
 Some exports include extra columns whose heading starts with a `#`, such as
 `#subject_name` or `#class_teacher`. These are there to make the file readable — they
@@ -27,7 +32,9 @@ ignored if you import the file back into ADAM, so you can leave them in place.
 
 ## CSV Import
 
-Importing data from CSV can be a great time saver is there is lots of information that needs to be changed. ADAM can import into any of the tables that are mentioned above. To import data, navigate to **Administration → Database Administration → Import Data from CSV**.
+Importing data from CSV can be a great time saver is there is lots of information that needs to be changed. ADAM can import into any of the tables that are mentioned above. To import data, navigate to **Administration → Import & Export → Import from CSV to Database**.
+
+Importing needs the **Allow importing of data to the database** permission, which is on the **Database Admin** tab under the **Import and Export** heading when [changing the permissions of a group](security-administration-for-staff.md#changing-the-permissions-of-a-group).
 
 > [!WARNING]
 > Please pay careful attention to the formatting of numbers and dates in Excel before saving and importing the CSV file. Excel will do things such as reformat ID numbers, drop the leading 0s from phone numbers and so on. **It is strongly suggested that, once you have downloaded your export, that you make a copy of this file before starting to edit the contents.** In this way, you can always revert changes by importing the file you exported.
@@ -37,7 +44,7 @@ Importing data from CSV can be a great time saver is there is lots of informatio
 > [!WARNING]
 > Please take special note of the sections below with regards to [structuring your import file](#structuring-your-import-file) and ensuring that your file [contains only the information that is strictly needed](#import-only-what-you-need).
 
-Navigate to **Administration → Database Administration → Import Data from CSV**.
+Navigate to **Administration → Import & Export → Import from CSV to Database**. The page is titled **Import information from a CSV file**.
 
 Click on the **Choose file** button and select your CSV file from the file selection window. You must tell ADAM what sort of **Data** you are going to import. ADAM will use this information to double check that your CSV file is properly structures, so it is very important that you get this right.
 
@@ -49,9 +56,7 @@ ADAM also asks for the **import operation type**. This tells ADAM what sort of d
 
 The option to **Create records for unknown IDs** tells ADAM that you may wish to have records created with specific identifiers. If not, ADAM will assume that a record with an unknown ID should be ignored - this setting is only looked at if you have chosen one of the options above to **create** records as part of your import.
 
-ADAM can perform **Date-based updates**. Here, ADAM looks at the records “modified by” date - which is generally set automatically - and will not update any records that have been modified since a certain time which is specified in the **Cut-off Date**. This functionality is very specific and will probably not need to be used ever.
-
-When you are ready,  click on the **Next** button for ADAM to perform the import. ADAM will confirm the number of records that have been updated and/or imported into the database.
+When you are ready, click on the **Next** button. ADAM runs the import in the background and opens the **Queue Monitor** page for it, which shows the import’s progress. When the import finishes, the **Job result** confirms what ADAM updated and/or imported into the database.
 
 ### Structuring your import file
 
@@ -285,3 +290,66 @@ The following is an example of a file used for import:
 Navigate to **Administration → Absentee Administration → Edit the absentee reasons**. Click on the **edit** option next to each and notice the address bar end with the text &id=.... The digits that are shown there represent the id number of the reason. This is illustrated below, where the reason\_id value is set to 1.
 
 ![](assets/screenshots/importing-and-exporting-data/importing-and-exporting-data-21.png)
+
+## Importing Classes and Class Registrations
+
+The **Classes** import creates classes and puts pupils into them from one file. Each row of the file names one pupil and describes the class that pupil belongs in. ADAM looks for an existing class that matches the description. If it finds exactly one, it adds the pupil to that class. If it finds none, it creates the class first and then adds the pupil. Schools use this at the start of a year, or when they move to ADAM, to load class lists without adding each class by hand.
+
+To run it, follow the steps in [Performing the Import](#performing-the-import) and choose **Classes** in the **Data** list. The **Import operation type** and **Create records for unknown IDs** options have no effect on this import: ADAM always matches or creates classes as described below.
+
+> [!WARNING]
+> A Classes import can move many pupils between classes at once. Make a [backup](backups.md) before you import the file.
+
+### Structuring the classes file
+
+The first row holds the column names. The columns can be in any order. ADAM ignores every column that is not a pupil column or a class column, including the columns whose heading starts with `#`.
+
+**One pupil column.** This column identifies the pupil on each row. `pupil_id` or `pupil_admin` are the usual choices. Include only one column from the pupil record: if the file has more than one, ADAM uses the last of them to find the pupil. If two pupils have the same value, ADAM uses the pupil who was added to ADAM first. Rows whose pupil ADAM cannot find are skipped and counted in the result.
+
+Without a pupil column, the import stops and the **Job result** reads: “The job did not complete successfully: I need a field to search for pupil. pupil\_id or pupil\_admin are normally great choices.”
+
+**Class columns.** These columns describe the class. Any column from the class record may be used. ADAM looks for a class that matches every class column in the file, and the values must be exactly equal. Deleted classes are never matched.
+
+-   To put pupils into **classes that already exist**, the simplest column is `class_id`. A **Classes** export from [CSV Export](#csv-export) lists every class with its `class_id`, next to the subject, teacher and grade level of the class.
+-   To **create new classes**, each row needs all four of these columns:
+    -   `class_subject_id`: a current subject. A **Subjects** export lists the `subject_id` of each subject.
+    -   `class_staff_id`: a current staff member, who becomes the class’s **Teacher**. A **Staff** export lists the `staff_id` of each staff member.
+    -   `class_grade_id`: the class’s **Grade Level**, which says whether the class has marks. It is not the grade the class is in. `1` is an academic class with marks, and `2` is a non-academic class. It must not be 0. A **Classes** export shows the `class_grade_id` of each existing class, with its name in the `#grade_description` column.
+    -   `class_description`: the **Class Description**, which tells the class apart from other classes of the same subject and grade, for example `A`. There is no need to repeat the grade or subject in it.
+
+    `class_gradeyear` holds the grade the class is in, as a number: `10` for a Grade 10 class. It is optional, but a class without it has no grade, so include it for every class that belongs to one grade.
+
+    These columns are also optional when ADAM creates a class: `class_language_id` (the **Language Of Teaching and Learning**, using the [language codes](appendix-a-import-and-export-codes.md#language-codes)), `class_venue` (**Teaching Venue(s)**), `class_teachingtime` (**Teaching Time**, in minutes per week) and `class_teacherreporttext` (**Reporting Teacher**). The fields are described in [Creating a new class](class-management.md#creating-a-new-class).
+
+    A row that matches no class, and that lacks one of the four required columns or names a subject or staff member that is not current, is skipped. The result does not mention these rows.
+
+Rows that describe the same class are grouped: ADAM creates the class once and adds every pupil on those rows to it.
+
+> [!WARNING]
+> **Describe each class completely.** If the class columns match more than one existing class, ADAM treats that as no match and creates another class. For example, a file with only `class_subject_id` and `class_description` creates a duplicate class when Grade 8 and Grade 10 Mathematics each already have an “A” class. Adding `class_gradeyear` tells them apart. Use `class_id` for classes that already exist.
+
+### What happens to each pupil
+
+-   ADAM adds only current pupils. Rows for admissions pupils and alumni are skipped.
+-   A pupil who is already in the class stays in it.
+-   A pupil who is in a different class of the same subject is moved out of that class and into the new one. Their marks in open reporting periods move with them, as when you **change** a pupil’s class in [Registering Classes for a Pupil](class-registration.md#registering-classes-for-a-pupil). Marks are not removed, as they are when you **drop** a subject.
+
+> [!CAUTION]
+> Importing the same file a second time does not create its classes again, because ADAM finds the classes it created the first time. It does move every pupil back into the class the file names, which undoes any class changes made since the first import.
+
+### Example classes file
+
+```
+pupil_admin,class_subject_id,class_staff_id,class_grade_id,class_gradeyear,class_description
+2019045,12,34,1,10,A
+2019046,12,34,1,10,A
+2019047,12,51,1,10,B
+```
+
+This file describes two academic Grade 10 classes of subject 12. It puts the first two pupils into class A, taught by staff member 34, and the third pupil into class B, taught by staff member 51. ADAM creates either class if it does not already exist. The ids are examples; each school’s ids differ.
+
+### After the classes import
+
+When the import finishes, the **Job result** on the **Queue Monitor** page gives a summary such as “Enrolled 412 pupils. Classes: 18 created, 3 matched. Skipped 2 unknown pupils.” The last sentence appears only when some pupils could not be found.
+
+The number of enrolled pupils counts every row whose pupil and class ADAM found or created. It includes pupils that ADAM did not add because they are not current or are already in the class. To check the result, view the class lists.

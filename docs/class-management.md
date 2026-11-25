@@ -8,6 +8,8 @@ A class can be considered a container. Its primary purpose is to link a teacher 
 
 To create a new class, click on the “**Add a new class**” option on the “**Classes**” tab, found under the “**Class Administration**” heading.
 
+To create many classes at once and put pupils into them from one file, use the [Classes import](importing-and-exporting-data.md#importing-classes-and-class-registrations).
+
 https://www.youtube.com/watch?v=pfIaJu2TFzA
 
 The following screen is shown:
