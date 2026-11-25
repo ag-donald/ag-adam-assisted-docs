@@ -268,6 +268,25 @@ needs a person.
 
 ---
 
+## Email Personal Documents — pictures (`docs/email-personal-documents.md`)
+
+The page was written from ADAM PR #643 (`feature/document-emailer`) before it reached the branch the
+screenshot site serves, so it has no pictures. Capture these once the feature is on that branch.
+Emailing a set from the screenshot site queues real mail batches, so ask the user before any send.
+
+1. `email-personal-documents-01.png`: **Pupils → Messaging and Communications → Email personal
+   documents → Upload documents**. Frame from the **Upload Documents to Email** heading to the
+   **Upload Documents** button, with **Who the documents are for** on **Current pupils**. Place it
+   after the numbered steps under "Uploading the Documents".
+2. `email-personal-documents-02.png`: the email form of a set of about five current pupils' documents,
+   before its first send. Frame from **To** down to **Description**, so that **Audience**,
+   **Document Repository Category** and **Description** show. Place it after the list of
+   differences under "Emailing a Set".
+3. `email-personal-documents-03.png`: the set's page of the same set after one send to
+   **Families**, showing at least one **Queued** row and one **Not sent** row with its reason. Place
+   it after the list of outcomes under "The Set's Page". This needs a real send, so it waits until
+   the user agrees to one on the screenshot site.
+
 ## Pictures made out of date by the text corrections of 2026-11-18
 
 The text of these pages was corrected against ADAM on 2026-11-18. The images below still show the

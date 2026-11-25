@@ -2,7 +2,7 @@
 
 Some uploads hold files or values that ADAM must match to pupils or staff members. ADAM matches them first and then shows a review page. On that page you check the matches before ADAM saves anything. Open the rows marked **Check** or **No match**, choose the right person or tick **Ignore**, then click **Confirm**. ADAM remembers the choices you confirm, for you only.
 
-Four uploads work this way:
+Five uploads work this way:
 
 | Upload | Where to find it | Matched against |
 |---|---|---|
@@ -10,8 +10,9 @@ Four uploads work this way:
 | Pupil photographs | **Pupils → Names and Faces → Upload new pupil photographs** | The pupils in the **Choose Pupil Dataset** option you choose |
 | Staff photographs | **Staff → Names and Faces → Upload new staff photographs** | Current staff |
 | Assessment results | **Assessment → Assessment Administration → Import assessment results** | The pupils enrolled during the import’s reporting period |
+| Email personal documents | **Pupils → Messaging and Communications → Email personal documents** (also on the **Staff** and **Families** tabs), then **Upload documents** | The group chosen in **Who the documents are for**: current pupils, applicants, alumni and leavers, or current staff |
 
-How to make each upload is described on its own page: [Uploading Documents in Bulk](document-repository.md#uploading-documents-in-bulk), [Pupil Photographs](pupil-photographs.md#uploading-pupil-photographs), [Staff Photographs](staff-photographs.md#uploading-staff-photographs) and [Importing Assessment Results](mark-book-administration.md#importing-assessment-results). This page describes the review page that all four share.
+How to make each upload is described on its own page: [Uploading Documents in Bulk](document-repository.md#uploading-documents-in-bulk), [Pupil Photographs](pupil-photographs.md#uploading-pupil-photographs), [Staff Photographs](staff-photographs.md#uploading-staff-photographs), [Importing Assessment Results](mark-book-administration.md#importing-assessment-results) and [Email Personal Documents](email-personal-documents.md#uploading-the-documents). This page describes the review page that all five share.
 
 You need the same permission for each upload as before. There is no new permission. Parents and pupils do not see the review page.
 
@@ -36,7 +37,7 @@ ADAM only searches the group of people the upload is matched against. A pupil wh
 
 After you upload, ADAM takes you to the review page. Nothing has been saved yet.
 
-The heading is the name of the upload: “Upload documents to the Document Repository”, “Upload pupil pictures”, “Upload staff pictures” or “Import assessment results”. Under the heading, ADAM shows:
+The heading is the name of the upload: “Upload documents to the Document Repository”, “Upload pupil pictures”, “Upload staff pictures”, “Import assessment results” or “Email personal documents”. Under the heading, ADAM shows:
 
 -   A count, such as “12 files · 9 certain · 3 to check”. For an assessment import it counts values instead of files.
 -   The group of people ADAM searched, such as “Matched against current pupils.”
@@ -90,7 +91,7 @@ ADAM found nobody. Search for the person, or tick **Ignore**.
 
 Click **Confirm** to save the upload. Every row needs a person or the **Ignore** tick. If a row has neither, ADAM saves nothing and shows the review page again with the message “Choose a person for every row, or tick Ignore, before you confirm. Your choices so far are saved.”
 
-After you confirm, ADAM saves what you confirmed and shows the results. For a document or photograph upload this is the upload’s results page. For an assessment import, ADAM takes you to the subject step of the import.
+After you confirm, ADAM saves what you confirmed and shows the results. For a document or photograph upload this is the upload’s results page. For an assessment import, ADAM takes you to the subject step of the import. For Email personal documents, ADAM opens the [set’s page](email-personal-documents.md#the-sets-page).
 
 ![The review page after Confirm was clicked with two rows left empty: the rows, the Cancel, Ignore unmatched and Confirm buttons, and the message “Choose a person for every row, or tick Ignore, before you confirm. Your choices so far are saved.”](assets/screenshots/matching-uploads-to-people/matching-uploads-to-people-04.png)
 
@@ -112,7 +113,7 @@ Click **Cancel** to abandon the upload. ADAM saves nothing and takes you back to
 
 Only the staff member who made the upload can open its review page. The review page has no menu item. If you leave it before you confirm, use your browser’s **Back** button to return to it, or upload the files again.
 
-If you open the review page of an upload that you have already confirmed, ADAM takes you to its results page instead. For an assessment import, it takes you to the subject step.
+If you open the review page of an upload that you have already confirmed, ADAM takes you to its results page instead. For an assessment import, it takes you to the subject step. For Email personal documents, it takes you to the set’s page.
 
 ## Remembered Matches
 
