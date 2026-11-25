@@ -314,17 +314,19 @@ Without a pupil column, the import stops and the **Job result** reads: “The jo
 -   To **create new classes**, each row needs all four of these columns:
     -   `class_subject_id`: a current subject. A **Subjects** export lists the `subject_id` of each subject.
     -   `class_staff_id`: a current staff member, who becomes the class’s **Teacher**. A **Staff** export lists the `staff_id` of each staff member.
-    -   `class_grade_id`: the class’s **Grade Level**. It must not be 0. A **Classes** export shows the `class_grade_id` of each existing class, with its name in the `#grade_description` column.
-    -   `class_description`: the **Class Description**, for example `10A`.
+    -   `class_grade_id`: the class’s **Grade Level**, which says whether the class has marks. It is not the grade the class is in. `1` is an academic class with marks, and `2` is a non-academic class. It must not be 0. A **Classes** export shows the `class_grade_id` of each existing class, with its name in the `#grade_description` column.
+    -   `class_description`: the **Class Description**, which tells the class apart from other classes of the same subject and grade, for example `A`. There is no need to repeat the grade or subject in it.
 
-    These columns are optional when ADAM creates a class: `class_gradeyear` (the grade, as a number such as `10`), `class_language_id` (the **Language Of Teaching and Learning**, using the [language codes](appendix-a-import-and-export-codes.md#language-codes)), `class_venue` (**Teaching Venue(s)**), `class_teachingtime` (**Teaching Time**, in minutes per week) and `class_teacherreporttext` (**Reporting Teacher**). The fields are described in [Creating a new class](class-management.md#creating-a-new-class).
+    `class_gradeyear` holds the grade the class is in, as a number: `10` for a Grade 10 class. It is optional, but a class without it has no grade, so include it for every class that belongs to one grade.
+
+    These columns are also optional when ADAM creates a class: `class_language_id` (the **Language Of Teaching and Learning**, using the [language codes](appendix-a-import-and-export-codes.md#language-codes)), `class_venue` (**Teaching Venue(s)**), `class_teachingtime` (**Teaching Time**, in minutes per week) and `class_teacherreporttext` (**Reporting Teacher**). The fields are described in [Creating a new class](class-management.md#creating-a-new-class).
 
     A row that matches no class, and that lacks one of the four required columns or names a subject or staff member that is not current, is skipped. The result does not mention these rows.
 
 Rows that describe the same class are grouped: ADAM creates the class once and adds every pupil on those rows to it.
 
 > [!WARNING]
-> **Describe each class completely.** If the class columns match more than one existing class, ADAM treats that as no match and creates another class. For example, a file with only `class_subject_id` and `class_description` creates a duplicate class when two teachers each already have a “10A” Mathematics class. Use `class_id` for classes that already exist.
+> **Describe each class completely.** If the class columns match more than one existing class, ADAM treats that as no match and creates another class. For example, a file with only `class_subject_id` and `class_description` creates a duplicate class when Grade 8 and Grade 10 Mathematics each already have an “A” class. Adding `class_gradeyear` tells them apart. Use `class_id` for classes that already exist.
 
 ### What happens to each pupil
 
@@ -338,13 +340,13 @@ Rows that describe the same class are grouped: ADAM creates the class once and a
 ### Example classes file
 
 ```
-pupil_admin,class_subject_id,class_staff_id,class_grade_id,class_description
-2019045,12,34,2,10A
-2019046,12,34,2,10A
-2019047,12,51,2,10B
+pupil_admin,class_subject_id,class_staff_id,class_grade_id,class_gradeyear,class_description
+2019045,12,34,1,10,A
+2019046,12,34,1,10,A
+2019047,12,51,1,10,B
 ```
 
-This file puts the first two pupils into one class taught by staff member 34, and the third pupil into a class taught by staff member 51. ADAM creates either class if it does not already exist. The ids are examples; each school’s ids differ.
+This file describes two academic Grade 10 classes of subject 12. It puts the first two pupils into class A, taught by staff member 34, and the third pupil into class B, taught by staff member 51. ADAM creates either class if it does not already exist. The ids are examples; each school’s ids differ.
 
 ### After the classes import
 
