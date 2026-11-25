@@ -174,6 +174,8 @@ This staff allow-list is separate from the per-slot accepted types you set for p
 
 Pupil and staff documents can be uploaded in bulk to the document repository.
 
+To upload one document per person and email each person their own document, use [Email Personal Documents](email-personal-documents.md#email-personal-documents) instead. It files the documents in the Document Repository when it emails them.
+
 ### Naming of Documents
 
 ADAM matches each document to a pupil or staff member by its file name. The upload page lists these rules:

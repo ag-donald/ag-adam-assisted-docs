@@ -281,3 +281,7 @@ The screen shown is the standard messaging centre screen, which may have differe
 ![](assets/screenshots/messaging-centre/messaging-centre-19.png)
 
 Click on **Send emails** to queue your email.
+
+## Emailing Each Person Their Own Document
+
+To email each pupil, family or staff member their own document, such as a certificate or a letter, use **Email personal documents**. You upload one file per person, and ADAM attaches each person’s file to their email. See [Email Personal Documents](email-personal-documents.md#email-personal-documents).
