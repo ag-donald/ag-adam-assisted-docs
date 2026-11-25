@@ -1,0 +1,30 @@
+- image: importing-and-exporting-data-01.png
+  captured: 2026-11-25
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration → Import & Export → Export data to CSV
+  frame:
+    mode: span
+    selectors: >
+      The "Export information to a CSV file" h1 to the bottom of the
+      form[action$="/admin/database/export"], viewport 900×333.
+    padding: 8
+  setup: none (form left at its defaults).
+  revert: none
+
+- image: importing-and-exporting-data-05.png
+  captured: 2026-11-25
+  host: screenshot.theta.adam.co.za (adam_agent_screenshot, randomised)
+  as: staff
+  path: Administration → Import & Export → Import from CSV to Database
+  frame:
+    mode: span
+    selectors: >
+      The "Import information from a CSV file" h1 to the bottom of the
+      form[action$="/admin/database/import"], viewport 900×507.
+    padding: 8
+  setup: >
+    Data set to "Classes". A one-line file, ClassLists2027.csv (header row
+    only), chosen in CSV File so the field shows a file name. The form was
+    not submitted.
+  revert: none
