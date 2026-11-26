@@ -67,7 +67,8 @@ edit the Token.
 If you do regenerate a token, please remember to update your external systems with the new token.
 
 **Deleting** the token will remove it from the list and it will no longer be available for use. Systems that rely on the
-resources will no longer have access to the data supplied by ADAM.
+resources will no longer have access to the data supplied by ADAM. Deleting a token also deletes its
+[Data Query secrets](api-data-query.md#create-a-data-query-secret).
 
 ### Suspending and Reactivating Tokens
 
@@ -226,6 +227,11 @@ The ADAM API is organised by module. Each page below documents the endpoints for
 - [Reporting](api-reporting.md)
 - [Subjects](api-subjects.md)
 - [Other Endpoints](api-other-endpoints.md)
+
+## Trying the API
+
+Developers can create their own token on the ADAM demonstration site, without logging in. See
+[Trying the API on the Demo Site](api-demo-site.md#trying-the-api-on-the-demo-site).
 
 ## Specific Integration Requirements
 

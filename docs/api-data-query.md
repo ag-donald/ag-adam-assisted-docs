@@ -23,7 +23,7 @@ To use this API endpoint, an additional data query token must be defined.
 
 ![](assets/screenshots/api-access-to-adam/api-access-to-adam-03.png)
 
-Note that field access definitions can only be linked to a single API Token. If multiple API tokens require access to the same fields, this process must be duplicated for each API token and a unique list created for each.
+Note that field access definitions can only be linked to a single API Token. Deleting the API Token also deletes its field access definitions. If multiple API tokens require access to the same fields, this process must be duplicated for each API token and a unique list created for each.
 
 -   Select the **API Token** that you want to associate with this query. *Note that only API Tokens who have access to the* *DataQuery/get/get* *resource may be selected here.*
 -   Make a note of the **Secret** and do not share this with unauthorised personnel.

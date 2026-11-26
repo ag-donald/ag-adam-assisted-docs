@@ -168,6 +168,7 @@ nav:
   - "Appendix B: Common Errors and their Meanings": appendix-b-common-errors-and-their-meanings.md
   - "Appendix C: API Access to ADAM":
     - API Access to ADAM: api-access-to-adam.md
+    - Trying the API on the Demo Site: api-demo-site.md
     - Absentees: api-absentees.md
     - Assessment: api-assessment.md
     - Calendar: api-calendar.md
