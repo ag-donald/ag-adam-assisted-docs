@@ -45,7 +45,9 @@ Token.
    existing endpoint and create a new one.
 2. Select the appropriate **resources** to allow the token to access. Hold down the “Ctrl” key on your keyboard to allow
    you to select multiple resources by then clicking on those resources while holding down that button.
-3. Add **notes** if required. It is a good idea to make note of what service is making use of the API token.
+3. Add **notes**. They are required. Name the service that uses the token, for example “Timetabling system”. ADAM
+   shows these notes in its change history as the name of whoever made a change through the token (see
+   [Changes Made Through a Token](#changes-made-through-a-token)).
 4. Click on **Save Token**.
 
 > [!WARNING]
@@ -106,6 +108,27 @@ The difference between the two ways of stopping a token is important:
   restored at any time by reactivating it.
 - **Delete** is permanent and cannot be undone. The token is removed from the list entirely and cannot be recovered; a
   new token would have to be created and shared with the external system.
+
+### Changes Made Through a Token
+
+When a program changes information in ADAM through a token, ADAM records the change against that token. Wherever ADAM
+shows who made a change — for example the **Changed by** column on a class’s **History** tab, or the **Changed By**
+column of a [change log notification](change-log-notifications.md#change-log-notifications) — the token is named by its
+notes, as **API:** followed by the notes. A token with the notes “Timetabling system” appears as
+**API: Timetabling system**.
+
+The **API:** in front of the notes is always shown, so a change made through a token is never mistaken for a change
+made by a person, even when the notes read like a person’s name.
+
+A token that was created before notes were required, and had none, has the notes **API Token #** followed by the
+token’s number, for example “API Token #7”. Its changes appear as **API: API Token #7**. Edit those notes to name the
+service that uses the token.
+
+The name is looked up each time the history is shown. If you edit a token’s notes, the new notes name every change the
+token has made, including earlier ones. If you delete a token, its notes are deleted with it, and its changes then
+appear as **API: Token #** followed by the token’s number. Suspending a token keeps its notes.
+
+Changes made through a token before ADAM started recording the token are shown as **Unknown**.
 
 ### Document Category Permissions
 

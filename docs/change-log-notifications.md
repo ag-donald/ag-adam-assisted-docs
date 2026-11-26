@@ -30,7 +30,7 @@ Finally, if you require **additional information** to be included - perhaps an a
 
 Finally, click on the button at the bottom to save the notification.
 
-Each notification lists who made each change in the **Changed By** column. Changes that ADAM makes itself are included too, and name the process that made them: **ADAM upgrade**, **ADAM scheduled task**, **ADAM command line** or **ADAM background job**.
+Each notification lists who made each change in the **Changed By** column. Changes that ADAM makes itself are included too, and name the process that made them: **ADAM upgrade**, **ADAM scheduled task**, **ADAM command line** or **ADAM background job**. A change that another program made through ADAM’s API names the API token, as **API:** followed by the token’s notes (see [Changes Made Through a Token](api-access-to-adam.md#changes-made-through-a-token)).
 
 ## Watching Site Settings
 
