@@ -6,7 +6,7 @@ ADAM allows you to approach the registration process from one of two ways. The f
 
 The second is used more commonly when a pupil arrives at the school late and needs to be added to already existing classes.
 
-To register many pupils into many classes at once from one file, for example at the start of a year, use the [Classes import](importing-and-exporting-data.md#importing-classes-and-class-registrations).
+To register many pupils into many classes at once from one file, for example at the start of a year, use the [Classes import](importing-and-exporting-data.md#importing-classes-and-class-registrations). Another program, such as a timetabling system, can also enrol, move and remove pupils through ADAM’s API (see [Changing a Pupil’s Classes](api-registration.md#changing-a-pupils-classes)).
 
 > [!WARNING]
 > The most common support issue that we find revolves around the fact that a pupil can only be enrolled in a single class per subject. Thus a pupil cannot be in two “English” classes at the same time. The pupil must first be removed from the first class and then added to the second class.
